@@ -1,0 +1,612 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Problem Detail - Ram Technical Help</title>
+  <meta name="description" content="Step-by-step solution guide for this laptop and Windows problem.">
+  <meta name="keywords" content="Troubleshooting Detail, Step-by-step Guide, Problem Solution, PC Repair, Tech Support">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  
+  <!-- Theme Flash Protection -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    /* ── Article Layout ── */
+    .guide-article {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2.5rem 0 4rem;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      margin-bottom: 2rem;
+      transition: var(--transition-base);
+    }
+
+    .back-link:hover {
+      color: var(--brand-primary);
+    }
+
+    /* ── Header ── */
+    .guide-header {
+      margin-bottom: 2.5rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid var(--border-light);
+    }
+
+    .guide-header .category-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      padding: 0.3rem 0.8rem;
+      border-radius: var(--radius-full);
+      margin-bottom: 1rem;
+    }
+
+    .guide-header h1 {
+      font-size: 2.25rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 0.75rem;
+    }
+
+    .guide-header .guide-summary {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .guide-meta {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    /* ── Section Cards ── */
+    .guide-section {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .guide-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text-main);
+    }
+
+    .guide-section-title .section-icon {
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Description ── */
+    .desc-section .section-icon {
+      background: rgba(79, 70, 229, 0.1);
+    }
+
+    .description-text {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-muted);
+    }
+
+    /* ── Causes ── */
+    .causes-section .section-icon {
+      background: rgba(245, 158, 11, 0.12);
+    }
+
+    .causes-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .causes-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .causes-list li::before {
+      content: '⚠️';
+      font-size: 0.85rem;
+      margin-top: 0.1rem;
+      flex-shrink: 0;
+    }
+
+    /* ── Steps ── */
+    .steps-section .section-icon {
+      background: rgba(16, 185, 129, 0.1);
+    }
+
+    .steps-list {
+      display: grid;
+      gap: 1.5rem;
+    }
+
+    .step {
+      display: flex;
+      gap: 1.25rem;
+      align-items: flex-start;
+    }
+
+    .step-num {
+      flex-shrink: 0;
+      width: 32px;
+      height: 32px;
+      background: var(--brand-gradient);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.85rem;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.3);
+    }
+
+    .step-content {
+      flex-grow: 1;
+      padding-top: 0.25rem;
+    }
+
+    .step-content p {
+      margin: 0;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: var(--text-muted);
+    }
+
+    .step-content strong {
+      color: var(--text-main);
+    }
+
+    .step-image {
+      margin-top: 0.875rem;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .step-image img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .screenshot-hint {
+      display: block;
+      margin-top: 0.5rem;
+      font-size: 0.82rem;
+      color: var(--brand-secondary);
+      font-style: italic;
+      background: rgba(14, 165, 233, 0.05);
+      border: 1px dashed rgba(14, 165, 233, 0.4);
+      padding: 0.4rem 0.7rem;
+      border-radius: 6px;
+    }
+
+    /* ── Tips ── */
+    .tips-section .section-icon {
+      background: rgba(99, 102, 241, 0.1);
+    }
+
+    .tips-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.6rem;
+    }
+
+    .tips-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.6rem;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+      line-height: 1.55;
+    }
+
+    .tips-list li::before {
+      content: '💡';
+      font-size: 0.9rem;
+      flex-shrink: 0;
+      margin-top: 0.05rem;
+    }
+
+    /* ── Technician Box ── */
+    .tech-section {
+      background: linear-gradient(135deg, rgba(239, 68, 68, 0.06) 0%, rgba(245, 158, 11, 0.06) 100%);
+      border: 1.5px solid rgba(239, 68, 68, 0.2);
+    }
+
+    .tech-section .section-icon {
+      background: rgba(239, 68, 68, 0.1);
+    }
+
+    .tech-note {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      color: var(--text-muted);
+    }
+
+    .tech-note strong {
+      color: #dc2626;
+    }
+
+    /* ── Rating ── */
+    .rating-box {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      text-align: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .rating-box h3 {
+      font-size: 1.05rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .rating-box .sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    /* ── Badges ── */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.65rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+
+    .badge-warning {
+      background: rgba(245, 158, 11, 0.12);
+      color: #d97706;
+    }
+
+    .badge-danger {
+      background: rgba(239, 68, 68, 0.12);
+      color: #dc2626;
+    }
+
+    .badge-performance {
+      background: rgba(139, 92, 246, 0.12);
+      color: #7c3aed;
+    }
+
+    .badge-hardware {
+      background: rgba(245, 158, 11, 0.12);
+      color: #d97706;
+    }
+
+    .badge-software {
+      background: rgba(59, 130, 246, 0.12);
+      color: #2563eb;
+    }
+
+    .badge-network {
+      background: rgba(16, 185, 129, 0.12);
+      color: #059669;
+    }
+
+    .badge-data {
+      background: rgba(236, 72, 153, 0.12);
+      color: #db2777;
+    }
+
+    .badge-virus {
+      background: rgba(239, 68, 68, 0.12);
+      color: #dc2626;
+    }
+
+    @media (max-width: 768px) {
+      .guide-header h1 {
+        font-size: 1.75rem;
+      }
+
+      .guide-section {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="site-header"></header>
+
+  <div class="container" style="margin-top: 2rem;">
+    <div class="ad-unit ad-top-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="has-sidebar">
+      <article class="guide-article" id="content">
+        <a href="problems.html" class="back-link">← Back to Troubleshooting</a>
+        <!-- Populated by JS -->
+      </article>
+
+      <aside class="sidebar">
+        <div class="ad-unit ad-sidebar-box">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_1" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        <div class="ad-unit ad-sidebar-box">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_2" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- Popular problems could go here too -->
+      </aside>
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-unit ad-footer-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="FOOTER" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <footer class="site-footer"></footer>
+
+
+  <script src="assets/js/problems-db.js?v=1.1"></script>
+
+  <script>
+    (function init() {
+      const id = new URLSearchParams(window.location.search).get('id');
+      const p = problemsDB[id];
+      const content = document.getElementById('content');
+
+
+      if (!p) {
+        content.innerHTML = `
+          <a href="problems.html" class="back-link">← Back to Troubleshooting</a>
+          <div style="text-align:center; padding:4rem 0; color:var(--text-muted);">
+            <div style="font-size:3rem;">🔍</div>
+            <h2 style="margin:1rem 0 0.5rem;">Problem not found</h2>
+            <p>This problem doesn't exist. <a href="problems.html" style="color:var(--brand-primary);">Browse all Troubleshooting guides →</a></p>
+          </div>`;
+        return;
+      }
+
+      document.title = `${p.title} — Ram Technical Help`;
+
+      // Difficulty badge class
+      function diffClass(d) {
+        return d === 'Easy' ? 'badge-success' : d === 'Medium' ? 'badge-warning' : 'badge-danger';
+      }
+
+      // Category icons
+      const catIcons = {
+        performance: '⚡', hardware: '🔧', software: '💾',
+        network: '🌐', data: '💿', virus: '🦠',
+        battery: '🔋', app: '📱', system: '⚙️', connectivity: '📡'
+      };
+
+      // Build steps HTML
+      const stepsHtml = p.steps.map((s, i) => `
+        <div class="step">
+          <div class="step-num">${i + 1}</div>
+          <div class="step-content">
+            <p>${s.text}</p>
+            ${s.img ? `<div class="step-image"><img src="${s.img}" alt="${s.alt || ''}" loading="lazy"></div>` : ''}
+          </div>
+        </div>`).join('');
+
+      // Build causes HTML (if present)
+      const causesHtml = (p.causes && p.causes.length) ? `
+        <div class="guide-section causes-section">
+          <div class="guide-section-title">
+            <div class="section-icon">⚠️</div>
+            Common Causes
+          </div>
+          <ul class="causes-list">
+            ${p.causes.map(c => `<li>${c}</li>`).join('')}
+          </ul>
+        </div>` : '';
+
+      // Build tips HTML (if present)
+      const tipsHtml = (p.tips && p.tips.length) ? `
+        <div class="guide-section tips-section">
+          <div class="guide-section-title">
+            <div class="section-icon">💡</div>
+            Additional Tips
+          </div>
+          <ul class="tips-list">
+            ${p.tips.map(t => `<li>${t}</li>`).join('')}
+          </ul>
+        </div>` : '';
+
+      // Build technician note (if present)
+      const techHtml = p.technicianNote ? `
+        <div class="guide-section tech-section">
+          <div class="guide-section-title">
+            <div class="section-icon">🛠️</div>
+            When to Contact a Technician
+          </div>
+          <p class="tech-note">${p.technicianNote}</p>
+        </div>` : '';
+
+      // Build description (use p.description or fall back to p.summary)
+      const descText = p.description || p.summary;
+
+      // Inject all sections
+      content.innerHTML = `
+        <a href="problems.html" class="back-link">← Back to Troubleshooting</a>
+
+        <!-- ── 1. Header ── -->
+        <header class="guide-header">
+          <div class="badge badge-${p.category} category-tag">
+            ${catIcons[p.category] || '🖥️'} ${p.category}
+          </div>
+          <h1 id="guide-title">${p.title}</h1>
+          <p class="guide-summary">${p.summary}</p>
+          <div class="guide-meta">
+            <span class="badge badge-${p.category}">${p.category}</span>
+            <span class="badge ${diffClass(p.difficulty)}">${p.difficulty}</span>
+            <span class="badge" style="background:rgba(100,116,139,0.1);color:var(--text-muted);">
+              🖥️ ${p.os.join(' / ')}
+            </span>
+            <span class="badge" style="background:rgba(100,116,139,0.1);color:var(--text-muted);">
+              ${p.steps.length} steps
+            </span>
+          </div>
+          <div style="margin-top:1rem;">
+            <button id="btn-bookmark" class="btn btn-sm btn-secondary"
+              onclick="App.toggleBookmark('${id}', '${p.title.replace(/'/g, "\\'")}')">
+              ☆ Bookmark
+            </button>
+          </div>
+        </header>
+
+        <!-- ── 2. Problem Description ── -->
+        <div class="guide-section desc-section">
+          <div class="guide-section-title">
+            <div class="section-icon">📋</div>
+            Problem Description
+          </div>
+          <p class="description-text">${descText}</p>
+        </div>
+
+        <!-- ── 3. Common Causes ── -->
+        ${causesHtml}
+
+        <div class="ad-unit ad-inline">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="INLINE_1" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+
+        <!-- ── 4. Step-by-Step Solution ── -->
+
+        <div class="guide-section steps-section">
+          <div class="guide-section-title">
+            <div class="section-icon">✅</div>
+            Step-by-Step Solution
+          </div>
+          <div class="steps-list">${stepsHtml}</div>
+        </div>
+
+        <!-- ── 5. Additional Tips ── -->
+        ${tipsHtml}
+
+        <!-- ── 6. When to Contact a Technician ── -->
+        ${techHtml}
+
+        <!-- ── Rating ── -->
+        <div class="rating-box">
+          <h3>Was this guide helpful?</h3>
+          <p class="sub">Your feedback helps us improve our guides.</p>
+          <div id="rating" style="display:flex;gap:0.5rem;justify-content:center;"></div>
+          <div id="rateMsg" class="alert ok"
+            style="display:none;margin-top:1rem;max-width:300px;margin-left:auto;margin-right:auto;">
+            Thanks for your feedback!
+          </div>
+        </div>
+
+        <!-- ── Video Mount ── -->
+        <section id="videoMount" aria-label="Video guide" style="margin-top:1rem;"></section>
+      `;
+
+      // Save history & update bookmark
+      App.saveHistory(id, p.title);
+      App.updateBookmarkButton(id);
+
+      // ── Star Rating ──
+      const ratingWrap = document.getElementById('rating');
+      const savedRating = Store.get('ratings', {})[id] || 0;
+
+      function renderStars(current) {
+        ratingWrap.innerHTML = '';
+        for (let i = 1; i <= 5; i++) {
+          const btn = document.createElement('button');
+          btn.textContent = '★';
+          btn.setAttribute('aria-label', `Rate ${i} star${i > 1 ? 's' : ''}`);
+          btn.style.cssText = 'background:transparent;border:none;font-size:2rem;cursor:pointer;transition:color 0.2s;';
+          btn.style.color = i <= current ? '#f59e0b' : '#d1d5db';
+
+          btn.onmouseover = () =>
+            Array.from(ratingWrap.children).forEach((b, idx) =>
+              b.style.color = (idx + 1) <= i ? '#f59e0b' : '#d1d5db');
+
+          btn.onmouseleave = () => {
+            const saved = Store.get('ratings', {})[id] || 0;
+            Array.from(ratingWrap.children).forEach((b, idx) =>
+              b.style.color = (idx + 1) <= saved ? '#f59e0b' : '#d1d5db');
+          };
+
+          btn.onclick = () => {
+            const r = Store.get('ratings', {});
+            r[id] = i;
+            Store.set('ratings', r);
+            document.getElementById('rateMsg').style.display = 'block';
+            renderStars(i);
+          };
+
+          ratingWrap.appendChild(btn);
+        }
+      }
+      renderStars(savedRating);
+
+    })();
+  </script>
+</body>
+
+</html>
+
+

@@ -1,0 +1,588 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>SQL Testing Interview Q&A - Ram Technical Help</title>
+    <meta name="description"
+        content="Master SQL testing interviews with our collection of Q&A. Covers basic queries, joins, subqueries, and real-world database testing scenarios in English and Hinglish.">
+    <meta name="keywords"
+        content="SQL Testing, Database Testing, SQL Queries, Joins, Subqueries, QA Interview Questions">
+
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <style>
+        /* This page uses global responsive styles from assets/css/styles.css */
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="container page-main">
+        <div class="has-sidebar">
+            <div class="main-content">
+                <div class="qa-container">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="qa-testing.html">Testing Q&A</a>
+                        <span>/</span>
+                        <span>SQL Testing</span>
+                    </nav>
+
+                    <div class="list-header">
+                        <h1>SQL & Database Testing Interview Q&A</h1>
+                        <p class="muted">Master SQL queries, joins, and database verification for software testing roles.</p>
+                    </div>
+                </div>
+
+                <div class="qa-controls">
+                    <div class="qa-search-wrapper">
+                        <input type="text" id="qaSearch" placeholder="Search SQL questions... (e.g., Join, Select, Update)" />
+                    </div>
+                    <div class="qa-btn-group">
+                        <button id="studyModeToggle" class="study-mode-toggle">
+                            <div class="toggle-switch"></div>
+                            <span>Study Mode</span>
+                        </button>
+                        <button id="btnExpandAll" class="btn btn-sm">Expand All</button>
+                        <button id="btnCollapseAll" class="btn btn-sm btn-outline">Collapse All</button>
+                    </div>
+                </div>
+
+                <div id="qa-content">
+                    <h2 class="section-title" id="foundation">📌 SQL Foundation (SELECT & Filters)</h2>
+                    
+                    <details>
+                        <summary>1. Which SQL command is used to retrieve data from a database?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The <strong>SELECT</strong> statement is used to fetch data from one or more tables.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Database se data nikalne ke liye <strong>SELECT</strong> command use karte hain.<br>
+                            <small><strong>Example:</strong> <code>SELECT * FROM Customers;</code></small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Which SQL command is used to add new rows of data to a table?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The <strong>INSERT INTO</strong> statement is used to add new records.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table mein naya data daalne ke liye <strong>INSERT INTO</strong> use karte hain.<br>
+                            <small><strong>Example:</strong> <code>INSERT INTO Products (Name, Price) VALUES ('Laptop', 1200);</code></small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Which SQL command is used to modify existing data in a table?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The <strong>UPDATE</strong> statement is used to modify the existing records.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table mein maujood data ko badalne ke liye <strong>UPDATE</strong> use karte hain.<br>
+                            <small><strong>Example:</strong> <code>UPDATE Customers SET City = 'New York' WHERE CustomerID = 1;</code></small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. Which SQL command is used to delete rows of data from a table?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The <strong>DELETE FROM</strong> statement is used to remove existing records.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table se data ki rows mitane ke liye <strong>DELETE FROM</strong> use karte hain.<br>
+                            <small><strong>Example:</strong> <code>DELETE FROM Orders WHERE OrderID = 101;</code></small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. What is the difference between DELETE and TRUNCATE?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>DELETE</strong> is a DML command that removes rows one by one and can be rolled back. <strong>TRUNCATE</strong> is a DDL command that removes all rows by deallocating pages, is faster, but cannot be rolled back easily.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> DELETE row-by-row data hatata hai aur undo ho sakta hai. TRUNCATE pura table turant khali kar deta hai aur fast hota hai par wapas nahi aa sakta.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. What is the difference between DELETE and DROP?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> DELETE removes rows but keeps the table structure; DROP removes the entire table structure along with its data.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> DELETE data hatata hai par table rehta hai; DROP table aur uske data dono ko khatam kar deta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. What is a Primary Key?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A unique identifier for each record in a table. It cannot contain NULL values.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table ki har row ki ek unique ID jo kabhi khali (NULL) nahi ho sakti.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. What is a Foreign Key?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A field that links two tables together. it is a primary key in another table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Do tables ko jodne waali key jo doosri table mein primary key hoti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. What is the purpose of the DISTINCT keyword?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It is used to return only unique (different) values from a column, removing duplicates from the results.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Query results mein se duplicates hata kar sirf unique values dikhane ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Explain the 'LIKE' operator and wildcards (% and _).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Used for pattern matching. <strong>%</strong> represents zero or more characters, while <strong>_</strong> represents exactly one character.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Text patterns dhoondhne ke liye. % matlab kai characters aur _ matlab sirf ek character.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is the BETWEEN operator used for?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selects values within a specific range (inclusive).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Do limits ke beech ki values ko select karne ke liye.
+                            <small><strong>Example:</strong> <code>WHERE Price BETWEEN 10 AND 20;</code></small>
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="joins">📌 Joins & Relationships</h2>
+
+                    <details>
+                        <summary>12. What is an INNER JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Returns records that have matching values in both tables.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sirf matching rows dikhata hai jo dono tables mein common hon.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. What is a LEFT (OUTER) JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Returns all records from the left table, and the matched records from the right table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Left table ka poora data dikhaega, bhale hi right table mein match na ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What is a RIGHT (OUTER) JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Returns all records from the right table, and the matched records from the left table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Right table ka poora data dikhaega, bhale hi left table mein match na ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. What is a FULL (OUTER) JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Returns all records when there is a match in either left or right table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Dono tables ka poora data dikhaega jahan bhi match mile.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. What is a SELF JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A regular join, but the table is joined with itself. Useful for hierarchy data.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek hi table ko apne aap se jodna (e.g., manager and employee relationship).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. What is a CROSS JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Produces a Cartesian product (every row of table A with every row of table B).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek table ki har row ko doosri table ki har row se multiply/join karna.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="aggregates">📌 Aggregates & Grouping</h2>
+
+                    <details>
+                        <summary>18. Name the common SQL Aggregate Functions.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> SUM (total), AVG (average), COUNT (number of rows), MIN (lowest), MAX (highest).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Calculations ke functions: SUM, AVG, COUNT, MIN, MAX.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. What is the purpose of GROUP BY?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Groups rows that have the same values into summary rows.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek jaise data wali rows ko ek group mein ikatha karne ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. Difference between WHERE and HAVING clause?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>WHERE</strong> filters rows before grouping. <strong>HAVING</strong> filters groups after the GROUP BY clause is applied.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> WHERE normal records pe chalta hai, aur HAVING tab jab results group ho chuke hon.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="advanced">📌 Advanced SQL & DB Testing</h2>
+
+                    <details>
+                        <summary>21. What is a Subquery?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A query nested inside another SQL query (e.g., in WHERE or FROM).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek query ke andar doosri query.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. Describe ACID properties in a Database.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Atomicity</strong> (all or nothing), <strong>Consistency</strong> (data integrity), <strong>Isolation</strong> (independent), <strong>Durability</strong> (permanent).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Database transactions ke 4 main rules: Atomicity, Consistency, Isolation, Durability.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. What is an Index and why is it used?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A data structure used to speed up the retrieval of data from a database table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Database se data jaldi dhoondhne ke liye banaya gaya pointer.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. What is Database Normalization?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Organizing data to avoid redundancy/duplicates (1NF, 2NF, 3NF).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Tables ko aise design karna taaki data faltu repeats na ho (Duplicates kam karna).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. Difference between View and Materialized View?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>View:</strong> Virtual, runs every time. <strong>Materialized View:</strong> Stores result physically for faster access.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> View sirf save ki gayi query hai; Materialized view us query ka data bhi store karta hai taaki processing fast ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. What are Stored Procedures?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Pre-compiled SQL code that can be reused and called with parameters.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Save kiya hua SQL code jise baar-baar run kiya ja sakta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. What is Database Trigger?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A piece of code that automatically executes on a specific event like INSERT or DELETE.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table mein kuch hone par (जैसे insert) apne aap piche chalne wala code.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. Difference between UNION and UNION ALL?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>UNION:</strong> Combines results and removes duplicates. <strong>UNION ALL:</strong> Combines all results including duplicates.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> UNION unique results deta hai, UNION ALL sab kuch (duplicates samet).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. What is COMMIT and ROLLBACK?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>COMMIT:</strong> Saves changes permanently. <strong>ROLLBACK:</strong> Undoes changes to the last save point.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> COMMIT changes ko pakka (save) karta hai, ROLLBACK galti hone par purane state pe wapas le jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>30. What is a Deadlock in Databases?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A situation where two transactions wait for each other to release locks forever.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab do kaam ek doosre ka rasta rok kar hamesha ke liye atak jayein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>31. What is Query Optimization?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Improving the performance of a query by using indexes, avoiding SELECT *, and better joins.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Query ko fast banane ka tareeka (jaise index use karna).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. What is SQL Injection?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A security vulnerability where attackers insert malicious SQL code into input fields.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hacker dwara galat SQL code daal kar database hack karne ki koshish.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. How to prevent SQL Injection?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use Prepared Statements (Parameterized Queries) and proper input validation.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Parameterized queries aur sahi input validation use karke.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>34. What is 'Data Migration Testing'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verifying that data remains intact while moving from an old system/database to a new one.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek DB se doosre mein data shift karte waqt ye check karna ki koi galti ya loss toh nahi hua.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>35. What is 'Dirty Read' in Databases?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> When a transaction reads data that has been modified by another transaction but not yet committed.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Aisi information padhna jo badal toh gayi hai par abhi tak DB mein pakki save (commit) nahi huwi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>36. How to find the Nth highest salary? (Restored)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using subqueries or <code>DENSE_RANK()</code>. Example: <code>SELECT salary FROM (SELECT salary, DENSE_RANK() OVER (ORDER BY salary DESC) as rnk FROM Emp) WHERE rnk = N;</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> DENSE_RANK() use karke har salary ko number do aur fir N number wala utha lo.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>37. What are CTEs (Common Table Expressions)? (Restored)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A temporary named result set (using <code>WITH</code> clause) that makes complex queries easier to read and maintain.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek temporary result set jo lambi queries ko saaf suthra aur asaan banane ke liye use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>38. Explain ROW_NUMBER() vs RANK() vs DENSE_RANK(). (Restored)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>ROW_NUMBER:</strong> Unique index. <strong>RANK:</strong> Skips numbers on ties. <strong>DENSE_RANK:</strong> No skipping on ties.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ranking dene ke 3 tareeke: ROW_NUMBER saaf ginti deta hai, RANK ties pe numbers kudata hai, DENSE_RANK gap nahi chhodta.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="scenario">📌 Database Testing Scenarios</h2>
+
+                    <details>
+                        <summary>39. How do you test a Database Migration?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Compare row counts, check data integrity, verify schemas, and test performance in the new environment.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Dono systems mein row count aur data ki quality match karke check karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>40. What is ETL Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Extract, Transform, Load testing. Ensuring data is correctly pulled, changed as required, and saved in destination.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Data ko shahi tareeke se nikalne, badalne aur save karne ki testing.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>41. What is Negative Testing in Databases?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Entering invalid data (e.g., character in numeric field) to see if DB constraints prevent it.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Galat data daal kar check karna ki DB usko reject karta hai ya nahi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>42. What is a "Constraint" in SQL?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Rules applied to columns (like NOT NULL, UNIQUE, CHECK).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Columns pe lagaye gaye rules taaki galat data na aaye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>43. How to check for NULL values in SQL?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>IS NULL</code> or <code>IS NOT NULL</code> instead of <code>= NULL</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Khali values dhoondhne ke liye <code>IS NULL</code> use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>44. What is the difference between a Table and a View?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Table stores actual data; View is a virtual table that shows data from one or more tables.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table mein data physically hota hai, View sirf ek 'khidki' (virtual table) hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>45. What is the purpose of the COALESCE function?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Returns the first non-null value in a list. Great for handling default values.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> List mein se pehli 'non-null' value nikaalne ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>46. How to find duplicate records in a table?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>GROUP BY</code> on all columns and <code>HAVING COUNT(*) > 1</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Group by karke jin rows ka count 1 se zyada hai, wo duplicates hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>47. What is an Auto-Increment field?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Automatically generates a unique numeric value for new rows (like IDENTITY in SQL Server).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Nayi row aate hi ID apne aap 1, 2, 3... badhne wala system.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>48. What is the difference between Character and Varchar?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> CHAR is fixed length; VARCHAR is variable length (saves space).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> CHAR ki length fix hoti hai, VARCHAR jitna text ho utni hi jagah leta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>49. What is a Composite Key?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A primary key consisting of two or more columns.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab do ya zyada columns milkar ek unique ID banayein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>50. How to delete all records but keep the table structure?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>TRUNCATE TABLE tablename;</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table structure bachate hue saara data saaf karne ke liye TRUNCATE use karein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>51. What is the default port for MySQL and PostgreSQL?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> MySQL: 3306, PostgreSQL: 5432.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> MySQL 3306 use karta hai aur PostgreSQL 5432.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>52. What is Data Integrity?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ensures that data remains accurate and consistent throughout its lifecycle.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye dhyan rakhna ki data hamesha sahi aur constant rahe, bina kisi galti ke.
+                        </div>
+                    </details>
+                </div>
+
+            </div>
+            
+            <aside class="sidebar">
+                <!-- Navigation Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-compass"></i> Guide Navigation</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#essential-sql"><i class="fas fa-database"></i> SQL Basics</a></li>
+                        <li><a href="#joins"><i class="fas fa-link"></i> SQL Joins</a></li>
+                        <li><a href="api-testing.html"><i class="fas fa-network-wired"></i> API Testing Guide</a></li>
+                        <li><a href="automation-testing.html"><i class="fas fa-robot"></i> Automation Hub</a></li>
+                    </ul>
+                </div>
+
+                <!-- Related Resource Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-link"></i> Tech Guides</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="manual-testing.html"><i class="fas fa-user-check"></i> Manual Testing</a></li>
+                        <li><a href="qa-testing.html"><i class="fas fa-book"></i> Full QA Roadmap</a></li>
+                        <li><a href="automation-testing.html"><i class="fas fa-code"></i> Java Programs</a></li>
+                    </ul>
+                </div>
+
+                <div class="ad-unit" style="min-height: 250px;">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+            const studyToggle = document.getElementById('studyModeToggle');
+
+            detailsElements.forEach(det => {
+                det.addEventListener('click', () => {
+                    if (document.body.classList.contains('study-mode')) det.classList.add('revealed');
+                });
+            });
+
+            if (studyToggle) {
+                studyToggle.addEventListener('click', () => {
+                    const isActive = document.body.classList.toggle('study-mode');
+                    studyToggle.classList.toggle('active', isActive);
+                    detailsElements.forEach(det => det.classList.remove('revealed'));
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    detailsElements.forEach(el => {
+                        const text = el.textContent.toLowerCase();
+                        el.style.display = (term === "" || text.includes(term)) ? 'block' : 'none';
+                    });
+                    
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        let next = title.nextElementSibling;
+                        let hasVisible = false;
+                        while(next && !next.classList.contains('section-title')) {
+                            if(next.tagName === 'DETAILS' && next.style.display !== 'none') {
+                                hasVisible = true;
+                                break;
+                            }
+                            next = next.nextElementSibling;
+                        }
+                        title.style.display = hasVisible || term === "" ? 'flex' : 'none';
+                    });
+                });
+            }
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Troubleshooter - Ram Technical Help</title>
+    <meta name="description" content="Use our interactive wizard to easily troubleshoot and find solutions for your PC, mobile, or network issues.">
+    <meta name="keywords" content="Interactive Troubleshooter, Tech Support Wizard, Device Diagnosis">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+    
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <style>
+        .wizard-step {
+            display: none;
+        }
+
+        .wizard-step.active {
+            display: block;
+            animation: fade-in-up 0.4s ease-out;
+        }
+
+        .option-btn {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            text-align: left;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-color);
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .option-btn:hover {
+            border-color: var(--brand-primary);
+            background: var(--bg-surface-alt);
+        }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="container" style="padding: 4rem 0; max-width: 600px;">
+        <div class="card" id="wizard-container">
+            <div id="step-1" class="wizard-step active">
+                <h2>What device are you having trouble with?</h2>
+                <button class="option-btn" onclick="nextStep(2)">💻 Computer (PC/Laptop)</button>
+                <button class="option-btn" onclick="nextStep(3)">📱 Mobile (Phone/Tablet)</button>
+                <button class="option-btn" onclick="nextStep(4)">🌐 Internet / Network</button>
+            </div>
+
+            <!-- PC Path -->
+            <div id="step-2" class="wizard-step">
+                <h2>What is the main symptom?</h2>
+                <button class="option-btn" onclick="showResult('performance')">🐢 Slow performance / Freezing</button>
+                <button class="option-btn" onclick="showResult('bsod')">🔵 Blue Screen of Death</button>
+                <button class="option-btn" onclick="showResult('hardware')">🔥 Overheating / Noisy Fan</button>
+                <button class="option-btn" onclick="resetWizard()">⬅️ Start Over</button>
+            </div>
+
+            <!-- Mobile Path -->
+            <div id="step-3" class="wizard-step">
+                <h2>What is happening with your phone?</h2>
+                <button class="option-btn" onclick="showResult('battery')">🔋 Battery draining fast</button>
+                <button class="option-btn" onclick="showResult('app')">📱 App crashing</button>
+                <button class="option-btn" onclick="resetWizard()">⬅️ Start Over</button>
+            </div>
+
+            <!-- Network Path -->
+            <div id="step-4" class="wizard-step">
+                <h2>Network issues?</h2>
+                <button class="option-btn" onclick="showResult('network')">📶 Slow Wi-Fi</button>
+                <button class="option-btn" onclick="showResult('connectivity')">❌ No Connection</button>
+                <button class="option-btn" onclick="resetWizard()">⬅️ Start Over</button>
+            </div>
+
+            <!-- Result Step -->
+            <div id="step-result" class="wizard-step text-center">
+                <h2>We found a solution!</h2>
+                <p>Based on your answers, we recommend this guide:</p>
+                <div id="result-link" class="mt-4"></div>
+                <button class="btn btn-secondary mt-4" onclick="resetWizard()">Start Over</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+    <script>
+        function nextStep(id) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step-' + id).classList.add('active');
+        }
+
+        function showResult(category) {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+            const resultDiv = document.getElementById('step-result');
+            const linkDiv = document.getElementById('result-link');
+
+            resultDiv.classList.add('active');
+
+            // Simple mapping - in a real app this would query the DB
+            let url = 'problems.html?category=' + category;
+            let text = 'View ' + category.charAt(0).toUpperCase() + category.slice(1) + ' Solutions';
+
+            if (category === 'bsod') { url = 'problem.html?id=bsod'; text = 'Fix Blue Screen (BSOD)'; }
+            if (category === 'battery') { url = 'mobile-problems.html?q=battery'; text = 'Fix Battery Issues'; }
+
+            linkDiv.innerHTML = `<a href="${url}" class="btn">${text}</a>`;
+        }
+
+        function resetWizard() {
+            document.querySelectorAll('.wizard-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step-1').classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
+
+

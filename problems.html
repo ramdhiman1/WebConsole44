@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Troubleshooting Guides - Ram Technical Help</title>
+  <meta name="description" content="Step-by-step troubleshooting guides for PC, Laptops, and Windows. Fix errors, performance issues, and hardware problems with easy-to-follow technical help.">
+  <meta name="keywords" content="PC Repair, Laptop Troubleshooting, Windows Fixes, Technical Support, Hardware Help">
+  
+  <!-- Theme Flash Protection -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    /* ── Page Hero ── */
+    .problems-hero {
+      padding: 3.5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .problems-hero .badge-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: rgba(79, 70, 229, 0.1);
+      color: var(--brand-primary);
+      border: 1px solid rgba(79, 70, 229, 0.2);
+      border-radius: var(--radius-full);
+      padding: 0.35rem 1rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 1.25rem;
+    }
+
+    .problems-hero h1 {
+      font-size: 2.75rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 1rem;
+      background: var(--brand-gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      line-height: 1.15;
+    }
+
+    .problems-hero p.lead {
+      font-size: 1.1rem;
+      color: var(--text-muted);
+      max-width: 640px;
+      margin: 0 auto 2rem;
+      line-height: 1.7;
+    }
+
+    /* ── Stats Row ── */
+    .stats-row {
+      display: flex;
+      justify-content: center;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+
+    .stat-item {
+      text-align: center;
+    }
+
+    .stat-item .stat-num {
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: var(--brand-primary);
+      line-height: 1;
+    }
+
+    .stat-item .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
+    /* ── How-to Ribbon ── */
+    .howto-ribbon {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      padding: 1.25rem 2rem;
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .howto-ribbon .ribbon-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+    }
+
+    .howto-steps {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      flex: 1;
+    }
+
+    .howto-step {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .howto-step .num {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--brand-gradient);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .howto-step-sep {
+      color: var(--border-color);
+      font-size: 1.1rem;
+    }
+
+    /* ── Filter Bar ── */
+    .filter-bar {
+      background: var(--bg-surface);
+      padding: 1.5rem;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 0.5rem;
+      position: relative;
+      z-index: 50;
+    }
+
+    /* ── Results Count ── */
+    #resultsCount {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin: 1rem 0 0;
+      font-weight: 500;
+    }
+
+    #resultsCount span {
+      color: var(--brand-primary);
+      font-weight: 700;
+    }
+
+    /* ── Category Pills ── */
+    .cat-pills {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 1rem;
+    }
+
+    .cat-pill {
+      padding: 0.35rem 0.9rem;
+      border-radius: var(--radius-full);
+      font-size: 0.8rem;
+      font-weight: 600;
+      border: 1.5px solid var(--border-light);
+      background: var(--bg-surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: var(--transition-base);
+    }
+
+    .cat-pill:hover,
+    .cat-pill.active {
+      border-color: var(--brand-primary);
+      background: rgba(79, 70, 229, 0.08);
+      color: var(--brand-primary);
+    }
+
+    /* ── Card Enhancements ── */
+    .card .card-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.55;
+      margin-bottom: 0;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .mt-4 {
+      margin-top: 1rem;
+    }
+
+    /* ── No-results ── */
+    .no-results {
+      grid-column: 1/-1;
+      text-align: center;
+      padding: 4rem 2rem;
+      color: var(--text-muted);
+    }
+
+    .no-results .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Difficulty Info Box ── */
+    .legend {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 1.5rem 0 2.5rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .legend-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    @media (max-width: 768px) {
+      .problems-hero h1 {
+        font-size: 2rem;
+      }
+
+      .howto-ribbon {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+      }
+
+      .stats-row {
+        gap: 1.5rem;
+      }
+    }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="site-header"></header>
+
+  <div class="container" style="margin-top: 2rem;">
+    <div class="ad-unit ad-top-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <main class="container">
+
+    <!-- ── Hero ── -->
+    <section class="problems-hero">
+      <div class="badge-label">🖥️ Troubleshooting</div>
+      <h1>Troubleshooting</h1>
+      <p class="lead">
+        Browse our complete guide for common Laptop, PC, and Windows problems.
+        Each solution includes a clear description, common causes, numbered steps,
+        helpful tips, and advice on when to call a technician.
+      </p>
+
+      <div class="stats-row">
+        <div class="stat-item">
+          <div class="stat-num" id="totalCount">—</div>
+          <div class="stat-label">Problems Covered</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">6</div>
+          <div class="stat-label">Categories</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Free &amp; Beginner-Friendly</div>
+        </div>
+      </div>
+    </section>
+    
+    <!-- Troubleshooting Category Widgets -->
+    <div class="category-cards" style="margin-top: 1rem; margin-bottom: 4rem;">
+        <a href="problems.html" class="category-card">
+            <i class="fas fa-desktop"></i>
+            <h3>PC Troubleshooting</h3>
+            <p>Fix common Windows, macOS, and Linux errors, performance lags, and hardware issues.</p>
+            <span class="btn-card">Explore PC Fixes <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="mobile-problems.html" class="category-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile Issues</h3>
+            <p>Troubleshoot Android and iOS problems, battery drain, connectivity, and app crashes.</p>
+            <span class="btn-card">Explore Mobile Fixes <i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+
+    <!-- ── How Each Guide is Structured ── -->
+    <div class="howto-ribbon">
+      <span class="ribbon-title">Each guide includes:</span>
+      <div class="howto-steps">
+        <span class="howto-step"><span class="num">1</span> Description</span>
+        <span class="howto-step-sep">›</span>
+        <span class="howto-step"><span class="num">2</span> Causes</span>
+        <span class="howto-step-sep">›</span>
+        <span class="howto-step"><span class="num">3</span> Step-by-Step Fix</span>
+        <span class="howto-step-sep">›</span>
+        <span class="howto-step"><span class="num">4</span> Extra Tips</span>
+        <span class="howto-step-sep">›</span>
+        <span class="howto-step"><span class="num">5</span> When to Call a Technician</span>
+      </div>
+    </div>
+
+    <!-- ── Quick Category Pills ── -->
+    <div class="cat-pills" id="catPills">
+      <button class="cat-pill active" data-cat="">All Problems</button>
+      <button class="cat-pill" data-cat="performance">⚡ Performance</button>
+      <button class="cat-pill" data-cat="hardware">🔧 Hardware</button>
+      <button class="cat-pill" data-cat="software">💾 Software</button>
+      <button class="cat-pill" data-cat="network">🌐 Network</button>
+      <button class="cat-pill" data-cat="data">💿 Data Recovery</button>
+      <button class="cat-pill" data-cat="virus">🦠 Virus/Malware</button>
+    </div>
+
+    <!-- ── Filter Bar ── -->
+    <div class="filter-bar">
+      <form class="search search-grid" id="searchForm">
+<input type="hidden" name="csrf_token" value="generate_on_server_12345">
+        <div class="search-wrapper">
+          <input type="search" id="searchInput" placeholder="Search problems (e.g. slow wifi, blue screen)…"
+            aria-label="Search problems">
+          <button type="submit" class="search-btn-inner">Search</button>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="category" aria-label="Category">
+            <option value="">All Categories</option>
+            <option value="performance">Performance</option>
+            <option value="virus">Virus/Malware</option>
+            <option value="hardware">Hardware</option>
+            <option value="software">Software</option>
+            <option value="network">Network</option>
+            <option value="data">Data Recovery</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="os" aria-label="OS">
+            <option value="">All OS</option>
+            <option>Windows</option>
+            <option>macOS</option>
+            <option>Linux</option>
+          </select>
+        </div>
+
+        <div class="select-wrapper">
+          <select id="difficulty" aria-label="Difficulty">
+            <option value="">All Difficulty</option>
+            <option>Easy</option>
+            <option>Medium</option>
+            <option>Hard</option>
+          </select>
+        </div>
+
+        <button class="btn" type="submit" id="filterBtn">Filter Results</button>
+      </form>
+    </div>
+
+    <!-- Difficulty Legend -->
+    <div class="legend">
+      <span class="legend-item"><span class="legend-dot" style="background:#10b981"></span> Easy — you can fix this
+        yourself in minutes</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#f59e0b"></span> Medium — takes a bit more
+        care</span>
+      <span class="legend-item"><span class="legend-dot" style="background:#ef4444"></span> Hard — follow steps
+        carefully or consult a technician</span>
+    </div>
+
+    <div class="has-sidebar">
+      <div class="main-content">
+        <p id="resultsCount"></p>
+        <div id="results" class="grid"></div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="ad-unit ad-sidebar-box">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_LISTING" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+        <div class="ad-unit ad-sidebar-box">
+          <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_LISTING_2" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-unit ad-footer-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="FOOTER" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <footer class="site-footer"></footer>
+
+  <script src="assets/js/problems-db.js?v=1.1"></script>
+
+  <script>
+    // Category icons
+    const catIcons = {
+      performance: '⚡',
+      hardware: '🔧',
+      software: '💾',
+      network: '🌐',
+      data: '💿',
+      virus: '🦠',
+      battery: '🔋',
+      app: '📱',
+      system: '⚙️',
+      connectivity: '📡',
+      sensor: '📡'
+    };
+
+    // Load from global problemsDB — filter for PC (Windows, Linux, macOS)
+    const allProblems = Object.entries(problemsDB).map(([id, data]) => ({ id, ...data }));
+    const problems = allProblems.filter(p => p.os.some(os => ['Windows', 'Linux', 'macOS'].includes(os)));
+
+    // Update total count
+    document.getElementById('totalCount').textContent = problems.length + '+';
+
+    function getDifficultyClass(d) {
+      if (d === 'Easy') return 'badge-success';
+      if (d === 'Medium') return 'badge-warning';
+      return 'badge-danger';
+    }
+
+    function render(list) {
+      const wrap = document.getElementById('results');
+      const countEl = document.getElementById('resultsCount');
+
+      if (!list.length) {
+        wrap.innerHTML = `
+          <div class="no-results">
+            <div class="icon">🔍</div>
+            <strong>No problems found.</strong><br>
+            Try a different keyword or clear your filters.
+          </div>`;
+        countEl.innerHTML = '';
+        return;
+      }
+
+      countEl.innerHTML = `Showing <span>${list.length}</span> problem${list.length !== 1 ? 's' : ''}`;
+
+      wrap.innerHTML = list.map(p => `
+        <a class="card card-${p.category}" href="problem.html?id=${p.id}">
+          <div style="margin-bottom:auto">
+            <span class="card-icon">${catIcons[p.category] || '🖥️'}</span>
+            <h3>${p.title}</h3>
+            <p>${p.summary}</p>
+          </div>
+          <div class="meta mt-4">
+            <span class="badge badge-${p.category}">${p.category}</span>
+            <span class="badge ${getDifficultyClass(p.difficulty)}">${p.difficulty}</span>
+            <span style="margin-left:auto; font-size:0.78rem; color:var(--text-light);">${p.steps.length} steps →</span>
+          </div>
+        </a>
+      `).join('');
+    }
+
+    function applyFilters() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const category = document.getElementById('category').value;
+      const os = document.getElementById('os').value;
+      const difficulty = document.getElementById('difficulty').value;
+
+      const filtered = problems.filter(p => {
+        const qok = !q || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q);
+        const cok = !category || p.category === category;
+        const ook = !os || p.os.includes(os);
+        const dok = !difficulty || p.difficulty === difficulty;
+        return qok && cok && ook && dok;
+      });
+      render(filtered);
+    }
+
+    // Category pill clicks
+    document.getElementById('catPills').addEventListener('click', e => {
+      const pill = e.target.closest('.cat-pill');
+      if (!pill) return;
+      document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+      pill.classList.add('active');
+      const cat = pill.dataset.cat;
+      document.getElementById('category').value = cat;
+      applyFilters();
+    });
+
+    document.getElementById('searchForm').addEventListener('submit', e => { e.preventDefault(); applyFilters(); });
+    ['category', 'os', 'difficulty'].forEach(id =>
+      document.getElementById(id).addEventListener('change', () => {
+        applyFilters();
+        // Sync pills
+        const val = document.getElementById('category').value;
+        document.querySelectorAll('.cat-pill').forEach(p => {
+          p.classList.toggle('active', p.dataset.cat === val);
+        });
+      })
+    );
+
+    // Initial render
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('category')) {
+      const cat = params.get('category');
+      document.getElementById('category').value = cat;
+      document.querySelectorAll('.cat-pill').forEach(p => {
+        p.classList.toggle('active', p.dataset.cat === cat);
+      });
+      applyFilters();
+    } else if (params.get('q')) {
+      document.getElementById('searchInput').value = params.get('q');
+      applyFilters();
+    } else {
+      render(problems);
+      document.getElementById('resultsCount').innerHTML = `Showing <span>${problems.length}</span> problems`;
+    }
+  </script>
+
+</body>
+
+</html>
+
+

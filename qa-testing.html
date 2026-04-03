@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Testing Q&A - Ram Technical Help</title>
+
+    <!-- Content Security Policy & Security Headers -->
+    
+    
+    
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <meta name="description"
+        content="Master software testing interviews with our collection of QA questions and answers. Covers Manual, Automation, API, and SQL testing.">
+    <meta name="keywords"
+        content="QA Interview Questions, Manual Testing, Automation Testing, API Testing, SQL Testing, Selenium, Postman">
+
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <style>
+        /* This page uses global responsive styles from assets/css/styles.css */
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <div class="container ad-top-wrapper" style="margin-top: 5rem;">
+        <div class="ad-unit ad-top-banner">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <main class="container page-main">
+        <div class="has-sidebar">
+            <div class="main-content">
+                <div class="qa-container">
+
+                    <div class="list-header">
+                        <h1>Testing Q&A Resource Hub</h1>
+                        <p class="muted">Explore categorized interview questions for Manual Testing, Automation, API,
+                            and SQL. Master your next QA interview with our comprehensive guides.</p>
+                    </div>
+                </div>
+
+                <div class="qa-controls">
+                    <div class="qa-search-wrapper">
+                        <input type="text" id="qaSearch" placeholder="Search general questions..." />
+                    </div>
+                    <div style="display:flex; align-items:center; gap: 1.5rem; flex-wrap:wrap;">
+                        <div class="toggle-wrapper" title="Show/Hide Hinglish Answers">
+                            <span>Hinglish</span>
+                            <label class="switch">
+                                <input type="checkbox" id="toggleHinglish" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="qa-btn-group" style="display: flex; gap: 0.75rem;">
+                            <button id="btnExpandAll" class="btn btn-sm">Expand All</button>
+                            <button id="btnCollapseAll" class="btn btn-sm btn-secondary">Collapse All</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CATEGORY CARDS -->
+                <div class="category-cards">
+                    <a href="manual-testing.html" class="category-card">
+                        <i class="fas fa-user-check"></i>
+                        <h3>Manual Testing</h3>
+                        <p>SDLC, STLC, Bug Life Cycle, and Scenario-based QA.</p>
+                        <span class="btn-card">Explore Manual <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="automation-testing.html" class="category-card">
+                        <i class="fas fa-robot"></i>
+                        <h3>Automation Testing</h3>
+                        <p>Selenium, Java, Cucumber, and Mobile Automation.</p>
+                        <span class="btn-card">Explore Automation <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="api-testing.html" class="category-card">
+                        <i class="fas fa-network-wired"></i>
+                        <h3>API Testing</h3>
+                        <p>Postman, REST vs SOAP, and Web Services.</p>
+                        <span class="btn-card">Explore API <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="sql-testing.html" class="category-card">
+                        <i class="fas fa-database"></i>
+                        <h3>SQL Testing</h3>
+                        <p>Database testing, Queries, Joins, and more.</p>
+                        <span class="btn-card">Explore SQL <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="MobileTesting.html" class="category-card">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h3>Mobile Testing</h3>
+                        <p>Emulators, Simulators, Appium, and Mobile UX.</p>
+                        <span class="btn-card">Explore Mobile <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="QALeadInterviewQ&A.html" class="category-card">
+                        <i class="fas fa-graduation-cap"></i>
+                        <h3>QA Lead Interview</h3>
+                        <p>Team management, Strategy, and Scenario QA.</p>
+                        <span class="btn-card">Explore Lead Level <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="ai-testing.html" class="category-card">
+                        <i class="fas fa-brain"></i>
+                        <h3>AI Testing Prep</h3>
+                        <p>AI-based testing concepts, tools, and interview preparation.</p>
+                        <span class="btn-card">Explore AI Testing <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="practice-lab.html" class="category-card">
+                        <i class="fas fa-flask"></i>
+                        <h3>Practice Lab (2.0)</h3>
+                        <p>Hands-on practice scenarios, real-time test cases, and exercises.</p>
+                        <span class="btn-card">Start Practice <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                    <a href="mock-interview.html" class="category-card">
+                        <i class="fas fa-comments"></i>
+                        <h3>Mock Interview Prep</h3>
+                        <p>Real interview questions, answers, and mock interview simulations.</p>
+                        <span class="btn-card">Start Mock Interview <i class="fas fa-arrow-right"></i></span>
+                    </a>
+                </div>
+
+                <h2 class="section-title" id="general-qa">📌 General QA Interview Questions</h2>
+
+                <details>
+                    <summary>1. Tell me about yourself.<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        I am a QA Engineer with experience in both Manual and Automation Testing. I have worked with
+                        Selenium using Java, TestNG, and Maven. My responsibilities include writing test cases,
+                        executing them, reporting defects, and creating automation scripts.<br><br>
+                        <span class="lang-badge hinglish">Hinglish:</span><br>
+                        Main ek QA Engineer hoon aur mujhe Manual aur Automation dono ka experience hai. Maine Selenium,
+                        Java, TestNG aur Maven ke saath kaam kiya hai. Meri responsibilities me test cases likhna,
+                        execute karna, defect report karna aur automation scripts banana shamil hai.
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. Tell me about your project.<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        I am working on an E-commerce project where we test the end-to-end flow like Login, Product
+                        Search, Cart, and Payment. We use Agile methodology and Jira for bug tracking. For automation,
+                        we follow POM (Page Object Model).<br><br>
+                        <div class="hinglish-box">
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            Main E-commerce project par kaam kar raha hoon jisme hum end-to-end flow test karte hain
+                            jaise
+                            Login, Search, Cart aur Payment. Hum Agile methodology aur Jira use karte hain. Automation
+                            ke
+                            liye hum Page Object Model (POM) follow karte hain.
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. What is your Roles & Responsibilities?<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        1. Understanding Requirements<br>
+                        2. Writing & Executing Test Cases<br>
+                        3. Defect Reporting & Tracking<br>
+                        4. Automation Scripting & Maintenance<br>
+                        5. Attending Daily Stand-ups<br><br>
+                        <span class="lang-badge hinglish">Hinglish:</span><br>
+                        1. Requirements samajhna<br>
+                        2. Test cases likhna aur execute karna<br>
+                        3. Bug report karna aur track karna<br>
+                        4. Automation script banana aur maintain karna<br>
+                        5. Daily meeting (Scrum call) attend karna
+                    </div>
+                </details>
+
+                <details>
+                    <summary>4. How to raise a defect in Jira?<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        1. Click on <strong>Create Issue</strong><br>
+                        2. Select <strong>Issue Type as Bug</strong><br>
+                        3. Enter <strong>Summary and Description</strong><br>
+                        4. Add <strong>Steps to Reproduce</strong><br>
+                        5. Mention <strong>Expected and Actual Result</strong><br>
+                        6. <strong>Attach screenshot</strong><br>
+                        7. Click <strong>Submit</strong><br><br>
+                        <div class="hinglish-box">
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            Jira me defect raise karne ke steps:<br>
+                            1. <strong>Create Issue</strong> par click karo<br>
+                            2. <strong>Issue Type = Bug</strong> select karo<br>
+                            3. <strong>Summary aur Description</strong> likho<br>
+                            4. <strong>Steps to reproduce</strong> add karo<br>
+                            5. <strong>Expected aur Actual result</strong> likho<br>
+                            6. <strong>Screenshot attach</strong> karo<br>
+                            7. <strong>Submit</strong> karo
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>5. Difference between Smoke and Sanity testing?<i class="fas fa-chevron-down"></i>
+                    </summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        <strong>Smoke Testing:</strong> Done on initial build to check critical features.<br>
+                        <strong>Sanity Testing:</strong> Done on stable build to check specific bug fixes.<br><br>
+                        <div class="hinglish-box">
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            <strong>Smoke:</strong> Nayi build aate hi basic cheezein check karna.<br>
+                            <strong>Sanity:</strong> Bug fix hone ke baad usi feature ko detail me check karna.
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>6. What is the Bug Life Cycle?<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        The journey of a bug from discovery to closure: 1. New, 2. Assigned, 3. Open, 4. Fixed, 5.
+                        Retest, 6. Verified, 7. Closed.<br><br>
+                        <div class="hinglish-box">
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            Bug jab milta hai to <strong>New</strong>, fir senior use dev ko <strong>Assign</strong>
+                            karta hai, dev use theek karke <strong>Fixed</strong> bolta hai, tester fir use
+                            <strong>Retest</strong> karta hai aur end me <strong>Closed</strong> kar deta hai.
+                        </div>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>7. What is SDLC vs STLC?<i class="fas fa-chevron-down"></i></summary>
+                    <div class="answer">
+                        <span class="lang-badge">English:</span><br>
+                        <strong>SDLC:</strong> Entire process of software creation.<br>
+                        <strong>STLC:</strong> Focused only on the testing phase activities.<br><br>
+                        <div class="hinglish-box">
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            <strong>SDLC:</strong> Pura software banane ka process.<br>
+                            <strong>STLC:</strong> Sirf test line-up ke activities ka process.
+                        </div>
+                    </div>
+                </details>
+                <div class="ad-unit ad-in-article">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="IN_ARTICLE" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                <div class="category-card"
+                    style="margin-top: 1.5rem; border: 1px dashed var(--brand-primary); background: var(--bg-surface-alt); padding: 2.5rem; border-radius: 12px; text-align: center;">
+                    <div style="display: flex; flex-direction: column; align-items: center; gap: 1.25rem;">
+                        <i class="fas fa-book-open" style="font-size: 3rem; color: var(--brand-primary);"></i>
+                        <h3 style="margin: 0; font-size: 1.6rem;">Complete Manual Testing Guide</h3>
+                        <p
+                            style="margin: 0; color: var(--text-muted); max-width: 450px; line-height: 1.6; font-size: 1.1rem;">
+                            We have moved the detailed manual testing interview questions (STLC, Bug Life Cycle, Agile,
+                            etc.) to a dedicated section for better organization.
+                        </p>
+                        <a href="manual-testing.html" class="btn btn-primary"
+                            style="padding: 0.9rem 2.5rem; font-weight: 600; border-radius: 50px; display: inline-flex; align-items: center; gap: 10px; margin-top: 1rem;">
+                            <span>View 33+ Detailed Questions</span>
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="ad-unit ad-in-article">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="IN_ARTICLE_END" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                    <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article"
+                        data-ad-format="fluid" data-ad-client="ca-pub-XXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX"></ins>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-list-ul"></i> In this Guide</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#general-qa"><i class="fas fa-play"></i> General Questions</a></li>
+                        <li><a href="manual-testing.html"><i class="fas fa-user-check"></i> Manual Testing</a></li>
+                        <li><a href="automation-testing.html"><i class="fas fa-robot"></i> Automation Hub</a></li>
+                        <li><a href="api-testing.html"><i class="fas fa-network-wired"></i> API Testing</a></li>
+                        <li><a href="sql-testing.html"><i class="fas fa-database"></i> SQL Lab</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-tags"></i> Top Categories</h4>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                        <span class="lang-badge" style="margin:0">Selenium</span>
+                        <span class="lang-badge" style="margin:0">Postman</span>
+                        <span class="lang-badge" style="margin:0">Agile</span>
+                        <span class="lang-badge" style="margin:0">JIRA</span>
+                        <span class="lang-badge" style="margin:0">Java</span>
+                    </div>
+                </div>
+
+                <div class="ad-unit ad-sidebar-box">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_1" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    detailsElements.forEach(el => {
+                        const text = el.textContent.toLowerCase();
+                        el.style.display = (term === "" || text.includes(term)) ? 'block' : 'none';
+                    });
+                });
+            }
+
+            const toggleHinglish = document.getElementById('toggleHinglish');
+            if (toggleHinglish) {
+                toggleHinglish.addEventListener('change', (e) => {
+                    const hinglishBoxes = document.querySelectorAll('.hinglish-box');
+                    const inlineHinglish = document.querySelectorAll('.lang-badge.hinglish');
+
+                    const display = e.target.checked ? 'block' : 'none';
+                    const inlineDisplay = e.target.checked ? 'inline-block' : 'none';
+
+                    hinglishBoxes.forEach(box => box.style.display = display);
+                    inlineHinglish.forEach(badge => badge.style.display = inlineDisplay);
+                });
+            }
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+
+</html>
+

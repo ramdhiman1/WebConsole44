@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Sitemap: https://ramtechnicalhelp.com/sitemap.xml
+
+# Protect Mock Env Paths from phishing scanners
+Disallow: /automation-lab.html
+Disallow: /practice-lab.html
+Disallow: /login.html

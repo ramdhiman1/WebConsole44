@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mobile Troubleshooting Guide — Ram Technical Help</title>
+    <meta name="description" content="Expert troubleshooting guides for iPhone (iOS) and Android devices. Fix battery drain, screen issues, software glitches, and more with our step-by-step mobile help.">
+    <meta name="keywords" content="Android Fix, iPhone Repair, Mobile Troubleshooting, iOS Help, Phone Support">
+    
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <style>
+        /* ── Mobile Page Specific Styling ── */
+        .mobile-hero {
+            padding: 4rem 0 3rem;
+            text-align: center;
+            background: radial-gradient(circle at top right, rgba(79, 70, 229, 0.08), transparent 400px),
+                radial-gradient(circle at bottom left, rgba(236, 72, 153, 0.05), transparent 400px);
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 2rem;
+        }
+
+        .mobile-hero h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            letter-spacing: -0.04em;
+            background: linear-gradient(135deg, #4f46e5 0%, #ec4899 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 1rem;
+        }
+
+        .mobile-hero p {
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        /* ── Stats ── */
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 1rem;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .stat-val {
+            font-size: 1.75rem;
+            font-weight: 800;
+            color: var(--text-main);
+        }
+
+        .stat-lbl {
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── Guide Structure Ribbon ── */
+        .structure-ribbon {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            padding: 1.25rem;
+            border-radius: var(--radius-xl);
+            margin-top: -2.5rem;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .structure-label {
+            font-weight: 700;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .structure-steps {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .step-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        .step-icon {
+            width: 24px;
+            height: 24px;
+            background: var(--brand-gradient);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        /* ── Filters ── */
+        .filter-section {
+            margin-top: 3.5rem;
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            padding: 2rem;
+            border-radius: var(--radius-2xl);
+        }
+
+        .category-pills {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+            justify-content: center;
+        }
+
+        .pill {
+            padding: 0.5rem 1.25rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-body);
+            border: 1px solid var(--border-color);
+            color: var(--text-muted);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 0.9rem;
+        }
+
+        .pill:hover {
+            border-color: var(--brand-primary);
+            color: var(--brand-primary);
+        }
+
+        .pill.active {
+            background: var(--brand-primary);
+            border-color: var(--brand-primary);
+            color: white;
+            box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+        }
+
+        .search-row {
+            display: grid;
+            grid-template-columns: 1fr auto auto auto;
+            gap: 1rem;
+            position: relative;
+            z-index: 50;
+        }
+
+        .input-grp {
+            position: relative;
+        }
+
+        .input-grp input {
+            width: 100%;
+            border-radius: var(--radius-md);
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border-color);
+            background: var(--bg-body);
+        }
+
+        .difficulty-legend {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+        }
+
+        /* ── Results Summary ── */
+        .results-info {
+            margin: 2.5rem 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .results-count {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        /* ── Premium Cards ── */
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .p-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-xl);
+            padding: 1.75rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .p-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-primary);
+        }
+
+        .p-card .p-cat {
+            font-size: 0.65rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--brand-primary);
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .p-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            color: var(--text-main);
+            line-height: 1.3;
+        }
+
+        .p-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.55;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .p-card .p-meta {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+
+        .p-badge {
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.6rem;
+            border-radius: var(--radius-full);
+            background: var(--bg-body);
+            color: var(--text-muted);
+            border: 1px solid var(--border-light);
+        }
+
+        .p-badge.diff-easy {
+            background: rgba(16, 185, 129, 0.1);
+            color: #059669;
+        }
+
+        .p-badge.diff-med {
+            background: rgba(245, 158, 11, 0.1);
+            color: #d97706;
+        }
+
+        .p-badge.diff-hard {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-hero h1 {
+                font-size: 2.25rem;
+            }
+
+            .search-row {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-stats {
+                gap: 1.5rem;
+            }
+        }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <header class="site-header"></header>
+
+    <div class="container" style="margin-top: 2rem;">
+        <div class="ad-unit ad-top-banner">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <section class="mobile-hero">
+        <div class="container">
+            <div
+                style="background: rgba(79, 70, 229, 0.1); color: #4f46e5; padding: 0.4rem 1rem; border-radius: var(--radius-full); display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.75rem; font-weight: 700; margin-bottom: 1.5rem; text-transform: uppercase; letter-spacing: 0.1em;">
+                📱 Smartphone Troubleshooting Guide
+            </div>
+            <h1>Fix Your Phone Issue — Step by Step</h1>
+            <p>Our comprehensive mobile guide covers the most common iPhone and Android problems. Each solution includes
+                verified causes, numbered steps, and expert tips.</p>
+
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-val">50+</span>
+                    <span class="stat-lbl">Issues Covered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">2</span>
+                    <span class="stat-lbl">OS Supported</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-lbl">Beginner-Friendly</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Troubleshooting Category Widgets -->
+    <div class="category-cards" style="margin-top: 1rem; margin-bottom: 4rem;">
+        <a href="problems.html" class="category-card">
+            <i class="fas fa-desktop"></i>
+            <h3>PC Troubleshooting</h3>
+            <p>Fix common Windows, macOS, and Linux errors, performance lags, and hardware issues.</p>
+            <span class="btn-card">Explore PC Fixes <i class="fas fa-arrow-right"></i></span>
+        </a>
+        <a href="mobile-problems.html" class="category-card">
+            <i class="fas fa-mobile-alt"></i>
+            <h3>Mobile Issues</h3>
+            <p>Troubleshoot Android and iOS problems, battery drain, connectivity, and app crashes.</p>
+            <span class="btn-card">Explore Mobile Fixes <i class="fas fa-arrow-right"></i></span>
+        </a>
+    </div>
+
+    <main class="container">
+        <div class="structure-ribbon">
+            <span class="structure-label">Each Guide Includes:</span>
+            <div class="structure-steps">
+                <div class="step-item"><span class="step-icon">1</span> Description</div>
+                <div class="step-item"><span class="step-icon">2</span> Causes</div>
+                <div class="step-item"><span class="step-icon">3</span> Step-by-Step Fix</div>
+                <div class="step-item"><span class="step-icon">4</span> Extra Tips</div>
+                <div class="step-item"><span class="step-icon">5</span> Technician Note</div>
+            </div>
+        </div>
+
+        <!-- Filters -->
+        <div class="filter-section">
+            <div class="category-pills" id="categoryPills">
+                <button class="pill active" data-cat="">All Issues</button>
+                <button class="pill" data-cat="battery">🔋 Battery & Power</button>
+                <button class="pill" data-cat="connectivity">📡 Connectivity</button>
+                <button class="pill" data-cat="app">📱 Apps & Software</button>
+                <button class="pill" data-cat="hardware">🛠️ Hardware</button>
+                <button class="pill" data-cat="system">⚙️ System</button>
+            </div>
+
+            <form class="search search-grid" id="filterForm">
+<input type="hidden" name="csrf_token" value="generate_on_server_12345">
+                <div class="search-wrapper">
+                    <input type="search" id="searchInput" placeholder="Search by problem (e.g. bluetooth, charge)..."
+                        aria-label="Search problems">
+                    <button type="submit" class="search-btn-inner">Search</button>
+                </div>
+                <div class="select-wrapper">
+                    <select id="osSelect" aria-label="Device OS">
+                        <option value="">All Devices</option>
+                        <option value="iOS">iPhone (iOS)</option>
+                        <option value="Android">Android</option>
+                    </select>
+                </div>
+                <div class="select-wrapper">
+                    <select id="diffSelect" aria-label="Difficulty">
+                        <option value="">Any Difficulty</option>
+                        <option value="Easy">Easy</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Hard">Hard</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn">Filter Results</button>
+            </form>
+
+            <div class="difficulty-legend">
+                <div class="legend-item"><span class="dot" style="background:#10b981;"></span> No technical skill needed
+                </div>
+                <div class="legend-item"><span class="dot" style="background:#f59e0b;"></span> Some settings knowledge
+                </div>
+                <div class="legend-item"><span class="dot" style="background:#ef4444;"></span> Deep system configuration
+                </div>
+            </div>
+        </div>
+
+        <div class="has-sidebar">
+            <div class="main-content">
+                <!-- Results -->
+                <div class="results-info">
+                    <div class="results-count" id="resultsCount">Found 0 Troubleshooting Guides</div>
+                    <div style="font-size:0.85rem;color:var(--text-muted);">Sorted by Relevance</div>
+                </div>
+
+                <div id="results" class="problem-grid">
+                    <!-- Generated by JS -->
+                </div>
+
+                <div id="noResults" style="display:none; text-align:center; padding:4rem 0;">
+                    <div style="font-size:3rem; margin-bottom:1rem;">🔍</div>
+                    <h3>No matching guides found</h3>
+                    <p class="muted">Try adjusting your filters or search terms.</p>
+                    <button class="btn btn-secondary mt-4" onclick="resetFilters()">Clear All Filters</button>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <div class="ad-unit ad-sidebar-box">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_1" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+                <div class="ad-unit ad-sidebar-box">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR_2" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <div class="container">
+        <div class="ad-unit ad-footer-banner">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="FOOTER" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <footer class="site-footer"></footer>
+
+    <script src="assets/js/problems-db.js?v=1.1"></script>
+    <script src="assets/js/app.js"></script>
+    <script>
+        const resultsGrid = document.getElementById('results');
+        const resultsCount = document.getElementById('resultsCount');
+        const noResults = document.getElementById('noResults');
+        const filterForm = document.getElementById('filterForm');
+        const pills = document.querySelectorAll('.pill');
+
+        let currentCategory = '';
+
+        // Filter for Mobile
+        const allProblems = Object.entries(problemsDB).map(([id, data]) => ({ id, ...data }));
+        const mobileProblems = allProblems.filter(p => p.os.some(os => ['iOS', 'Android'].includes(os)));
+
+        const catIcons = {
+            battery: '🔋', connectivity: '📡', app: '📱',
+            hardware: '🛠️', system: '⚙️', performance: '⚡', data: '💾'
+        };
+
+        function render(list) {
+            if (list.length === 0) {
+                resultsGrid.style.display = 'none';
+                noResults.style.display = 'block';
+                resultsCount.textContent = '0 Guides Found';
+                return;
+            }
+
+            resultsGrid.style.display = 'grid';
+            noResults.style.display = 'none';
+            resultsCount.textContent = `Found ${list.length} Troubleshooting ${list.length === 1 ? 'Guide' : 'Guides'}`;
+
+            resultsGrid.innerHTML = list.map(p => `
+        <a href="problem.html?id=${p.id}" class="p-card">
+          <div class="p-cat">
+            ${catIcons[p.category] || '📱'} ${p.category}
+          </div>
+          <h3>${p.title}</h3>
+          <p>${p.summary}</p>
+          <div class="p-meta">
+            <span class="p-badge diff-${p.difficulty.toLowerCase().slice(0, 4)}">${p.difficulty}</span>
+            <span class="p-badge">${p.os.join(' / ')}</span>
+            <span class="p-badge" style="opacity:0.7;">${p.steps.length} Steps</span>
+          </div>
+        </a>
+      `).join('');
+        }
+
+        function applyFilters() {
+            const q = document.getElementById('searchInput').value.toLowerCase().trim();
+            const os = document.getElementById('osSelect').value;
+            const diff = document.getElementById('diffSelect').value;
+
+            const filtered = mobileProblems.filter(p => {
+                const matchQ = !q || p.title.toLowerCase().includes(q) || p.summary.toLowerCase().includes(q);
+                const matchCat = !currentCategory || p.category === currentCategory;
+                const matchOS = !os || p.os.includes(os);
+                const matchDiff = !diff || p.difficulty === diff;
+                return matchQ && matchCat && matchOS && matchDiff;
+            });
+
+            render(filtered);
+        }
+
+        // Pill interaction
+        pills.forEach(pill => {
+            pill.addEventListener('click', () => {
+                pills.forEach(p => p.classList.remove('active'));
+                pill.classList.add('active');
+                currentCategory = pill.dataset.cat;
+                applyFilters();
+            });
+        });
+
+        function resetFilters() {
+            document.getElementById('searchInput').value = '';
+            document.getElementById('osSelect').value = '';
+            document.getElementById('diffSelect').value = '';
+            pills[0].click();
+        }
+
+        filterForm.onsubmit = (e) => { e.preventDefault(); applyFilters(); };
+        ['osSelect', 'diffSelect'].forEach(id => document.getElementById(id).onchange = applyFilters);
+
+        render(mobileProblems);
+    </script>
+</body>
+
+</html>
+
+

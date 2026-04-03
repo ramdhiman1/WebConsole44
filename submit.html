@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Submit a Problem - Ram Technical Help</title>
+  <meta name="description" content="Have you successfully solved a technical issue? Submit your problem and solution to the Ram Technical Help community and help others find the answers they need.">
+  <meta name="keywords" content="Submit Problem, Tech Contribution, Computer Help, QA Solution, Share Knowledge">
+  
+  <!-- Theme Flash Protection -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="site-header"></header>
+
+  <main class="container">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <h1>Submit a Problem</h1>
+        <p class="muted">Help the community by sharing a problem you encountered and how you fixed it.</p>
+      </div>
+
+      <div class="card">
+        <form id="submitForm">
+<input type="hidden" name="csrf_token" value="generate_on_server_12345">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" required placeholder="Jane Doe">
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="jane@example.com">
+          </div>
+
+          <div class="form-group">
+            <div class="row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+              <div>
+                <label for="os">Operating System</label>
+                <select id="os" required>
+                  <option value="" disabled selected>Select OS</option>
+                  <option>Windows</option>
+                  <option>macOS</option>
+                  <option>Linux</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div>
+                <label for="category">Category</label>
+                <select id="category" required>
+                  <option value="" disabled selected>Select Category</option>
+                  <option value="performance">Performance</option>
+                  <option value="virus">Virus/Malware</option>
+                  <option value="hardware">Hardware</option>
+                  <option value="software">Software</option>
+                  <option value="network">Network</option>
+                  <option value="data">Data Recovery</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="probTitle">Problem Title</label>
+            <input type="text" id="probTitle" required placeholder="e.g. Printer not recognized on Windows 11">
+          </div>
+
+          <div class="form-group">
+            <label for="desc">Description & Solution steps</label>
+            <textarea id="desc" rows="6" required
+              placeholder="Describe the symptoms and the steps you took to fix it..."></textarea>
+          </div>
+
+          <div class="form-group mb-4">
+            <label>Human Verification</label>
+            <div id="captcha" class="captcha-mount"
+              style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-color); display: flex; align-items: center; justify-content: center;">
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-block">Submit Problem</button>
+          <div id="msg" class="alert ok mt-4" style="display:none"></div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // If logged in, pre-fill
+      const user = Auth.getUser();
+      if (user) {
+        document.getElementById('name').value = user.name || '';
+        document.getElementById('email').value = user.email || '';
+      }
+
+      // Init Captcha
+      const captchaId = Captcha.create('captcha');
+
+      document.getElementById('submitForm').addEventListener('submit', e => {
+        e.preventDefault();
+
+        if (!Captcha.validate(captchaId)) {
+          alert('Incorrect captcha answer.');
+          return;
+        }
+
+        const data = {
+          id: 'sub-' + Date.now(),
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          os: document.getElementById('os').value,
+          category: document.getElementById('category').value,
+          title: document.getElementById('probTitle').value,
+          desc: document.getElementById('desc').value,
+          date: new Date().toISOString()
+        };
+
+        const submissions = Store.get('submissions', []);
+        submissions.push(data);
+        Store.set('submissions', submissions);
+
+        const msg = document.getElementById('msg');
+        msg.style.display = 'block';
+        msg.textContent = 'Thank you! Your submission has been received for review.';
+        e.target.reset();
+
+        // Reset Captcha
+        Captcha.create('captcha');
+      });
+    });
+  </script>
+</body>
+
+</html>
+
+

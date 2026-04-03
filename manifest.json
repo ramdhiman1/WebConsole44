@@ -1,0 +1,10 @@
+{
+    "name": "Ram Technical Help - QA Hub",
+    "short_name": "QA Hub",
+    "description": "Master QA, Automation, and APIs offline.",
+    "start_url": "/index.html",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#4f46e5",
+    "icons": []
+}

@@ -1,0 +1,1486 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Manual Testing Interview Q&A - Ram Technical Help</title>
+    <meta name="description"
+        content="Master manual testing interviews with our comprehensive collection of Q&A. Covers SDLC, STLC, Bug Life Cycle, and real-world scenarios in English and Hinglish.">
+    <meta name="keywords"
+        content="Manual Testing, SDLC, STLC, Bug Life Cycle, QA Interview Questions, Software Testing">
+
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <style>
+        /* This page uses global responsive styles from assets/css/styles.css */
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <div class="container ad-top-wrapper" style="margin-top: 2rem;">
+        <div class="ad-unit">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div>
+
+    <main class="container page-main" style="margin-top: 2rem;">
+        <div class="has-sidebar">
+            <div class="main-content">
+                <div class="qa-container">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="qa-testing.html">Testing Q&A</a>
+                        <span>/</span>
+                        <span>Manual Testing</span>
+                    </nav>
+
+                    <div class="list-header">
+                        <h1>Manual Testing Interview Q&A Guide</h1>
+                        <p class="muted">Master manual testing concepts, SDLC, STLC, and real-world scenarios with our expert-curated guide.</p>
+                    </div>
+                </div>
+
+                <div class="qa-controls">
+                    <div class="qa-search-wrapper">
+                        <input type="text" id="qaSearch" placeholder="Search manual testing questions..." />
+                    </div>
+                    <div class="qa-btn-group">
+                        <button id="studyModeToggle" class="study-mode-toggle">
+                            <div class="toggle-switch"></div>
+                            <span>Study Mode</span>
+                        </button>
+                        <button id="btnExpandAll" class="btn btn-sm">Expand All</button>
+                        <button id="btnCollapseAll" class="btn btn-sm btn-outline">Collapse All</button>
+                    </div>
+                </div>
+
+                <div id="qa-content">
+                    <h2 class="section-title" id="essential-qa">📌 Essential Manual Testing Q&A (Quick Guide)</h2>
+
+                    <details>
+                        <summary>1. What is the difference between Verification and Validation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verification is checking the documents and design (Static Testing), while Validation is checking the actual product by executing code (Dynamic Testing).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Verification me documents aur design check karte hain, aur Validation me actual software run karke check karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Explain the STLC (Software Testing Life Cycle) phases.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The phases of STLC include:
+                            <ul style="margin-top: 10px;">
+                                <li>Requirement Analysis</li>
+                                <li>Test Planning</li>
+                                <li>Test Case Development</li>
+                                <li>Environment Setup</li>
+                                <li>Test Execution</li>
+                                <li>Test Closure</li>
+                            </ul>
+                            <span class="lang-badge hinglish">Hinglish:</span> STLC me requirements analyze karne se lekar bug reporting aur closing tak ke saare steps aate hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. What is a Bug Life Cycle?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A bug goes through several stages: New &rarr; Assigned &rarr; Open &rarr; Fixed &rarr; Retest &rarr; Closed (or Reopened/Deferred).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bug report hone se target fix hone tak ke status change ko Bug Life Cycle kehte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. White Box vs Black Box Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>White Box:</strong> Focuses on internal code structure (done by developers).<br>
+                            <strong>Black Box:</strong> Focuses on external functionality based on requirements (done by testers).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> White box me code dekhte hain, black box me sirf features check karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. What is Boundary Value Analysis (BVA)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> BVA is a test design technique where testing is performed at the boundaries (edges) of the input ranges (e.g. 1-100 range &rarr; test 0, 1, 2, 99, 100, 101).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> BVA me range ke corners ya edges check karte hain (jaise 1-100 range me 1 aur 100).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. Positive vs Negative Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Positive testing checks if the system works with valid data, while Negative testing checks if it correctly handles invalid data.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sahi data ke saath test karna Positive hai, aur galat data daal kar check karna Negative testing hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. What is RTM (Requirement Traceability Matrix)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A document that maps requirements with test cases to ensure that all requirements are covered by testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Requirement aur test cases ko match karne wala document taaki koi feature miss na ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. Exploratory vs Scripted Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Exploratory testing is simultaneous learning and testing without a pre-written script, while Scripted testing follows predefined test cases.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Exploratory me bina kisi script ke software explore karke test karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. Have you worked in Agile methodology?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            Yes, I have worked in Agile methodology where work is done in short sprints with continuous development, testing, and feedback. I participate in sprint planning, daily standups, and sprint reviews to ensure timely and quality delivery.<br><br>
+                            <strong>Agile Sprint Cycle:</strong>
+                            <ol style="margin-top: 5px;">
+                                <li>Planning</li>
+                                <li>Develop</li>
+                                <li>Test</li>
+                                <li>Deploy</li>
+                                <li>Review</li>
+                            </ol>
+                            <span class="lang-badge hinglish">Hinglish:</span> Yes, maine Agile methodology me kaam kiya hai jahan kaam chhote sprints me hota hai aur development, testing aur feedback continuously chalta rehta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Explain the points you consider while writing a good test case.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <ul style="margin-top: 5px;">
+                                <li>Test case should be clear and simple</li>
+                                <li>Must include pre-conditions and post-conditions</li>
+                                <li>Should cover both positive and negative scenarios</li>
+                                <li>Should be reusable and easy to maintain</li>
+                                <li>Must have a proper expected result</li>
+                                <li>Use unique test case IDs for tracking</li>
+                            </ul>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            <ul style="margin-top: 5px;">
+                                <li>Test case clear aur simple hona chahiye</li>
+                                <li>Pre-conditions aur post-conditions mention hone chahiye</li>
+                                <li>Positive aur negative dono scenarios cover hone chahiye</li>
+                                <li>Test case reusable aur easy to maintain hona chahiye</li>
+                                <li>Proper expected result likhna zaroori hai</li>
+                                <li>Tracking ke liye unique test case ID use karni chahiye</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is the Bug Life Cycle? (Detailed)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The Bug Life Cycle is the different stages a bug goes through from the time it is found until it is fixed and closed. It helps to track the status of a defect properly.<br><br>
+                            <strong>Steps of Bug Life Cycle:</strong>
+                            <ul style="margin-top: 10px;">
+                                <li><strong>New:</strong> Bug found and logged.</li>
+                                <li><strong>Assigned:</strong> Assigned to a developer.</li>
+                                <li><strong>Open:</strong> Developer starts working.</li>
+                                <li><strong>Fixed:</strong> Developer fixes the issue.</li>
+                                <li><strong>Retest:</strong> Tester retests the bug.</li>
+                                <li><strong>Closed:</strong> If working fine, the bug is closed.</li>
+                                <li><strong>Reopen:</strong> If still failing, it is reopened.</li>
+                                <li><strong>Deferred / Rejected:</strong> If not valid or postponed for later.</li>
+                            </ul>
+                            <strong>Flow Diagram:</strong> New &rarr; Assigned &rarr; Open &rarr; Fixed &rarr; Retest &rarr; Closed<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bug Life Cycle wo stages hote hain jisme ek bug, find hone se lekar fix aur close hone tak jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. Test Scenario vs Test Case (Detailed)</summary>
+                        <div class="answer">
+                            <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                                <div style="flex: 1; min-width: 250px;">
+                                    <strong>Test Scenario:</strong>
+                                    <ul style="margin-top: 5px;">
+                                        <li>High-level idea of what to test.</li>
+                                        <li>Describes <em>what</em> to test (e.g., Login).</li>
+                                        <li>Covers one feature.</li>
+                                        <li>Simple language, no detailed steps.</li>
+                                    </ul>
+                                </div>
+                                <div style="flex: 1; min-width: 250px;">
+                                    <strong>Test Case:</strong>
+                                    <ul style="margin-top: 5px;">
+                                        <li>Detailed step-by-step instructions.</li>
+                                        <li>Describes <em>how</em> to test.</li>
+                                        <li>Includes steps, inputs, and expected results.</li>
+                                        <li>Actual tool for testing.</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <span class="lang-badge hinglish">Hinglish:</span> Scenario matlab <strong>kya</strong> test karna hai, aur Test Case matlab <strong>kaise</strong> (detailed steps) test karna hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Functional vs Non-Functional Testing</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>Functional Testing:</strong> Checks <em>what</em> the system does (Features, Login, Add to Cart).<br>
+                            <strong>Non-Functional Testing:</strong> Checks <em>how</em> the system performs (Speed, Load, Security, UI).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Functional testing features check karti hai; Non-Functional testing performance aur security check karti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What is STLC in software testing? (Detailed Phases)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Software Testing Life Cycle (STLC) is a step-by-step process followed by testers to plan and execute testing activities.<br><br>
+                            <strong>Phases:</strong> Requirement Analysis &rarr; Test Planning &rarr; Test Case Design &rarr; Test Environment Setup &rarr; Test Execution &rarr; Defect Reporting &rarr; Test Closure.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> STLC ek process hai jisme tester planning se lekar testing aur closure tak kaam karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. What is a Software Testing Model? (V-Model, Waterfall, Agile)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A process or approach followed to test software in a structured way.<br><br>
+                            <strong>Common Models:</strong>
+                            <ul style="margin-top: 10px;">
+                                <li><strong>V-Model:</strong> Testing runs parallel with development.</li>
+                                <li><strong>Waterfall Model:</strong> Sequential process (Requirement &rarr; Design &rarr; Coding &rarr; Testing).</li>
+                                <li><strong>Agile Model:</strong> Iterative and sprint-based testing.</li>
+                            </ul>
+                            <span class="lang-badge hinglish">Hinglish:</span> Software Testing Model batata hai ki development ke dauran testing ka approach kya hoga.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. What are the 7 Principles of Software Testing?</summary>
+                        <div class="answer">
+                            <ol style="margin-top: 10px;">
+                                <li><strong>Testing shows presence of defects:</strong> Testing bugs dhoondh sakti hai, par ye prove nahi karti ki software 100% bug-free hai.</li>
+                                <li><strong>Exhaustive testing is not possible:</strong> Har cheez test karna impossible hai.</li>
+                                <li><strong>Early testing saves time & cost:</strong> Requirement stage se start karne par cost kam aati hai.</li>
+                                <li><strong>Defect clustering:</strong> Zyada bugs kuch specific modules me hi milte hain.</li>
+                                <li><strong>Pesticide paradox:</strong> Same tests baar-baar chalane se naye bugs nahi milte.</li>
+                                <li><strong>Testing depends on context:</strong> Mobile app vs Medical app testing alag hoti hai.</li>
+                                <li><strong>Absence-of-errors fallacy:</strong> Bug-free hona kafi nahi hai agar software user ke liye useful na ho.</li>
+                            </ol>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye 7 rules hain jo tester ko effective testing karne me guide karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. What is Severity and Priority in Software Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>Severity:</strong> How much the defect affects the system internally (Technical impact).<br>
+                            <strong>Priority:</strong> How fast the defect should be fixed from a business perspective.<br><br>
+                            <strong>Examples Matrix:</strong>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid var(--border-light); font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background: var(--bg-surface-alt);">
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Scenario</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Severity</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Priority</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">App crashes on clicking Login</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light); color: #dc2626; font-weight: 600;">High</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light); color: #dc2626; font-weight: 600;">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Logo spelling mistake on homepage</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Low</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light); color: #dc2626; font-weight: 600;">High</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">App crashes on a rarely used hidden page</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light); color: #dc2626; font-weight: 600;">High</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Low</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Small color mismatch on a button</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Low</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Low</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. Difference between Smoke and Sanity Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>Smoke Testing:</strong> A basic check to verify that the application is stable and the build is ready for further testing (build verification).<br>
+                            <strong>Sanity Testing:</strong> A narrow and deep check to confirm that new functionality or a bug fix is working properly.<br><br>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid var(--border-light); font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background: var(--bg-surface-alt);">
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Feature</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Smoke Testing</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Sanity Testing</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">When is it done?</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">On Initial build</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">After minor changes/fixes</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Depth of Test</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Shallow & Wide</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Narrow & Deep</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Objective</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Verify application stability</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Verify rationality of a feature</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Smoke Testing build stability check karta hai; Sanity Testing naye badlav (changes) ko verify karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. What is Regression Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Regression Testing is done to make sure that new changes, bug fixes, or new features have not affected the existing functionality of the application.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Regression Testing ye ensure karta hai ki naye changes ke baad purane features sahi se kaam kar rahe hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. How do you ensure complete test coverage?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> By writing test cases based on requirements and user stories, covering both positive and negative scenarios. I also use a Traceability Matrix (RTM).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Requirements ke base par detailed test cases likhkar aur RTM use karke main complete coverage ensure karta hoon.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. Verification vs Validation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>Verification (Static):</strong> Are we building the product right? (Checking documents, design, code).<br>
+                            <strong>Validation (Dynamic):</strong> Are we building the right product? (Testing the actual software).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Verification check karta hai ki process sahi hai; Validation actual app chala kar check karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. What are BVA and Equivalence Partitioning?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Both are Black Box Test Design Techniques to reduce the number of test cases.<br><br>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; border: 1px solid var(--border-light); font-size: 0.9rem;">
+                                <thead>
+                                    <tr style="background: var(--bg-surface-alt);">
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Technique</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Invalid Test</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Valid Test</th>
+                                        <th style="padding: 8px; border: 1px solid var(--border-light); text-align: left;">Invalid Test</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Equivalence</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">&lt; 18 (e.g., 10)</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">18 &le; Age &le; 60</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">&gt; 60 (e.g., 75)</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">Boundary (BVA)</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">17</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">18, 19, 59, 60</td>
+                                        <td style="padding: 8px; border: 1px solid var(--border-light);">61</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye methods test cases kam karne aur bugs dhoondhne me help karte hain partitions aur edges ke through.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. What is Testing Life Cycle (STLC)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> STLC is the sequence of activities performed during testing: Requirement Analysis &rarr; Test Planning &rarr; Test Case Design &rarr; Test Execution &rarr; Test Closure.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> STLC testing ka pura timeline hai, planning se lekar report close karne tak.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. What is Integration Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Integration testing verifies interaction between different modules after unit testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab do ya zada modules ko mila kar check karte hain toh use Integration testing kehte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. What is Load Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Load testing checks how the application behaves under expected user load.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Application par expected users ka load daal kar uska performance check karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. How many test cases will you write per day?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It depends on the module complexity. For simple modules: 20–25 cases. For complex modules: 10–15 cases.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Complexity ke hisab se 10 se 25 tak likh sakte hain ek din me.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. Where do you maintain the test case?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Test cases are maintained in tools like TestRail, JIRA, or Excel sheets.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum test cases TestRail, JIRA ya normal Excel sheet me rakhte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. What is Priority in bug reporting?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Priority means how fast a bug should be fixed. High (Critical), Medium (Normal), Low (Minor).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Priority batati hai ki developer ko bug kitni jaldi fix karna chahiye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. Roles of each team member (Agile/QA)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            <strong>Developer:</strong> Writes code. <strong>Tester:</strong> Tests application. <strong>BA:</strong> Gives requirements. <strong>Scrum Master:</strong> Manages Agile process. <strong>Product Owner:</strong> Decides features.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Developer code likhta hai, Tester check karta hai, BA requirements deta hai, aur PO features decide karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>30. What are Agile Ceremonies?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Agile ceremonies are periodic meetings in Agile: Sprint Planning, Daily Standup, Sprint Review, and Sprint Retrospective.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Agile me project cycle ke meetings ko ceremonies bolte hain: Planning, Daily meeting, Review, aur Retrospective.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>31. How do you maintain test cases?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Test cases are maintained in tools like TestRail, JIRA (with Xray or Zephyr), or shared Excel sheets.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Test cases hum TestRail, JIRA ya Excel sheet me properly maintain karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. How many test cases can you write per day?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> On average, 15-25 test cases per day, depending on the complexity of the feature and clarity of requirements.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Module ke complexity par depend karta hai, usually 15 se 25 test cases likh sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. What is Priority and how do you rate it?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Priority defines the urgency of fixing a bug. It is typically rated as High (fix immediately), Medium (fix in next release), or Low (fix later).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Priority batati hai bug kitni jaldi fix hona chahiye (Urgency).
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="beginner">📌 Fundamental QA (Beginner Level)</h2>
+                    
+                    <details>
+                        <summary>1. What is Software Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The process of evaluating a software product to identify defects.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Software mein galtiyan dhoondhne ka process.<br>
+                            <small><strong>Example:</strong> Clicking all buttons to see if they work.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. What is a 'Bug'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A deviation from expected behavior in a software application.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab software waisa kaam na kare jaisa usse karna chahiye.<br>
+                            <small><strong>Example:</strong> Login button not working.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. What is SDLC?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A framework defining tasks performed at each step in the software development process.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Software banane ka pura process, step-by-step.<br>
+                            <small><strong>Example:</strong> Requirements -> Design -> Coding -> Testing -> Deployment.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What is STLC?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A sequence of specific activities performed during the testing process.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Testing karne ka pura process, step-by-step.<br>
+                            <small><strong>Example:</strong> Requirement Analysis -> Test Planning -> Test Execution.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. What is a Test Case?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A detailed set of steps to test a specific functionality.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kisi feature ko test karne ke liye step-by-step instructions.<br>
+                            <small><strong>Example:</strong> Steps to login: 1. Open URL, 2. Enter username, 3. Enter password, 4. Click Login.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. What is Internationalization (I18N)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Designing a software application so that it can be adapted to various languages and regions without engineering changes.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Product ko aise design karna ki wo kisi bhi language mein support ho sake.<br>
+                            <small><strong>Example:</strong> Using Unicode (UTF-8) for all text.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. What is Localization (L10N)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The process of adapting an internationalized software for a specific region or language by adding local-specific components and translating text.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kisi khas area ya language ke hisab se software ko dhalna (jaise translation).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. Define Gray Box Testing.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing with partial knowledge of internal logic or database structures.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab tester ko code aur functionality dono ki thodi knowledge ho.<br>
+                            <small><strong>Example:</strong> Checking if a form saves to the specific DB table.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. What is Monkey Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Unpredictable inputs used to check if the app can handle random user behavior.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina kisi plan ke random clicks/data se system check karna.<br>
+                            <small><strong>Example:</strong> Rapidly clicking buttons on a slow device.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. What is Ad-hoc Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Informal testing performed without following any test cases or requirement docs.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina kisi document ke apni samajh se app ko check karna.<br>
+                            <small><strong>Example:</strong> Randomly trying site features during a break.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is Sanity Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Narrow focus on a specific functionality to ensure it works after changes.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bugs fix hone ke baad kisi khas feature ki basic health check.<br>
+                            <small><strong>Example:</strong> Checking Logout button after Header update.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. What is Smoke Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verifies basic stability (e.g., Can it launch? Can we login?) before deep testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Build aate hi basic stability (Login/Home) check karna.<br>
+                            <small><strong>Example:</strong> Checking if app opens properly on a new build.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Name a Functional Testing type.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing the 'what' of the software (features, inputs, outputs).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> App ke features (Kya kaam ho raha hai) ko check karna.<br>
+                            <small><strong>Example:</strong> Testing 'Add to Cart' button.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What is a 'Defect'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A flaw found by testers before the product goes live.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab result waisa na aaye jaisa documents mein manga tha.<br>
+                            <small><strong>Example:</strong> Expected 'Success' but got 'Error 500'.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. What is an 'Error' in testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A human action that produces an incorrect result (e.g., typo in code).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Coder ya tester ki insani galti jo baad mein bug banti hai.<br>
+                            <small><strong>Example:</strong> Typing '==' instead of '===' in Javascript.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. What is Regression Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ensuring that recent code changes haven't broken existing features.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jo bug report kiya tha, uske fix hone ke baad dobara check karna.<br>
+                            <small><strong>Example:</strong> Tester re-verifying Bug ID 101.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. What is Static Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing without executing the code (Verification).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina app chalaye requirements aur code review karna.<br>
+                            <small><strong>Example:</strong> Reading Requirement Docs to find gaps.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. What is Positive Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing with inputs that are expected to work correctly.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sahi data daal kar check karna ki system kaam kar raha hai.<br>
+                            <small><strong>Example:</strong> Logging in with correct username/password.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. What is 'End-to-End' (E2E) testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ensures the whole system works together (e.g., login to checkout).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Pura system shuru se anth tak check karna.<br>
+                            <small><strong>Example:</strong> User login -> Search -> Buy -> Logout.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. What is Negative Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing with incorrect inputs to ensure the system handles errors.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Galat data daal kar check karna ki error message aata hai ya nahi.<br>
+                            <small><strong>Example:</strong> Entering 'abc' in a Moble Number field.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. What is the primary goal of UAT?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> User Acceptance Testing ensures the tool is fit for business use.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> UAT check karta hai ki product client ki requirements poori karta hai.<br>
+                            <small><strong>Example:</strong> Client testing the app before final handover.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. Define 'Hotfix'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A high-priority fix for a production issue.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Live software mein aayi badi galti ko turant theek karna.<br>
+                            <small><strong>Example:</strong> Fixing a checkout crash on a live site.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. What is 'Latent' bug?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A bug that hasn't been found yet because the feature or conditions weren't met.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Aisa bug jo chhupa hua hai aur kisi khas vajah se hi dikhta hai.<br>
+                            <small><strong>Example:</strong> Bug that appears only on February 29th.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. Verification vs Validation simplified?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verification checks process/docs; Validation checks the final software.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Verification: Kya hum sahi process follow kar rahe? Validation: Kya client ki zaroorat poori hui?<br>
+                            <small><strong>Example:</strong> Reviewing specs vs Running the login.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. What is the status 'Deferred' in Bug Life Cycle?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A bug that is acknowledged but scheduled for a later release.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bug hai par ise agle version mein theek kiya jayega.<br>
+                            <small><strong>Example:</strong> Small spelling error deferred to v2.0.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. What is 'Spike' in Agile?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A task focused on research or prototyping rather than coding a feature.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kisi nayi cheez ko samajhne ke liye kiya gaya research task.<br>
+                            <small><strong>Example:</strong> Prototype for new payment gateway.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. What is 'Traceability'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The ability to track requirements through design to testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Pata lagana ki har requirement test case se judi hai ya nahi.<br>
+                            <small><strong>Example:</strong> RTM document.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. What is 'Equivalence Class Partitioning'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Focuses on testing one value from each group of inputs that behave same.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Inputs ko un groups mein baantna jo same result dete hon.<br>
+                            <small><strong>Example:</strong> Testing age 30 for 18-60 range.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. Define 'Acceptance Criteria'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Set of conditions that a software product must meet to be accepted by a customer.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Woh conditions jo poori hone par client software ko accept karega.<br>
+                            <small><strong>Example:</strong> User must be able to login within 2 seconds.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>30. What is 'Crash'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An unexpected termination of a software program.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab software chalte-chalte bina kisi warning ke band ho jaye.<br>
+                            <small><strong>Example:</strong> App closing when clicking on Profile.</small>
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="intermediate">📌 Process & Methodologies (Intermediate Level)</h2>
+                    
+                    <details>
+                        <summary>31. What is Boundary Value Analysis (BVA)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing values at the boundaries of equivalence classes (e.g., 0, 1, 100).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Inputs ki boundaries (kinaron) pe test karna (like -1, 0, 1).<br>
+                            <small><strong>Example:</strong> If age is 1-100, test 0, 1, 100, 101.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. What is Equivalence Partitioning?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Dividing input data into classes where one value represents the class.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Inputs ko groups mein baantna jo same result dein.<br>
+                            <small><strong>Example:</strong> Testing one value (e.g., 25) for age group 18-60.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. What is an RTM (Requirement Traceability Matrix)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ensures every requirement has at least one associated test case.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Requirement ko Test Case ke saath map karna taaki kuch miss na ho.<br>
+                            <small><strong>Example:</strong> Requirement 1.0 is covered by TC_01.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>34. What is Exploratory Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing on the fly based on experience and intuition.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina fixed steps ke apni samajh se app ko explore aur test karna.<br>
+                            <small><strong>Example:</strong> Tester randomly trying scenarios to find complex bugs.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>35. Define Test Scenario vs Test Case.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Scenario is high-level; Test Case is detailed with steps.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Scenario matlab kya test karna hai, Case matlab kaise (steps).<br>
+                            <small><strong>Example:</strong> Scenario: Forget Password; Case: Enter email, click link...</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>36. What is the Pesticide Paradox?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Tests lose effectiveness over time and need regular updates.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek hi tests baar-baar chalane se naye bugs nahi milte.<br>
+                            <small><strong>Example:</strong> Updating the regression suite every sprint.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>37. What is a 'Critical' bug?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A major functionality is blocked and there is no alternative.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab koi main feature bilkul kaam na kare aur koi rasta na ho.<br>
+                            <small><strong>Example:</strong> Sign-up button not doing anything.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>38. What is a Test Plan?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A document describing the scope, approach, resources, and schedule of testing activities.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Testing kaise hogi, kya test hoga, kaun karega, kab tak hoga - sab batane wala document.<br>
+                            <small><strong>Example:</strong> A document detailing the strategy for testing a new mobile app.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>39. What is a Test Stub?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A dummy program that integrates with the module under test and provides the same output as the actual module.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek chhota sa nakli program jo asli module ki tarah kaam karta hai, jab asli module ready na ho.<br>
+                            <small><strong>Example:</strong> A stub for a payment gateway that always returns 'success'.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>40. What is a Test Driver?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A program that calls the module under test, passes test data, and prints results.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek program jo asli module ko chalata hai aur usko data dekar check karna hai.<br>
+                            <small><strong>Example:</strong> A main method calling a utility function with various inputs.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>41. Define 'Quality Assurance' vs 'Quality Control'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> QA prevents defects; QC identifies them in the final product.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> QA bugs aane se rokta hai, QC unhe check karke dhoondhta hai.<br>
+                            <small><strong>Example:</strong> Process audits (QA) vs Running tests (QC).</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>42. What is 'Exhaustive Testing'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Practically impossible but theoretically testing everything.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har possible value aur condition ko test karna (jo mushkil hai).<br>
+                            <small><strong>Example:</strong> Testing millions of password combinations.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>43. What is 'Alpha' vs 'Beta' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Alpha is done at developer site; Beta is done at client site/real environment.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alpha office mein hota hai, Beta asli users ke saath bahar.<br>
+                            <small><strong>Example:</strong> Gmail Beta (years ago).</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>44. What is 'Compatibility' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ensures the app looks and works same across Chrome, Safari, etc.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alag browsers/mobile phones par app chalana.<br>
+                            <small><strong>Example:</strong> Checking site layout on iPhone vs Android.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>45. What is 'Backlog' in Agile?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A list of everything that's known to be needed in the product.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Un kamo ki list jo team ko aage karne hain.<br>
+                            <small><strong>Example:</strong> User stories for the next 3 sprints.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>46. What is a 'Sprint'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A core unit of development in Scrum, typically 2-4 weeks.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek nichit samay (usually 2-4 hafte) jisme kaam deliver karna hota hai.<br>
+                            <small><strong>Example:</strong> Sprint 5: Implementing Login & Logout.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>47. Define 'Daily Stand-up'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Short (15-min) sync meeting for the team to discuss progress and blockers.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Rozana ki 15-minute ki meeting kaam update karne ke liye.<br>
+                            <small><strong>Example:</strong> What did I do yesterday? What will I do today?</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>48. What is 'Burn-down Chart'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Visual tool to track sprint progress showing work remaining vs time.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye dekhne ka chart ki sprint mein kitna kaam bacha hai.<br>
+                            <small><strong>Example:</strong> Line going down as tasks complete.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>49. Define 'Definition of Done' (DoD).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A shared understanding of what it means for work to be complete.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kaam pura kab mana jayega, uska shared criteria.<br>
+                            <small><strong>Example:</strong> Code reviewed, Unit tested, and QA passed.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>50. What is 'Happy Path' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Testing the most common, error-free path through an app.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sabse aasan aur bina error wala flow check karna.<br>
+                            <small><strong>Example:</strong> User login -> Search -> Buy -> Success.</small>
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="advanced">📌 Advanced Strategies & Scenarios (Advanced Level)</h2>
+                    
+                    <details>
+                        <summary>51. What is the V-Model in Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Associates every development phase with a corresponding test phase.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har development step ke saath ek testing step parallel chalta hai.<br>
+                            <small><strong>Example:</strong> Requirement analysis matches Acceptance testing.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>52. Explain Risk-Based Testing.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Focusing core efforts on features most likely to fail or cause damage.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jahan zyada risk hai, wahan pehle aur zyada testing karna.<br>
+                            <small><strong>Example:</strong> Testing Payment gateway before About Us page.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>53. What is Mutation Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Changes (mutants) are made to source code to verify test case quality.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Code mein jaan-bujh kar galti karna dekhne ke liye ki tests use pakadte hain ya nahi.<br>
+                            <small><strong>Example:</strong> Changing a '+' to '-' in code to see if tests fail.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>54. What is Shift-Left Testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Integrating testing into the early stages of the software development lifecycle.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Testing ko development process mein jaldi shuru karna, taaki bugs pehle mil jaayen.<br>
+                            <small><strong>Example:</strong> Developers writing unit tests before integration.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>55. What is Test Pyramid?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Suggests having more low-level tests (unit) and fewer high-level tests (UI).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Testing ko alag-alag levels mein baantna, jaise zyada unit tests aur kam UI tests.<br>
+                            <small><strong>Example:</strong> Many unit tests, fewer integration tests, very few UI tests.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>56. What is a 'Showstopper' bug?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A defect that is so severe it halts the entire project or prevents a release.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek aisa bug jo software ko release hone se rok de, bahut serious.<br>
+                            <small><strong>Example:</strong> The entire application crashes on startup in production environment.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>57. Define 'State Transition Testing'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Useful for systems with complex flows where outputs depend on the current state.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab system ek status se doosre par jaye (jaise Order status), use check karna.<br>
+                            <small><strong>Example:</strong> Ordered -> Packed -> Shipped -> Delivered.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>58. What is 'Penetration' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ethical hacking to check for vulnerabilities and security gaps.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> System ki suraksha check karne ke liye 'hacking' style testing.<br>
+                            <small><strong>Example:</strong> Trying to bypass login via SQL injection.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>59. What is 'Cyclomatic Complexity'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Quantitative measure of code complexity indicating the number of linearly independent paths.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Code kitna uljha hua hai, uska ek mathematical score.<br>
+                            <small><strong>Example:</strong> Score > 10 means code is complex and risky.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>60. Difference between 'Load' and 'Stress' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Load checks performance under expected peak; Stress checks stability beyond limits.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Load: 100 log; Stress: 10,000 log jab tak site fat na jaye.<br>
+                            <small><strong>Example:</strong> Normal sale vs Black Friday peak.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>61. What is 'Interoperability' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Focuses on the ability of different systems or components to exchange and use information.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alag-alag systems ke beech data transfer aur communication check karna.<br>
+                            <small><strong>Example:</strong> Checking if app works properly with a PayPal API.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>63. What are the key elements of a Bug Report?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> ID, Title, Description, Steps to Reproduce, Expected vs Actual Results, Severity, Priority, Environment, and Attachments.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bug report mein: ID, Title, Steps, Expected/Actual results, Severity aur screenshots zaroori hote hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>64. What is 'Defect Leakage'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> When a bug is missed by testers and found by the customer/end-user after release.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab tester se bug miss ho jaye aur wo sidha client ke haath lag jaye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>65. Define 'Exploratory' testing simplified.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Simultaneous learning and execution to find bugs that scripted tests miss.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina kisi script ke app ko explore karke galti dhoondhna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>66. What do you do if a bug is not reproducible?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Check different browsers/OS, verify steps, consult developers, and monitor logs. Mark as 'Cannot Reproduce' if consistent.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser badal kar check karein, logs dekhein, developer se baat karein. Agar phir bhi na mile toh 'CNR' mark karein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>67. What is 'Sanity' vs 'Regression'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Sanity checks limited fixes/new features; Regression checks everything old is still safe.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sanity matlab naye badlav ki basic check. Regression matlab purana sab sahi hai ya nahi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>68. What is 'Localization' vs 'Globalization'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Globalization makes the app ready for world; Localization adapts it to a specific city/culture.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Globalization app ko world-ready banata hai; Localization kisi khas jagah (like India) ke hisab se dhalta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>69. Define 'Smoke' testing goal.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> To decide whether the build is stable enough for further detailed testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye decide karna ki build aage test karne layak hai ya nahi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>70. What is a 'Test Suite'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A collection of multiple test cases grouped based on a feature or objective.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bahut saare test cases ka ek group (bundle).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>71. What is 'Static Testing' vs 'Dynamic Testing'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Static doesn't execute code (Reviews); Dynamic executes code (Execution).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Static: Code review/Docs; Dynamic: App run karke check karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>72. What is 'Verification' vs 'Validation' in one line?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verification is 'Process' check; Validation is 'Product' check.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Verification: Kaam sahi ho raha hai? Validation: Product sahi bana hai?
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>73. Define 'Agile Scrum' in testing context.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Continuous testing and feedback throughout short development cycles (Sprints).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Chhote cycles (Sprints) mein kaam karna aur saath-saath test karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>74. What is 'User Story'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An informal, natural language explanation of a feature from the perspective of an end-user.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> User ki nazar se ek feature ka chhota sa description.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>75. What is 'Acceptance' testing types?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Alpha (Internal), Beta (External), and UAT (Business).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alpha (team), Beta (real users), UAT (client).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>76. What is 'Exploratory' testing duration typically?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Usually structured into 'sessions' of 30-90 minutes.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ise 30-90 minutes ke sessions mein baant kar kiya jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>77. What is 'Hotfix' vs 'Release'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Hotfix is an emergency patch; Release is a planned deployment.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hotfix emergency theek-kaam hai; Release ek planned launch.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>78. Define 'Test Coverage'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A metric measuring how much of the code/requirements are being exercised by tests.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kitna software test kiya gaya, uska andaza lagana.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>79. What is 'White Box' testing level?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Primarily Unit and Integration testing done by developers.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab coder khud code ki logic check kare.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>80. Why is testing never 100%?</summary>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>56. What is a 'Showstopper' bug?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A defect that is so severe it halts the entire project or prevents a release.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek aisa bug jo software ko release hone se rok de, bahut serious.<br>
+                            <small><strong>Example:</strong> The entire application crashes on startup in production environment.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>57. Define 'State Transition Testing'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Useful for systems with complex flows where outputs depend on the current state.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab system ek status se doosre par jaye (jaise Order status), use check karna.<br>
+                            <small><strong>Example:</strong> Ordered -> Packed -> Shipped -> Delivered.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>58. What is 'Penetration' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Ethical hacking to check for vulnerabilities and security gaps.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> System ki suraksha check karne ke liye 'hacking' style testing.<br>
+                            <small><strong>Example:</strong> Trying to bypass login via SQL injection.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>59. What is 'Cyclomatic Complexity'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Quantitative measure of code complexity indicating the number of linearly independent paths.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Code kitna uljha hua hai, uska ek mathematical score.<br>
+                            <small><strong>Example:</strong> Score > 10 means code is complex and risky.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>60. Difference between 'Load' and 'Stress' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Load checks performance under expected peak; Stress checks stability beyond limits.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Load: 100 log; Stress: 10,000 log jab tak site fat na jaye.<br>
+                            <small><strong>Example:</strong> Normal sale vs Black Friday peak.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>61. What is 'Interoperability' testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Focuses on the ability of different systems or components to exchange and use information.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alag-alag systems ke beech data transfer aur communication check karna.<br>
+                            <small><strong>Example:</strong> Checking if app works properly with a PayPal API.</small>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>63. What are the key elements of a Bug Report?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> ID, Title, Description, Steps to Reproduce, Expected vs Actual Results, Severity, Priority, Environment, and Attachments.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bug report mein: ID, Title, Steps, Expected/Actual results, Severity aur screenshots zaroori hote hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>64. What is 'Defect Leakage'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> When a bug is missed by testers and found by the customer/end-user after release.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab tester se bug miss ho jaye aur wo sidha client ke haath lag jaye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>65. Define 'Exploratory' testing simplified.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Simultaneous learning and execution to find bugs that scripted tests miss.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina kisi script ke app ko explore karke galti dhoondhna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>66. What do you do if a bug is not reproducible?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Check different browsers/OS, verify steps, consult developers, and monitor logs. Mark as 'Cannot Reproduce' if consistent.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser badal kar check karein, logs dekhein, developer se baat karein. Agar phir bhi na mile toh 'CNR' mark karein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>67. What is 'Sanity' vs 'Regression'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Sanity checks limited fixes/new features; Regression checks everything old is still safe.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sanity matlab naye badlav ki basic check. Regression matlab purana sab sahi hai ya nahi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>68. What is 'Localization' vs 'Globalization'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Globalization makes the app ready for world; Localization adapts it to a specific city/culture.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Globalization app ko world-ready banata hai; Localization kisi khas jagah (like India) ke hisab se dhalta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>69. Define 'Smoke' testing goal.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> To decide whether the build is stable enough for further detailed testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye decide karna ki build aage test karne layak hai ya nahi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>70. What is a 'Test Suite'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A collection of multiple test cases grouped based on a feature or objective.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bahut saare test cases ka ek group (bundle).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>71. What is 'Static Testing' vs 'Dynamic Testing'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Static doesn't execute code (Reviews); Dynamic executes code (Execution).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Static: Code review/Docs; Dynamic: App run karke check karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>72. What is 'Verification' vs 'Validation' in one line?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verification is 'Process' check; Validation is 'Product' check.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Verification: Kaam sahi ho raha hai? Validation: Product sahi bana hai?
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>73. Define 'Agile Scrum' in testing context.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Continuous testing and feedback throughout short development cycles (Sprints).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Chhote cycles (Sprints) mein kaam karna aur saath-saath test karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>74. What is 'User Story'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An informal, natural language explanation of a feature from the perspective of an end-user.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> User ki nazar se ek feature ka chhota sa description.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>75. What is 'Acceptance' testing types?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Alpha (Internal), Beta (External), and UAT (Business).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alpha (team), Beta (real users), UAT (client).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>76. What is 'Exploratory' testing duration typically?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Usually structured into 'sessions' of 30-90 minutes.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ise 30-90 minutes ke sessions mein baant kar kiya jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>77. What is 'Hotfix' vs 'Release'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Hotfix is an emergency patch; Release is a planned deployment.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hotfix emergency theek-kaam hai; Release ek planned launch.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>78. Define 'Test Coverage'.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A metric measuring how much of the code/requirements are being exercised by tests.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kitna software test kiya gaya, uska andaza lagana.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>79. What is 'White Box' testing level?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Primarily Unit and Integration testing done by developers.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab coder khud code ki logic check kare.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>80. Why is testing never 100%?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Due to infinite input combinations, time constraints, and environment variations.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ananth combinations aur kam time ki wajah se 100% testing namumkin hai.
+                        </div>
+                    </details>
+                </div>
+
+                <div class="ad-unit">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="BOTTOM" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                   </div>
+            <!-- End of main-content -->
+
+            <aside class="sidebar">
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-compass"></i> Quick Navigation</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#essential-qa"><i class="fas fa-star"></i> Essential Q&A</a></li>
+                        <li><a href="#beginner"><i class="fas fa-seedling"></i> Beginner</a></li>
+                        <li><a href="#intermediate"><i class="fas fa-chart-line"></i> Intermediate</a></li>
+                        <li><a href="#advanced"><i class="fas fa-rocket"></i> Advanced</a></li>
+                    </ul>
+                </div>
+
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-tags"></i> Related Tags</h4>
+                    <div style="display:flex; flex-wrap:wrap; gap:0.5rem;">
+                        <span class="lang-badge" style="margin:0">SDLC</span>
+                        <span class="lang-badge" style="margin:0">STLC</span>
+                        <span class="lang-badge" style="margin:0">JIRA</span>
+                        <span class="lang-badge" style="margin:0">Agile</span>
+                        <span class="lang-badge" style="margin:0">QA</span>
+                    </div>
+                </div>
+
+                <div class="ad-unit" style="min-height: 250px;">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        // Page specific logic for manual testing
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    detailsElements.forEach(el => {
+                        const text = el.textContent.toLowerCase();
+                        el.style.display = (term === "" || text.includes(term)) ? 'block' : 'none';
+                    });
+                    
+                    // Hide empty sections
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        let next = title.nextElementSibling;
+                        let hasVisible = false;
+                        while(next && !next.classList.contains('section-title')) {
+                            if(next.tagName === 'DETAILS' && next.style.display !== 'none') {
+                                hasVisible = true;
+                                break;
+                            }
+                            next = next.nextElementSibling;
+                        }
+                        title.style.display = hasVisible || term === "" ? 'flex' : 'none';
+                    });
+                });
+            }
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+
+</html>
+
+

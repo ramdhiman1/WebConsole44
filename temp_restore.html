@@ -1,0 +1,99 @@
+                                <li><strong>9. TestNG XML:</strong> Used for grouping tests, parallel execution, and managing test suites.</li>
+                            </ul>
+                            <br>
+                            Overall, the framework supports data-driven testing, reporting, reusable components, and can be integrated with CI/CD tools like Jenkins.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <!-- Quick Navigation Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-compass"></i> Quick Navigation</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#selenium-hub"><i class="fas fa-star"></i> Selenium Hub</a></li>
+                        <li><a href="#java-programs"><i class="fas fa-code"></i> Java Programs</a></li>
+                        <li><a href="#advanced-automation"><i class="fas fa-rocket"></i> Advanced Topics</a></li>
+                        <li><a href="#core-java-expert"><i class="fas fa-graduation-cap"></i> Core Java</a></li>
+                        <li><a href="#framework-structure"><i class="fas fa-project-diagram"></i> Framework Structure</a></li>
+                    </ul>
+                </div>
+
+                <!-- Related Resource Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-link"></i> Related Guides</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="manual-testing.html"><i class="fas fa-user-check"></i> Manual Testing</a></li>
+                        <li><a href="api-testing.html"><i class="fas fa-network-wired"></i> API Testing Guide</a></li>
+                        <li><a href="sql-testing.html"><i class="fas fa-database"></i> SQL Interview Q&A</a></li>
+                        <li><a href="qa-testing.html"><i class="fas fa-book"></i> Full QA Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="ad-unit ad-top-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block; min-height: 90px;"
+                         data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID"
+                         data-ad-slot="AD_PLACEHOLDER_SLOT_TOP"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+            const studyToggle = document.getElementById('studyModeToggle');
+
+            detailsElements.forEach(det => {
+                det.addEventListener('click', () => {
+                    if (document.body.classList.contains('study-mode')) det.classList.add('revealed');
+                });
+            });
+
+            if (studyToggle) {
+                studyToggle.addEventListener('click', () => {
+                    const isActive = document.body.classList.toggle('study-mode');
+                    studyToggle.classList.toggle('active', isActive);
+                    detailsElements.forEach(det => det.classList.remove('revealed'));
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    detailsElements.forEach(el => {
+                        const text = el.textContent.toLowerCase();
+                        el.style.display = (term === "" || text.includes(term)) ? 'block' : 'none';
+                    });
+
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        let next = title.nextElementSibling;
+                        let hasVisible = false;
+                        while (next && !next.classList.contains('section-title')) {
+                            if (next.tagName === 'DETAILS' && next.style.display !== 'none') {
+                                hasVisible = true;
+                                break;
+                            }
+                            next = next.nextElementSibling;
+                        }
+                        title.style.display = hasVisible || term === "" ? 'flex' : 'none';
+                    });
+                });
+            }
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+</html>

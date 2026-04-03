@@ -1,0 +1,270 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Login / Sign Up - Ram Technical Help</title>
+  <meta name="description"
+    content="Access your Ram Technical Help account to save troubleshooting guides and track your progress in QA testing preparation.">
+  <meta name="keywords" content="Login, Sign Up, User Account, QA Testing Prep">
+
+  <!-- Security Headers -->
+  
+  
+  
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+
+  <!-- Theme Flash Protection -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    .auth-container {
+      max-width: 480px;
+      margin: 2rem auto;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .auth-toggle {
+      display: flex;
+      background: var(--bg-surface-alt);
+      padding: 6px;
+      border-radius: 14px;
+      margin-bottom: 2.5rem;
+      border: 1px solid var(--border-light);
+    }
+
+    .auth-toggle button {
+      flex: 1;
+      padding: 0.85rem 0;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      border-radius: 10px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .auth-toggle button.active {
+      background: white;
+      color: var(--brand-primary);
+      box-shadow: var(--shadow-md);
+      transform: scale(1.02);
+    }
+
+    .auth-toggle button:hover:not(.active) {
+      color: var(--text-main);
+    }
+
+    .form-group input:focus {
+      border-color: var(--brand-primary) !important;
+      outline: none;
+      box-shadow: 0 0 0 4px rgba(79, 70, 229, 0.1);
+    }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="site-header"></header>
+
+  <main class="container" style="min-height: 90vh; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; padding: 2rem 0;">
+    <!-- Background Enhancement -->
+    <div class="mesh-gradient"></div>
+    
+    <div class="auth-container reveal" style="width: 100%; max-width: 480px; position: relative; z-index: 2;">
+      <div class="card glass shadow-xl" style="padding: 3rem; border-radius: var(--radius-2xl); border: 1px solid rgba(255,255,255,0.1); background: rgba(255,255,255,0.7); backdrop-filter: blur(20px);">
+        
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+          <div class="logo-3d-wrap" style="width: 80px; height: 80px; margin: 0 auto 1.5rem; background: var(--brand-primary); border-radius: 20px; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow-brand);">
+            <i class="fas fa-user-shield" style="font-size: 2rem; color: white;"></i>
+          </div>
+          <h1 style="font-size: 2rem; font-weight: 800; color: var(--text-main); margin-bottom: 0.5rem;">Access Hub</h1>
+          <p class="text-muted">Master your QA career from today</p>
+        </div>
+
+        <div class="auth-toggle">
+          <button id="tabLogin" class="active">Login</button>
+          <button id="tabRegister">Sign Up</button>
+        </div>
+
+        <!-- SOCIAL LOGIN PLACEHOLDERS -->
+        <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 2.5rem;">
+          <button class="btn btn-outline" style="width: 100%; display: flex; align-items: center; justify-content: center; gap: 1rem; height: 52px; border-radius: 12px; font-weight: 600; border-color: var(--border-light); background: white;">
+            <img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" width="20" alt="Google">
+            Continue with Google
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; margin-bottom: 2.5rem; gap: 1rem;">
+          <div style="flex: 1; height: 1px; background: var(--border-light);"></div>
+          <span class="text-muted" style="font-size: 0.85rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em;">Or with email</span>
+          <div style="flex: 1; height: 1px; background: var(--border-light);"></div>
+        </div>
+
+        <form id="formLogin">
+
+<!-- SAFE BROWSING & ANTI-PHISHING SHIELD -->
+<div class="safe-browsing-shield" style="background: rgba(239, 68, 68, 0.1); border: 2px dashed var(--danger, #ef4444); color: var(--danger, #ef4444); padding: 1rem; border-radius: var(--radius-md, 8px); text-align: center; margin-bottom: 1.5rem; font-weight: 800; font-size: 0.9rem;">
+    <i class="fas fa-shield-alt"></i> EDUCATIONAL SANDBOX ONLY
+    <div style="font-weight: 500; font-size: 0.8rem; margin-top: 0.5rem; color: var(--text-main, #0F172A);">Do NOT enter real passwords or personal data. This is a secure simulation interface for software testing practice.</div>
+</div>
+
+<input type="hidden" name="csrf_token" value="generate_on_server_12345">
+          <div class="form-group" style="position: relative; margin-bottom: 1.5rem;">
+            <label for="l_email" style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.75rem;">Email Address</label>
+            <div style="position: relative;">
+               <i class="fas fa-envelope" style="position: absolute; left: 1.25rem; top: 1.1rem; color: var(--text-light);"></i>
+               <input id="l_email" type="email" required placeholder="you@example.com" style="padding-left: 3rem; height: 56px; border-radius: 12px; width: 100%; border: 1.5px solid var(--border-light); background: white;">
+            </div>
+          </div>
+
+          <div class="form-group" style="position: relative; margin-bottom: 1rem;">
+            <label for="l_password" style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.75rem;">Password</label>
+            <div style="position: relative;">
+               <i class="fas fa-lock" style="position: absolute; left: 1.25rem; top: 1.1rem; color: var(--text-light);"></i>
+               <input id="l_password" type="text" data-mock-type="password" style="-webkit-text-security: disc; text-security: disc;" required placeholder="••••••••" style="padding-left: 3rem; height: 56px; border-radius: 12px; width: 100%; border: 1.5px solid var(--border-light); background: white;">
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+            <label style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.9rem; cursor: pointer;">
+              <input type="checkbox" style="width: 16px; height: 16px; accent-color: var(--brand-primary);"> Remember me
+            </label>
+            <a href="#" style="font-size: 0.9rem; font-weight: 600; color: var(--brand-primary); text-decoration: none;">Forgot password?</a>
+          </div>
+
+          <button class="btn btn-block" type="submit" style="height: 56px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; box-shadow: var(--shadow-brand);">Login to Hub</button>
+          <div id="loginAlert" class="alert err mt-4" style="display:none"></div>
+        </form>
+
+        <form id="formRegister" style="display:none">
+<input type="hidden" name="csrf_token" value="generate_on_server_12345">
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="r_name"  style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.75rem;">Full Name</label>
+            <div style="position: relative;">
+              <i class="fas fa-user" style="position: absolute; left: 1.25rem; top: 1.1rem; color: var(--text-light);"></i>
+              <input id="r_name" type="text" required placeholder="John Doe" style="padding-left: 3rem; height: 56px; border-radius: 12px; width: 100%; border: 1.5px solid var(--border-light); background: white;">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label for="r_email" style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.75rem;">Email Address</label>
+            <div style="position: relative;">
+              <i class="fas fa-envelope" style="position: absolute; left: 1.25rem; top: 1.1rem; color: var(--text-light);"></i>
+              <input id="r_email" type="email" required placeholder="you@example.com" style="padding-left: 3rem; height: 56px; border-radius: 12px; width: 100%; border: 1.5px solid var(--border-light); background: white;">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 2rem;">
+            <label for="r_password" style="font-weight: 700; color: var(--text-main); display: block; margin-bottom: 0.75rem;">Password</label>
+            <div style="position: relative;">
+              <i class="fas fa-lock" style="position: absolute; left: 1.25rem; top: 1.1rem; color: var(--text-light);"></i>
+              <input id="r_password" type="text" data-mock-type="password" style="-webkit-text-security: disc; text-security: disc;" required placeholder="Create a password" style="padding-left: 3rem; height: 56px; border-radius: 12px; width: 100%; border: 1.5px solid var(--border-light); background: white;">
+            </div>
+          </div>
+
+          <button class="btn btn-block" type="submit" style="height: 56px; border-radius: 12px; font-weight: 700; font-size: 1.1rem; box-shadow: var(--shadow-brand);">Create Account</button>
+          <div id="regAlert" class="alert err mt-4" style="display:none"></div>
+        </form>
+
+        <p class="muted text-center mt-5" style="border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+          <small>Credentials are stored in your browser's LocalStorage securely.</small>
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer"></footer>
+
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if already logged in
+      if (Auth.getUser()) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      const tabLogin = document.getElementById('tabLogin');
+      const tabRegister = document.getElementById('tabRegister');
+      const formLogin = document.getElementById('formLogin');
+      const formRegister = document.getElementById('formRegister');
+
+      // Toggle Logic
+      tabLogin.addEventListener('click', () => {
+        tabLogin.classList.add('active');
+        tabRegister.classList.remove('active');
+        formLogin.style.display = 'block';
+        formRegister.style.display = 'none';
+      });
+
+      tabRegister.addEventListener('click', () => {
+        tabRegister.classList.add('active');
+        tabLogin.classList.remove('active');
+        formRegister.style.display = 'block';
+        formLogin.style.display = 'none';
+      });
+
+      // Login Handler
+      formLogin.addEventListener('submit', e => {
+        e.preventDefault();
+        const email = document.getElementById('l_email').value.trim();
+        const pass = document.getElementById('l_password').value;
+
+        const result = Auth.login(email, pass);
+        const alert = document.getElementById('loginAlert');
+
+        if (result.success) {
+          alert.className = 'alert ok mt-4';
+          alert.textContent = 'Login successful! Redirecting...';
+          alert.style.display = 'block';
+          setTimeout(() => window.location.href = 'index.html', 1000);
+        } else {
+          alert.className = 'alert err mt-4';
+          alert.textContent = result.message;
+          alert.style.display = 'block';
+        }
+      });
+
+      // Register Handler
+      formRegister.addEventListener('submit', e => {
+        e.preventDefault();
+        const name = document.getElementById('r_name').value.trim();
+        const email = document.getElementById('r_email').value.trim();
+        const pass = document.getElementById('r_password').value;
+
+        const result = Auth.register(name, email, pass);
+        const alert = document.getElementById('regAlert');
+
+        if (result.success) {
+          alert.className = 'alert ok mt-4';
+          alert.textContent = 'Account created! Redirecting...';
+          alert.style.display = 'block';
+          setTimeout(() => window.location.href = 'index.html', 1000);
+        } else {
+          alert.className = 'alert err mt-4';
+          alert.textContent = result.message;
+          alert.style.display = 'block';
+        }
+      });
+    });
+  </script>
+</body>
+
+</html>
+
