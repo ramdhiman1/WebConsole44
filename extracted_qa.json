@@ -1,0 +1,3880 @@
+{
+  "manual": {
+    "beginner": [
+      {
+        "q": "What is Software Testing?",
+        "en": "The process of evaluating a software product to identify defects.",
+        "hi": "Software mein galtiyan dhoondhne ka process.",
+        "ex": "Clicking all buttons to see if they work."
+      },
+      {
+        "q": "What is a 'Bug'?",
+        "en": "A deviation from expected behavior in a software application.",
+        "hi": "Jab software waisa kaam na kare jaisa usse karna chahiye.",
+        "ex": "Login button not working."
+      },
+      {
+        "q": "What is SDLC?",
+        "en": "A framework defining tasks performed at each step in the software development process.",
+        "hi": "Software banane ka pura process, step-by-step.",
+        "ex": "Requirements -> Design -> Coding -> Testing -> Deployment."
+      },
+      {
+        "q": "What is STLC?",
+        "en": "A sequence of specific activities performed during the testing process.",
+        "hi": "Testing karne ka pura process, step-by-step.",
+        "ex": "Requirement Analysis -> Test Planning -> Test Execution."
+      },
+      {
+        "q": "What is a Test Case?",
+        "en": "A detailed set of steps to test a specific functionality.",
+        "hi": "Kisi feature ko test karne ke liye step-by-step instructions.",
+        "ex": "Steps to login: 1. Open URL, 2. Enter username, 3. Enter password, 4. Click Login."
+      },
+      {
+        "q": "What is Localization (L10n)?",
+        "en": "Adapting software to the language, culture, and legal requirements of a target locale.",
+        "hi": "App ko kisi khas language ya region ke hisab se dhaalna.",
+        "ex": "Adding Hindi language support."
+      },
+      {
+        "q": "What is Internationalization (I18n)?",
+        "en": "Designing and developing a product so that it can be localized for different cultures.",
+        "hi": "Product ko aise design karna ki wo kisi bhi language mein support ho sake.",
+        "ex": "Using Unicode (UTF-8) for all text."
+      },
+      {
+        "q": "Define Gray Box Testing.",
+        "en": "Testing with partial knowledge of internal logic or database structures.",
+        "hi": "Jab tester ko code aur functionality dono ki thodi knowledge ho.",
+        "ex": "Checking if a form saves to the specific DB table."
+      },
+      {
+        "q": "What is Monkey Testing?",
+        "en": "Unpredictable inputs used to check if the app can handle random user behavior.",
+        "hi": "Bina kisi plan ke random clicks/data se system check karna.",
+        "ex": "Rapidly clicking buttons on a slow device."
+      },
+      {
+        "q": "What is Ad-hoc Testing?",
+        "en": "Informal testing performed without following any test cases or requirement docs.",
+        "hi": "Bina kisi document ke apni samajh se app ko check karna.",
+        "ex": "Randomly trying site features during a break."
+      },
+      {
+        "q": "What is Sanity Testing?",
+        "en": "Narrow focus on a specific functionality to ensure it works after changes.",
+        "hi": "Bugs fix hone ke baad kisi khas feature ki basic health check.",
+        "ex": "Checking Logout button after Header update."
+      },
+      {
+        "q": "What is Smoke Testing?",
+        "en": "Verifies basic stability (e.g., Can it launch? Can we login?) before deep testing.",
+        "hi": "Build aate hi basic stability (Login/Home) check karna.",
+        "ex": "Checking if app opens properly on a new build."
+      },
+      {
+        "q": "Name a Functional Testing type.",
+        "en": "Testing the 'what' of the software (features, inputs, outputs).",
+        "hi": "App ke features (Kya kaam ho raha hai) ko check karna.",
+        "ex": "Testing 'Add to Cart' button."
+      },
+      {
+        "q": "What is a 'Defect'?",
+        "en": "A flaw found by testers before the product goes live.",
+        "hi": "Jab result waisa na aaye jaisa documents mein manga tha.",
+        "ex": "Expected 'Success' but got 'Error 500'."
+      },
+      {
+        "q": "What is an 'Error' in testing?",
+        "en": "A human action that produces an incorrect result (e.g., typo in code).",
+        "hi": "Coder ya tester ki insani galti jo baad mein bug banti hai.",
+        "ex": "Typing '==' instead of '===' in Javascript."
+      },
+      {
+        "q": "What is Regression Testing?",
+        "en": "Ensuring that recent code changes haven't broken existing features.",
+        "hi": "Jo bug report kiya tha, uske fix hone ke baad dobara check karna.",
+        "ex": "Tester re-verifying Bug ID 101."
+      },
+      {
+        "q": "What is Static Testing?",
+        "en": "Testing without executing the code (Verification).",
+        "hi": "Bina app chalaye requirements aur code review karna.",
+        "ex": "Reading Requirement Docs to find gaps."
+      },
+      {
+        "q": "What is Positive Testing?",
+        "en": "Testing with inputs that are expected to work correctly.",
+        "hi": "Sahi data daal kar check karna ki system kaam kar raha hai.",
+        "ex": "Logging in with correct username/password."
+      },
+      {
+        "q": "What is 'End-to-End' (E2E) testing?",
+        "en": "Ensures the whole system works together (e.g., login to checkout).",
+        "hi": "Pura system shuru se anth tak check karna.",
+        "ex": "User login -> Search -> Buy -> Logout."
+      },
+      {
+        "q": "What is Negative Testing?",
+        "en": "Testing with incorrect inputs to ensure the system handles errors.",
+        "hi": "Galat data daal kar check karna ki error message aata hai ya nahi.",
+        "ex": "Entering 'abc' in a Moble Number field."
+      },
+      {
+        "q": "What is the primary goal of UAT?",
+        "en": "User Acceptance Testing ensures the tool is fit for business use.",
+        "hi": "UAT check karta hai ki product client ki requirements poori karta hai.",
+        "ex": "Client testing the app before final handover."
+      },
+      {
+        "q": "What is Monkey Testing?",
+        "en": "Randomly entering data to check system robustness.",
+        "hi": "Bina kisi plan ke random data daal kar system ki majbooti check karna.",
+        "ex": "Repeatedly clicking buttons to see if it hangs."
+      },
+      {
+        "q": "Define Gray Box Testing.",
+        "en": "Tester has partial knowledge of internal structures (e.g., DB schema).",
+        "hi": "Black aur White box ka mishran; isme thodi internal knowledge hoti hai.",
+        "ex": "Checking database entries after submitting a form."
+      },
+      {
+        "q": "What is Ad-hoc Testing?",
+        "en": "Informal testing performed without any documentation or plan.",
+        "hi": "Bina kisi document ya planning ke randomly test karna.",
+        "ex": "Trying random features on a lunch break."
+      },
+      {
+        "q": "What is localization (L10n) vs Internationalization (I18n)?",
+        "en": "I18n makes the app capable of global use; L10n adapts it for a specific locale.",
+        "hi": "I18n matlab app ko global banana, L10n matlab kisi khas area/language ke liye dhaalna.",
+        "ex": "Adding Hindi language support (Localization)."
+      },
+      {
+        "q": "Define 'Hotfix'.",
+        "en": "A high-priority fix for a production issue.",
+        "hi": "Live software mein aayi badi galti ko turant theek karna.",
+        "ex": "Fixing a checkout crash on a live site."
+      },
+      {
+        "q": "What is 'Latent' bug?",
+        "en": "A bug that hasn't been found yet because the feature or conditions weren't met.",
+        "hi": "Aisa bug jo chhupa hua hai aur kisi khas vajah se hi dikhta hai.",
+        "ex": "Bug that appears only on February 29th."
+      },
+      {
+        "q": "Verification vs Validation simplified?",
+        "en": "Verification checks process/docs; Validation checks the final software.",
+        "hi": "Verification: Kya hum sahi process follow kar rahe? Validation: Kya client ki zaroorat poori hui?",
+        "ex": "Reviewing specs vs Running the login."
+      },
+      {
+        "q": "What is the status 'Deferred' in Bug Life Cycle?",
+        "en": "A bug that is acknowledged but scheduled for a later release.",
+        "hi": "Bug hai par ise agle version mein theek kiya jayega.",
+        "ex": "Small spelling error deferred to v2.0."
+      },
+      {
+        "q": "Define 'Agile' in one word.",
+        "en": "A flexible and iterative development approach.",
+        "hi": "Kaam ko chhote hisson mein baant kar step-by-step deliver karna.",
+        "ex": "Working in 2-week sprints."
+      },
+      {
+        "q": "What is a 'Spike' in Agile?",
+        "en": "A task focused on research or prototyping rather than coding a feature.",
+        "hi": "Kisi nayi cheez ko samajhne ke liye kiya gaya research task.",
+        "ex": "Prototype for new payment gateway."
+      },
+      {
+        "q": "What is 'Traceability'?",
+        "en": "The ability to track requirements through design to testing.",
+        "hi": "Pata lagana ki har requirement test case se judi hai ya nahi.",
+        "ex": "RTM document."
+      },
+      {
+        "q": "Define Gherkin.",
+        "en": "A plain-text language with structure for defining test scenarios.",
+        "hi": "Simple English format (Given-When-Then) jisme tests likhe jaate hain.",
+        "ex": "Given user is on login page..."
+      },
+      {
+        "q": "What is 'Equivalence Class Partitioning'?",
+        "en": "Focuses on testing one value from each group of inputs that behave same.",
+        "hi": "Inputs ko un groups mein baantna jo same result dete hon.",
+        "ex": "Testing age 30 for 18-60 range."
+      },
+      {
+        "q": "Define 'Acceptance Criteria'.",
+        "en": "Set of conditions that a software product must meet to be accepted by a customer.",
+        "hi": "Woh conditions jo poori hone par client software ko accept karega.",
+        "ex": "User must be able to login within 2 seconds."
+      },
+      {
+        "q": "What is a 'Crash'?",
+        "en": "An unexpected termination of a software program.",
+        "hi": "Jab software chalte-chalte bina kisi warning ke band ho jaye.",
+        "ex": "App closing when clicking on Profile."
+      },
+      {
+        "q": "What is 'End-User'?",
+        "en": "The individual for whom the product is designed and developed.",
+        "hi": "Woh asli insaan jo software ko use karega.",
+        "ex": "A bank customer using an ATM."
+      },
+      {
+        "q": "What is 'Build' in software?",
+        "en": "A version of software code that has been compiled and is ready for use.",
+        "hi": "Software ka ek version jo test karne layak ho gaya ho.",
+        "ex": "Build v1.0.1 received from Dev team."
+      },
+      {
+        "q": "Define 'Defect Report'.",
+        "en": "A formal document describing a bug found during testing.",
+        "hi": "Bug ki saari jaankari dene wala document.",
+        "ex": "Reporting Bug ID #405: 'Login Button Missing'."
+      },
+      {
+        "q": "What is 'Functional Requirement'?",
+        "en": "Describes a specific behavior or function of the system.",
+        "hi": "Software kya kaam karega (features), uski jaankari.",
+        "ex": "System should allow users to reset passwords."
+      },
+      {
+        "q": "What is 'Non-Functional Requirement'?",
+        "en": "Describes the quality attributes of the system.",
+        "hi": "Software kaise kaam karega (speed, security), uski jaankari.",
+        "ex": "System should load in under 2 seconds."
+      },
+      {
+        "q": "What is 'Requirement Gathering'?",
+        "en": "The process of identifying what the client wants from the software.",
+        "hi": "Client se unki zaroorat (requirements) puchne ka process.",
+        "ex": "Business Analyst meeting with client."
+      },
+      {
+        "q": "Define 'User Interface' (UI).",
+        "en": "The series of screens, pages, and visual elements that you use to interact with a device.",
+        "hi": "Software ka wo hissa jo user ko dikhta hai.",
+        "ex": "Buttons, Menus, and Icons."
+      },
+      {
+        "q": "What is 'User Experience' (UX)?",
+        "en": "How a user feels when interacting with a system.",
+        "hi": "Software use karte waqt user ko kaisa feel hota hai (asaan ya mushkil).",
+        "ex": "Making sure the 'Buy' button is easy to find."
+      },
+      {
+        "q": "What is 'Regression' in simple terms?",
+        "en": "A bug that appears in a previously working feature.",
+        "hi": "Naye badlav ki vajah se purane features ka kharab ho jana.",
+        "ex": "Adding a new filter broke the Search button."
+      },
+      {
+        "q": "Define 'Priority'.",
+        "en": "Indicates how urgently a bug needs to be fixed.",
+        "hi": "Bug ko kitni jaldi theek karne ki zaroorat hai.",
+        "ex": "High priority: Logo is wrong on home page."
+      },
+      {
+        "q": "Define 'Severity'.",
+        "en": "Indicates how badly the bug affects the system operation.",
+        "hi": "Bug system ko kitna zyada nuksan pahuncha raha hai.",
+        "ex": "High severity: App crashes on startup."
+      },
+      {
+        "q": "What is 'Usability Testing'?",
+        "en": "Testing the application from a user's perspective for ease of use.",
+        "hi": "Ye check karna ki app user ke liye kitni aasan hai.",
+        "ex": "Asking a user to find a product in under 1 minute."
+      },
+      {
+        "q": "What is 'Reliability'?",
+        "en": "The ability of a system to perform its required functions under stated conditions for a specified period.",
+        "hi": "Software bina fail hue kitni der sahi chal sakta hai.",
+        "ex": "Server running 99.9% of the year."
+      },
+      {
+        "q": "What is 'Portability'?",
+        "en": "How easily an application can be moved from one OS/Browser to another.",
+        "hi": "Software ko ek jagah se doosri jagah (OS/Device) shift karna kitna aasan hai.",
+        "ex": "Running Windows app on Linux using wine."
+      },
+      {
+        "q": "What is 'Accessibility' testing?",
+        "en": "Checking if site works for screen readers, keyboard-only users, etc.",
+        "hi": "Yeh check karna ki divyang (disabled) log app use kar payein.",
+        "ex": "Adding alt-text to images."
+      }
+    ],
+    "intermediate": [
+      {
+        "q": "What is Boundary Value Analysis (BVA)?",
+        "en": "Testing values at the boundaries of equivalence classes (e.g., 0, 1, 100).",
+        "hi": "Inputs ki boundaries (kinaron) pe test karna (like -1, 0, 1).",
+        "ex": "If age is 1-100, test 0, 1, 100, 101."
+      },
+      {
+        "q": "What is Equivalence Partitioning?",
+        "en": "Dividing input data into classes where one value represents the class.",
+        "hi": "Inputs ko groups mein baantna jo same result dein.",
+        "ex": "Testing one value (e.g., 25) for age group 18-60."
+      },
+      {
+        "q": "What is an RTM (Requirement Traceability Matrix)?",
+        "en": "Ensures every requirement has at least one associated test case.",
+        "hi": "Requirement ko Test Case ke saath map karna taaki kuch miss na ho.",
+        "ex": "Requirement 1.0 is covered by TC_01."
+      },
+      {
+        "q": "What is the difference between Verification and Validation?",
+        "en": "Verification (Process) vs Validation (Final Product).",
+        "hi": "Verification: Kya hum sahi bana rahe hain? Validation: Kya humne sahi banaya?",
+        "ex": "Reviewing code vs Running the app."
+      },
+      {
+        "q": "What is a 'Defect' vs a 'Failure'?",
+        "en": "A defect in code leads to a failure in the environment.",
+        "hi": "Code ki galti Defect hai, aur jab app chalne mein galti kare toh Failure.",
+        "ex": "A syntax error causing a crash."
+      },
+      {
+        "q": "What is Sanity Testing?",
+        "en": "A subset of regression focusing on specific component changes.",
+        "hi": "Bugs fix hone ke baad kuch khas features ki health check karna.",
+        "ex": "Checking Payment module after a small update."
+      },
+      {
+        "q": "What is Exploratory Testing?",
+        "en": "Testing on the fly based on experience and intuition.",
+        "hi": "Bina fixed steps ke apni samajh se app ko explore aur test karna.",
+        "ex": "Tester randomly trying scenarios to find complex bugs."
+      },
+      {
+        "q": "Define Test Scenario vs Test Case.",
+        "en": "Scenario is high-level; Test Case is detailed with steps.",
+        "hi": "Scenario matlab kya test karna hai, Case matlab kaise (steps).",
+        "ex": "Scenario: Forget Password; Case: Enter email, click link..."
+      },
+      {
+        "q": "What is the Pesticide Paradox?",
+        "en": "Tests lose effectiveness over time and need regular updates.",
+        "hi": "Ek hi tests baar-baar chalane se naye bugs nahi milte.",
+        "ex": "Updating the regression suite every sprint."
+      },
+      {
+        "q": "What is the difference between Error, Bug, and Defect?",
+        "en": "Error is human mistake; Bug is found by users/QA; Defect is the technical flaw.",
+        "hi": "Error insani galti hai, Bug QA ne pakda, Defect code ki khami hai.",
+        "ex": "Typo in code leads to a Bug in UI."
+      },
+      {
+        "q": "What is a 'Critical' bug?",
+        "en": "A major functionality is blocked and there is no alternative.",
+        "hi": "Jab koi main feature bilkul kaam na kare aur koi rasta na ho.",
+        "ex": "Sign-up button not doing anything."
+      },
+      {
+        "q": "What is 'End-to-End' Testing?",
+        "en": "Verifies the entire system flow including external integrations.",
+        "hi": "Shuru se ant tak pura process test karna.",
+        "ex": "Login -> Search -> Add to Cart -> Payment -> Invoice."
+      },
+      {
+        "q": "Name a non-functional testing type.",
+        "en": "Checks how the system works (Speed, Load, Security).",
+        "hi": "Jo features ke bajaye quality/speed check kare (like load testing).",
+        "ex": "Checking if site loads in 2 seconds."
+      },
+      {
+        "q": "What is 'Defect Density'?",
+        "en": "Helps identify which modules are the weakest/most problematic.",
+        "hi": "Ye batata hai ki code ke size ke hisab se kitne bugs hain.",
+        "ex": "Module A has 10 bugs per 1000 lines of code."
+      },
+      {
+        "q": "What is a Test Plan?",
+        "en": "A comprehensive document that describes the objectives, scope, and methods for testing a software product.",
+        "hi": "Testing kaise hogi, kya test hoga, kaun karega, kab tak hoga - sab batane wala document.",
+        "ex": "A document detailing the strategy for testing a new mobile app."
+      },
+      {
+        "q": "What is a Test Strategy?",
+        "en": "A high-level plan that defines the testing types, levels, and objectives for a project.",
+        "hi": "Testing ki badi picture, jaise kaun se types ki testing hogi (manual, automation, performance).",
+        "ex": "Deciding to use Agile testing methodology for the project."
+      },
+      {
+        "q": "What is a Test Harness?",
+        "en": "A collection of software and test data configured to test a program unit by simulating the environment.",
+        "hi": "Ek setup jismein test karne ke liye code, data aur tools hote hain.",
+        "ex": "Using JUnit with mock objects to test a specific class."
+      },
+      {
+        "q": "What is a Test Stub?",
+        "en": "A dummy program that integrates with the module under test and provides the same output as the actual module.",
+        "hi": "Ek chhota sa nakli program jo asli module ki tarah kaam karta hai, jab asli module ready na ho.",
+        "ex": "A stub for a payment gateway that always returns 'success'."
+      },
+      {
+        "q": "What is a Test Driver?",
+        "en": "A program that calls the module under test, passes test data, and prints results.",
+        "hi": "Ek program jo asli module ko chalata hai aur usko data dekar check karta hai.",
+        "ex": "A main method calling a utility function with various inputs."
+      },
+      {
+        "q": "What is a Use Case?",
+        "en": "Describes the interaction between a user and the system to achieve a specific goal.",
+        "hi": "User kaise system ko use karke apna kaam karega, uska description.",
+        "ex": "'Place an Order' use case for an e-commerce site."
+      },
+      {
+        "q": "Define 'Quality Assurance' vs 'Quality Control'.",
+        "en": "QA prevents defects; QC identifies them in the final product.",
+        "hi": "QA bugs aane se rokta hai, QC unhe check karke dhoondhta hai.",
+        "ex": "Process audits (QA) vs Running tests (QC)."
+      },
+      {
+        "q": "What is 'Exhaustive Testing'?",
+        "en": "Practically impossible but theoretically testing everything.",
+        "hi": "Har possible value aur condition ko test karna (jo mushkil hai).",
+        "ex": "Testing millions of password combinations."
+      },
+      {
+        "q": "What is 'Stub' vs 'Driver'?",
+        "en": "Stubs simulate lower modules; Drivers simulate higher modules.",
+        "hi": "Stub neeche wale module ki jagah, Driver upar wale ki jagah.",
+        "ex": "Top-down (Stub) vs Bottom-up (Driver)."
+      },
+      {
+        "q": "Define 'Negative testing' goal.",
+        "en": "Ensures the system doesn't crash on invalid data and gives errors.",
+        "hi": "Ye dekhna ki galat data par app sahi error message deti hai ya nahi.",
+        "ex": "Typing 'text' in age field."
+      },
+      {
+        "q": "What is a 'Smoke Test' set?",
+        "en": "Short set of tests to ensure build is stable enough to test further.",
+        "hi": "Badi testing shuru karne se pehle zaroori features ki check.",
+        "ex": "Can app open and login?"
+      },
+      {
+        "q": "What is 'Sanity' vs 'Smoke'?",
+        "en": "Smoke is general health check; Sanity is for a specific fix validation.",
+        "hi": "Smoke puri build ki health hai, Sanity ek khas feature ki fix check.",
+        "ex": "Fresh build (Smoke) vs Bug fix check (Sanity)."
+      },
+      {
+        "q": "Define 'Exploratory' testing approach.",
+        "en": "No prepared script; tester uses their experience to find edge cases.",
+        "hi": "Bina kisi document ke apni akal se software ko xplore karna.",
+        "ex": "Trying random weird inputs to crash UI."
+      },
+      {
+        "q": "What is 'Alpha' vs 'Beta' testing?",
+        "en": "Alpha is done at developer site; Beta is done at client site/real environment.",
+        "hi": "Alpha office mein hota hai, Beta asli users ke saath bahar.",
+        "ex": "Gmail Beta (years ago)."
+      },
+      {
+        "q": "What is 'Compatibility' testing?",
+        "en": "Ensures the app looks and works same across Chrome, Safari, etc.",
+        "hi": "Alag browsers/mobile phones par app chalana.",
+        "ex": "Checking site layout on iPhone vs Android."
+      },
+      {
+        "q": "What is 'Backlog' in Agile?",
+        "en": "A list of everything that's known to be needed in the product.",
+        "hi": "Un kamo ki list jo team ko aage karne hain.",
+        "ex": "User stories for the next 3 sprints."
+      },
+      {
+        "q": "What is a 'Sprint'?",
+        "en": "A core unit of development in Scrum.",
+        "hi": "Ek nichit samay (usually 2-4 hafte) jisme kaam deliver karna hota hai.",
+        "ex": "Sprint 5: Implementing Login & Logout."
+      },
+      {
+        "q": "Define 'Daily Stand-up'.",
+        "en": "Short (15-min) sync meeting for the team.",
+        "hi": "Rozana ki 15-minute ki meeting kaam update karne ke liye.",
+        "ex": "What did I do yesterday? What will I do today?"
+      },
+      {
+        "q": "What is 'Scrum'?",
+        "en": "The most popular framework for implementing Agile.",
+        "hi": "Agile follow karne ka ek badhiya tareeka.",
+        "ex": "Using Sprints, Daily Standups, and Backlog."
+      },
+      {
+        "q": "Define 'Product Owner' role.",
+        "en": "Responsible for maximizing the value of the product.",
+        "hi": "Client ki taraf se requirement samjhane aur prioritize karne wala insaan.",
+        "ex": "PO deciding which feature is most important."
+      },
+      {
+        "q": "Define 'Scrum Master' role.",
+        "en": "The coach who helps the team use the Scrum framework.",
+        "hi": "Wo insaan jo team ki rukawatein (blockers) door karta hai.",
+        "ex": "Scrum Master resolving team conflicts."
+      },
+      {
+        "q": "What is 'Burn-down Chart'?",
+        "en": "Visual tool to track sprint progress.",
+        "hi": "Ye dekhne ka chart ki sprint mein kitna kaam bacha hai.",
+        "ex": "Line going down as tasks complete."
+      },
+      {
+        "q": "What is 'Velocity' in Agile?",
+        "en": "Helps in planning future sprints based on past performance.",
+        "hi": "Team ek sprint mein kitna kaam kar sakti hai, uska score.",
+        "ex": "Team average velocity is 30 story points."
+      },
+      {
+        "q": "Define 'Definition of Done' (DoD).",
+        "en": "Ensures quality and clarity on when a task is finished.",
+        "hi": "Kaam pura kab mana jayega, uska shared criteria.",
+        "ex": "Code reviewed, Unit tested, and QA passed."
+      },
+      {
+        "q": "What is 'Technical Debt'?",
+        "en": "Future rework needed because of shortcuts taken during development.",
+        "hi": "Rasta chota lene ki vajah se baad mein hone wala extra kaam.",
+        "ex": "Skipping documentation now, paying later."
+      },
+      {
+        "q": "What is 'Mocking' in simple terms?",
+        "en": "Simulating a component for testing (e.g., using a fake DB).",
+        "hi": "Asli cheez ki jagah nakli setup use karna test karne ke liye.",
+        "ex": "Mocking a payment API."
+      },
+      {
+        "q": "Define 'Data Masking'.",
+        "en": "Creating a version of data used for testing that protects PII.",
+        "hi": "Asli data ko badal kar nakli banana taaki privacy bani rahe.",
+        "ex": "Changing real user emails to 'test@example.com'."
+      },
+      {
+        "q": "What is 'Happy Path' testing?",
+        "en": "Testing the most common, error-free path through an app.",
+        "hi": "Sabse aasan aur bina error wala flow check karna.",
+        "ex": "User login -> Search -> Buy -> Success."
+      },
+      {
+        "q": "Define 'Error Guessing'.",
+        "en": "Informal technique where experience is used to find bugs.",
+        "hi": "Apne purane tajurbe se ye andaza lagana ki bug kahan ho sakta hai.",
+        "ex": "Checking for 0 or negative values in a calculation field."
+      },
+      {
+        "q": "What is 'Path Testing'?",
+        "en": "White box technique ensuring all control paths are tested.",
+        "hi": "Code ke har raaste (logic) ko test karna.",
+        "ex": "Testing 'if', 'else', and 'switch' cases."
+      },
+      {
+        "q": "What is 'Branch Testing'?",
+        "en": "Testing every possible branch from each decision point.",
+        "hi": "Conditions ke har possible outcome (True/False) ko check karna.",
+        "ex": "Testing both Success and Error flows of a form."
+      },
+      {
+        "q": "Define 'Mutation' in code terms.",
+        "en": "Deliberately changing code to see if tests fail.",
+        "hi": "Jaan bujh kar code badalna taaki pata chale tests asardaar hain ya nahi.",
+        "ex": "Changing '>' to '>=' in a loop."
+      },
+      {
+        "q": "What is 'Heuristic' evaluation?",
+        "en": "Expert-driven usability check against set rules.",
+        "hi": "Maahir logo dwara standard rules ke hisab se UI check karna.",
+        "ex": "Checking if 'Cancel' button is near 'OK' button."
+      },
+      {
+        "q": "What is 'Pair wise' testing?",
+        "en": "Statistical method to reduce number of test cases while maintaining coverage.",
+        "hi": "Do-do parameters ke combinations bana kar test karna.",
+        "ex": "Testing Browser + OS combinations."
+      },
+      {
+        "q": "Define 'Incidence Report' vs 'Test Log'.",
+        "en": "Test Log: Chronological record; Incidence Report: Deviation from expected behavior.",
+        "hi": "Test Log rozana ka record hai, Incidence Report kisi khas bug ki detail.",
+        "ex": "Daily test execution log."
+      },
+      {
+        "q": "What is 'Control Flow Testing'?",
+        "en": "Ensures that all paths through a module are executed.",
+        "hi": "Code ke andar ke logic aur paths (control) ko test karna.",
+        "ex": "Testing nested if conditions."
+      }
+    ],
+    "advanced": [
+      {
+        "q": "What is the V-Model in Testing?",
+        "en": "Assocaites every development phase with a corresponding test phase.",
+        "hi": "Har development step ke saath ek testing step parallel chalta hai.",
+        "ex": "Requirement analysis matches Acceptance testing."
+      },
+      {
+        "q": "Explain Risk-Based Testing.",
+        "en": "Focusing core efforts on features most likely to fail or cause damage.",
+        "hi": "Zahan zyada risk hai, wahan pehle aur zyada testing karna.",
+        "ex": "Testing Payment gateway before About Us page."
+      },
+      {
+        "q": "What is Decision Table Testing?",
+        "en": "Using combinations of inputs (Rules) to verify complex behaviors.",
+        "hi": "Alag-alag conditions ke results ko matrix format mein test karna.",
+        "ex": "Testing login with 2FA, Remember Me, etc."
+      },
+      {
+        "q": "What is Mutation Testing?",
+        "en": "Changes (mutants) are made to source code to verify test case quality.",
+        "hi": "Code mein jaan-bujh kar galti karna dekhne ke liye ki tests use pakadte hain ya nahi.",
+        "ex": "Changing a '+' to '-' in code to see if tests fail."
+      },
+      {
+        "q": "Difference between Static Analysis and Code Review?",
+        "en": "Static analysis uses tools (like SonarQube); Reviews are manual peer checks.",
+        "hi": "Static Analysis tools karte hain, Code Review log (Peer Review).",
+        "ex": "SonarQube vs Github Pull Request review."
+      },
+      {
+        "q": "What is Bottom-Up vs Top-Down Integration?",
+        "en": "Approaches to combine units and test them as a group.",
+        "hi": "Components ko jodte waqt pehle bade modular level pe test karna ya chhote units se.",
+        "ex": "Testing drivers vs stubs."
+      },
+      {
+        "q": "What is Agile Methodology?",
+        "en": "Focuses on flexibility, collaboration, and rapid delivery (Sprints).",
+        "hi": "Chhote-chhote hisson mein kaam divide karke jaldi deliver karna.",
+        "ex": "2-week SCRUM sprint."
+      },
+      {
+        "q": "What is a 'User Story'?",
+        "en": "Format: As a [user], I want [action], so that [value].",
+        "hi": "Ek feature ki requirement jo user ke nazariye se likhi ho.",
+        "ex": "'As a shopper, I want a Search bar so I can find products'."
+      },
+      {
+        "q": "What is a 'Blocker' bug?",
+        "en": "Highest priority bug that prevents any further progress.",
+        "hi": "Aisa bug jo aage ki testing hi rok de.",
+        "ex": "App crashing immediately after login."
+      },
+      {
+        "q": "What is Pair Testing?",
+        "en": "Two people (e.g., a tester and a developer) testing together to find more defects.",
+        "hi": "Do log milkar ek hi cheez ko test karte hain, ek idea deta hai, dusra execute karta hai.",
+        "ex": "A developer and a QA engineer collaborating on a complex feature."
+      },
+      {
+        "q": "What is Test Data Management (TDM)?",
+        "en": "Ensuring that the right test data is available for testing at the right time.",
+        "hi": "Testing ke liye sahi data ko banana, store karna aur manage karna.",
+        "ex": "Creating masked production data for UAT environment."
+      },
+      {
+        "q": "What is Shift-Left Testing?",
+        "en": "Integrating testing into the early stages of the software development lifecycle.",
+        "hi": "Testing ko development process mein jaldi shuru karna, taaki bugs pehle mil jaayen.",
+        "ex": "Developers writing unit tests before integration."
+      },
+      {
+        "q": "What is Test Pyramid?",
+        "en": "Suggests having more low-level tests (unit) and fewer high-level tests (UI).",
+        "hi": "Testing ko alag-alag levels mein baantna, jaise zyada unit tests aur kam UI tests.",
+        "ex": "Many unit tests, fewer integration tests, very few UI tests."
+      },
+      {
+        "q": "What is a 'Showstopper' bug?",
+        "en": "A defect that is so severe it halts the entire project or prevents a release.",
+        "hi": "Ek aisa bug jo software ko release hone se rok de, bahut serious.",
+        "ex": "The entire application crashes on startup in production environment."
+      },
+      {
+        "q": "What is Fagan Inspection?",
+        "en": "A structured, formal inspection process for finding defects in documents and code.",
+        "hi": "Documents aur code ko systematically review karne ka ek formal tareeka.",
+        "ex": "A team meeting to formally review a design document for errors."
+      },
+      {
+        "q": "Define 'State Transition Testing'.",
+        "en": "Useful for systems with complex flows (e.g., ATM, Booking).",
+        "hi": "Jab system ek status se doosre par jaye, use check karna.",
+        "ex": "Ordered -> Packed -> Shipped -> Delivered."
+      },
+      {
+        "q": "What is 'Orthogonal Array Testing' (OAT)?",
+        "en": "Used to test large number of input combinations efficiently.",
+        "hi": "Kam cases mein zyada data combos cover karne ka mathematical tareeka.",
+        "ex": "Testing 10 variables with 3 params each."
+      },
+      {
+        "q": "What is 'Penetration' testing?",
+        "en": "Ethical hacking to check for vulnerabilities.",
+        "hi": "System ki suraksha check karne ke liye 'hacking' style testing.",
+        "ex": "Trying to bypass login via SQL injection."
+      },
+      {
+        "q": "What is 'Cyclomatic Complexity'?",
+        "en": "Quantitative measure of code complexity (more paths = more risk).",
+        "hi": "Code kitna uljha hua hai, uska ek mathematical score.",
+        "ex": "Score > 10 means code is complex and risky."
+      },
+      {
+        "q": "Define 'Binary Portability'?",
+        "en": "Code works on different hardware platforms without recompilation.",
+        "hi": "Ek hi software files ka alag computers pe sahi chalna.",
+        "ex": "Java .class files."
+      },
+      {
+        "q": "What is 'Latency' in performance testing?",
+        "en": "Time taken for a packet to travel from source to destination.",
+        "hi": "Request bhejne aur server ke sunne ke beech ka gap.",
+        "ex": "Ping result in ms."
+      },
+      {
+        "q": "Difference between 'Load' and 'Stress' testing?",
+        "en": "Load checks normal peak performance; Stress checks stability at limit.",
+        "hi": "Load: 100 log; Stress: 10,000 log jab tak site fat na jaye.",
+        "ex": "Normal sale vs Black Friday peak."
+      },
+      {
+        "q": "What is 'Spike' Testing?",
+        "en": "Checking if the system can handle sudden bursts of traffic.",
+        "hi": "Ek dum se bahut saare users aane par system check karna.",
+        "ex": "Flash sale starting at 12 PM."
+      },
+      {
+        "q": "What is 'Scalability' testing?",
+        "en": "Ensures that the app can be expanded (e.g., adding more RAM/nodes).",
+        "hi": "Ye check karna ki kya app ko bada karna (scale) aasan hai.",
+        "ex": "Adding 10 more servers."
+      },
+      {
+        "q": "Define 'Reliability' testing.",
+        "en": "Measures the probability of failure-free operation.",
+        "hi": "Bina kisi rukawat ke software kitni der sahi chalta hai.",
+        "ex": "Running a site for 72 hours without crash."
+      },
+      {
+        "q": "What is 'Interoperability' testing?",
+        "en": "Focuses on data exchange between different systems.",
+        "hi": "Alag-alag systems ke beech data transfer aur communication check karna.",
+        "ex": "Checking if app works with PayPal API."
+      },
+      {
+        "q": "Define 'Availability'.",
+        "en": "Usually expressed in 'nines' (e.g., 99.9% availability).",
+        "hi": "System kitne samay tak users ke liye upalabdh (available) rehta hai.",
+        "ex": "Server uptime."
+      },
+      {
+        "q": "What is 'Fault Tolerance'?",
+        "en": "The system should have redundancy to handle failures.",
+        "hi": "Kuch hissa kharab hone par bhi system ka band na hona.",
+        "ex": "Two servers running; if one fails, other takes over."
+      },
+      {
+        "q": "What is 'Data integrity' testing?",
+        "en": "Checks for data loss, duplication, or corruption during transfers.",
+        "hi": "Ye check karna ki data poore process mein sahi aur surakshit rahe.",
+        "ex": "Transferring money and checking both accounts."
+      },
+      {
+        "q": "Define 'Compliance' testing.",
+        "en": "Validating against standards like HIPAA (Health) or GDPR (Privacy).",
+        "hi": "Technical aur sarkari rules (standards) ke hisab se software check karna.",
+        "ex": "Checking if site follows GDPR privacy rules."
+      },
+      {
+        "q": "What is 'Security' testing focus?",
+        "en": "Protecting data and preventing unauthorized access.",
+        "hi": "Data ko chori hone se rokna aur system surakshit rakhna.",
+        "ex": "Checking for weak passwords."
+      },
+      {
+        "q": "Define 'Vulnerability' scanning.",
+        "en": "Using tools to scan for common security weaknesses like SQLi.",
+        "hi": "Tools ke zariye security ki kamzoriyan dhoondna.",
+        "ex": "Using OWASP ZAP to scan for risks."
+      },
+      {
+        "q": "What is 'Thread' testing?",
+        "en": "Ensures that concurrent threads don't cause bottlenecks or deadlocks.",
+        "hi": "Multiple processes jab saath chalein toh system check karna.",
+        "ex": "Testing parallel downloads."
+      },
+      {
+        "q": "Define 'MTBF' (Mean Time Between Failures).",
+        "en": "A statistical measure of reliability.",
+        "hi": "Do failures ke beech ka average samay.",
+        "ex": "If a system fails every 1000 hours, MTBF is 1000."
+      },
+      {
+        "q": "Define 'MTTR' (Mean Time to Repair).",
+        "en": "Measures how quickly a team can recover from a failure.",
+        "hi": "Galti theek karne mein lagne wala average samay.",
+        "ex": "Fixing a server in 30 minutes."
+      },
+      {
+        "q": "What is 'Disaster Recovery' testing?",
+        "en": "Focuses on business continuity after a major incident.",
+        "hi": "Main system jam hone par backup se system chalane ki check.",
+        "ex": "Simulating server room fire and restoring from cloud."
+      },
+      {
+        "q": "Define 'Audit Trail'.",
+        "en": "Important for security and compliance to see who did what.",
+        "hi": "Kaun kab aur kya badlav kar raha hai, uska pura record.",
+        "ex": "Logging which admin changed user permissions."
+      },
+      {
+        "q": "What is 'Data Migration' testing?",
+        "en": "Checks for data loss, mapping issues, and formatting during migration.",
+        "hi": "Purane system se naye system mein data shift karte waqt ki testing.",
+        "ex": "Moving 1M users from Oracle to MongoDB."
+      },
+      {
+        "q": "What is 'Localization' testing tool?",
+        "en": "Helps in verifying translations and regional UI layouts.",
+        "hi": "Translation aur alag languages ke UI ko check karne wale tools.",
+        "ex": "Using a tool to check Hindi fonts alignment."
+      },
+      {
+        "q": "Define 'Gray Box' testing skill.",
+        "en": "Tester looks at both code logic and final UI functionality.",
+        "hi": "Code aur user features dono ki thodi-thodi jankari hona.",
+        "ex": "Reviewing DB while testing a form."
+      },
+      {
+        "q": "What is 'Code Coverage'?",
+        "en": "Helps identify which parts of code are NOT tested.",
+        "hi": "Kitna percent code tests dwara chalaya (check kiya) gaya.",
+        "ex": "85% code coverage."
+      },
+      {
+        "q": "Define 'Branch Coverage' vs 'Statement Coverage'.",
+        "en": "Branch coverage is more complex and effective than statement coverage.",
+        "hi": "Branch har condition check karti hai, Statement har line.",
+        "ex": "Testing both 'if' and 'else'."
+      },
+      {
+        "q": "What is 'Basis Path Testing'?",
+        "en": "Aims to test every independent path in the code at least once.",
+        "hi": "White box testing jisme code ke har raaste ko kam se kam ek baar check kiya jaye.",
+        "ex": "Testing logic using flow graphs."
+      },
+      {
+        "q": "Define 'Test Maturity Model' (TMM).",
+        "en": "Similar to CMMI but specifically for testing quality.",
+        "hi": "Testing process ko behtar banane ka ek stepwise framework.",
+        "ex": "Level 1 (Initial) to Level 5 (Optimizing)."
+      },
+      {
+        "q": "What is 'Risk Mitigation' in testing?",
+        "en": "Focusing effort where failure would be most costly.",
+        "hi": "Risk kam karne ke liye uthaye gaye kadam.",
+        "ex": "Testing Payment security first."
+      },
+      {
+        "q": "What is 'Defect Leakage'?",
+        "en": "A measure of testing effectiveness (Lower is better).",
+        "hi": "Woh bugs jo testing mein nahi mile par live app mein mil gaye.",
+        "ex": "10 bugs found by users after release."
+      },
+      {
+        "q": "Define 'Quality Gate'.",
+        "en": "Ensures that bad code doesn't proceed to higher environments.",
+        "hi": "Agle level pe jaane ke liye zaroori check.",
+        "ex": "Code coverage must be 80% to merge."
+      },
+      {
+        "q": "What is 'Data Driven' testing benefit?",
+        "en": "Scalability and efficiency for repetitive tests.",
+        "hi": "Ek hi script se bahut saara data check karne ki sahuliyat.",
+        "ex": "Testing 1000 login IDs via Excel."
+      },
+      {
+        "q": "Define 'Keyword Driven' testing benefit.",
+        "en": "Allows non-technical users to understand and create tests.",
+        "hi": "Simple keywords (like 'Click') use karke tests banana.",
+        "ex": "Excel sheet with steps: Click, Enter, Login."
+      },
+      {
+        "q": "What is 'BDD' (Behavior Driven Development)?",
+        "en": "Uses 'Given-When-Then' for a shared understanding between all teams.",
+        "hi": "User ke nazariye se software kaise behave karega, uspe focus karna.",
+        "ex": "Scenario: Forget Password."
+      },
+      {
+        "q": "What is 'State Transition' testing?",
+        "en": "Useful for ATM or Booking systems with complex flows.",
+        "hi": "Jab system ek status se doosre par jaye (like Ordered to Shipped), use check karna.",
+        "ex": "ATM: Pin Entered -> Balance Check -> Withdrawal."
+      },
+      {
+        "q": "Define 'Decision Table' testing.",
+        "en": "Uses a matrix to capture complex business rules.",
+        "hi": "Alag-alag conditions ke combinations ko matrix format mein test karna.",
+        "ex": "Login logic for Admin vs User vs Guest."
+      }
+    ]
+  },
+  "automation": {
+    "beginner": [
+      {
+        "q": "What is Selenium WebDriver?",
+        "en": "WebDriver drives a browser natively for automation.",
+        "hi": "Selenium WebDriver browser ko automatically chalane ka ek tool hai.",
+        "ex": "driver.get('url');"
+      },
+      {
+        "q": "Which locator is generally preferred for performance?",
+        "en": "ID is uniquely indexed and fast.",
+        "hi": "ID sabse fast hota hai kyunki browser furan dhoond leta hai.",
+        "ex": "driver.findElement(By.id('login'));"
+      },
+      {
+        "q": "XPath vs CSS Selector - true statement?",
+        "en": "XPath allows bidirectional navigation (axis), CSS only moves downward.",
+        "hi": "XPath se hum parent pe ja sakte hain, CSS se nahi.",
+        "ex": "//td/parent::tr"
+      },
+      {
+        "q": "How to handle an Alert in Selenium?",
+        "en": "Use switchTo() to handle browser-level popups.",
+        "hi": "Browser popups handle karne ke liye focus switch karna padta hai.",
+        "ex": "driver.switchTo().alert().accept();"
+      },
+      {
+        "q": "Which command opens a URL in Selenium?",
+        "en": "driver.get() is the standard command to navigate to a page.",
+        "hi": "get() command se website open hoti hai.",
+        "ex": "driver.get('https://google.com');"
+      },
+      {
+        "q": "Implicit Wait vs Explicit Wait?",
+        "en": "Implicit is set once; Explicit waits for specific things like visibility.",
+        "hi": "Implicit poore browser ke liye, Explicit sirf ek khas condition ke liye.",
+        "ex": "Wait until element is 'clickable'."
+      },
+      {
+        "q": "How to find multiple elements in Selenium?",
+        "en": "findElements returns a List of matching elements.",
+        "hi": "findElements ek se zyada items dhoondhne ke liye hota hai.",
+        "ex": "List<WebElement> links = driver.findElements(By.tagName('a'));"
+      },
+      {
+        "q": "What is the purpose of Actions class?",
+        "en": "Used for complex gestures like drag and drop, hover, etc.",
+        "hi": "Mouse hover ya drag-drop ke liye Actions class use hoti hai.",
+        "ex": "actions.moveToElement(el).perform();"
+      },
+      {
+        "q": "How to refresh a page in Selenium?",
+        "en": "navigate().refresh() is the standard way to reload a page.",
+        "hi": "Page reload karne ke liye navigate().refresh() use karte hain.",
+        "ex": "driver.navigate().refresh();"
+      },
+      {
+        "q": "What is TestNG?",
+        "en": "A powerful framework for annotations, parallel execution, and assertions.",
+        "hi": "TestNG testing organize aur manage karne ka framework hai.",
+        "ex": "@Test annotation."
+      },
+      {
+        "q": "Difference between driver.close() and driver.quit()?",
+        "en": "quit() is safer as it releases all memory and processes.",
+        "hi": "Close sirf ek window band karta hai, Quit pura browser session.",
+        "ex": "Use quit() in @AfterSuite."
+      },
+      {
+        "q": "How to handle browser-based popups (Windows)?",
+        "en": "Selenium treats tabs/windows as 'handles'.",
+        "hi": "Alag-alag windows ke Handles lo aur switch() use karo.",
+        "ex": "driver.switchTo().window(childID);"
+      },
+      {
+        "q": "What are Selenium 4 Relative Locators?",
+        "en": "Finding elements relative to others nearby which is more human-friendly.",
+        "hi": "Kisi item ke upar, neeche ya paas wali cheez dhoondna.",
+        "ex": "with(By.tagName('p')).above(element)"
+      },
+      {
+        "q": "How to find if an element is displayed?",
+        "en": "Checks if the element is visible in the UI and present in DOM.",
+        "hi": "UI mein dikh raha hai ya nahi ye check karne ke liye.",
+        "ex": "boolean status = element.isDisplayed();"
+      },
+      {
+        "q": "What is a WebElement in Selenium?",
+        "en": "Represents an HTML element on a web page, allowing interaction.",
+        "hi": "Web page par maujood koi bhi HTML element (button, textbox, link).",
+        "ex": "WebElement loginButton = driver.findElement(By.id('login'));"
+      },
+      {
+        "q": "Which method is used to type text into a text field?",
+        "en": "The sendKeys() method simulates typing text into an input field.",
+        "hi": "Text box mein kuch likhne ke liye sendKeys() use karte hain.",
+        "ex": "usernameField.sendKeys('myuser');"
+      },
+      {
+        "q": "How to click a button in Selenium?",
+        "en": "The click() method simulates a mouse click on an element.",
+        "hi": "Button ya link par click karne ke liye click() method use hota hai.",
+        "ex": "submitButton.click();"
+      },
+      {
+        "q": "What is the default port for Selenium Grid Hub?",
+        "en": "Selenium Grid Hub typically runs on port 4444.",
+        "hi": "Selenium Grid Hub ka default port 4444 hota hai.",
+        "ex": "java -jar selenium-server.jar hub -port 4444"
+      },
+      {
+        "q": "Which of these is NOT a valid Selenium locator strategy?",
+        "en": "There is no direct By.text() locator; text is usually part of XPath or CSS.",
+        "hi": "By.text() naam ka koi direct locator nahi hota Selenium mein.",
+        "ex": "driver.findElement(By.xpath('//*[text()=\\\"Login\\\"]'));"
+      },
+      {
+        "q": "What is the purpose of `driver.manage().window().maximize()`?",
+        "en": "Maximizes the current browser window to its full size.",
+        "hi": "Browser window ko poori screen par bada karne ke liye.",
+        "ex": "driver.manage().window().maximize();"
+      },
+      {
+        "q": "What is the base interface of all WebDriver classes?",
+        "en": "SearchContext is the super interface which provides findElement methods.",
+        "hi": "WebDriver ki sabse upar wali interface SearchContext hai.",
+        "ex": "SearchContext > WebDriver > RemoteWebDriver."
+      },
+      {
+        "q": "How to navigate back in browser history?",
+        "en": "Navigation interface provides back, forward, and refresh methods.",
+        "hi": "Pichle page par jaane ke liye navigate().back() use hota hai.",
+        "ex": "driver.navigate().back();"
+      },
+      {
+        "q": "Which Selenium component is used for mobile automation?",
+        "en": "Appium is an extension of WebDriver for mobile apps.",
+        "hi": "Mobile apps automate karne ke liye Appium use hota hai.",
+        "ex": "Android/iOS testing."
+      },
+      {
+        "q": "What is the return type of findElements()?",
+        "en": "It returns a List of all matching elements found on the page.",
+        "hi": "Ye matching elements ki ek puri list deta hai.",
+        "ex": "List<WebElement> list = driver.findElements(...);"
+      },
+      {
+        "q": "Difference between / and // in XPath?",
+        "en": "Single slash starts from root; Double slash searches the whole DOM.",
+        "hi": "/ shuruat se dhoondhta hai, // kahi se bhi.",
+        "ex": "//input vs /html/body/input"
+      },
+      {
+        "q": "How to clear text in a textbox?",
+        "en": "The clear() method removes existing text from an input field.",
+        "hi": "Input box khali karne ke liye clear() use karein.",
+        "ex": "element.clear();"
+      },
+      {
+        "q": "Which class is used for dropdowns in Selenium?",
+        "en": "Select class (from support package) simplifies dropdown interaction.",
+        "hi": "Dropdown handle karne ke liye Select class bani hai.",
+        "ex": "new Select(element).selectByValue('val');"
+      },
+      {
+        "q": "Purpose of @Test annotation in TestNG?",
+        "en": "Identifies methods that should be run as part of the test suite.",
+        "hi": "Kisi function ko 'test case' bolne ke liye ye annotation lagti hai.",
+        "ex": "@Test public void loginTest() { ... }"
+      },
+      {
+        "q": "How to verify if a checkbox is checked?",
+        "en": "isSelected() works for checkboxes, radio buttons, and select options.",
+        "hi": "Ye check karne ke liye ki tick laga hai ya nahi.",
+        "ex": "boolean check = cb.isSelected();"
+      },
+      {
+        "q": "What is the purpose of `findElement()`?",
+        "en": "It returns the first element matching the locator.",
+        "hi": "Pehela matching item dhoondhne ke liye.",
+        "ex": "driver.findElement(By.id('btn'));"
+      },
+      {
+        "q": "Which language is Selenium NOT compatible with?",
+        "en": "Selenium supports many modern languages, but not legacy ones like COBOL.",
+        "hi": "Selenium modern languages toh support karta hai par COBOL nahi.",
+        "ex": "Java, Python, JS are popular."
+      },
+      {
+        "q": "What is the role of Selenium IDE?",
+        "en": "Firefox/Chrome extension for fast automation recorder.",
+        "hi": "Tests record aur play karne ka ek simple browser extension.",
+        "ex": "Recording a simple login steps."
+      },
+      {
+        "q": "Define 'BaseURL' in common frameworks.",
+        "en": "Makes the framework flexible to run on different environments (Dev/QA/Prod).",
+        "hi": "Website ka wo common hissa jo har test mein lagta hai.",
+        "ex": "https://qa-env.site.com"
+      },
+      {
+        "q": "What is a 'Test Suite'?",
+        "en": "Allows grouping tests to be run together (e.g., Regression Suite).",
+        "hi": "Bahut saare tests ka ek group.",
+        "ex": "Testing all features before release."
+      },
+      {
+        "q": "Goal of `Thread.sleep()` in Selenium?",
+        "en": "Considered a bad practice; use Explicit Waits instead.",
+        "hi": "Execution ko kuch seconds ke liye zabardasti rok dena.",
+        "ex": "Thread.sleep(5000) for 5s pause."
+      },
+      {
+        "q": "What is a 'CSS Selector'?",
+        "en": "Fast and reliable locator strategy after ID.",
+        "hi": "HTML elements ko styles aur attributes se dhoondhne ka tareeka.",
+        "ex": "input[type='submit']"
+      },
+      {
+        "q": "How to find an element by its exact linked text?",
+        "en": "linkText() is specific for <a> tags with exact text match.",
+        "hi": "Link ke poore text se use dhoondhna.",
+        "ex": "By.linkText('Contact Us')"
+      },
+      {
+        "q": "How to find an element by part of its linked text?",
+        "en": "Useful when link text is dynamic or long.",
+        "hi": "Link ke thode se hisse se use dhoondhna.",
+        "ex": "By.partialLinkText('Contact')"
+      },
+      {
+        "q": "What is the purpose of `driver.switchTo().defaultContent()`?",
+        "en": "After testing inside an iframe, you must switch back to the main DOM.",
+        "hi": "Frame se bahar nikal kar waapas main page par aane ke liye.",
+        "ex": "switchTo().defaultContent();"
+      },
+      {
+        "q": "Which class provides keyboard actions like TAB, ENTER?",
+        "en": "Enum-like class containing all keyboard keys.",
+        "hi": "Keyboard ki keys (Enter/Tab) use karne ke liye.",
+        "ex": "element.sendKeys(Keys.ENTER);"
+      },
+      {
+        "q": "How to find total number of links on a page?",
+        "en": "Find all <a> tags and check the list size.",
+        "hi": "Sare 'a' tags dhoondho aur unki ginti karo.",
+        "ex": "driver.findElements(By.tagName('a')).size();"
+      },
+      {
+        "q": "What is an 'Assertion'?",
+        "en": "The core of any test to verify results.",
+        "hi": "Condition check karna ki test pass hua ya fail.",
+        "ex": "Assert.assertTrue(isDisplayed);"
+      },
+      {
+        "q": "Which company originally created Selenium?",
+        "en": "Jason Huggins started it at ThoughtWorks in 2004.",
+        "hi": "ThoughtWorks company ne iski shuruat ki thi.",
+        "ex": "Jason Huggins (Creator)."
+      },
+      {
+        "q": "What is the role of WebDriver in the Selenium architecture?",
+        "en": "It acts as a bridge between the test script and the browser.",
+        "hi": "Script aur browser ke beech baat-cheet karwane wala bridge.",
+        "ex": "ChromeDriver, FirefoxDriver."
+      },
+      {
+        "q": "Which browser is NOT natively supported by Selenium 4?",
+        "en": "While many browsers have drivers, support for some like Opera varies by version.",
+        "hi": "Chrome aur Firefox ke muqable Opera ka support thoda alag ho sakta hai.",
+        "ex": "Edge, Safari, Chrome are primary."
+      },
+      {
+        "q": "What does `System.setProperty('webdriver.chrome.driver', 'path')` do?",
+        "en": "Tells the system where the exe for ChromeDriver is located.",
+        "hi": "ChromeDriver ki file kahan rakhi hai, wo rashta system ko batana.",
+        "ex": "Setting the path for .exe file."
+      },
+      {
+        "q": "How to scroll down a page manually via script?",
+        "en": "Can use JS or keyboard simulation.",
+        "hi": "Script ke zariye page neeche karne ke liye JS ya Keyboard use karein.",
+        "ex": "js.executeScript('window.scrollBy(0,1000)');"
+      },
+      {
+        "q": "What is 'Implicit Wait' scope?",
+        "en": "Applies to all element searches for that driver instance.",
+        "hi": "Ye poore session ke liye ek baar set ho jata hai.",
+        "ex": "driver.manage().timeouts().implicitlyWait(...);"
+      },
+      {
+        "q": "Which command deletes all browser cookies?",
+        "en": "Useful at the start of a test for a clean state.",
+        "hi": "Sari cookies mitane ke liye.",
+        "ex": "driver.manage().deleteAllCookies();"
+      },
+      {
+        "q": "What is a 'Locator' in automation?",
+        "en": "The way you tell Selenium which button or field to use.",
+        "hi": "Web page pe buttons ya field dhoondhne ka rashta.",
+        "ex": "ID, XPath, Name."
+      },
+      {
+        "q": "Which locator changes most often if UI is updated?",
+        "en": "Absolute paths break whenever a parent container changes.",
+        "hi": "Absolute XPath (shuruat wala) UI badalne pe bahut jaldi fail hota hai.",
+        "ex": "/html/body/div/div/..."
+      },
+      {
+        "q": "Difference between `getText()` and `getAttribute('value')`?",
+        "en": "Use getText() for <span>/<div> and getAttribute for <input> contents.",
+        "hi": "getText() labels ke liye aur 'value' text-box ke data ke liye.",
+        "ex": "input.getAttribute('value');"
+      },
+      {
+        "q": "What happens if an element is not found within the Implicit Wait time?",
+        "en": "Selenium waits for the duration before throwing the exception.",
+        "hi": "Implicit wait ke baad bhi item na mile toh error aa jata hai.",
+        "ex": "NoSuchElementException."
+      },
+      {
+        "q": "What is 'Fluent Wait' flexibility?",
+        "en": "Allows you to define how often to check for the element (e.g., every 500ms).",
+        "hi": "Har thodi der mein (polling) check karne ka advance tareeka.",
+        "ex": "FluentWait<WebDriver> wait = new FluentWait<>(driver)...;"
+      },
+      {
+        "q": "How to handle untrusted certificates in Firefox?",
+        "en": "Programmatically handling SSL issues for testing.",
+        "hi": "Firefox mein untrusted sites ko allow karna.",
+        "ex": "options.setAcceptInsecureCerts(true);"
+      },
+      {
+        "q": "Purpose of 'Groups' in TestNG?",
+        "en": "Grouping allows you to run 'Smoke' or 'Integration' tests selectively.",
+        "hi": "Tests ko categories (groups) mein baantna.",
+        "ex": "@Test(groups = {'smoke'})"
+      },
+      {
+        "q": "What is `@Parameters` annotation in TestNG for?",
+        "en": "Useful for environment-specific variables like URL or Browser.",
+        "hi": "testng.xml se data ko test functions mein bhejna.",
+        "ex": "@Parameters({'browser'})"
+      },
+      {
+        "q": "Define `@DataProvider` in TestNG.",
+        "en": "Core feature for Data Driven testing in TestNG.",
+        "hi": "Test ko bahut saara data provide karne ka component.",
+        "ex": "@DataProvider(name='user-data')"
+      },
+      {
+        "q": "Difference between `SoftAssert` and `HardAssert`?",
+        "en": "SoftAssert is better for multi-verification scripts.",
+        "hi": "Hard turant rok deta hai, Soft end mein report deta hai.",
+        "ex": "softAssert.assertEquals(); ... softAssert.assertAll();"
+      },
+      {
+        "q": "How to capture a screenshot of only a specific element in Selenium 4?",
+        "en": "Selenium 4 added native support to screenshot individual WebElements.",
+        "hi": "Sirf ek khas item (button/image) ka photo lena.",
+        "ex": "logo.getScreenshotAs(OutputType.FILE);"
+      },
+      {
+        "q": "Define 'Window Handling' in Selenium.",
+        "en": "Uses window handles (unique IDs) to navigate between popups.",
+        "hi": "Alag-alag browser tabs mein switch karna.",
+        "ex": "driver.switchTo().window(handleId);"
+      },
+      {
+        "q": "Difference between 'Relative' and 'Absolute' XPath?",
+        "en": "Relative XPath is more stable as it doesn't depend on the full tree structure.",
+        "hi": "Absolute shuruat se hota hai, Relative beech mein se kahi se bhi.",
+        "ex": "//input[@id='val'] (Relative)."
+      },
+      {
+        "q": "How to scroll an element into view?",
+        "en": "Ensures an element is visible in the viewport before interaction.",
+        "hi": "Element ko screen ke beech mein laana taaki dikh jaye.",
+        "ex": "js.executeScript('arguments[0].scrollIntoView(true);', element);"
+      },
+      {
+        "q": "What is 'JavaScript Injection' in Selenium context?",
+        "en": "Used when standard Selenium methods fail to click or interact.",
+        "hi": "Browser mein apni taraf se JS code chalana.",
+        "ex": "js.executeScript('arguments[0].click();', element);"
+      },
+      {
+        "q": "Why use `quit()` instead of `close()` frequently?",
+        "en": "close() only closes the current window; quit() cleans up everything.",
+        "hi": "quit() poore driver session ko khatam karta hai, jo zaroori hai.",
+        "ex": "driver.quit();"
+      },
+      {
+        "q": "How to handle HTML5 video players in Selenium?",
+        "en": "HTML5 video methods are best accessed via JS.",
+        "hi": "Video play/pause karne ke liye JS methods use hote hain.",
+        "ex": "js.executeScript('document.querySelector(\\\"video\\\").play()');"
+      },
+      {
+        "q": "Which tool is used for API automation in Java projects commonly?",
+        "en": "RestAssured is a DSL specifically for testing REST services.",
+        "hi": "Java mein API automate karne ke liye RestAssured popular hai.",
+        "ex": "given().when().get().then().statusCode(200);"
+      },
+      {
+        "q": "What is 'Cucumber' framework primarily for?",
+        "en": "Reads Gherkin files and maps them to steps in code.",
+        "hi": "BDD (Given-When-Then) framework jo human readable tests chalata hai.",
+        "ex": "Feature: Login."
+      },
+      {
+        "q": "Role of `Feature File` in Cucumber?",
+        "en": "Contains Scenarios, Background, and Examples.",
+        "hi": "Isme tests ke scenarios simple English mein likhe hote hain.",
+        "ex": "login.feature"
+      },
+      {
+        "q": "Define `Step Definition` in Cucumber.",
+        "en": "Bridges the gap between Gherkin text and actual automation code.",
+        "hi": "Gherkin line ke piche likha hua asli Java code.",
+        "ex": "@Given(\\\"^user is on login page$\\\")"
+      },
+      {
+        "q": "What is `@Before` vs `@After` in Cucumber?",
+        "en": "Essential for setup and teardown of browsers or databases.",
+        "hi": "Har scenario se pehle aur baad mein chalne wale hooks.",
+        "ex": "@Before public void setup() { ... }"
+      },
+      {
+        "q": "How to generate reports in TestNG?",
+        "en": "Many options exist for beautiful and detailed reporting.",
+        "hi": "Tests ki results reporting ke liye bahut sare plugins hain.",
+        "ex": "ExtentReports, Allure."
+      },
+      {
+        "q": "What is 'Headless' browser testing?",
+        "en": "Ideal for CI/CD pipelines to save resources.",
+        "hi": "Bina browser window dikhe tests ko background mein chalana.",
+        "ex": "options.addArguments('--headless');"
+      },
+      {
+        "q": "Which class handles Alert popups in Selenium?",
+        "en": "Provides accept(), dismiss(), and sendKeys() methods for alerts.",
+        "hi": "Browser alerts (OK/Cancel) ko handle karne ki class.",
+        "ex": "Alert alert = driver.switchTo().alert();"
+      },
+      {
+        "q": "How to handle multiple windows using their titles?",
+        "en": "Best way to find popups when you don't know the exact order.",
+        "hi": "Sare khule windows mein ghoom kar title match karna.",
+        "ex": "if(driver.getTitle().equals('Target')) break;"
+      },
+      {
+        "q": "What is `driver.manage().timeouts().pageLoadTimeout()` useful for?",
+        "en": "Prevents tests from hanging on very slow websites.",
+        "hi": "Page load hone ka maximum intezaar set karna.",
+        "ex": "pageLoadTimeout(30, TimeUnit.SECONDS);"
+      },
+      {
+        "q": "Standard naming convention for Page Object classes?",
+        "en": "Consistency helps other testers understand the repository.",
+        "hi": "Classes ko clear naam dena jaise LoginPage ya DashboardPage.",
+        "ex": "LoginPage.java"
+      }
+    ],
+    "intermediate": [
+      {
+        "q": "Can you explain your TestNG automation framework structure?",
+        "en": "A modular TestNG + Selenium framework using POM with Base, Page, Test, and Utility layers. Supports testng.xml, reporting (Extent), and data-driven testing (Excel/ODS).",
+        "hi": "POM use karte hue TestNG framework design kiya hai. Isme BaseClass, PageObjects, TestCases aur Utilities alag-alag layers mein hain.",
+        "ex": "project-root/src/test/java/..."
+      },
+      {
+        "q": "Can you explain your Cucumber automation framework structure?",
+        "en": "A hybrid framework using Selenium, Cucumber, and TestNG. Features Feature files (Gherkin), Step Definitions, Runner class, and Page Object Model.",
+        "hi": "Feature files aur Step Definitions ke sath design kiya gaya framework. Isme Gherkin language ke scenarios ko Java code ke sath link kiya gaya hai.",
+        "ex": "project-root/src/test/resources/features/..."
+      },
+      {
+        "q": "What is Page Object Model (POM)?",
+        "en": "Creates an object repository for UI elements to increase reusability.",
+        "hi": "Code saaf rakhne ke liye components aur logic ko alag karna.",
+        "ex": "LoginPage.java class."
+      },
+      {
+        "q": "How to handle Dynamic Web Tables?",
+        "en": "Calculate size of rows/cols and use loop to find target text.",
+        "hi": "Loop chala kar aur dynamic XPaths bana kar data dhoondna.",
+        "ex": "//tr[i]/td[j]"
+      },
+      {
+        "q": "What is JavascriptExecutor used for?",
+        "en": "Executes JS code directly in the browser to handle tricky UI actions.",
+        "hi": "Jab Selenium click na kar paye toh browser ka dimaag (JS) use karna.",
+        "ex": "js.executeScript('window.scrollBy(0,500)');"
+      },
+      {
+        "q": "How to take a Screenshot in Selenium?",
+        "en": "Cast driver to TakesScreenshot and call getScreenshotAs method.",
+        "hi": "Driver ko TakesScreenshot mein convert karke save karna.",
+        "ex": "((TakesScreenshot)driver).getScreenshotAs(...);"
+      },
+      {
+        "q": "Relative vs Absolute XPath - which is better?",
+        "en": "Relative is stable; Absolute breaks easily if the UI changes.",
+        "hi": "Relative XPath behtar hai kyunki UI badalne par bhi kaam karta hai.",
+        "ex": "//input[@id='user'] vs /html/body/div[1]/input"
+      },
+      {
+        "q": "What is Page Factory?",
+        "en": "Initializes web elements lazily with initElements.",
+        "hi": "POM ko aur advanced banane wala tool jisme @FindBy use hota hai.",
+        "ex": "@FindBy(id='login') WebElement btn;"
+      },
+      {
+        "q": "How to switch to a Frame in Selenium?",
+        "en": "Use switchTo().frame() using index, name, or element.",
+        "hi": "Frame (khidki ke andar khidki) mein switch karne ke liye.",
+        "ex": "driver.switchTo().frame('iframe_name');"
+      },
+      {
+        "q": "What is Data-Driven Framework?",
+        "en": "Separates test scripts from test data for scalability.",
+        "hi": "Script ek rahega par data Excel ya database se aayega.",
+        "ex": "Using @DataProvider in TestNG."
+      },
+      {
+        "q": "How to handle multiple browser windows?",
+        "en": "Use getWindowHandles() and iterate to the target handle.",
+        "hi": "getWindowHandles() se saari ids lo aur fir switch karo.",
+        "ex": "driver.switchTo().window(childID);"
+      },
+      {
+        "q": "What are Listeners in TestNG?",
+        "en": "Allows custom behavior on test start, success, or failure.",
+        "hi": "Tests ke events track karne wale tools (like Fail hone pe screenshot lena).",
+        "ex": "ITestListener interface."
+      },
+      {
+        "q": "What is the @DataProvider annotation?",
+        "en": "Enables data-driven testing by returning a 2D object array.",
+        "hi": "Ek hi test ko alag-alag data sets ke saath chalane ke liye.",
+        "ex": "@DataProvider(name='user-data')"
+      },
+      {
+        "q": "Soft Assert vs Hard Assert?",
+        "en": "Soft assert is useful for multiple validations in one test.",
+        "hi": "Hard assert fail hone pe test rok deta hai, Soft assert aage badhta hai.",
+        "ex": "SoftAssert sa = new SoftAssert();"
+      },
+      {
+        "q": "What is an Interceptor/Listener in Selenium?",
+        "en": "WebDriverEventListener can listen to driver actions like click/navigate.",
+        "hi": "Driver ki har harkat (like click) par nazar rakhne ke liye.",
+        "ex": "EventFiringWebDriver."
+      },
+      {
+        "q": "How to simulate 'Enter' key in Selenium?",
+        "en": "Keys class provides keyboard interactions.",
+        "hi": "Keys.ENTER use karke enter dabaya ja sakta hai.",
+        "ex": "element.sendKeys(Keys.ENTER);"
+      },
+      {
+        "q": "What is a Hybrid Framework in automation?",
+        "en": "Combines the advantages of multiple frameworks for robust automation.",
+        "hi": "Do ya do se zyada frameworks ko milakar banaya gaya framework.",
+        "ex": "Using POM with a data-driven approach."
+      },
+      {
+        "q": "What is a Keyword-Driven Framework?",
+        "en": "Test steps are written as keywords in a spreadsheet or table, independent of the automation tool.",
+        "hi": "Test steps ko keywords mein likhna, jisse non-technical log bhi test bana saken.",
+        "ex": "Keywords like 'Login', 'EnterText', 'ClickButton'."
+      },
+      {
+        "q": "How to handle SSL Certificate errors in Chrome using Selenium?",
+        "en": "ChromeOptions allows configuring browser capabilities, including SSL handling.",
+        "hi": "ChromeOptions ka use karke insecure certificates ko accept karna.",
+        "ex": "options.setAcceptInsecureCerts(true);"
+      },
+      {
+        "q": "What is the purpose of `ExpectedConditions` in Explicit Waits?",
+        "en": "Provides predefined conditions to wait for, such as element visibility or clickability.",
+        "hi": "Ye batane ke liye ki driver kis khas condition ka intezaar kare.",
+        "ex": "ExpectedConditions.elementToBeClickable(By.id('submit'));"
+      },
+      {
+        "q": "How to upload a file using Selenium WebDriver?",
+        "en": "The `sendKeys()` method can be used on an `<input type='file'>` element to provide the file path.",
+        "hi": "File upload karne ke liye file input element par file ka path sendKeys() se bhejna.",
+        "ex": "fileInput.sendKeys('C:\\\\path\\\\to\\\\file.txt');"
+      },
+      {
+        "q": "What is the difference between `findElement` and `findElements`?",
+        "en": "findElement returns the first matching element, while findElements returns all matching elements.",
+        "hi": "findElement ek element dhoondhta hai, findElements saare matching elements ki list.",
+        "ex": "driver.findElement(By.tagName('a')) vs driver.findElements(By.tagName('a'))"
+      },
+      {
+        "q": "How to perform Context Click (Right Click)?",
+        "en": "Context click is the Selenium term for a right-click gesture.",
+        "hi": "Mouse se right-click karne ke liye contextClick() chahiye.",
+        "ex": "actions.contextClick(el).perform();"
+      },
+      {
+        "q": "What is a 'StaleElementReferenceException'?",
+        "en": "Occurs when you try to use an element that was cached but the page refreshed.",
+        "hi": "Jab page refresh ho jaye aur purana element ka zariya (reference) khatam ho jaye.",
+        "ex": "Page refreshed, but script uses old variable."
+      },
+      {
+        "q": "How to handle a mouse hover action?",
+        "en": "moveToElement() moves the mouse cursor to a specific element.",
+        "hi": "Mouse ko kisi item ke upar le jaane ke liye (hover).",
+        "ex": "actions.moveToElement(menu).perform();"
+      },
+      {
+        "q": "How to run Selenium tests on a remote machine?",
+        "en": "Grid allows distributing tests across different OS and browsers.",
+        "hi": "Grid ki madad se hum doosre computers pe tests chala sakte hain.",
+        "ex": "Using Hub and Node."
+      },
+      {
+        "q": "Which interface is used to execute JavaScript?",
+        "en": "Cast the WebDriver instance to JavascriptExecutor to run scripts.",
+        "hi": "Browser mein JavaScript chalane ke liye JavascriptExecutor interface lagti hai.",
+        "ex": "((JavascriptExecutor)driver).executeScript(...);"
+      },
+      {
+        "q": "Difference between @BeforeMethod and @BeforeClass in TestNG?",
+        "en": "Method runs for every @Test; Class runs once before all tests in that class.",
+        "hi": "@BeforeMethod har test se pehle chalega, @BeforeClass sirf ek baar shuruat mein.",
+        "ex": "Open login page (@BeforeMethod) vs Start server (@BeforeClass)."
+      },
+      {
+        "q": "What is 'Groups' feature in TestNG?",
+        "en": "Allows tagging tests and running specific categories using xml.",
+        "hi": "Tests ko categories (like Smoke) mein baantna taaki unhe saath chala saken.",
+        "ex": "@Test(groups = {'smoke'})"
+      },
+      {
+        "q": "How do you handle a browser cookie?",
+        "en": "The Options interface provides addCookie, getCookie, and deleteCookie.",
+        "hi": "Cookies add ya delete karne ke liye driver.manage() use hota hai.",
+        "ex": "driver.manage().getCookies();"
+      },
+      {
+        "q": "What is an 'Implicit' wait in Selenium?",
+        "en": "Set once and applies to all findElement calls during the session.",
+        "hi": "Pure driver session ke liye ek bar set ki gayi wait.",
+        "ex": "driver.manage().timeouts().implicitlyWait(...)"
+      },
+      {
+        "q": "Define 'Explicit' wait.",
+        "en": "More precise and avoids unnecessary waiting.",
+        "hi": "Ek khas element ki khas condition (like visibility) ka intezaar karna.",
+        "ex": "ExpectedConditions.elementToBeClickable(...)"
+      },
+      {
+        "q": "What is 'Fluent' wait?",
+        "en": "Gives more control over how often to check for the element.",
+        "hi": "Advanced wait jisme check karne ka 'gap' (polling) set kar sakte hain.",
+        "ex": "wait.pollingEvery(Duration.ofSeconds(1))"
+      },
+      {
+        "q": "Difference between `driver.close()` and `driver.quit()`?",
+        "en": "Quit is generally preferred at the end of a suite.",
+        "hi": "Close sirf ek tab band karega, Quit pura browser session khatam karega.",
+        "ex": "driver.quit();"
+      },
+      {
+        "q": "How to handle browser authentication popups?",
+        "en": "Passing username/password directly in the URL address.",
+        "hi": "URL ke andar hi username aur password daal kar bhejna.",
+        "ex": "http://admin:admin@mysite.com"
+      },
+      {
+        "q": "What is 'WebDriverManager' (Bonigarcia) role?",
+        "en": "Keeps drivers updated automatically.",
+        "hi": "Browser drivers (exe) ko apne aap manage karne wali library.",
+        "ex": "WebDriverManager.chromedriver().setup();"
+      },
+      {
+        "q": "Role of `Actions` class in Selenium?",
+        "en": "Used for interactions that normal click/sendKeys cannot do.",
+        "hi": "Mouse hover ya drag-and-drop jaise tasks ke liye.",
+        "ex": "actions.moveToElement(el).perform();"
+      },
+      {
+        "q": "How to perform 'Drag and Drop' in Selenium?",
+        "en": "Uses Actions class to move an element from one source to destination.",
+        "hi": "Actions class use karke ek item ko doosri jagah khisakana.",
+        "ex": "actions.dragAndDrop(from, to).perform();"
+      },
+      {
+        "q": "What is 'Page Factory' initElements method?",
+        "en": "Essential for starting elements in Page Object Model.",
+        "hi": "POM mein elements ko 'active' ya shuru karne ka tareeka.",
+        "ex": "PageFactory.initElements(driver, this);"
+      },
+      {
+        "q": "Define 'Soft Assert' usefulness.",
+        "en": "Better for verifying multiple things on a single page.",
+        "hi": "Ek galti hone par test nahi rukta, saari galatiyan end mein batata hai.",
+        "ex": "softAssert.assertAll();"
+      },
+      {
+        "q": "How to handle untrusted certificates in Chrome?",
+        "en": "Setting capabilities to accept insecure certs.",
+        "hi": "Chrome settings (options) ke zariye insecure sites allow karna.",
+        "ex": "options.setAcceptInsecureCerts(true);"
+      },
+      {
+        "q": "What is 'Headless' mode benefit?",
+        "en": "Great for environment like Jenkins (CI/CD).",
+        "hi": "Bina browser dikhe background mein fast execution.",
+        "ex": "--headless flag."
+      },
+      {
+        "q": "How to handle an 'iFrame' inside another 'iFrame'?",
+        "en": "Must follow the hierarchy of frames.",
+        "hi": "Pehle bahar wale frame mein jaao, fir andar wale mein.",
+        "ex": "driver.switchTo().frame(0).switchTo().frame(0);"
+      },
+      {
+        "q": "What is the return type of `getWindowHandles()`?",
+        "en": "Returns a set of unique window IDs (order is not guaranteed).",
+        "hi": "Ye unique window IDs ka ek 'Set' (group) vapas karta hai.",
+        "ex": "Set<String> handles = driver.getWindowHandles();"
+      },
+      {
+        "q": "Define 'Screenplay Pattern' in automation.",
+        "en": "Alternative to POM for better readability and scaling.",
+        "hi": "POM se bhi advance pattern jo tasks aur actors pe focus karta hai.",
+        "ex": "Serenity BDD often uses this."
+      },
+      {
+        "q": "How to refresh a page without `navigate().refresh()`?",
+        "en": "Multiple ways to achieve a reload.",
+        "hi": "Current URL ko firse mangana ya F5 dabana.",
+        "ex": "driver.get(driver.getCurrentUrl());"
+      },
+      {
+        "q": "What is 'JavaScriptExecutor' used for primarily?",
+        "en": "Directly runs JS in browser context.",
+        "hi": "Browser ke andar direct JavaScript code chalane ke liye.",
+        "ex": "js.executeScript('arguments[0].click();', el);"
+      },
+      {
+        "q": "How to handle 'Shadow DOM' elements in Selenium 4?",
+        "en": "Selenium 4 introduced native support for Shadow DOM access.",
+        "hi": "Selenium 4 mein getShadowRoot() se deep elements pakad sakte hain.",
+        "ex": "el.getShadowRoot().findElement(...);"
+      },
+      {
+        "q": "What is 'Maven' primarily?",
+        "en": "Manages dependencies (JARs) and build lifecycle.",
+        "hi": "Libraries manage karne aur project build karne ka tool.",
+        "ex": "Adding dependencies in pom.xml."
+      },
+      {
+        "q": "Difference between `mvn test` and `mvn compile`?",
+        "en": "Compile is part of the test lifecycle.",
+        "hi": "Compile sirf code check karta hai, Test use chala ke bhi dekhta hai.",
+        "ex": "Check build success."
+      },
+      {
+        "q": "Benefit of using `testng.xml`?",
+        "en": "Control center of your TestNG execution.",
+        "hi": "Tests ko manage aur parallel chalane ka control center.",
+        "ex": "<suite parallel='tests'>"
+      },
+      {
+        "q": "What is 'WebDriverWait' specifically?",
+        "en": "WebDriverWait(driver, timeout).until(...)",
+        "hi": "Khis khas item ya condition ke liye driver ko rukwana.",
+        "ex": "wait.until(ExpectedConditions.visibilityOf(element));"
+      }
+    ],
+    "advanced": [
+      {
+        "q": "What is the Singleton Design Pattern in frameworks?",
+        "en": "Prevents multiple browser instances, saving memory and complexity.",
+        "hi": "Pure project mein browser ka ek hi connection (instance) banana.",
+        "ex": "private static WebDriver instance;"
+      },
+      {
+        "q": "How to automate Shadow DOM elements?",
+        "en": "Standard locators cannot enter shadow roots; need JS path.",
+        "hi": "Shadow DOM ko direct nahi pakda ja sakta, JS path chahiye.",
+        "ex": "wrapper.shadowRoot.querySelector(...)"
+      },
+      {
+        "q": "Selenium Grid purpose?",
+        "en": "Hub and Node architecture for distributed testing.",
+        "hi": "Alag-alag systems pe parallel tests chalane ke liye.",
+        "ex": "Running Chrome on Mac and Firefox on Windows at once."
+      },
+      {
+        "q": "What is Headless Testing?",
+        "en": "Faster execution, useful for CI/CD pipelines.",
+        "hi": "Bina browser dikhe (background mein) tests chalana.",
+        "ex": "options.addArguments('--headless');"
+      },
+      {
+        "q": "Difference between quit() and close() in Selenium?",
+        "en": "close() closes current window; quit() destroys driver instance.",
+        "hi": "Close sirf ek tab band karta hai, Quit pura browser udha deta hai.",
+        "ex": "driver.quit() is better for teardown."
+      },
+      {
+        "q": "What is a 'Fluent Wait'?",
+        "en": "More customizable than Explicit wait (defines frequency of checks).",
+        "hi": "Explicit wait ka advanced version jisme 'wait interval' set kar sakte hain.",
+        "ex": "wait.pollingEvery(Duration.ofSeconds(2))"
+      },
+      {
+        "q": "How to handle SVG elements in XPath?",
+        "en": "SVG elements need name() or local-name() syntax in XPath.",
+        "hi": "SVG tags ke liye special XPath syntax lagta hai.",
+        "ex": "//*[name()='svg']"
+      },
+      {
+        "q": "How to run tests in Parallel in TestNG?",
+        "en": "Achieved via the 'parallel' attribute in the Suite/Test XML tag.",
+        "hi": "testing.xml mein parallel attribute on karke.",
+        "ex": "<suite name='s1' parallel='methods'>"
+      },
+      {
+        "q": "What is 'ThreadLocal' in frameworks?",
+        "en": "Prevents different tests from overwriting each other's driver session.",
+        "hi": "Parallel execution mein har test ka apna alag driver instance safe rakhna.",
+        "ex": "private ThreadLocal<WebDriver> dr = new ThreadLocal<>();"
+      },
+      {
+        "q": "What is BDD (Behavior-Driven Development) in automation?",
+        "en": "Focuses on defining application behavior in a human-readable format (Given-When-Then).",
+        "hi": "Business aur technical teams ke beech collaboration, jismein tests ko simple language mein likha jaata hai.",
+        "ex": "Cucumber framework using Gherkin."
+      },
+      {
+        "q": "What is Cucumber in Selenium automation?",
+        "en": "A tool that supports BDD by allowing test cases to be written in plain language.",
+        "hi": "BDD ke liye ek tool jo test cases ko 'Given-When-Then' format mein likhne mein help karta hai.",
+        "ex": "Feature files with scenarios and step definitions."
+      },
+      {
+        "q": "What is Appium?",
+        "en": "Used for automating native, hybrid, and mobile web applications on iOS and Android platforms.",
+        "hi": "Mobile apps (Android, iOS) ko automate karne ka tool.",
+        "ex": "Automating a native Android app on an emulator."
+      },
+      {
+        "q": "What is Docker's role in test automation?",
+        "en": "Provides isolated, reproducible environments for running tests, ensuring consistency across different machines.",
+        "hi": "Tests ko chalane ke liye ek consistent aur isolated environment banana.",
+        "ex": "Running Selenium tests inside a Docker container."
+      },
+      {
+        "q": "What is CI/CD in the context of test automation?",
+        "en": "Automating the build, test, and deployment processes to deliver software faster and more reliably.",
+        "hi": "Code ko automatically integrate, test aur deploy karne ka process.",
+        "ex": "Jenkins or GitLab CI/CD pipelines running automated tests."
+      },
+      {
+        "q": "What is the purpose of `DesiredCapabilities` in Selenium?",
+        "en": "Used to configure the browser's behavior, such as browser name, version, platform, etc.",
+        "hi": "WebDriver ko batana ki kaun sa browser, version aur OS use karna hai.",
+        "ex": "caps.setBrowserName('chrome'); caps.setPlatform(Platform.WINDOWS);"
+      },
+      {
+        "q": "How to automate SVG icons that standard XPath can't find?",
+        "en": "SVG elements are in a different namespace and need name() function.",
+        "hi": "SVG icons ke liye normal XPath kaam nahi karke, name() wala logic lagta hai.",
+        "ex": "//*[name()='svg']"
+      },
+      {
+        "q": "What is 'Self-Healing' in modern automation tools?",
+        "en": "Uses AI/heuristics to locate elements if the primary locator fails.",
+        "hi": "Jab locator badal jaye, toh AI se automatically naya locator dhoondna.",
+        "ex": "Healenium or Mabl features."
+      },
+      {
+        "q": "How to manage dynamic IDs that change on every reload?",
+        "en": "Using logical patterns rather than fixed IDs ensures stability.",
+        "hi": "Contains ya child/parent logic use karke dynamic IDs ko pakadna.",
+        "ex": "//button[contains(@id, 'submit-')]"
+      },
+      {
+        "q": "Difference between `driver.getWindowHandle()` and `driver.getWindowHandles()`?",
+        "en": "Handle returns one String; Handles returns a Set of Strings.",
+        "hi": "Handle ek (current) tab deta hai, Handles saare khule tabs ki IDs.",
+        "ex": "Set<String> all = driver.getWindowHandles();"
+      },
+      {
+        "q": "What is a 'ThreadSafe' WebDriver instance?",
+        "en": "Using ThreadLocal ensures each thread gets its own driver seat.",
+        "hi": "Parallel execution mein har test ko apna driver session dena.",
+        "ex": "ThreadLocal<WebDriver> driver = new ThreadLocal<>();"
+      },
+      {
+        "q": "How to capture performance logs using Selenium?",
+        "en": "Selenium can capture browser performance data if configured with options.",
+        "hi": "ChromeOptions ke zariye network aur profile logs nikaalna.",
+        "ex": "LoggingPreferences logPrefs = new LoggingPreferences();"
+      },
+      {
+        "q": "What is 'Docker Compose' role in testing?",
+        "en": "Excellent for spinning up an entire environment for local/CI testing.",
+        "hi": "Hub aur Nodes ko ek saath ek file se chalane ke liye docker-compose use hota hai.",
+        "ex": "docker-compose up -d"
+      },
+      {
+        "q": "What is Gherkin's `Scenario Outline`?",
+        "en": "Uses 'Examples' table to repeat testing steps with different inputs.",
+        "hi": "Ek hi test ko alag-alag data ke saath chalane ka BDD tareeka.",
+        "ex": "Scenario Outline: Login with <user> and <pass>"
+      },
+      {
+        "q": "Purpose of 'pom.xml' in Maven projects?",
+        "en": "Central file for project configuration, dependencies (Selenium, TestNG), and build steps.",
+        "hi": "Pure project ki configuration aur libraries (jars) manage karne ki file.",
+        "ex": "<dependency> tag."
+      },
+      {
+        "q": "What is the difference between `@Test(enabled = false)` and `@Test(priority = 0)` in TestNG?",
+        "en": "Use `enabled=false` for temporarily ignoring buggy tests.",
+        "hi": "enabled=false test ko band karta hai, priority=0 use pehle chalata hai.",
+        "ex": "Scipping a failing test during release."
+      },
+      {
+        "q": "How to set up a listener in TestNG to capture screenshots automatically on failure?",
+        "en": "Listeners track test events and can fire code (like screenshot) on failure.",
+        "hi": "Failure hone par automatically photo lene ke liye ITestListener use karein.",
+        "ex": "public void onTestFailure(ITestResult res) { ... }"
+      },
+      {
+        "q": "Define 'Grid 4' distributed mode.",
+        "en": "Allows high scalability by running each Grid component as a separate process.",
+        "hi": "Selenium 4 Grid jo bahut sari devices pe tests distribute kar sake.",
+        "ex": "Cloud-style architecture."
+      },
+      {
+        "q": "What is `W3C WebDriver Protocol` in Selenium 4?",
+        "en": "Eliminates the need for JSON Wire Protocol, making tests more stable.",
+        "hi": "Selenium 4 ka naya standard communication tareeka.",
+        "ex": "Direct W3C compliance."
+      },
+      {
+        "q": "How to perform 'Zoom' action using Selenium?",
+        "en": "Best achieved via JavaScriptExecutor at the body level.",
+        "hi": "Page ko bada ya chhota (zoom) dikhane ke liye JS use karein.",
+        "ex": "js.executeScript('document.body.style.zoom=\\\"150%\\\"');"
+      },
+      {
+        "q": "How to handle browser basic authentication popups natively in Selenium 4?",
+        "en": "Selenium 4 allows capturing auth requests and providing credentials via BiDi protocol.",
+        "hi": "Selenium 4 mein username/password wale popups handle karne ka naya tareeka.",
+        "ex": "((HasAuthentication) driver).register(...)"
+      },
+      {
+        "q": "What is `Relative Locators` (Formerly 'Friendly Locators')?",
+        "en": "Makes locators more human-readable and adaptive to layout changes.",
+        "hi": "Doosre items ke muqable directions (left, above) se item dhoondna.",
+        "ex": "driver.findElement(with(By.tagName('p')).above(btn));"
+      },
+      {
+        "q": "How to record browser network traffic in Selenium 4?",
+        "en": "Selenium 4 CDP (Chrome DevTools Protocol) allows deep inspection of network logs.",
+        "hi": "Selenium 4 mein network calls (APIs) ko monitor karne ka direct tareeka.",
+        "ex": "devTools.send(Network.enable(Optional.empty()...));"
+      },
+      {
+        "q": "What is 'BiDi' (Bidirectional) protocol in progress for Selenium?",
+        "en": "The future standard for faster, more powerful browser automation (BiDi).",
+        "hi": "Browser aur script ke beech real-time baatcheet ka naya standard.",
+        "ex": "Standardizing CDP features."
+      },
+      {
+        "q": "Difference between `driver.manage().timeouts().implicitlyWait()` and `WebDriverWait` in async terms?",
+        "en": "Explicit waits are more efficient as they target specific conditions.",
+        "hi": "Implicit sabke liye hai, Explicit kisi khas condition ke liye.",
+        "ex": "ExpectedConditions.elementToBeClickable()"
+      },
+      {
+        "q": "What is `ThreadLocal` used for in parallel testing?",
+        "en": "Prevents tests from conflicting or sharing the same browser window.",
+        "hi": "Har test ko apni alag 'gaddi' (thread) aur driver dena.",
+        "ex": "ThreadLocal<WebDriver> driver = new ThreadLocal<>();"
+      },
+      {
+        "q": "Role of `testng.xml` file in a project?",
+        "en": "Allows running multiple classes, excluding certain tests, and setting parameters.",
+        "hi": "Pure project ke tests kaise chalenge, uska control center.",
+        "ex": "<suite name='RegressionSuite'>"
+      },
+      {
+        "q": "Difference between `mvn test` and `mvn install`?",
+        "en": "mvn install includes compiling, testing, packaging, and installing in local .m2 folder.",
+        "hi": "test sirf check karta hai, install project ki file bana ke computer pe save karta hai.",
+        "ex": "Building a library."
+      },
+      {
+        "q": "What is 'Jenkins' in automation ecosystem?",
+        "en": "Enables 'Continuous Testing' by triggering jobs automatically.",
+        "hi": "Test ko automatically chalane wala server (CI/CD tool).",
+        "ex": "Pipeline setup for nightly runs."
+      },
+      {
+        "q": "How to handle a 'shadow DOM' element in Selenium?",
+        "en": "Shadow DOM elements cannot be found with standard XPath/CSS directly from document root.",
+        "hi": "Shadow DOM ke andar ke elements pakadne ke liye getShadowRoot() chahiye.",
+        "ex": "element.getShadowRoot().findElement(...);"
+      },
+      {
+        "q": "What is 'Visual Testing' and which tool is popular with Selenium?",
+        "en": "Compares screenshots to find small layout or pixel differences.",
+        "hi": "App ka look and feel compare karna tools ke zariye.",
+        "ex": "Applitools Eyes."
+      },
+      {
+        "q": "Benefit of using 'Log4j' in frameworks?",
+        "en": "Provides configurable logging levels (INFO, DEBUG, ERROR).",
+        "hi": "Execution ki puri information files mein save karne ke liye.",
+        "ex": "logger.info('Starting test...');"
+      },
+      {
+        "q": "What is 'Mutation Testing' goal?",
+        "en": "Ensures that your tests ARE actually capable of catching bugs.",
+        "hi": "Ye check karna ki kya aapke tests galti pakadne layak hain.",
+        "ex": "PITest tool."
+      },
+      {
+        "q": "How to bypass 'Incognito' mode manually in Chrome via Selenium?",
+        "en": "Good for testing caching and session behaviors.",
+        "hi": "Private mode mein browser chalane ke liye options.addArguments('--incognito').",
+        "ex": "options.addArguments('--incognito');"
+      },
+      {
+        "q": "Define 'Retry Analyzer' in TestNG.",
+        "en": "Useful for handling flaky tests in a pipeline.",
+        "hi": "Fail hue tests ko apne aap 2-3 baar firse chala kar check karna.",
+        "ex": "IRetryAnalyzer interface."
+      },
+      {
+        "q": "What is `@Factory` annotation in TestNG?",
+        "en": "Used to create multiple test class instances at runtime.",
+        "hi": "Ek hi test class ko alag-alag configurations ke saath chalana.",
+        "ex": "Creating tests for 10 different accounts."
+      },
+      {
+        "q": "How to handle 'Windows Based' popups (like File Upload) if standard ways fail?",
+        "en": "Robot class uses native OS keyboard/mouse events.",
+        "hi": "Browser se bahar ke popups (Windows) handle karne ke liye AutoIT ya Robot.",
+        "ex": "new Robot().keyPress(KeyEvent.VK_ENTER);"
+      },
+      {
+        "q": "Role of `RemoteWebDriver` class?",
+        "en": "All browser-specific drivers (ChromeDriver, etc.) extend this class.",
+        "hi": "Cloud ya Grid pe tests chalane ki main class.",
+        "ex": "new RemoteWebDriver(hubUrl, caps);"
+      },
+      {
+        "q": "What is 'Flaky' test?",
+        "en": "Unreliable tests that cause noise in CI/CD (usually due to bad waits).",
+        "hi": "Aisa test jo kabhi pass toh kabhi fail ho (bina vajah).",
+        "ex": "Test failing due to slow network."
+      },
+      {
+        "q": "What is 'Self-Healing' automation trend?",
+        "en": "Reduces maintenance effort significantly.",
+        "hi": "UI badalte hi locators ko apne aap theek karne waali technique.",
+        "ex": "Mabl or Applitools."
+      },
+      {
+        "q": "What is 'Shift-Right' testing?",
+        "en": "Focuses on monitoring and performance in the live environment.",
+        "hi": "Asli users ke beech production mein testing aur monitoring karna.",
+        "ex": "Canary deployments."
+      },
+      {
+        "q": "How to integrate Selenium with Jira for bug reporting?",
+        "en": "Automates the process of creating tickets when a test fails.",
+        "hi": "Test fail hone par apne aap Jira ticket banane ke liye APIs use karna.",
+        "ex": "Jira REST API integration."
+      },
+      {
+        "q": "What is the future of Selenium and what is it competing with?",
+        "en": "Selenium is evolving with WebDriver BiDi to compete with modern tools.",
+        "hi": "Selenium ab Playwright aur Cypress jaise naye tools se muqabla kar raha hai.",
+        "ex": "Selenium 4 and BiDi support."
+      },
+      {
+        "q": "One main reason to choose Selenium over Cypress?",
+        "en": "Cross-platform and multi-language support remains Selenium's biggest strength.",
+        "hi": "Alag-alag languages (Java, Python) aur browsers (Safari) ka support.",
+        "ex": "Safari automation."
+      },
+      {
+        "q": "How to connect Selenium to BrowserStack?",
+        "en": "We use RemoteWebDriver and provide the BrowserStack Hub URL with our Access Key.",
+        "hi": "RemoteWebDriver ke zariye BrowserStack Hub aur Access Key se link kiya jaata hai.",
+        "ex": "new RemoteWebDriver(new URL('https://USER:KEY@hub.browserstack.com/wd/hub'), caps);"
+      },
+      {
+        "q": "What is a Tunnel for local testing in Cloud Grids?",
+        "en": "A secure connection (like BrowserStack Local) that allows testing websites hosted on private/local servers on cloud devices.",
+        "hi": "Local ya office server wali website ko cloud devices par check karne ka secure rasta (Tunnel).",
+        "ex": "BrowserStackLocal bsLocal = new BrowserStackLocal();"
+      },
+      {
+        "q": "What is a Jenkinsfile (Pipeline-as-Code)?",
+        "en": "A script defining the build/test/deploy lifecycle, stored in the GitHub repository.",
+        "hi": "Build aur test steps ko code mein likhkar Jenkins mein chalaana.",
+        "ex": "pipeline { stage('Test') { sh 'mvn test' } }"
+      },
+      {
+        "q": "How to run Selenium tests on GitHub Actions?",
+        "en": "Create a .github/workflows/main.yml file to define jobs for environment setup and test execution.",
+        "hi": "GitHub workflows use karke Selenium tests pipeline mein automatic trigger karna.",
+        "ex": "uses: actions/setup-java@v3"
+      },
+      {
+        "q": "What is Docker and why use it for Selenium Grid?",
+        "en": "Docker provides isolated, reproducible environments (containers) for running Selenium nodes, eliminating 'it works on my machine' issues.",
+        "hi": "Docker browser environments ko ek consistent container mein pack kar deta hai, jisse setup asaan aur bug-free rehta hai.",
+        "ex": "docker run selenium/standalone-chrome"
+      },
+      {
+        "q": "How to scale browser nodes using Docker Compose?",
+        "en": "Use the --scale flag to instantly spin up multiple browser containers.",
+        "hi": "Ek simple command se multiple chrome ya firefox containers chalaane ke liye.",
+        "ex": "docker-compose up --scale chrome=10"
+      },
+      {
+        "q": "What is Selenium Standalone mode in Docker?",
+        "en": "A single container that includes the Hub, browser, and driver for simple testing.",
+        "hi": "Ek hi container jiske andar Hub aur browser dono hote hain.",
+        "ex": "selenium/standalone-chrome:latest"
+      }
+    ]
+  },
+  "api": {
+    "beginner": [
+      {
+        "q": "What is an API?",
+        "en": "Application Programming Interface for communication.",
+        "hi": "Do applications ke beech baat-cheet ka ek zariya.",
+        "ex": "Weather API giving data to an app."
+      },
+      {
+        "q": "HTTP Status 201 meaning?",
+        "en": "Indicates that a new resource was successfully created.",
+        "hi": "Naya data create hone pe 201 success milta hai.",
+        "ex": "After a successful POST request."
+      },
+      {
+        "q": "What does HTTP Status 200 mean?",
+        "en": "Indicates that the request has succeeded.",
+        "hi": "Request successfully poora ho gaya.",
+        "ex": "A successful GET request for data."
+      },
+      {
+        "q": "Which HTTP method is used to retrieve data?",
+        "en": "GET requests are used to request data from a specified resource.",
+        "hi": "Server se data lene ke liye GET use karte hain.",
+        "ex": "Fetching a list of users."
+      },
+      {
+        "q": "Which HTTP method is used to create new data?",
+        "en": "POST requests are used to send data to a server to create/update a resource.",
+        "hi": "Naya data server par bhejne ke liye POST use karte hain.",
+        "ex": "Submitting a new user registration form."
+      },
+      {
+        "q": "What is JSON?",
+        "en": "JavaScript Object Notation, a lightweight data-interchange format.",
+        "hi": "Data ko ek format mein bhejne ka tareeka, jo JavaScript objects jaisa hota hai.",
+        "ex": "{ \\\"name\\\": \\\"John\\\", \\\"age\\\": 30 }"
+      },
+      {
+        "q": "What is an Endpoint in API testing?",
+        "en": "A specific URL that represents a resource or a function in an API.",
+        "hi": "API ka woh address jahan se hum data bhejte ya lete hain.",
+        "ex": "https://api.example.com/users"
+      },
+      {
+        "q": "What is a 'Request' in API testing?",
+        "en": "The message sent from the client to the server, containing method, headers, and body.",
+        "hi": "Client dwara server ko bheja gaya sandesh, jismein action ki jaankari hoti hai.",
+        "ex": "Sending a GET request to fetch user details."
+      },
+      {
+        "q": "What is a 'Response' in API testing?",
+        "en": "The message sent back from the server to the client, containing status, headers, and body.",
+        "hi": "Server dwara client ko bheja gaya jawab, jismein status aur data hota hai.",
+        "ex": "Receiving a 200 OK status with user data."
+      },
+      {
+        "q": "What is a 'Header' in an HTTP request/response?",
+        "en": "Contains metadata such as content type, authorization tokens, and caching instructions.",
+        "hi": "Request ya Response ke baare mein extra jaankari (jaise Content-Type, Authorization).",
+        "ex": "Content-Type: application/json"
+      },
+      {
+        "q": "HTTP Status 204 meaning?",
+        "en": "Success with no response body.",
+        "hi": "Request sahi rahi par server se koi data vapas nahi aaya.",
+        "ex": "After a successful DELETE."
+      },
+      {
+        "q": "What is 'Query Parameter' syntax?",
+        "en": "Appended to URL after a question mark.",
+        "hi": "URL ke end mein ? ke saath bheje gaye variables.",
+        "ex": "site.com?user=admin"
+      },
+      {
+        "q": "What is a 'Path Parameter'?",
+        "en": "Variables as part of the URL path itself.",
+        "hi": "URL address ke andar hi variable hona.",
+        "ex": "/users/101"
+      },
+      {
+        "q": "HTTP Status 400 meaning?",
+        "en": "Incorrect syntax or invalid request from client.",
+        "hi": "Client ne request bhejne mein galti ki.",
+        "ex": "Malformed JSON body."
+      },
+      {
+        "q": "HTTP Status 405 meaning?",
+        "en": "Requested method is not supported for that resource.",
+        "hi": "Us link ke liye woh tarika (GET/POST) allowed nahi hai.",
+        "ex": "Calling DELETE on sign-up endpoint."
+      },
+      {
+        "q": "What is an 'OAuth' token primarily for?",
+        "en": "Grants specific access rights without sharing passwords.",
+        "hi": "Bina password diye access pane ka ek secure tareeka.",
+        "ex": "Accessing Google Drive files via a 3rd party app."
+      },
+      {
+        "q": "What is 'Basic Auth'?",
+        "en": "Simple auth header with credentials.",
+        "hi": "Login/Password ke zariye simple authentication.",
+        "ex": "Authorization: Basic [token]"
+      },
+      {
+        "q": "Define 'Bearer Token'.",
+        "en": "Commonly used in JWT authentication.",
+        "hi": "Security ke liye bheja jaane wala ek khas code (token).",
+        "ex": "Authorization: Bearer <JWT>"
+      },
+      {
+        "q": "What is 'Postman' used for?",
+        "en": "The most popular API client for developers and testers.",
+        "hi": "APIs test karne aur unhe manage karne ka tool.",
+        "ex": "Sending a POST call and checking status 201."
+      },
+      {
+        "q": "What is a 'Collection' in Postman?",
+        "en": "Helps in running multiple API tests together as a suite.",
+        "hi": "API requests ko folders mein organize karne ka tareeka.",
+        "ex": "Login Suite collection."
+      },
+      {
+        "q": "What is a 'Global Variable' in Postman?",
+        "en": "A variable scope that is project-wide.",
+        "hi": "Aise symbols jo poore project mein kahi bhi use ho saken.",
+        "ex": "{{base_url}}"
+      },
+      {
+        "q": "Define 'Environment' in Postman.",
+        "en": "Helps switch sets of variables easily for different environments.",
+        "hi": "Dev, QA aur Prod ke alag-alag urls/tokens manage karne ke liye.",
+        "ex": "QA Environment variables."
+      },
+      {
+        "q": "What is 'CURL' in testing?",
+        "en": "Used to test APIs directly from terminal.",
+        "hi": "Command prompt se API hit karne ka tareeka.",
+        "ex": "curl -X GET site.com"
+      },
+      {
+        "q": "What is 'SOAP' format?",
+        "en": "Highly structured protocol with strict rules (WSDL).",
+        "hi": "Purana protocol jo XML data use karta hai.",
+        "ex": "Banking APIs still use SOAP."
+      },
+      {
+        "q": "WSDL stands for?",
+        "en": "Defines the service, operations, and data types in SOAP.",
+        "hi": "Web service ko define karne wali file (SOAP ke liye).",
+        "ex": "stock.wsdl"
+      },
+      {
+        "q": "What is 'RestAssured' in Java?",
+        "en": "Best way to automate APIs with Selenium-like syntax.",
+        "hi": "Java mein API automate karne wali library.",
+        "ex": "given().when().get().then()..."
+      },
+      {
+        "q": "Meaning of HTTP Status 429?",
+        "en": "User has sent too many requests in a given amount of time.",
+        "hi": "Client ne limit se zyada requests bhej di.",
+        "ex": "Hitting social media API too fast."
+      },
+      {
+        "q": "Payload is usually in which format nowadays?",
+        "en": "JSON is most lightweight and preferred.",
+        "hi": "Aaj kal JSON sabse zyada use hone wala data format hai.",
+        "ex": "{ user: 'test' }."
+      },
+      {
+        "q": "What is 'Mailing List' endpoint?",
+        "en": "Actually, any resource listing endpoint.",
+        "hi": "Data ki list dene wala endpoint.",
+        "ex": "/api/users"
+      },
+      {
+        "q": "Define 'Pre-request Script' in Postman.",
+        "en": "Used to set dynamic tokens or generate timestamps.",
+        "hi": "API call se pehle chalne wala chhota sa code.",
+        "ex": "Generating a random ID."
+      },
+      {
+        "q": "What is a 'Tests' tab in Postman used for?",
+        "en": "Uses JavaScript to check status code, body, etc.",
+        "hi": "API ke jawab (result) ko verify karne ke liye code likhna.",
+        "ex": "pm.response.to.have.status(200)."
+      },
+      {
+        "q": "What is 'Newman'?",
+        "en": "Allows running Postman tests in Jenkins/CI jobs.",
+        "hi": "Postman tests ko terminal se chalane ka tool.",
+        "ex": "newman run collection.json"
+      },
+      {
+        "q": "What is 'API Documentation' tool name?",
+        "en": "Automatically visualizes API endpoints and parameters.",
+        "hi": "API ki detail aur test drive dene wala dashboard.",
+        "ex": "Swagger UI."
+      },
+      {
+        "q": "What is 'Mock API' benefit?",
+        "en": "Tester can work without waiting for real DB or server.",
+        "hi": "Server ready na hone par nakli API (mock) use karna.",
+        "ex": "Mockoon tool."
+      },
+      {
+        "q": "Define 'Public API'.",
+        "en": "Used to share data with the world (like Weather).",
+        "hi": "Jo API sabke liye open ho.",
+        "ex": "Twitter API."
+      },
+      {
+        "q": "Define 'Partner API'.",
+        "en": "Used for business-to-business integrations.",
+        "hi": "Do companies ke beech share hone wali khas API.",
+        "ex": "Zomato integration with PayTM."
+      },
+      {
+        "q": "What is 'Pagination' in APIs?",
+        "en": "Prevents server overload by returning fixed data count per page.",
+        "hi": "Bahut saare results ko do-do hazaar mein baantna.",
+        "ex": "/api/products?page=2"
+      },
+      {
+        "q": "What is 'Sorting' parameter name commonly?",
+        "en": "Commonly use ?sort=price_desc.",
+        "hi": "Data ko kram (order) se lagane ka variable.",
+        "ex": "sort=date."
+      },
+      {
+        "q": "What is 'Content-Type' header?",
+        "en": "Tells the server how to interpret the request body.",
+        "hi": "Batata hai ki data kis format mein hai (JSON/XML).",
+        "ex": "application/json"
+      },
+      {
+        "q": "Define 'Status Code' 403.",
+        "en": "You have an account, but you don't have the rights for this specific action.",
+        "hi": "Sahu logic hai par is action ki permission nahi hai.",
+        "ex": "User trying to delete an Admin."
+      },
+      {
+        "q": "What is 'Rate Limit'?",
+        "en": "Prevents DDoS and API abuse.",
+        "hi": "API pe kitne calls allowed hain, uski limit.",
+        "ex": "100 calls/min."
+      },
+      {
+        "q": "What is 'Idempotency' key?",
+        "en": "Ensures safety if a request is retried (e.g., Payment).",
+        "hi": "Ek hi request do bar process na ho jaye, usse bachne ki key.",
+        "ex": "x-idempotency-key."
+      },
+      {
+        "q": "What is 'GraphQL' difference from REST?",
+        "en": "Avoids over-fetching and under-fetching of data.",
+        "hi": "Single point se jitna data chahiye utna hi mangana.",
+        "ex": "Ask only 'name' from User profile."
+      },
+      {
+        "q": "What is 'Microservices' relationship to APIs?",
+        "en": "API is the glue between different micro-services.",
+        "hi": "Microservices ke beech baatcheet API se hi hoti hai.",
+        "ex": "Order service calling Payment service."
+      },
+      {
+        "q": "What is 'Regression API testing'?",
+        "en": "Run the full suite of endpoints on every new build.",
+        "hi": "Naye changes se purani APIs na kharab ho jayein, ye check karna.",
+        "ex": "Running Postman Collection in Jenkins."
+      },
+      {
+        "q": "Difference between 401 and 403?",
+        "en": "401 means Logged out; 403 means Unauthorized for action.",
+        "hi": "401: Pehchaan nahi hai (Login kro); 403: Permission nahi hai (Bahar jao).",
+        "ex": "401 Unauthorized vs 403 Forbidden."
+      },
+      {
+        "q": "What is 'WebHook'?",
+        "en": "Real-time communication from server to client (e.g., GitHub push).",
+        "hi": "Jab kuch event ho, toh server apne aap doosri jagah notification bheje.",
+        "ex": "Getting a Slack message when code is pushed."
+      },
+      {
+        "q": "What is 'API Security' best practice?",
+        "en": "Protects against SQL injection and data leaks.",
+        "hi": "HTTPS use karna, passwords aur tokens ko secure rakhna.",
+        "ex": "Always use SSL."
+      },
+      {
+        "q": "Define 'Stateless' in REST.",
+        "en": "Each request must contain all information (like tokens).",
+        "hi": "Server purani baatein yaad nahi rakhta; har call naya hai.",
+        "ex": "Sending Auth Token in every call."
+      },
+      {
+        "q": "How to handle binary data (files) in API requests?",
+        "en": "Standard for uploading images or documents via API.",
+        "hi": "Files ya images bhejne ke liye multipart format use hota hai.",
+        "ex": "Uploading profile picture."
+      }
+    ],
+    "intermediate": [
+      {
+        "q": "What is 'SOAP' in API testing?",
+        "en": "A messaging protocol specification for exchanging structured information in the implementation of web services.",
+        "hi": "Ek purana protocol jo XML messages use karta hai web services ke liye.",
+        "ex": "SOAP APIs often use WSDL for service description."
+      },
+      {
+        "q": "Difference between PUT and PATCH?",
+        "en": "Use PATCH for small updates; PUT for full replacement.",
+        "hi": "PUT pura data badalta hai, PATCH sirf thoda sa hissa.",
+        "ex": "Changing only 'email' (PATCH) vs whole Profile (PUT)."
+      },
+      {
+        "q": "What is 'Idempotence' in HTTP?",
+        "en": "GET, HEAD, PUT, DELETE are idempotent; POST is NOT.",
+        "hi": "Aise methods jinhe kitni bhi bar chalao, server par asar same rahega.",
+        "ex": "Updating a name to 'John' multiple times."
+      },
+      {
+        "q": "HTTP Status 301 meaning?",
+        "en": "Browser will remember the new URL for future requests.",
+        "hi": "Ye link hamesha ke liye badal gaya hai.",
+        "ex": "Old site redirecting to new site."
+      },
+      {
+        "q": "HTTP Status 302 meaning?",
+        "en": "Resource is temporarily at a different URL.",
+        "hi": "Abhi ke liye ye link doosri jagah hai.",
+        "ex": "Redirecting during maintenance."
+      },
+      {
+        "q": "Meaning of HTTP Status 409?",
+        "en": "Request could not be completed due to a conflict with current state.",
+        "hi": "Data mein takrav (conflict) hone par ye error aata hai.",
+        "ex": "Signing up with an email that already exists."
+      },
+      {
+        "q": "What is 'Accept' header for?",
+        "en": "Tells server if client wants JSON, XML, or HTML.",
+        "hi": "Client server ko batata hai ki use kis format mein jawab chahiye.",
+        "ex": "Accept: application/json."
+      },
+      {
+        "q": "What is 'Cache-Control' header?",
+        "en": "Used to speed up repeated requests by storing copies.",
+        "hi": "Browser ko batane ke liye ki data kab tak save (cache) rakhna hai.",
+        "ex": "max-age=3600."
+      },
+      {
+        "q": "Define 'Cross-Origin Resource Sharing' (CORS).",
+        "en": "Security feature that prevents unauthorized sites from calling your API.",
+        "hi": "Ek domain se doosre domain pe API request allow karne ki permission.",
+        "ex": "Site-A calling API-B."
+      },
+      {
+        "q": "What is 'Preflight Request' (OPTIONS)?",
+        "en": "Checks if the server allows the specific method and headers.",
+        "hi": "Asli request se pehle browser ek check bhejta hai (OPTIONS method).",
+        "ex": "Checking if POST is allowed from site.com."
+      },
+      {
+        "q": "What is 'SSL Handshake' in API communication?",
+        "en": "Used to agree on encryption keys and verify identity.",
+        "hi": "Client aur server ke beech secure connection shuru karne ka process.",
+        "ex": "HTTPS connection initialization."
+      },
+      {
+        "q": "Define 'Payload' versus 'Headers'.",
+        "en": "Headers contain instructions; Payload contains actual info (JSON).",
+        "hi": "Headers mein extra jaankari hoti hai, Payload mein asli data.",
+        "ex": "JSON body (Payload)."
+      },
+      {
+        "q": "How to use 'Path Variables' in RestAssured?",
+        "en": "Allows dynamic URL building.",
+        "hi": "URL ke path mein variable daalne ka tareeka.",
+        "ex": "get('/users/{id}', 101)."
+      },
+      {
+        "q": "How to assert Status Code in RestAssured?",
+        "en": "Fluent way to verify response metadata.",
+        "hi": "RestAssured mein result verify karne ka standard tareeka.",
+        "ex": "then().statusCode(201)."
+      },
+      {
+        "q": "What is 'BaseURI' in RestAssured?",
+        "en": "RestAssured.baseURI = 'https://api.site.com';",
+        "hi": "API ka base address jo har call mein use hota hai.",
+        "ex": "https://reqres.in/api"
+      },
+      {
+        "q": "Meaning of HTTP 503?",
+        "en": "Server is currently unable to handle the request.",
+        "hi": "Server abhi kaam nahi kar raha ya load zyada hai.",
+        "ex": "Server maintenance."
+      },
+      {
+        "q": "What is 'JsonPath' used for?",
+        "en": "Similar to XPath but for JSON objects.",
+        "hi": "JSON ke andar se kisi khas cheez ka data nikalne ke liye.",
+        "ex": "response.path('data.users[0].name')."
+      },
+      {
+        "q": "Meaning of 'GSON' or 'Jackson'?",
+        "en": "GSON (Google) and Jackson are the most popular Java libraries for JSON.",
+        "hi": "Java code aur JSON symbols ke beech data convert karne wali libraries.",
+        "ex": "Serialization."
+      },
+      {
+        "q": "Define 'Serialization'.",
+        "en": "Sending object over the network as data.",
+        "hi": "Java object ko JSON data mein badalna.",
+        "ex": "Object to JSON."
+      },
+      {
+        "q": "Define 'Deserialization'.",
+        "en": "Reading API response back into a usable Java class.",
+        "hi": "JSON data ko waapas Java object mein badalna.",
+        "ex": "JSON to Object."
+      },
+      {
+        "q": "What is 'Log().all()' in RestAssured?",
+        "en": "Extremely helpful for debugging API calls.",
+        "hi": "Saari details (headers, body) console par print karne ke liye.",
+        "ex": "given().log().all()..."
+      },
+      {
+        "q": "What is 'Cookie' in API context?",
+        "en": "Used for session management and tracking.",
+        "hi": "Server dwara browser mein save ki gayi thodi si jaankari.",
+        "ex": "SessionID."
+      },
+      {
+        "q": "What is 'Self-Documenting' API?",
+        "en": "Uses Swagger to show available endpoints live.",
+        "hi": "Aise tools jo automatically API ki details show karte hain.",
+        "ex": "OpenAPI Spec."
+      },
+      {
+        "q": "How to handle 'Form Data' in RestAssured?",
+        "en": "Allows sending parameters as if from an HTML form.",
+        "hi": "HTML form jaisa data bhejne ke liye formParam use hota hai.",
+        "ex": "formParam('user', 'admin')."
+      },
+      {
+        "q": "Role of 'Proxy' in API testing?",
+        "en": "Tools like Charles or Fiddler act as a proxy.",
+        "hi": "Client aur server ke beech ki calls ko monitor karne ka bichola.",
+        "ex": "Using Fiddler to see mobile app traffic."
+      },
+      {
+        "q": "What is an 'Asset' in API context?",
+        "en": "Often delivered via CDN for better performance.",
+        "hi": "Static cheezein jaise photos ya style files.",
+        "ex": "logo.png."
+      },
+      {
+        "q": "Difference between Authorization and Authentication?",
+        "en": "Authentication (login) vs Authorization (permissions).",
+        "hi": "Authentication: Aap kaun hain; Authorization: Aap kya kar sakte hain.",
+        "ex": "User login vs Admin rights."
+      },
+      {
+        "q": "What is 'API Throttling'?",
+        "en": "Prevents abuse and ensures fair usage for all clients.",
+        "hi": "Calls ki limit bandhna taaki server safe rahe.",
+        "ex": "Maximum 10 calls per second."
+      },
+      {
+        "q": "Define 'Endpoint' vs 'URI'.",
+        "en": "URI: https://site.com/api/users; Endpoint: /users.",
+        "hi": "URI pura path hai, Endpoint uska danda ya feature hissa.",
+        "ex": "/login."
+      },
+      {
+        "q": "What is 'Hamcrest Matchers'?",
+        "en": "Better readability: assertThat(age, equalTo(20)).",
+        "hi": "Assertions ko English jaisa banake check karne ki library.",
+        "ex": "is(), equalTo(), containsString()."
+      },
+      {
+        "q": "Status 422 meaning?",
+        "en": "Syntax is fine, but content is logically incorrect (e.g., age = -5).",
+        "hi": "Data format sahi hai par value galat hai (like negative age).",
+        "ex": "Validation error."
+      },
+      {
+        "q": "What is 'SOAP Fault'?",
+        "en": "Standard way to report errors in SOAP.",
+        "hi": "SOAP calls fail hone par milne wala standard error message.",
+        "ex": "<Fault> tag."
+      },
+      {
+        "q": "Define 'Schema Validation'.",
+        "en": "Ensures that data types and field names are correct.",
+        "hi": "Ye check karna ki response ka structure (fields/types) sahi hai ya nahi.",
+        "ex": "validating against user_schema.json."
+      },
+      {
+        "q": "What is 'GZIP' in API calls?",
+        "en": "Improves performance by reducing network data usage.",
+        "hi": "Data ko compress karke bhejna taaki speed fast ho.",
+        "ex": "Content-Encoding: gzip."
+      },
+      {
+        "q": "What is 'Time to First Byte' (TTFB)?",
+        "en": "Measures latency between request and first bit of data from server.",
+        "hi": "Server se pehla 'asli answer' aane mein laga samay.",
+        "ex": "Latency test."
+      },
+      {
+        "q": "Define 'Throughput' in APIs.",
+        "en": "Measures capacity of the API under load.",
+        "hi": "Ek nichit samay mein server ne kitni requests process ki.",
+        "ex": "100 TPS (Transactions per second)."
+      },
+      {
+        "q": "What is 'API Key' security?",
+        "en": "Easily accessible but less secure than OAuth/JWT.",
+        "hi": "App ki pehchan ke liye ek simple code/key.",
+        "ex": "x-api-key header."
+      },
+      {
+        "q": "What is 'SOAP Envelope'?",
+        "en": "Contains Header and Body of the SOAP call.",
+        "hi": "SOAP message ka sabसे bahar wala bag (folder).",
+        "ex": "<soap:Envelope>."
+      },
+      {
+        "q": "What is 'CRUD' operations mapping to HTTP?",
+        "en": "Standard mapping for REST services.",
+        "hi": "Create: POST, Read: GET, Update: PUT, Delete: DELETE.",
+        "ex": "Database basics."
+      },
+      {
+        "q": "What is 'Hateoas' in REST?",
+        "en": "Providing links to related resources in the response itself.",
+        "hi": "Result mein hi agle steps ke URLs bhejna.",
+        "ex": "Response showing 'self' and 'next_page' links."
+      },
+      {
+        "q": "What is 'API Security' - Salt and Hashing?",
+        "en": "Salt adds randomness before hashing to prevent rainbow table attacks.",
+        "hi": "Passwords ko secure banane ke liye unhe modify karke save karna.",
+        "ex": "Hashing 'Pass123' to 'sd8f7a6s5df'."
+      },
+      {
+        "q": "Define 'Deep Linking' in API/Mobile context.",
+        "en": "Improves user experience by skipping the home screen.",
+        "hi": "Seedha app ke andar kisi khas page par pahuchane wala link.",
+        "ex": "Opening a specific product from an email link."
+      },
+      {
+        "q": "What is 'WebDAV'?",
+        "en": "Allows web servers to act as network drives.",
+        "hi": "HTTP ka extension jo files manage karne mein madad karta hai.",
+        "ex": "Remote file editing."
+      },
+      {
+        "q": "What is 'ETag' in HTTP?",
+        "en": "Optimizes performance by avoiding redundant downloads.",
+        "hi": "Data version ki pehchan jisse caching fast ho sake.",
+        "ex": "If-None-Match header."
+      },
+      {
+        "q": "What is 'JSONP' (JSON with Padding)?",
+        "en": "Mostly replaced by CORS today.",
+        "hi": "Purana tareeka cross-domain data access karne ka.",
+        "ex": "<script> tags."
+      },
+      {
+        "q": "Define 'Message Queue' (MQ) in API architecture.",
+        "en": "Decouples services and ensures message delivery.",
+        "hi": "Do services ke beech messages ko line mein rakhne ka system.",
+        "ex": "RabbitMQ or Kafka."
+      },
+      {
+        "q": "What is 'WebRTC'?",
+        "en": "Peer-to-peer communication without needing intermediate servers for data.",
+        "hi": "Browser ke beech video/audio calling ka feature.",
+        "ex": "Google Meet in browser."
+      },
+      {
+        "q": "What is 'SSE' (Server-Sent Events)?",
+        "en": "One-way communication from server to client.",
+        "hi": "Server se client tak lagatar data bhejne ka rasta.",
+        "ex": "Live stock tickers."
+      },
+      {
+        "q": "Define 'API Orchestration'.",
+        "en": "Reduces client complexity by handling multiple calls on the server.",
+        "hi": "Bahut saari APIs ko mila kar ek simple result dena.",
+        "ex": "BFF (Backend for Frontend)."
+      },
+      {
+        "q": "What is 'Swagger Hub'?",
+        "en": "Cloud based editor and documentation host.",
+        "hi": "Teams ke liye API design aur documentation ka online platform.",
+        "ex": "Collaborative API design."
+      }
+    ],
+    "advanced": [
+      {
+        "q": "What is OAuth 2.0?",
+        "en": "Industry-standard protocol for authorization.",
+        "hi": "Security ke liye password ki jagah Token use karne ka standard.",
+        "ex": "'Log in with Facebook' on a website."
+      },
+      {
+        "q": "What is 'Mutual TLS' (mTLS)?",
+        "en": "Highest level of security for B2B/Internal communications.",
+        "hi": "Client aur server dono ek doosre ki pehchan (certificates) check karte hain.",
+        "ex": "Internal microservices security."
+      },
+      {
+        "q": "What is 'SQL Injection' via API?",
+        "en": "A major security vulnerability where data and commands are mixed.",
+        "hi": "API ke parameters mein SQL code daal kar database hack karna.",
+        "ex": "Entering 'OR 1=1' in user login."
+      },
+      {
+        "q": "What is 'Idempotency' in DELETE methods?",
+        "en": "DELETE is idempotent because result (absence of resource) remains same.",
+        "hi": "Ek bar udaao ya do bar, result yahi hai ki item nahi bacha.",
+        "ex": "Delete user 101."
+      },
+      {
+        "q": "What is 'API Governance'?",
+        "en": "Ensures consistency (naming, versioning, security) across an organization.",
+        "hi": "Ek company mein APIs banane aur use karne ke pakke rules.",
+        "ex": "Naming convention policy."
+      },
+      {
+        "q": "Role of 'Proxy' like 'Nginx' in API ecosystem?",
+        "en": "Very critical for high-traffic and secure infrastructure.",
+        "hi": "Server ko traffic manage karne aur fast banane mein madad karna.",
+        "ex": "Load Balancing."
+      },
+      {
+        "q": "What is 'CORS Preflight' optimization?",
+        "en": "Reduces overhead by not sending OPTIONS call for every single request.",
+        "hi": "Bar-bar OPTIONS call bhejne se bachne ke liye caching use karna.",
+        "ex": "Caching CORS check for 24 hours."
+      },
+      {
+        "q": "What is 'Circuit Breaker' in API architectural patterns?",
+        "en": "Prevents a domino effect where one slow API crashes others.",
+        "hi": "Jab ek service fail ho rahi ho, toh use call karna band kar dena.",
+        "ex": "Resilience4j library."
+      },
+      {
+        "q": "What is 'Pagination' via 'Cursor'?",
+        "en": "More efficient for large, frequently changing datasets than limit/offset.",
+        "hi": "Next page ke liye ek khas marker (cursor) use karna.",
+        "ex": "Used by Facebook/Twitter APIs."
+      },
+      {
+        "q": "What is 'Rate Limiting' via 'Leaky Bucket' algorithm?",
+        "en": "Smooths out bursts of traffic into a steady flow.",
+        "hi": "Requests ko ek fix speed se process karne ka tareeka.",
+        "ex": "Smoother traffic flow."
+      },
+      {
+        "q": "What is 'Token Introspection' (RFC 7662)?",
+        "en": "Resource server asking Auth server if the token is still good.",
+        "hi": "Auth server se puchna ki ye token abhi kaam kar raha hai ya nahi.",
+        "ex": "OAuth security check."
+      },
+      {
+        "q": "Define 'OpenID Connect' (OIDC).",
+        "en": "OAuth is for permissions; OIDC is for identifying the user.",
+        "hi": "Account ki pehchan (Identity) ke liye OAuth ke upar bani layer.",
+        "ex": "Login with Google."
+      },
+      {
+        "q": "What is 'JWT' structure parts?",
+        "en": "Each part is Base64 encoded and separated by dots.",
+        "hi": "JWT ke teen hisse hote hain: Header, Data (Payload) aur Security Seal.",
+        "ex": "xxxxx.yyyyy.zzzzz."
+      },
+      {
+        "q": "Why is 'Signature' important in JWT?",
+        "en": "Uses a secret key to verify authenticity.",
+        "hi": "Ye pakka karne ki liye ki token beech mein kisi ne badla toh nahi.",
+        "ex": "Verifying the seal."
+      },
+      {
+        "q": "Define 'Stateless' token vs 'Stateful' session.",
+        "en": "JWTs allow scaling clusters without sharing session DB.",
+        "hi": "Stateless mein token mein hi sab hota hai, server ko kuch yaad rakhne ki zaroorat nahi.",
+        "ex": "Modern web apps use JWT."
+      },
+      {
+        "q": "Define 'Sticky Session' (Session Persistence).",
+        "en": "Useful for stateful applications to keep session data local.",
+        "hi": "User ki har request ko ek hi server pe bhejna taaki login na toote.",
+        "ex": "Load Balancer setting."
+      },
+      {
+        "q": "Define 'Blue-Green' deployment for APIs.",
+        "en": "Allows instant rollback and zero downtime updates.",
+        "hi": "Do identical setups rakhna taaki update ke waqt downtime zero rahe.",
+        "ex": "Traffic switching."
+      },
+      {
+        "q": "What is 'Canary Release'?",
+        "en": "Used to detect critical bugs before full-scale rollout.",
+        "hi": "Naya update pehle sirf 5% users ko dena, dekhne ke liye ki sab theek hai.",
+        "ex": "Risk mitigation."
+      },
+      {
+        "q": "What is 'API First' design approach?",
+        "en": "Ensures team alignment and better architecture before implementation.",
+        "hi": "Pehle API design karna, fir development aur UI shuru karna.",
+        "ex": "Swagger first."
+      },
+      {
+        "q": "Define 'Contract First' vs 'Code First' development.",
+        "en": "Contract first ensures cross-team compatibility.",
+        "hi": "Pehle rules (contract) banana ya seedha code likh ke rules banana.",
+        "ex": "OpenAPI design vs Annotation generation."
+      },
+      {
+        "q": "What is 'Service Discovery' in Microservices?",
+        "en": "Tools like Eureka or Consul help services find each other's IP/Ports.",
+        "hi": "Services ka apne aap ek doosre ko dhoondh lena.",
+        "ex": "Netflix Eureka."
+      },
+      {
+        "q": "What is 'API Versioning' via 'Header'?",
+        "en": "Keeps URLs clean while allowing different behavior for different clients.",
+        "hi": "URL badalne ke bajaye header mein version mangana.",
+        "ex": "Custom header versioning."
+      },
+      {
+        "q": "What is 'Payload' compression benefit?",
+        "en": "Critical for mobile users with slow internet.",
+        "hi": "Data size kam karna taaki internet kam kharch ho aur speed badhe.",
+        "ex": "Using GZIP/Deflate."
+      },
+      {
+        "q": "What is 'Reverse Proxy' safety?",
+        "en": "Acts as a shield for internal services.",
+        "hi": "Asli server ko duniye se chhupa kar rakhna (security ke liye).",
+        "ex": "Nginx shield."
+      },
+      {
+        "q": "Define 'Horizontal' vs 'Vertical' scaling.",
+        "en": "Horizontal is better for cloud efficiency and fault tolerance.",
+        "hi": "Horizontal matlab zyada computer lagana, Vertical matlab ek hi computer ko bada banana.",
+        "ex": "Auto-scaling groups."
+      },
+      {
+        "q": "Define 'Load Balancing' algorithms (Round Robin).",
+        "en": "Simple way to share traffic equally among servers.",
+        "hi": "Sari requests ko bari-bari se sabhi servers pe baantna.",
+        "ex": "Equal traffic distribution."
+      },
+      {
+        "q": "What is 'Least Connection' load balancing?",
+        "en": "More efficient when requests take varying amounts of time.",
+        "hi": "Uss server ko request bhejna jispe abhi sabse kam load hai.",
+        "ex": "Smart balancing."
+      },
+      {
+        "q": "What is 'API Security' - BOLA (Broken Object Level Authorization)?",
+        "en": "Most common API security risk (OWASP #1).",
+        "hi": "URL mein ID badal kar doosre user ka data dekh lena.",
+        "ex": "Changing /user/10 /user/11."
+      },
+      {
+        "q": "What is 'Mass Assignment' vulnerability?",
+        "en": "Security risk where internal fields are updated without permission.",
+        "hi": "Aise fields update kar dena jinki permission nahi hai (like self-admin).",
+        "ex": "Hacking profile update."
+      },
+      {
+        "q": "Define 'Shadow API'.",
+        "en": "Major risk as they are unmonitored backdoors.",
+        "hi": "Aise links jo live hain par documentation mein nahi hain.",
+        "ex": "Forgotten legacy endpoints."
+      },
+      {
+        "q": "What is 'Zombie API'?",
+        "en": "Security risk from outdated code versions.",
+        "hi": "Purane versions jo band hone chahiye the par abhi bhi chal rahe hain.",
+        "ex": "v1.0 still active."
+      },
+      {
+        "q": "Define 'Rate Limiting' via 'Fixed Window' vs 'Sliding Window'.",
+        "en": "Sliding window solves the 'spike at the end of minute' issue.",
+        "hi": "Sliding window zyada smart limit lagata hai.",
+        "ex": "Advanced API security."
+      },
+      {
+        "q": "Define 'Web Application Firewall' (WAF).",
+        "en": "Protects against SQLi, XSS, and other web attacks.",
+        "hi": "Web traffic ko monitor karne aur khatarnaak calls rokne waali security layer.",
+        "ex": "AWS WAF."
+      },
+      {
+        "q": "Importance of 'Correlation ID' in logs?",
+        "en": "Critical for debugging complex microservice errors.",
+        "hi": "Multiple services mein ek hi request ko track karne wala unique code.",
+        "ex": "X-Correlation-ID."
+      },
+      {
+        "q": "Goal of 'Service Level Agreement' (SLA)?",
+        "en": "Legal and technical promise on performance/availability.",
+        "hi": "Service provider aur client ke beech ka agreement (uptime ka vada).",
+        "ex": "Cloud provider SLAs."
+      },
+      {
+        "q": "Define 'GraphQL' Resolver.",
+        "en": "The logic behind every single field in a GraphQL query.",
+        "hi": "GraphQL mein data fetch karne wali asli internal function.",
+        "ex": "Data fetching logic."
+      },
+      {
+        "q": "What is 'N+1 Query' problem in GraphQL?",
+        "en": "Can crash DB if not handled by tools like DataLoader.",
+        "hi": "Ek query ki vajah se database pe bahut saari calls chale jaana.",
+        "ex": "Performance bottleneck."
+      },
+      {
+        "q": "What is 'DataLoader' in GraphQL?",
+        "en": "Reduces duplicate DB hits significantly.",
+        "hi": "Data requests ko group karke database pe load kam karne ka tareeka.",
+        "ex": "Batching logic."
+      },
+      {
+        "q": "What is 'Introspection' in GraphQL?",
+        "en": "Allows tools (like GraphiQL) to provide documentation automatically.",
+        "hi": "GraphQL schema se hi puchna ki isme kya-kya mang sakte hain.",
+        "ex": "__schema query."
+      },
+      {
+        "q": "Summarize: REST vs GraphQL vs WebSockets.",
+        "en": "All have different use cases; WS is best for Chat/Live scores.",
+        "hi": "REST (simple), GraphQL (flexible), WebSockets (real-time/chating).",
+        "ex": "Chat App (WS) vs Profile (REST)."
+      },
+      {
+        "q": "What is 'Zero Trust' architecture?",
+        "en": "Never trust, always verify.",
+        "hi": "Har request ko verify karna, bhale hi woh internal network se ho.",
+        "ex": "Modern cloud security."
+      },
+      {
+        "q": "What is 'API Security' - Insecure Direct Object Reference (IDOR)?",
+        "en": "Similar to BOLA; changing an ID gives others' data.",
+        "hi": "ID badal kar kisi aur ka private data dekh lena.",
+        "ex": "site.com/invoice/100 -> 101."
+      },
+      {
+        "q": "Define 'Penetration Testing' for APIs.",
+        "en": "Ethical hacking to secure the API.",
+        "hi": "Security check karne ke liye 'hamla' karke dekhna.",
+        "ex": "Using Burp Suite."
+      },
+      {
+        "q": "What is 'Fuzzing' in API testing?",
+        "en": "Automated black-box testing strategy.",
+        "hi": "Random data bhej kar server ko crash karne ki koshish karna (testing ke liye).",
+        "ex": "Security fuzzing."
+      },
+      {
+        "q": "What is 'Containerization' (Docker) influence on APIs?",
+        "en": "Standard for modern microservices.",
+        "hi": "API ko ek safe 'box' (container) mein pack karke kahin bhi chalana.",
+        "ex": "Dockerizing a Node.js API."
+      },
+      {
+        "q": "Define 'Kubernetes' (K8s) in API context.",
+        "en": "Manages container clusters.",
+        "hi": "Bahut saare containers (APIs) ko manage aur scale karne ka system.",
+        "ex": "Auto-scaling API instances."
+      },
+      {
+        "q": "What is 'API Security' - SQLi via Headers?",
+        "en": "Headers are also user input and must be validated.",
+        "hi": "Headers ke zariye database hack karne ki koshish.",
+        "ex": "Malicious User-Agent string."
+      },
+      {
+        "q": "Define 'API Contract drift'.",
+        "en": "Docs say one thing, code does another.",
+        "hi": "Documentation aur asli code ka alag-alag hona.",
+        "ex": "Missing fields in response."
+      },
+      {
+        "q": "What is 'OpenTelemetry' in APIs?",
+        "en": "Standard way to collect performance data.",
+        "hi": "App ki performance aur logs ko track karne ka standard tareeka.",
+        "ex": "Distributed tracing."
+      },
+      {
+        "q": "Final Question: What is 'API Monetization'?",
+        "en": "Turning APIs into business products.",
+        "hi": "API calls ke liye paise charge karna.",
+        "ex": "Stripe or OpenAI API billing."
+      }
+    ]
+  },
+  "sql": {
+    "beginner": [
+      {
+        "q": "Which command removes data permanently (no rollback)?",
+        "en": "TRUNCATE is DDL and doesn't support easy rollback.",
+        "hi": "TRUNCATE furan pura table khali karta hai bina log ke.",
+        "ex": "Truncate table logs;"
+      },
+      {
+        "q": "Which SQL command is used to retrieve data from a database?",
+        "en": "The SELECT statement is used to fetch data from a database.",
+        "hi": "Database se data nikalne ke liye SELECT command use karte hain.",
+        "ex": "SELECT * FROM Customers;"
+      },
+      {
+        "q": "Which SQL command is used to add new rows of data to a table?",
+        "en": "The INSERT INTO statement is used to add new records to a table.",
+        "hi": "Table mein naya data daalne ke liye INSERT INTO use karte hain.",
+        "ex": "INSERT INTO Products (Name, Price) VALUES ('Laptop', 1200);"
+      },
+      {
+        "q": "Which SQL command is used to modify existing data in a table?",
+        "en": "The UPDATE statement is used to modify the existing records in a table.",
+        "hi": "Table mein maujood data ko badalne ke liye UPDATE use karte hain.",
+        "ex": "UPDATE Customers SET City = 'New York' WHERE CustomerID = 1;"
+      },
+      {
+        "q": "Which SQL command is used to delete rows of data from a table?",
+        "en": "The DELETE FROM statement is used to delete existing records in a table.",
+        "hi": "Table se data ki rows mitane ke liye DELETE FROM use karte hain.",
+        "ex": "DELETE FROM Orders WHERE OrderID = 101;"
+      },
+      {
+        "q": "What does SQL stand for?",
+        "en": "SQL is a standard language for storing, manipulating and retrieving data in databases.",
+        "hi": "SQL ka matlab hai Structured Query Language.",
+        "ex": "Learning SQL to interact with databases."
+      },
+      {
+        "q": "Which clause is used to filter records based on a specified condition?",
+        "en": "The WHERE clause is used to extract only those records that fulfill a specified condition.",
+        "hi": "Records ko filter karne ke liye WHERE clause use karte hain.",
+        "ex": "SELECT * FROM Products WHERE Price > 50;"
+      },
+      {
+        "q": "Which keyword is used to sort the result-set of a query?",
+        "en": "The ORDER BY keyword is used to sort the result-set in ascending or descending order.",
+        "hi": "Query ke results ko sort karne ke liye ORDER BY use karte hain.",
+        "ex": "SELECT Name FROM Employees ORDER BY LastName DESC;"
+      },
+      {
+        "q": "What is a 'Primary Key' in SQL?",
+        "en": "A column (or set of columns) that uniquely identifies each row in a table.",
+        "hi": "Ek column jo table mein har record ko alag pehchan deta hai.",
+        "ex": "CustomerID in a Customers table."
+      },
+      {
+        "q": "What is a 'Foreign Key' in SQL?",
+        "en": "A field (or collection of fields) in one table that refers to the primary key in another table.",
+        "hi": "Ek table ka column jo doosre table ki Primary Key se link hota hai.",
+        "ex": "OrderID in an OrderDetails table linking to OrderID in an Orders table."
+      },
+      {
+        "q": "Difference between DELETE and TRUNCATE?",
+        "en": "DELETE logs each row; TRUNCATE resets the table and is faster.",
+        "hi": "DELETE mein undo ho sakta hai, TRUNCATE pura tabela khali kar deta hai bina logging ke.",
+        "ex": "Truncate users;"
+      },
+      {
+        "q": "What is 'Unique' constraint?",
+        "en": "Prevents duplicate entries in a specific field.",
+        "hi": "Ye check karta hai ki column mein har value alag ho.",
+        "ex": "Unique(email)."
+      },
+      {
+        "q": "What is 'Not Null' constraint?",
+        "en": "Ensures that a column cannot have a NULL value.",
+        "hi": "Ye column khali nahi choda ja sakta.",
+        "ex": "Price NOT NULL."
+      },
+      {
+        "q": "Define 'Joins' in SQL.",
+        "en": "Used to fetch data spread across different tables.",
+        "hi": "Do ya zyada tables ka data jodkar ek saath result dikhana.",
+        "ex": "Inner Join."
+      },
+      {
+        "q": "What is an 'Inner Join'?",
+        "en": "Simplest join to get matching data only.",
+        "hi": "Sirf woh records dikhana jo dono tables mein match karte hain.",
+        "ex": "Users JOIN Orders."
+      },
+      {
+        "q": "What is a 'Left Join'?",
+        "en": "Keeps all left records even if no match on right.",
+        "hi": "Left side ke saare records aur right side ke matching records.",
+        "ex": "Users LEFT JOIN Orders."
+      },
+      {
+        "q": "What is 'Right Join'?",
+        "en": "Keeps all right records even if no match on left.",
+        "hi": "Right side ke saare records aur left side ke matching records.",
+        "ex": "Users RIGHT JOIN Orders."
+      },
+      {
+        "q": "What is a 'Full Outer Join'?",
+        "en": "Returns all records when there is a match in either table.",
+        "hi": "Dono tables ke saare records dikhana.",
+        "ex": "Full Join."
+      },
+      {
+        "q": "What is 'GROUP BY' used for?",
+        "en": "Often used with aggregate functions (COUNT, SUM).",
+        "hi": "Ek jaisi values ko ek saath collect karna (summarize karne ke liye).",
+        "ex": "Group by Country."
+      },
+      {
+        "q": "What is 'HAVING' clause?",
+        "en": "WHERE cannot be used with aggregates; HAVING can.",
+        "hi": "GROUP BY ke baad results ko filter karne ke liye use hota hai.",
+        "ex": "Having COUNT(ID) > 5."
+      },
+      {
+        "q": "What is 'DISTINCT' keyword?",
+        "en": "Reduces duplicates in the output.",
+        "hi": "Sirf unique (alag) values dikhane ke liye use hota hai.",
+        "ex": "SELECT DISTINCT City."
+      },
+      {
+        "q": "What is 'LIKE' operator?",
+        "en": "Uses wildcards like % and _.",
+        "hi": "Text mein pattern dhoondhne ke liye (e.g., naam 'A' se shuru ho).",
+        "ex": "Name LIKE 'A%'."
+      },
+      {
+        "q": "What is '%' in LIKE operator?",
+        "en": "Wildcard for any number of characters.",
+        "hi": "Kitne bhi characters ke liye wildcard.",
+        "ex": "'%John%'."
+      },
+      {
+        "q": "What is '_' in LIKE operator?",
+        "en": "Wildcard for exactly one character.",
+        "hi": "Sirf ek character ke liye wildcard.",
+        "ex": "'_at' matches 'Cat', 'Bat'."
+      },
+      {
+        "q": "What is 'IN' operator?",
+        "en": "Shorthand for multiple OR conditions.",
+        "hi": "Multiple values mein se search karne ka asan tareeka.",
+        "ex": "WHERE Country IN ('USA', 'UK')."
+      },
+      {
+        "q": "What is 'BETWEEN' operator?",
+        "en": "Inclusive of start and end values.",
+        "hi": "Ek range ke beech ki values dhoondhne ke liye.",
+        "ex": "Price BETWEEN 10 AND 50."
+      },
+      {
+        "q": "What is 'Aliases' (AS)?",
+        "en": "Makes query results easier to read.",
+        "hi": "Table ya column ko testing ke liye ek temporary naam dena.",
+        "ex": "SELECT Name AS UserName."
+      },
+      {
+        "q": "Define 'Subquery'.",
+        "en": "The inner query runs first.",
+        "hi": "Ek query ke andar doosri query.",
+        "ex": "SELECT * FROM (SELECT...)."
+      },
+      {
+        "q": "What is 'COMMIT' in transactions?",
+        "en": "Used to finish a successful transaction.",
+        "hi": "Badlav ko database mein pakka (save) karna.",
+        "ex": "Finish transaction."
+      },
+      {
+        "q": "What is 'ROLLBACK' in transactions?",
+        "en": "Restores DB specifically to the last COMMIT.",
+        "hi": "Galti hone par badlav ko cancel karke purani state pe jaana.",
+        "ex": "Undo changes."
+      },
+      {
+        "q": "Define 'Index' in SQL.",
+        "en": "Speeds up reads but slows down writes (Insert/Update).",
+        "hi": "Data jaldi dhoondhne ke liye banayi gayi index.",
+        "ex": "CREATE INDEX."
+      },
+      {
+        "q": "What is 'Candidate Key'?",
+        "en": "Minimal set of fields which can uniquely Identify a row.",
+        "hi": "Woh column jo Primary Key banne ke layak ho.",
+        "ex": "Email or Passport ID."
+      },
+      {
+        "q": "What is 'Composite Key'?",
+        "en": "Used when one column is not enough to identify a row uniquely.",
+        "hi": "Jab do ya zyada columns milkar Primary Key banate hain.",
+        "ex": "OrderID + ProductID."
+      },
+      {
+        "q": "Define 'Normalization'.",
+        "en": "Dividing large tables into smaller ones and linking them.",
+        "hi": "Database design ko behtar banana taaki data repeat na ho.",
+        "ex": "1NF, 2NF, 3NF."
+      },
+      {
+        "q": "What is '1NF' (First Normal Form)?",
+        "en": "Basic level of normalization.",
+        "hi": "Data ko simple aur unique rows mein todna.",
+        "ex": "No multiple phones in one cell."
+      },
+      {
+        "q": "What is 'ACID' properties?",
+        "en": "Rules to ensure reliable database transactions.",
+        "hi": "Database transactions safe aur sahi hone ke rules.",
+        "ex": "Banking transactions."
+      },
+      {
+        "q": "Define 'Durability' in ACID.",
+        "en": "Data must be saved on disk safely.",
+        "hi": "Save hone ke baad data server crash hone par bhimi mitna nahi chahiye.",
+        "ex": "Commit logic."
+      },
+      {
+        "q": "What is 'Schema'?",
+        "en": "Includes tables, fields, views, etc.",
+        "hi": "Database ka pura design ya dacha.",
+        "ex": "Public Schema."
+      },
+      {
+        "q": "What is a 'View'?",
+        "en": "Doesn't store data itself; it's a saved query.",
+        "hi": "Ek save ki gayi query jo table ki tarah dikhti hai par physical nahi hoti.",
+        "ex": "CREATE VIEW ActiveUsers."
+      },
+      {
+        "q": "What is 'DML' (Data Manipulation Language)?",
+        "en": "Used to manage data within objects.",
+        "hi": "Data ke saath khelne walai commands (select/insert etc).",
+        "ex": "INSERT."
+      },
+      {
+        "q": "What is 'DDL' (Data Definition Language)?",
+        "en": "Used to define the structure of DB objects.",
+        "hi": "Structure banane ya badalne wali commands (create/drop).",
+        "ex": "CREATE TABLE."
+      },
+      {
+        "q": "Define 'Stored Procedure'.",
+        "en": "Reusable code that runs on the server.",
+        "hi": "SQL code ka ek block jinhe save karke bar-bar call kiya ja sake.",
+        "ex": "EXEC procedure_name."
+      },
+      {
+        "q": "Define 'Trigger'.",
+        "en": "Example: Log a record whenever a user is deleted.",
+        "hi": "Kisi event (insert/delete) par apne aap chalne wala script.",
+        "ex": "On insert update timestamp."
+      },
+      {
+        "q": "SQL Statement to remove entire table from DB?",
+        "en": "DROP deletes data AND the table structure.",
+        "hi": "Table ko pura mita dena (structure ke saath).",
+        "ex": "DROP TABLE users;"
+      },
+      {
+        "q": "What is 'Aggregate Function'?",
+        "en": "Returns a single value result.",
+        "hi": "Multiple rows pe calculation karke ek answer dena.",
+        "ex": "AVG(Price)."
+      },
+      {
+        "q": "What is 'Data integrity'?",
+        "en": "Ensures data is reliable and accurate.",
+        "hi": "Data ki accuracy aur suraksha ka pura khayal rakhna.",
+        "ex": "Unique constraints."
+      },
+      {
+        "q": "Define 'ER Model'?",
+        "en": "Graphical representation of logical database structure.",
+        "hi": "Database ka aisa naksha jo tables aur relationships dikhata hai.",
+        "ex": "ER Diagram."
+      },
+      {
+        "q": "What is 'Self Join'?",
+        "en": "Useful for hierarchical data (e.g., Employees and Managers).",
+        "hi": "Ek hi table ko uske sath jodkar compare karna.",
+        "ex": "Compare salaries in same table."
+      },
+      {
+        "q": "Final SQL B Question: What is 'Deadlock'?",
+        "en": "System hangs as both processes are blocked.",
+        "hi": "Do transactions ka ek doosre ki wajah se phas jaana.",
+        "ex": "Transaction A waits for B, B waits for A."
+      },
+      {
+        "q": "What is 'Database Consistency'?",
+        "en": "Enforced by constraints like NOT NULL, UNIQUE, etc.",
+        "hi": "Ye ensure karna ki database mein hamesha sahi aur valid data hi save ho.",
+        "ex": "Constraint checks."
+      }
+    ],
+    "intermediate": [
+      {
+        "q": "Which SQL clause is used with aggregate functions?",
+        "en": "HAVING is used to filter groups whereas WHERE filters rows.",
+        "hi": "HAVING ka use aggregate functions ke saath groups filter karne ke liye hota hai.",
+        "ex": "GROUP BY country HAVING count(*) > 5;"
+      },
+      {
+        "q": "Which operator is used to search for a pattern in a column?",
+        "en": "LIKE uses wildcards like % and _ for pattern matching.",
+        "hi": "Text mein pattern dhoondhne ke liye LIKE operator use hota hai.",
+        "ex": "WHERE Name LIKE 'A%';"
+      },
+      {
+        "q": "Which join returns all rows from the left table and matching rows from the right?",
+        "en": "LEFT JOIN ensures all records from the first table are present.",
+        "hi": "Left table ka pura data aur right ka matching data laane ke liye.",
+        "ex": "Customers LEFT JOIN Orders;"
+      },
+      {
+        "q": "What is a 'Subquery'?",
+        "en": "An inner query nested within an outer query.",
+        "hi": "Ek query ke andar doosri query jo pehle chalti hai.",
+        "ex": "SELECT * FROM (SELECT id FROM users);"
+      },
+      {
+        "q": "What is the purpose of the 'DISTINCT' keyword?",
+        "en": "DISTINCT filters out duplicate entries in the result set.",
+        "hi": "Results mein se duplicate values hatane ke liye use hota hai.",
+        "ex": "SELECT DISTINCT City FROM Users;"
+      },
+      {
+        "q": "Which function returns the total number of rows in a table?",
+        "en": "COUNT(*) counts all results including nulls.",
+        "hi": "Sari rows ki ginti karne ke liye COUNT use hota hai.",
+        "ex": "SELECT COUNT(*) FROM Orders;"
+      },
+      {
+        "q": "What is '2NF' in database normalization?",
+        "en": "Table must be in 1NF and all non-key columns must depend on primary key.",
+        "hi": "Jab table 1NF mein ho aur partial dependency na ho.",
+        "ex": "Removing redundant composite data."
+      },
+      {
+        "q": "What is a 'Foreign Key'?",
+        "en": "Establishes a link between data in two tables.",
+        "hi": "Do tables ko aapas mein jodne wala column.",
+        "ex": "CustomerID in Orders table."
+      },
+      {
+        "q": "Which command is used to add a new column to a table?",
+        "en": "ALTER TABLE table_name ADD column_name datatype.",
+        "hi": "Pehle se bani table mein naya column jodne ke liye ALTER use hota hai.",
+        "ex": "ALTER TABLE Customers ADD Email varchar(255);"
+      },
+      {
+        "q": "What is an 'Index' in SQL?",
+        "en": "Speeds up retrieval but slows down data entry.",
+        "hi": "Data dhoondhne ki speed badhane wala pointer.",
+        "ex": "CREATE INDEX idx_name ON table(col);"
+      },
+      {
+        "q": "What is 'ACID' properties full form?",
+        "en": "Guarantees reliable transactions.",
+        "hi": "Database transactions ki reliability ke 4 main pillars.",
+        "ex": "Transaction management."
+      },
+      {
+        "q": "Which join returns only rows where there is a match in both tables?",
+        "en": "INNER JOIN is the most popular join type.",
+        "hi": "Sirf woh data dena jo dono tables mein common hai.",
+        "ex": "A INNER JOIN B ON A.id = B.id;"
+      },
+      {
+        "q": "Difference between 'DELETE' and 'TRUNCATE'?",
+        "en": "TRUNCATE is DDL, DELETE is DML.",
+        "hi": "Truncate table ko turant khali karta hai, Delete ek-ek row log marta hai.",
+        "ex": "Truncate table Users;"
+      },
+      {
+        "q": "What is a 'VIEW' in SQL?",
+        "en": "A stored query that acts like a table.",
+        "hi": "Ek save ki gayi query jo table ki tarah behave karti hai.",
+        "ex": "CREATE VIEW customer_list AS SELECT...;"
+      },
+      {
+        "q": "How to find names starting with 'a'?",
+        "en": "% represents any number of characters.",
+        "hi": "'a' se shuru hone wale naam dhoondhne ke liye a% use karein.",
+        "ex": "Name LIKE 'a%';"
+      },
+      {
+        "q": "What is 'Primary Key' constraint?",
+        "en": "Each table can have only one primary key.",
+        "hi": "Aisa column jisme data unique ho aur kabhi khali (null) na ho.",
+        "ex": "ID INT PRIMARY KEY;"
+      },
+      {
+        "q": "What is '3NF'?",
+        "en": "Removes dependencies on non-key columns.",
+        "hi": "Table jab 2NF mein ho aur non-key columns aapas mein dependent na hon.",
+        "ex": "Third Normal Form."
+      },
+      {
+        "q": "What is 'Union' operator?",
+        "en": "Both selects must have same column count and types.",
+        "hi": "Do alag-alag queries ke results ko akatha karke dikhana.",
+        "ex": "SELECT... UNION SELECT...;"
+      },
+      {
+        "q": "What is 'Candidate Key'?",
+        "en": "Any key that could potentially become a primary key.",
+        "hi": "Woh columns jo primary key banne ke layak hain.",
+        "ex": "Email or PassportID."
+      },
+      {
+        "q": "What is 'DML'?",
+        "en": "Subset of SQL for data updates (Insert, Select, Update, Delete).",
+        "hi": "Data ko badalne ya nikalne wali commands (like INSERT/UPDATE).",
+        "ex": "DML commands."
+      },
+      {
+        "q": "What is 'Schema'?",
+        "en": "Defines tables, columns, constraints and views.",
+        "hi": "Database ka pura design ya dacha (blueprint).",
+        "ex": "DB Schema."
+      },
+      {
+        "q": "What is a 'Trigger'?",
+        "en": "Executed by DB engine when specific data changes occur.",
+        "hi": "Database mein kisi badlav pe apne aap chalne wala script.",
+        "ex": "AFTER INSERT trigger."
+      },
+      {
+        "q": "Explain 'Stored Procedure'.",
+        "en": "Stored in DB and can be reused to reduce network traffic.",
+        "hi": "SQL code ka save kiya hua block jise baar baar chala sakte hain.",
+        "ex": "EXEC GetUserByID 1;"
+      },
+      {
+        "q": "What is 'Normalization' vs 'Denormalization'?",
+        "en": "Denormalization is used in warehousing for fast reads.",
+        "hi": "Normalization data kam karta hai, Denormalization speed badhane ke liye data repeat karta hai.",
+        "ex": "Reporting DB vs Transaction DB."
+      },
+      {
+        "q": "What is 'Self Join'?",
+        "en": "Used to compare records within the same table.",
+        "hi": "Ek hi table ko uske sath jodna (e.g. employee aur unke manager).",
+        "ex": "Emp JOIN Mgr ON E.mgr_id = M.emp_id;"
+      },
+      {
+        "q": "What is 'Composite Key'?",
+        "en": "Used when one column is not enough to identify a row uniquely.",
+        "hi": "Jab do ya zyada columns milkar ek record ko unique banate hain.",
+        "ex": "OrderID + ProductID link."
+      },
+      {
+        "q": "What is 'Wildcard' in SQL?",
+        "en": "% for multi char, _ for single char.",
+        "hi": "LIKE ke sath use hone wale khas symbols jo patterns dhoondhte hain.",
+        "ex": "% and _."
+      },
+      {
+        "q": "What is 'Row Level Lock'?",
+        "en": "Allows multiple users to work on different rows at once.",
+        "hi": "Sirf khas rows ko lock karna taaki doosre log baki data use kar saken.",
+        "ex": "SELECT FOR UPDATE."
+      },
+      {
+        "q": "What is 'Dirty Read'?",
+        "en": "Happens when isolation levels are low.",
+        "hi": "Aise data ko padhna jo abhi tak poori tarah save nahi hua.",
+        "ex": "Read Uncommitted."
+      },
+      {
+        "q": "Define 'Correlation Subquery'.",
+        "en": "Runs once for every row processed by outer query.",
+        "hi": "Aisi inner query jo outer query ke data par depdenent ho.",
+        "ex": "SELECT... WHERE x > (SELECT... WHERE y = x.id)."
+      },
+      {
+        "q": "What is 'Pivot' in SQL?",
+        "en": "Used for reporting summaries.",
+        "hi": "Data ko ghuma dena (rows ko columns mein badal dena).",
+        "ex": "Monthly sales report columns."
+      },
+      {
+        "q": "What is 'B-Tree' in SQL context?",
+        "en": "Balanced tree allows fast search, insert and delete.",
+        "hi": "Database indexing ka ek behtar structure.",
+        "ex": "Balanced Tree."
+      },
+      {
+        "q": "How to find 2nd highest salary?",
+        "en": "Common interview question using ORDER BY and OFFSET.",
+        "hi": "Salary ko descending karke doosra number uthana.",
+        "ex": "ORDER BY sal DESC LIMIT 1 OFFSET 1;"
+      },
+      {
+        "q": "What is 'JSON' support in modern SQL?",
+        "en": "Postgres and MySQL have native JSONB/JSON fields.",
+        "hi": "Modern databases mein JSON data save aur search karna.",
+        "ex": "-> and ->> operators."
+      },
+      {
+        "q": "What is 'Window Function'?",
+        "en": "Unlike group by, it doesn't collapse rows.",
+        "hi": "Rows ko bina merge kiye sum ya rank nikalne ka tareeka.",
+        "ex": "SUM(val) OVER(PARTITION BY...);"
+      },
+      {
+        "q": "Define 'Isolation Level'.",
+        "en": "Levels like Serializable, Repeatable Read, Read Committed.",
+        "hi": "Transactions ek doosre se kitni alag/secure rahengi.",
+        "ex": "Read Committed."
+      },
+      {
+        "q": "What is 'Phantom Read'?",
+        "en": "Prevented by higher isolation levels.",
+        "hi": "Transaction ke dauraan naye data ki wajah se rows ka badal jana.",
+        "ex": "Isolation bug."
+      },
+      {
+        "q": "Difference between 'COALESCE' and 'ISNULL'?",
+        "en": "COALESCE is standard SQL; ISNULL is often vendor specific.",
+        "hi": "COALESCE kai values mein se pehla 'non-null' return karta hai.",
+        "ex": "COALESCE(phone, email, 'N/A')."
+      },
+      {
+        "q": "What is 'CTE' (Common Table Expression)?",
+        "en": "Improves readability of complex queries.",
+        "hi": "Query ke andar ek temporary result set (WITH clause).",
+        "ex": "WITH my_cte AS (SELECT...)."
+      },
+      {
+        "q": "Explain 'Recursive CTE'.",
+        "en": "Useful for org charts or tree structures.",
+        "hi": "Jab query khud ko baar-baar repeat kare (folder structures ke liye).",
+        "ex": "Tree traversal."
+      },
+      {
+        "q": "What is 'Clustered' vs 'Non-Clustered' Index?",
+        "en": "Only one clustered index per table possible.",
+        "hi": "Clustered index data ko physically line mein lagata hai.",
+        "ex": "Primary Key is by default clustered index."
+      },
+      {
+        "q": "What is 'Database Sharding'?",
+        "en": "Essential for scaling massive databases like Facebook.",
+        "hi": "Database ko tukdon (shards) mein baant kar alag servers pe rakhna.",
+        "ex": "Users A-M on Server 1, N-Z on Server 2."
+      },
+      {
+        "q": "What is 'Cross Join'?",
+        "en": "Result size is TableA * TableB.",
+        "hi": "Dono tables ka har record ka har doosre record ke sath combo banana.",
+        "ex": "Colors CROSS JOIN Sizes."
+      },
+      {
+        "q": "What is 'SQL Injection'?",
+        "en": "Can be prevented using parameterized queries.",
+        "hi": "Galt input dekar database command badal dena (Hacking).",
+        "ex": "Entering ' OR 1=1 --'."
+      },
+      {
+        "q": "What is 'Data Warehouse'?",
+        "en": "Stores historical data from multiple sources.",
+        "hi": "Analysis aur reports ke liye banaya gaya bada data storage.",
+        "ex": "Amazon Redshift."
+      },
+      {
+        "q": "Define 'OLTP' vs 'OLAP'?",
+        "en": "Online Transaction Processing vs Online Analytical Processing.",
+        "hi": "OLTP fast apps ke liye, OLAP data analysis ke liye.",
+        "ex": "Banking (OLTP) vs Sales Report (OLAP)."
+      },
+      {
+        "q": "Goal of 'Query Optimizer'?",
+        "en": "Uses statistics to choose index vs table scan.",
+        "hi": "SQL query chalane ka sabse fast rasta dhoondhne wala engine.",
+        "ex": "Execution Plan."
+      },
+      {
+        "q": "What is 'Execution Plan'?",
+        "en": "Used to debug slow queries and missing indexes.",
+        "hi": "Batata hai ki database ne data nikalne mein kya 'raasta' liya.",
+        "ex": "EXPLAIN SELECT *..."
+      },
+      {
+        "q": "What is 'Upsert'?",
+        "en": "Commonly done via ON DUPLICATE KEY or MERGE.",
+        "hi": "Agar data hai toh badlo, nahi toh naya daal do.",
+        "ex": "INSERT... ON CONFLICT."
+      },
+      {
+        "q": "Final Intermediate SQL Question: What is 'Relational Database'?",
+        "en": "Uses SQL and enforces schemas.",
+        "hi": "Tables aur aapas mein links par adharit database.",
+        "ex": "MySQL, PostgreSQL, Oracle."
+      }
+    ],
+    "advanced": [
+      {
+        "q": "What is horizontal partitioning in SQL?",
+        "en": "Improves manageability and performance.",
+        "hi": "Ek badi table ko rows ke hisab se chhote hisson mein todna.",
+        "ex": "Partition by Year."
+      },
+      {
+        "q": "What is vertical partitioning?",
+        "en": "Useful for thinning out 'wide' tables with many columns.",
+        "hi": "Column ke hisab se table ko todna taaki load kam ho.",
+        "ex": "Moving large 'Description' text to another table."
+      },
+      {
+        "q": "What is a 'Covering Index'?",
+        "en": "Allows the DB to retrieve data without looking at the actual table.",
+        "hi": "Aisa index jisme query ka saara zaroori data mojood ho.",
+        "ex": "Index(Name, Email) for query on Name/Email."
+      },
+      {
+        "q": "Define 'Index Fragmentation'.",
+        "en": "Needs index rebuild or reorganize regularly.",
+        "hi": "Index ka bikhra hua hona jo retrieval slow kar deta hai.",
+        "ex": "REBUILD INDEX."
+      },
+      {
+        "q": "What is 'Database Mirroring'?",
+        "en": "Provides high availability.",
+        "hi": "Ek database ki exact copy doosre server pe rakhna backup ke liye.",
+        "ex": "SQL Server Mirroring."
+      },
+      {
+        "q": "What is 'Replication' in SQL?",
+        "en": "Synchronizing data across multiple servers.",
+        "hi": "Data ko ek server se doosre server pe copy aur sync karte rehna.",
+        "ex": "Master-Slave replication."
+      },
+      {
+        "q": "What is 'Log Shipping'?",
+        "en": "Cost-effective disaster recovery solution.",
+        "hi": "Transaction logs ko backup karke doosre server pe restore karna.",
+        "ex": "DR setup."
+      },
+      {
+        "q": "Define 'Multi-Tenancy' in DB design.",
+        "en": "Common in SaaS applications.",
+        "hi": "Ek hi database mein kai customers ka data alag-alag manage karna.",
+        "ex": "SaaS DB structure."
+      },
+      {
+        "q": "What is a 'Database Cluster'?",
+        "en": "If one server fails, others take over.",
+        "hi": "Kai servers ka ek group jo milkar ek hi database chalate hain.",
+        "ex": "MySQL Cluster."
+      },
+      {
+        "q": "Difference between 'Optimistic' and 'Pessimistic' Locking?",
+        "en": "Optimistic uses versions; Pessimistic uses shared/exclusive locks.",
+        "hi": "Optimistic mein end pe check karte hain, Pessimistic turant data lock kar deta hai.",
+        "ex": "Version columns."
+      },
+      {
+        "q": "What is 'Entity Integrity'?",
+        "en": "Ensures unique identification of every record.",
+        "hi": "Ye ensure karna ki har table ki primary key sahi ho.",
+        "ex": "Primary Key rule."
+      },
+      {
+        "q": "What is 'Referential Integrity'?",
+        "en": "Ensures no orphaned records in child tables.",
+        "hi": "Foreign keys ke zariye tables ka aapas mein sahi link bane rehna.",
+        "ex": "On Delete Cascade."
+      },
+      {
+        "q": "Explain 'Domain Integrity'.",
+        "en": "Enforced by data types, CHECK constraints, and rules.",
+        "hi": "Column ke andar data ka sahi limit aur type mein hona.",
+        "ex": "Age > 18."
+      },
+      {
+        "q": "Define 'Star Schema'.",
+        "en": "Simplest form of data warehouse schema.",
+        "hi": "Data warehouse design jisme center mein ek main table aur side mein info tables hon.",
+        "ex": "Sales Fact Table."
+      },
+      {
+        "q": "What is 'Snowflake Schema'?",
+        "en": "Reduces redundancy but increases join complexity.",
+        "hi": "Normalized Star Schema jisme dimensions bhi separate hoti hain.",
+        "ex": "Region -> Country -> City tables."
+      },
+      {
+        "q": "What is 'OLAP Cube'?",
+        "en": "Pre-calculated data for complex reporting.",
+        "hi": "Kai dimensions (Time, Place, Product) par adharit data structure.",
+        "ex": "Business Intelligence."
+      },
+      {
+        "q": "Define 'Late Binding' in SQL.",
+        "en": "Used in dynamic SQL.",
+        "hi": "Query chalte samay columns ya tables ke naam decide karna.",
+        "ex": "Dynamic SQL execution."
+      },
+      {
+        "q": "What is 'Wait Statistics'?",
+        "en": "Crucial for performance tuning.",
+        "hi": "Database mein queries kahan aur kyun ruk rahi hain uska data.",
+        "ex": "CXPACKET wait."
+      },
+      {
+        "q": "Define 'Cardinality'.",
+        "en": "High cardinality means many unique values (e.g., ID).",
+        "hi": "Column mein values ki uniqueness ki paimaish.",
+        "ex": "Gender - Low, Email - High."
+      },
+      {
+        "q": "What is a 'Database Deadlock'?",
+        "en": "Requires one process to be killed to proceed.",
+        "hi": "Jab do transactions ek doosre ki wajah se phas jayein aur aage na badh payein.",
+        "ex": "Cyclic dependency."
+      },
+      {
+        "q": "Explain 'Isolation Level: Serializable'.",
+        "en": "Avoids all concurrency issues but is slow.",
+        "hi": "Sabse secure level jahan transactions ek ke baad ek chalti hui lagti hain.",
+        "ex": "Total Transaction Isolation."
+      },
+      {
+        "q": "Explain 'Isolation Level: Repeatable Read'.",
+        "en": "Prevents Dirty and Non-repeatable reads.",
+        "hi": "Ek hi transaction mein wahi data baar-baar padhne par badalta nahi.",
+        "ex": "Shared Locks."
+      },
+      {
+        "q": "Explain 'Isolation Level: Read Committed'.",
+        "en": "Default in many SQL databases.",
+        "hi": "Sirf wahi data padhna jo save ho chuka hai.",
+        "ex": "No dirty reads."
+      },
+      {
+        "q": "Explain 'Isolation Level: Read Uncommitted'.",
+        "en": "Fastest but least reliable.",
+        "hi": "Transaction khatam hone se pehle hi data padhlena.",
+        "ex": "Dirty Read."
+      },
+      {
+        "q": "What is 'Database Normalization' vs 'Denormalization' trade-off?",
+        "en": "Balance depends on Read vs Write frequency.",
+        "hi": "Normalization se data space bachta hai, denormalization se calculation kam hoti hai.",
+        "ex": "Joins reduction."
+      },
+      {
+        "q": "What is 'MVCC' (Multi-Version Concurrency Control)?",
+        "en": "Used in PostgreSQL and Oracle for non-blocking reads.",
+        "hi": "Database ka ek record ke purane versions ko manage karna taaki reads fast hon.",
+        "ex": "Postgres version control."
+      },
+      {
+        "q": "What is 'Write Ahead Logging' (WAL)?",
+        "en": "Ensures data recovery if server crashes.",
+        "hi": "Database update se pehle uska log likhna safety ke liye.",
+        "ex": "Journaling."
+      },
+      {
+        "q": "What is 'Columnar Database'?",
+        "en": "Excellent for SUM, AVG on billions of rows.",
+        "hi": "Data ko rows ki bajaye columns mein save karna (Big Data ke liye).",
+        "ex": "Cassandra, Redshift."
+      },
+      {
+        "q": "What is 'In-Memory Database'?",
+        "en": "Example: Redis, SAP HANA.",
+        "hi": "Poora data RAM mein rakhna taaki retrieval milliseconds mein ho.",
+        "ex": "Redis Cache."
+      },
+      {
+        "q": "What is 'Two-Phase Commit' (2PC)?",
+        "en": "Ensures all database nodes either commit or rollback together.",
+        "hi": "Distributed system mein sabhi servers ka ek saath transaction save karna.",
+        "ex": "Microservices transaction."
+      },
+      {
+        "q": "What is 'Database Migration'?",
+        "en": "Often automated with scripts.",
+        "hi": "Purane database ya structure se naye mein data shift karna.",
+        "ex": "Flyway or Liquibase."
+      },
+      {
+        "q": "Explain 'Bulk Insert'.",
+        "en": "Much faster for initial data loads.",
+        "hi": "Ek saath hazaron rows table mein load karna.",
+        "ex": "CSV to SQL import."
+      },
+      {
+        "q": "What is 'Database Hardening'?",
+        "en": "Security best practice.",
+        "hi": "Database ko attack se bachane ke liye secure karna.",
+        "ex": "Changing default ports."
+      },
+      {
+        "q": "What is 'B-Tree' vs 'Hash' Index?",
+        "en": "Hash index is faster (=) but doesn't support < or >.",
+        "hi": "B-Tree sorting mein kaam aata hai, Hash sirf exact match ke liye.",
+        "ex": "Point vs Range query."
+      },
+      {
+        "q": "What is 'Bitmap Index'?",
+        "en": "Good for data warehouses (e.g. Gender, Flag columns).",
+        "hi": "Bits ka use karke banaya gaya chhota aur fast index.",
+        "ex": "Gender column indexing."
+      },
+      {
+        "q": "Define 'T-SQL' vs 'PL/SQL'.",
+        "en": "Standard SQL plus procedural programming features.",
+        "hi": "SQL ke advanced versions (Microsoft ke liye T-SQL, Oracle ke liye PL/SQL).",
+        "ex": "SQL dialects."
+      },
+      {
+        "q": "What is 'Materialized View'?",
+        "en": "Speeds up heavy aggregate queries.",
+        "hi": "Aisa view jo query ka data disk pe save kar leta hai fast access ke liye.",
+        "ex": "Periodic refresh."
+      },
+      {
+        "q": "What is 'Lateral Join'?",
+        "en": "Often used with JSON/Arrays in Postgres.",
+        "hi": "Advanced join jisme subquery baki tables ke data ko use kar sakti hai.",
+        "ex": "Postgres LATERAL."
+      },
+      {
+        "q": "What is 'Full Text Search' (FTS)?",
+        "en": "More powerful than LIKE '%...%'.",
+        "hi": "Bahut bade text mein se keywords dhoondhne ki advanced technology.",
+        "ex": "Apache Solr or SQL FTS."
+      },
+      {
+        "q": "What is 'Foreign Key' actions - ON DELETE SET NULL?",
+        "en": "Ensures data remains but loses link.",
+        "hi": "Main record delete hone par judi hui category ko null kar dena.",
+        "ex": "User delete -> Posts remain (Author: NULL)."
+      },
+      {
+        "q": "Explain 'SQL Hint'.",
+        "en": "Only use when optimizer fails to choose best plan.",
+        "hi": "Database engine ko batana ki is query ke liye ye wala index hi use karo.",
+        "ex": "FORCING INDEX."
+      },
+      {
+        "q": "What is 'Data Scrubbing'?",
+        "en": "Important part of ETL.",
+        "hi": "Database se kachra aur galat data ko saaf karna.",
+        "ex": "Data cleansing."
+      },
+      {
+        "q": "What is 'Vertical Scaling' (Up) vs 'Horizontal Scaling' (Out)?",
+        "en": "Out is better for infinite scale (Sharding).",
+        "hi": "Up matlab bada server, Out matlab zyada servers.",
+        "ex": "AWS EC2 upgrade vs Sharding."
+      },
+      {
+        "q": "What is 'Transaction Log'?",
+        "en": "Used for Point-In-Time recovery.",
+        "hi": "Database mein hone wale har badlav ka record.",
+        "ex": "LDF file."
+      },
+      {
+        "q": "Final Advanced SQL Question: What is 'Polyglot Persistence'?",
+        "en": "Choosing the best DB for each specific job.",
+        "hi": "Mobile app mein kai tarah ke databases (SQL, Redis, Mongo) ek saath use karna.",
+        "ex": "Modern architecture."
+      },
+      {
+        "q": "What is 'Graph Database'?",
+        "en": "Best for social networks and fraud detection.",
+        "hi": "Data ko nodes aur links ke roop mein save karna (Social media connections ke liye).",
+        "ex": "Neo4j."
+      },
+      {
+        "q": "Define 'NoSQL' categories.",
+        "en": "Designed for unstructured data and massive scale.",
+        "hi": "SQL se hatkar alag tarah ke databases (Mongo, Redis, Cassandra).",
+        "ex": "MongoDB (Document)."
+      },
+      {
+        "q": "What is 'CAP Theorem' in Distributed DB?",
+        "en": "A distributed system can only provide two of these three.",
+        "hi": "Distributed database mein Consistency, Availability aur Partitioning ke beech ka balance.",
+        "ex": "CP vs AP systems."
+      },
+      {
+        "q": "What is 'Sharding' (Horizontal Partitioning)?",
+        "en": "Essential for massive web-scale apps.",
+        "hi": "Data ko hazaron servers pe baant dena taaki load divide ho sake.",
+        "ex": "MongoDB Sharding."
+      }
+    ]
+  }
+}

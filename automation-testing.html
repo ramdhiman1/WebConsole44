@@ -1,0 +1,3322 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Automation Testing Interview Q&A - Ram Technical Help</title>
+    <meta name="description"
+        content="Master automation testing interviews with our massive collection of Selenium, Java, Cucumber, and Mobile testing Q&A. Covers challenges, exceptions, and coding.">
+    <meta name="keywords"
+        content="Automation Testing, Selenium WebDriver, Java for Automation, Cucumber Framework, Mobile Testing, Appium, QA Interview Questions">
+
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    
+    <style>
+        /* Modern UI Enhancements */
+        .progress-container {
+            position: sticky;
+            top: var(--header-height);
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: rgba(0,0,0,0.05);
+            z-index: 1001;
+            margin-bottom: -4px;
+        }
+        .progress-bar {
+            height: 100%;
+            background: var(--brand-gradient);
+            width: 0%;
+            transition: width 0.1s ease;
+        }
+        [data-theme="dark"] .progress-container { background: rgba(255,255,255,0.1); }
+
+        /* Enhanced Code Blocks */
+        pre {
+            position: relative;
+            background: #1e1e1e !important; /* VS Code Dark */
+            color: #d4d4d4 !important;
+            padding: 1.5rem !important;
+            border-radius: 12px;
+            border: 1px solid rgba(255,255,255,0.1);
+            box-shadow: var(--shadow-md);
+            margin: 1.5rem 0;
+            overflow-x: auto;
+        }
+        .copy-btn {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            backdrop-filter: blur(4px);
+            z-index: 10;
+        }
+        .copy-btn:hover { background: var(--brand-primary); }
+        .copy-btn.copied { background: var(--success); }
+
+        mark {
+            background: rgba(79, 70, 229, 0.2);
+            color: var(--brand-primary);
+            padding: 0 2px;
+            border-radius: 2px;
+            font-weight: 600;
+        }
+
+        .lab-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--brand-primary);
+            background: rgba(79, 70, 229, 0.1);
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-top: 0.5rem;
+            transition: all 0.2s;
+        }
+        .lab-link:hover {
+            background: var(--brand-primary);
+            color: white;
+            transform: translateY(-1px);
+        }
+
+        .section-title i {
+            margin-right: 0.75rem;
+            color: var(--brand-primary);
+            width: 32px;
+            text-align: center;
+        }
+
+        /* Premium Glassmorphism & Feedback */
+        .sidebar-card, .qa-controls {
+            background: rgba(255, 255, 255, 0.03) !important;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05) !important;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+        
+        .qa-search-wrapper input {
+            background: rgba(0,0,0,0.2) !important;
+            border: 1px solid rgba(255,255,255,0.1) !important;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .qa-search-wrapper input:focus {
+            border-color: var(--brand-primary) !important;
+            box-shadow: 0 0 15px rgba(79, 70, 229, 0.3);
+        }
+
+        /* Section Hover Glow */
+        .section-title {
+            position: relative;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid rgba(255,255,255,0.05);
+            margin-bottom: 2rem;
+            transition: all 0.4s ease;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--brand-primary);
+            transition: width 0.4s ease;
+        }
+        
+        .section-title:hover::after { width: 100px; }
+        .section-title:hover { color: var(--brand-primary); }
+
+        /* Animation Classes */
+        .reveal-on-scroll {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        
+        .reveal-on-scroll.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .breadcrumb i { font-size: 0.8rem; margin: 0 0.5rem; color: #666; }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+    <div class="progress-container"><div class="progress-bar" id="readingProgress"></div></div>
+
+    <main class="container page-main">
+        <div class="has-sidebar">
+            <div class="main-content">
+                <div class="qa-container">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="qa-testing.html">Testing Q&A</a>
+                        <span>/</span>
+                        <span>Automation Testing</span>
+                    </nav>
+
+                    <div class="list-header">
+                        <h1>Automation Testing Interview Q&A Guide</h1>
+                        <p class="muted">Comprehensive guide for Selenium WebDriver, Java, Cucumber, and Mobile
+                            Automation interviews.</p>
+                    </div>
+                </div>
+
+                <div class="qa-controls">
+
+                    <div class="qa-search-wrapper">
+                        <input type="text" id="qaSearch"
+                            placeholder="Search automation questions... (e.g., Selenium, Wait, Loop)" />
+                    </div>
+                    <div class="qa-btn-group">
+                        <button id="studyModeToggle" class="study-mode-toggle">
+                            <div class="toggle-switch"></div>
+                            <span>Study Mode</span>
+                        </button>
+                        <button id="btnExpandAll" class="btn btn-sm">Expand All</button>
+                        <button id="btnCollapseAll" class="btn btn-sm btn-outline">Collapse All</button>
+                    </div>
+                </div>
+
+                <div id="qa-content">
+                    <h2 class="section-title" id="selenium-basics"><i class="fas fa-cubes"></i> Selenium Fundamentals</h2>
+
+                    <details>
+                        <summary>1. What is Selenium WebDriver?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An open-source API that allows programmatic
+                            interaction with web browsers to automate UI testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium WebDriver browser ko
+                            automatically chalane aur UI test karne ka ek tool hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Why is ID locator preferred over others?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> IDs are generally unique in a DOM and are indexed
+                            by the browser, making them the fastest and most reliable locator.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> ID unique hoti hai isliye browser use
+                            jaldi dhoond leta hai aur ye sabse fast locator hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Difference between / and // in XPath?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>/ (Single Slash):</strong> Relative path
+                            starting from the immediate parent. <strong>// (Double Slash):</strong> Absolute path
+                            searching the whole DOM for a matching node.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> / matlab shuruat se ek-ek step; // matlab
+                            poore page pe kahi bhi matching item dhoondhna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What is the difference between Implicit Wait and Explicit Wait?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Implicit:</strong> Applied globally to all
+                            elements. <strong>Explicit:</strong> Applied to a specific element for a specific condition
+                            (visibility/clickability).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Implicit pure browser ke liye, Explicit
+                            sirf ek khas item ki condition ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. How to handle multiple windows in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using <code>getWindowHandles()</code> to get a set
+                            of unique IDs, then iterating through them and using
+                            <code>switchTo().window(handle)</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Saare windows ki IDs lekar, loop chala
+                            kar, driver ko switch() karna padta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. What is specific about findElements() return type?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It returns a <code>List&lt;WebElement&gt;</code>.
+                            If no elements are found, it returns an empty list instead of throwing an exception.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye matching items ki puri list deta hai
+                            aur kuch na mile toh khali list return karta hai (error nahi aata).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. What are CSS Selectors and why use them?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> CSS Selectors are patterns used to select elements
+                            for styling. In Selenium, they are faster than XPath in many browsers (like Chrome/IE).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> CSS Selectors styling ke liye hote hain
+                            par Selenium mein ye XPath se fast kaam karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. How to handle alert popups in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using
+                            <code>Alert alert = driver.switchTo().alert();</code> then <code>alert.accept()</code> or
+                            <code>alert.dismiss()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Simple alert ke liye switchTo().alert()
+                            use karke accept ya dismiss karte hain.
+                            <a href="practice-lab.html?lab=automation-lab" class="lab-link"><i class="fas fa-vial"></i> Practice Alert Handling in Lab</a>
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="advanced-selenium"><i class="fas fa-rocket"></i> Intermediate & Advanced Automation</h2>
+
+                    <details>
+                        <summary>9. What is 'StaleElementReferenceException'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Occurs when an element that was found earlier is no
+                            longer in the DOM (e.g., due to a page refresh).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab page refresh ho jaye aur purana
+                            element ka zariya (reference) khatam ho jaye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. How to perform mouse hover or drag-and-drop actions?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using the <strong>Actions</strong> class:
+                            <code>actions.moveToElement(el).perform()</code> for hover and
+                            <code>actions.dragAndDrop(src, dest).perform()</code> for drag.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mouse hover ya drag-drop ke liye Actions
+                            class ka use karke perform() lagana padta hai.
+                            <a href="practice-lab.html?lab=automation-lab" class="lab-link"><i class="fas fa-vial"></i> Practice Mouse Actions in Lab</a>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is JavaScriptExecutor and common use cases?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Interface to run JS code. Used for scrolling,
+                            clicking hidden elements, or handling tricky UI when Selenium fails.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser mein direct JS chalane ke liye;
+                            jaise invisible items click karna ya page scroll karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. How to handle Frames (iframes) in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using
+                            <code>driver.switchTo().frame(index/name/element)</code>. To return, use
+                            <code>driver.switchTo().defaultContent()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> switchTo().frame() se andar jaate hain
+                            aur defaultContent() se wapas bahar main page par.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Explain Page Object Model (POM).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A design pattern where each page is a class
+                            containing its own elements (locators) and actions (methods). Increases reusability.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har web page ki alag class banana aur
+                            usme uske saare buttons/logic rakhna, taaki code manage karna aasan ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What is Page Factory?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An extension of POM in Selenium that uses
+                            <code>@FindBy</code> annotations to initialize web elements lazily.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> POM ka advanced version jisme @FindBy
+                            annotations se items dhoondhe aur manage kiye jaate hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. How to handle synchronization issues in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using various Waits: Implicit, Explicit, and Fluent
+                            Wait to sync the code speed with browser speed.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser aur script ki speed match karne
+                            ke liye alag-alag waits use karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. How to take a screenshot only of a specific element? (Selenium 4)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span>
+                            <code>element.getScreenshotAs(OutputType.FILE);</code> available in Selenium 4.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium 4 se hum kisi ek khas button ya
+                            image ka screenshot le sakte hain bina poore page ke.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="testng-cucumber">📌 Frameworks & BDD (TestNG, Cucumber)</h2>
+
+                    <details>
+                        <summary>17. Difference between Soft Assert and Hard Assert in TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Hard Assert:</strong> Stops test execution
+                            immediately on failure. <strong>Soft Assert:</strong> Continues execution and reports
+                            failures at the end.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hard assert test ko turant rok deta hai,
+                            Soft assert sare checks karke last mein result deta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. What are TestNG Annotations sequence?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> @BeforeSuite -> @BeforeTest -> @BeforeClass ->
+                            @BeforeMethod -> @Test -> @AfterMethod...<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Suite se lekar Test level tak ke
+                            sequential annotations hain jo framework ka flow control karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. What is Cucumber and Gherkin?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Cucumber:</strong> A BDD tool.
+                            <strong>Gherkin:</strong> The language used (Given, When, Then) to write tests in plain
+                            English.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Cucumber ek tool hai jo simple English
+                            (Gherkin) mein likhe tests ko code se jodta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. What is a 'Scenario Outline' in Cucumber?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Used to run the same scenario multiple times with
+                            different sets of data using an <code>Examples:</code> table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek hi scenario ko alag-alag data sets ke
+                            saath baar-baar chalane ka tareeka.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. Purpose of `testng.xml` file?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Configuration file to define suites, tests,
+                            parallel execution, parameters, and listeners.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Is file se hum poore testing suite ka
+                            behavior control karte hain (like parallel running).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. What is a DataProvider in TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A way to pass multiple sets of data to a single
+                            test method for data-driven testing.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek hi test ko alag-alag values se
+                            baar-baar chalane ke liye data provider use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. How to achieve parallel execution in TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> By setting <code>parallel="methods"</code> or
+                            <code>parallel="tests"</code> in testng.xml.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> testng.xml mein attributes badal kar hum
+                            ek saath kai tests chala sakte hain.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="java-basics">📌 Java for Automation (Core Concepts)</h2>
+
+                    <details>
+                        <summary>24. Difference between Method Overloading and Overriding?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Overloading:</strong> Same method name,
+                            different parameters (static/compile-time). <strong>Overriding:</strong> Same method
+                            signature in parent and child class (dynamic/run-time).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Overloading ek hi class mein parameters
+                            badalkar hoti hai; Overriding tab jab child class parent ka function badalti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. Explain Exception Handling in Java.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using try, catch, finally, throw, and throws to
+                            handle runtime errors gracefully.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Program mein koi error aaye toh use
+                            try-catch se handle karna taaki crash na ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. What is a 'static' keyword in Java?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Means the member belongs to the class rather than
+                            an instance. Shared across all objects.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> static ka matlab wo cheez class ki hai,
+                            kisi specific object ki nahi (har jagah shared rahegi).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. Difference between ArrayList and LinkedList?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>ArrayList:</strong> Faster for retrieval
+                            (random access). <strong>LinkedList:</strong> Faster for insertion and deletion.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> ArrayList se data nikalna fast hai;
+                            LinkedList mein data beech mein daalna/hatana fast hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. What is Interface in Java?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A blueprint of a class that can contain only method
+                            signatures and constant variables. Achieves 100% abstraction.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek 'shart' ya blueprint jo batata hai
+                            class mein kya hona chaiye (WebDriver khud ek interface hai).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. Why Java is not purely Object Oriented?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Because it uses primitive data types like int,
+                            char, boolean which are not objects.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Kyuki Java mein int, char jaise variables
+                            objects nahi hote.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="devops-mobile">📌 CI/CD & Mobile Automation</h2>
+
+                    <details>
+                        <summary>30. What is Maven and its benefits?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A build automation tool used to manage dependencies
+                            (jars), project lifecycle, and reporting via <code>pom.xml</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Maven libraries (jars) manage karne aur
+                            build automatic banane ka tool hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>31. Role of Jenkins in Automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A CI tool used to trigger automation suites
+                            automatically on every code commit or on a schedule (nightly builds).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jenkins automatic test chalane aur report
+                            bhejne ke liye pipeline banata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. What is Git and common commands?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Version control system. Commands:
+                            <code>git add</code>, <code>git commit</code>, <code>git push</code>, <code>git pull</code>,
+                            <code>git merge</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Code ke badlav track karne ke liye; push,
+                            commit, pull iske main commands hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. How Appium differs from Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selenium is for Web; Appium is for Mobile
+                            (Android/iOS). Appium acts as a wrapper for native automation engines.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium websites ke liye hai, aur Appium
+                            mobile apps (Android/iOS) ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>34. What is 'Desired Capabilities' in Appium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> JSON object sent to the server to define the
+                            device, OS, app path, and automation engine.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Appium ko batane ke liye ki kaunsa phone
+                            aur kaunsi app test karni hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>35. What is Headless browser testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Running browser tests without a visible UI. Faster
+                            and consumes less resources. Used in CI/CD.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina kisi window dikhaye piche
+                            (background) tests chalana, jo fast hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>36. How to find a broken link in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Collect all <code>&lt;a&gt;</code> tags, get
+                            'href', and check HTTP response codes using <code>HttpURLConnection</code> (200=OK,
+                            404=Broken).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Saare links ke URLs nikaal kar check
+                            karna ki koi page dead toh nahi hai (e.g., 404 error).
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="scenario-coding">📌 Scenario Based & Coding Qs</h2>
+
+                    <details>
+                        <summary>37. How to handle a dynamic table in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Iterate through <code>&lt;tr&gt;</code> and
+                            <code>&lt;td&gt;</code> tags using loops to find or verify specific cell data.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Table ki rows aur columns pe loop chala
+                            kar data verify karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>38. What is the difference between '/' and '//' in relative Xpath? (Revisited)
+                        </summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Single slash (/) looks for internal child, while
+                            double slash (//) looks anywhere in the sub-tree.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> / matlab sirf uska bacha; // matlab
+                            bacha, pota, poore tree mein kahi bhi.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>39. How to verify a tooltip in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Hover over the element and get the
+                            <code>title</code> attribute using <code>getAttribute("title")</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mouse hover karke 'title' attribute ka
+                            text read karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>40. How to handle cookies in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using <code>driver.manage().getCookies()</code>,
+                            <code>addCookie()</code>, or <code>deleteAllCookies()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser ki cookies set karna ya saaf
+                            karne ke liye manage() commands.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>41. What is the use of `fluentWait`?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It's a type of Explicit wait where you can define
+                            the polling frequency and ignore specific exceptions (like NoSuchElementException).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye wait har thodi der (polling) mein
+                            check karta hai ki item aya ya nahi, error chhodkar.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>42. How to handle SVG elements in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> By using special XPath tag
+                            <code>//*[local-name()='svg']</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> SVG icons graphics hote hain isliye unhe
+                            local-name() waale XPath se dhoondhte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>43. How to maximize the browser window?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span>
+                            <code>driver.manage().window().maximize();</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser ki screen badi karne ke liye
+                            maximize() use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>44. How to click on a radio button?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Identify the element by ID or XPath and use
+                            <code>.click()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Radio button ka locator dhoondh kar bas
+                            click() command chalana hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>45. Can we automate Desktop Applications with Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> No, Selenium is strictly for Web Applications. Use
+                            tools like WinAppDriver or AutoIT for Desktop apps.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Nahi, Selenium sirf websites ke liye hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>46. What is shadow DOM and how to handle it?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Encapsulated DOM inside another DOM. Handle it
+                            using <code>element.getShadowRoot()</code> (Selenium 4).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye DOM ke andar ek chupa hua DOM hota hai
+                            jise access karne ke liye getShadowRoot() lagta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>47. Relationship between Selenium and WebDriver?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selenium is the suite name. WebDriver is a
+                            component of Selenium that provides the direct communication API with browsers.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium poora ghar hai, aur WebDriver us
+                            ghar ka ek mukhya kamra (main tool).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>48. What is `driver.navigate().to()` vs `driver.get()`?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Both open a URL. <code>navigate()</code> maintains
+                            history and supports <code>back()</code>, <code>forward()</code>,
+                            <code>refresh()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Dono URL kholte hain, par navigate() mein
+                            back/forward/refresh karne ke options hote hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>49. What is continuous testing?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The process of executing automated tests as part of
+                            the software delivery pipeline to obtain immediate feedback.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Code badalte hi turant automation chalana
+                            taaki fauran feedback mil sake.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>50. How to scroll up/down using Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span>
+                            <code>js.executeScript("window.scrollTo(0, document.body.scrollHeight)");</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> JavaScriptExecutor ki madad se page niche
+                            scroll karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>51. What is CDP in Selenium 4?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Chrome DevTools Protocol. Allows you to set network
+                            conditions, capture console logs, and simulate geolocations.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium 4 ka feature jo browser ke
+                            advanced settings (jaise slow internet) control karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>52. How to handle multiple checkboxes in one go?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Find them using <code>findElements()</code> with a
+                            common locator and iterate through the list to click each.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Saare boxes ko ek list mein la kar
+                            for-loop se tick karna.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>53. What is Parallelism in Selenium Grid?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The ability to execute multiple tests across
+                            various nodes (different browser-machine combos) simultaneously.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek saath alag-alag machines pe tests
+                            chalane ki kshamta.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>54. Name some reports used in Automation.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Extent Reports, Allure Reports, TestNG HTML
+                            Reports, and Cucumber JVM Reports.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Results dikhane ke liye Reports (जैसे
+                            Extent, Allure) use hote hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>55. How to handle Drag and Drop? (Alternative way)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>clickAndHold(source)</code>,
+                            <code>moveToElement(target)</code>, then <code>release()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Item pakad kar, move karke, phir chhodne
+                            waale steps (manual feel).
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="selenium-advanced-scenarios">📌 Automation Testing (Selenium,
+                        Framework & Scenarios)</h2>
+
+                    <details>
+                        <summary>1. What is Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selenium is an open-source automation testing tool
+                            used to automate web applications across different browsers such as Chrome, Firefox, and
+                            Edge.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium ek open-source automation tool
+                            hai jo web applications ko automate karne ke liye use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. What are the components of Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selenium has four main components:<br>
+                            - <strong>Selenium IDE:</strong> Record and playback tool<br>
+                            - <strong>Selenium WebDriver:</strong> Automates browsers using programming languages<br>
+                            - <strong>Selenium Grid:</strong> Runs tests on multiple machines and browsers<br>
+                            - <strong>Selenium RC:</strong> Older version (now deprecated)<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium ke 4 main components hote hain:
+                            IDE, WebDriver, Grid, aur RC.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. What is WebDriver in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Selenium WebDriver is an API that allows testers to
+                            interact with web browsers and automate user actions like clicking, typing, and
+                            navigating.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> WebDriver ek <strong>API hai jo browser
+                                ko control karke automation perform karta hai</strong>.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What are locators in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Locators are used to identify web elements on a
+                            webpage. Common locators: ID, Name, Class Name, XPath, CSS Selector, Tag Name, and Link
+                            Text.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Locators ka use web elements ko find
+                            karne ke liye hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. What is XPath in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> XPath is a locator used to find elements in an HTML
+                            DOM structure.<br>
+                            <code>driver.findElement(By.xpath("//input[@id='username']"));</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> XPath ek path expression hai jo HTML
+                            structure me element locate karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. Difference between Absolute and Relative XPath?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Absolute XPath:</strong> Starts from the root node (/html/body/...). Highly
+                            unstable as any small UI change breaks it.<br>
+                            - <strong>Relative XPath:</strong> Starts from anywhere in the DOM
+                            (//tagname[@attr='value']). More stable and widely used.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            - <strong>Absolute:</strong> Root se start hota hai, thoda change hone par break ho jata
+                            hai.<br>
+                            - <strong>Relative:</strong> Beech se start kar sakte hain, zyada reliable hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. How to handle dropdowns in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use the <strong>Select</strong> class for static
+                            dropdowns.<br>
+                            <pre>Select sel = new Select(element);
+sel.selectByVisibleText("Option");</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Dropdowns handle karne ke liye Select
+                            class ka use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. What is Fluent Wait in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Fluent Wait is used to wait for an element with a
+                            specific frequency and can ignore specific exceptions (like NoSuchElementException) during
+                            the polling period.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Fluent Wait har thodi der (polling) me
+                            element check karta hai aur error skip kar sakta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. What is the difference between driver.close() and driver.quit()?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>driver.close():</strong> Closes the current browser window/tab that Selenium is
+                            currently controlling.<br>
+                            - <strong>driver.quit():</strong> Closes all browser windows and tabs associated with the
+                            WebDriver session and ends the session.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            - <strong>close():</strong> current tab close karta hai<br>
+                            - <strong>quit():</strong> poora browser aur session close karta hai
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Difference between implicit and explicit waits & Why do we use waits?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use waits in Selenium to handle synchronization
+                            between Selenium and web elements. It helps Selenium wait until the element is visible or
+                            clickable.<br><br>
+                            <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                                <tr style="background: var(--brand-primary); color: white;">
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Feature</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Implicit Wait</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Explicit Wait</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Scope</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Global (All
+                                        elements)</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Local (Specific
+                                        element)</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Condition</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Presence in DOM
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Specific conditions
+                                        (Visibility, Clickable)</td>
+                                </tr>
+                            </table><br>
+                            <strong>Syntax for Explicit Wait:</strong>
+                            <pre>WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("loginBtn")));</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Selenium me waits ka use synchronization
+                            ke liye hota hai, taaki Selenium tab tak wait kare jab tak element visible ya clickable na
+                            ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. Write an XPath for an element and a dynamic table.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Standard element:</strong> <code>//input[@id='username']</code> - Locates an input
+                            box using its ID.<br>
+                            - <strong>Dynamic Table:</strong> <code>//table[@id='empTable']//tr[2]/td[3]</code> - Finds
+                            data from a specific row and column.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            - <strong>Standard:</strong> Yeh XPath ID ke through element locate karta hai.<br>
+                            - <strong>Dynamic Table:</strong> Yeh table ke particular row aur column ka data find karta
+                            hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. What is an exception in Selenium and what have you faced?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An exception is an unwanted situation that occurs
+                            during execution and stops normal flow. Common facing exceptions:<br>
+                            - <strong>NoSuchElementException:</strong> Element locator is wrong or element is not on
+                            page.<br>
+                            - <strong>ElementNotInteractableException:</strong> Element is hidden or disabled.<br>
+                            - <strong>StaleElementReferenceException:</strong> Page refreshed after element was
+                            found.<br>
+                            - <strong>TimeoutException:</strong> Wait time exceeded before element appeared.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Exception ek unwanted situation hoti hai
+                            jo flow ko stop kar deti hai. Common: Element na mile, refresh ke baad error, wait timeout
+                            error.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Difference between findElement() vs findElements().</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>findElement():</strong> Returns single element, throws NoSuchElementException if
+                            not found.<br>
+                            - <strong>findElements():</strong> Returns list of elements, returns empty list if not
+                            found.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> findElement() ek element deta hai (error
+                            if not found), findElements() list deta hai (empty if not found).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. How to handle alerts in Selenium?</summary>
+                        <div class="answer">
+                            <pre>Alert alert = driver.switchTo().alert();
+System.out.println(alert.getText());
+alert.accept();  // click OK
+alert.dismiss(); // click Cancel
+alert.sendKeys("text"); // enter text</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. Write the syntax for wait and take a screenshot.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> This waits for an element and then takes a
+                            screenshot.<br>
+                            <pre>WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("logo")));
+
+File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(src, new File("screenshot.png"));</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Yeh pehle element ke visible hone ka wait
+                            karta hai aur phir screenshot leta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. How do you design a POM (Page Object Model) framework?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> POM means each web page has its own class
+                            containing Locators (WebElements) and Actions/Methods. Test cases are kept separate.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> POM follow karne se code maintainable,
+                            reusable, aur clean banta hai.<br><br>
+                            <strong>Architecture Example:</strong>
+                            <pre>src/test/java
+ ├── pages
+ │    ├── LoginPage.java      (Locators & login())
+ │    └── HomePage.java       (Locators & logout())
+ ├── tests
+ │    ├── LoginTest.java      (Calls LoginPage methods)
+ └── base
+      └── BaseTest.java       (Driver setup & teardown)</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. How do you handle the 4th tab when multiple browser tabs are opened?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We collect all window handles, convert them to a
+                            list, and switch using the index.<br>
+                            <pre>Set&lt;String&gt; handles = driver.getWindowHandles();
+List&lt;String&gt; tabs = new ArrayList&lt;&gt;(handles);
+driver.switchTo().window(tabs.get(3)); // index 3 = 4th tab</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum window handles ko list me store karke
+                            required tab ke index par switch karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. How would you resolve StaleElementException?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> StaleElementException happens when the element is
+                            refreshed or reloaded. <strong>Solution:</strong> Re-locate the element again.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Page refresh hone ke baad element dobara
+                            find (re-locate) karo.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. Explain your roles and responsibilities.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> "My roles include analyzing requirements, writing
+                            test cases/scripts, executing tests, logging defects, performing regression testing, and
+                            CI/CD integration using Jenkins."<br>
+                            <span class="lang-badge hinglish">Hindi:</span> "Meri responsibilities hain requirements
+                            analyze karna, test cases/scripts likhna, bugs log karna, aur Jenkins ke saath integration
+                            karna."
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. Explain your automation project / framework.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Developed using Selenium, Java, and TestNG with
+                            POM. Includes Base class (setup), Page classes (locators), Test classes (execution), and
+                            Utils (reports, screenshots).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mera project Selenium, Java aur TestNG
+                            par based hai. Hum POM follow karte hain aur Extent Reports use karte hain.<br><br>
+                            <strong>Main Components:</strong>
+                            <ul>
+                                <li><strong>Base Class:</strong> Driver setup, browser config, waits.</li>
+                                <li><strong>Page Classes:</strong> Locators and reusable methods.</li>
+                                <li><strong>Test Classes:</strong> Actual test steps.</li>
+                                <li><strong>Utility Classes:</strong> Screenshot, Excel, and Logs.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. How do you handle iframes in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> You must switch to an iframe before interacting
+                            with its elements. Use index, name/ID, or WebElement.<br>
+                            <pre>driver.switchTo().frame("id"); // Switch In
+driver.switchTo().defaultContent(); // Switch Out</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Iframe ke andar jaane ke liye
+                            switchTo().frame() aur bahar aane ke liye defaultContent() use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. Hard Assert vs Soft Assert in TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Hard Assert:</strong> Stops execution immediately on failure.
+                            (<code>Assert.assertEquals</code>)<br>
+                            - <strong>Soft Assert:</strong> Execution continues; report failures at the end using
+                            <code>assertAll()</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hard assert fail hone par test wahi ruk
+                            jata hai. Soft assert fail hone par bhi baaki code chalta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. How to scroll down to a particular element in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Best method is using
+                            <strong>JavaScriptExecutor</strong> with <code>scrollIntoView(true)</code>.<br>
+                            <pre>WebElement element = driver.findElement(By.id("btn"));
+((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> JavaScriptExecutor se page ko kisi unit
+                            element tak scroll kara sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. What is Drag and Drop in Selenium and how do you perform it?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Pick an element, hold it, drag it over another, and
+                            drop it. We use the <strong>Actions</strong> class in Selenium for this.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek element ko click karke pakadna (drag)
+                            aur dusre element par chhod dena (drop).<br><br>
+                            <strong>Drag and Drop Code:</strong>
+                            <pre>WebElement source = driver.findElement(By.id("draggable"));
+WebElement target = driver.findElement(By.id("droppable"));
+
+Actions act = new Actions(driver);
+act.dragAndDrop(source, target).perform();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. How do you handle (manage) Alerts in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An Alert is a JavaScript pop-up. Selenium cannot
+                            inspect it directly, so we use the <strong>Alert</strong> interface.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alert ek JS browser popup hota hai jise
+                            inspect nahi kar sakte, hume <code>driver.switchTo().alert()</code> use karna padta
+                            hai.<br><br>
+                            <strong>Types of Alerts:</strong>
+                            <ul>
+                                <li><strong>Simple Alert:</strong> Only OK button</li>
+                                <li><strong>Confirmation Alert:</strong> OK & Cancel buttons</li>
+                                <li><strong>Prompt Alert:</strong> Textbox + OK/Cancel</li>
+                            </ul>
+                            <strong>Example Actions:</strong>
+                            <pre>Alert alert = driver.switchTo().alert();
+alert.accept();  // Click OK
+alert.dismiss(); // Click Cancel
+System.out.println(alert.getText()); // Read message
+alert.sendKeys("Hello"); // Send text to prompt</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. What is Page Factory Concept in Selenium (Using Java)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Page Factory is a design pattern in Selenium used
+                            to initialize web elements of a page using <code>@FindBy</code> annotations. It is an
+                            advanced way of implementing Page Object Model (POM).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Page Factory Selenium ka ek design
+                            pattern hai jo web elements ko <code>@FindBy</code> annotation se initialize karta
+                            hai.<br><br>
+                            <strong>Why use Page Factory?</strong>
+                            <ul>
+                                <li><strong>Reduces code duplication:</strong> Minimal element initialization.</li>
+                                <li><strong>Improves readability:</strong> Clear separation of locators.</li>
+                                <li><strong>Easy Locators:</strong> Locators are managed within annotations.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. Explain the order of TestNG annotations.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The execution order runs from Suite to Method and
+                            back.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> TestNG annotations ka order
+                            <code>@BeforeSuite</code> se start hota hai aur <code>@AfterSuite</code> par end hota
+                            hai.<br><br>
+                            <strong>Execution Order:</strong>
+                            <pre>@BeforeSuite → @BeforeTest → @BeforeClass → @BeforeMethod
+    ↓
+    @Test
+    ↓
+@AfterMethod → @AfterClass → @AfterTest → @AfterSuite</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. What are XPath Axes? Give examples.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> XPath Axes are used to locate elements based on
+                            their relationship with other elements. Examples: parent, child, following-sibling,
+                            preceding-sibling, ancestor, descendant.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> XPath Axes element ko relation ke basis
+                            par locate karta hai jaise parent-child.<br><br>
+                            <strong>Examples:</strong>
+                            <ul>
+                                <li><code>//input[@id='email']/parent::div</code></li>
+                                <li><code>//label[text()='Username']/following-sibling::input</code></li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. What is the Difference Between Cucumber and TestNG?</summary>
+                        <div class="answer">
+                            <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                                <tr style="background: var(--brand-primary); color: white;">
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Feature</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Cucumber</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">TestNG</th>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Approach</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">BDD</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">TDD</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Language</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Gherkin (Plain
+                                        English)</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Java</td>
+                                </tr>
+                                <tr>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Usage</td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Acceptance Testing
+                                    </td>
+                                    <td style="padding: 8px; border: 1px solid var(--border-light);">Functional/Unit
+                                        Testing</td>
+                                </tr>
+                            </table><br>
+                            <span class="lang-badge">English:</span> Cucumber is used for behavior-based testing using
+                            plain English, whereas TestNG is used for structured execution and reporting.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Cucumber collaboration ke liye best hai,
+                            TestNG complex logic ke liye use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>30. What is Given, When, Then?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Given, When, Then is a BDD (Behavior Driven
+                            Development) format used in Cucumber.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Given, When, Then BDD format hai jo
+                            Cucumber me use hota hai.<br><br>
+                            <ul>
+                                <li><strong>Given:</strong> Precondition</li>
+                                <li><strong>When:</strong> Action</li>
+                                <li><strong>Then:</strong> Expected result</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>31. How do you pass test data from Excel to a method?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We pass test data from Excel using <strong>Apache
+                                POI</strong> and <strong>DataProvider</strong> in TestNG.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum Apache POI aur DataProvider ka use
+                            karke Excel se data method me pass karte hain.<br><br>
+                            <pre>@DataProvider(name="excelData")
+public Object[][] getData() {
+    return new Object[][] {
+        {"admin","1234"},
+        {"user","5678"}
+    };
+}
+
+@Test(dataProvider="excelData")
+public void loginTest(String user, String pass) {
+    System.out.println(user + " " + pass);
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. Explain BDD (Behavior Driven Development).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> BDD is a testing approach where test cases are
+                            written in simple English language using Given, When, Then format. It improves
+                            communication.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> BDD ek testing approach hai jisme test
+                            cases simple English me likhe jaate hain taaki communication better ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. How do you automate login with username and password?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We locate fields and pass values using
+                            <code>sendKeys</code>, then click login.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum locator find karke
+                            <code>sendKeys</code> se data enter karte hain aur click perform karte hain.<br>
+                            <pre>driver.findElement(By.id("username")).sendKeys("admin");
+driver.findElement(By.id("password")).sendKeys("12345");
+driver.findElement(By.id("loginBtn")).click();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>34. How do you connect and validate database scenarios in your framework?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use <strong>JDBC</strong> to connect with the
+                            database. After executing SQL queries, we validate the data with UI results.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum JDBC se DB connect karte hain aur SQL
+                            query se data fetch karke UI se compare karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>35. How do you pass files in your framework? (File Upload)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use <code>sendKeys</code> method to upload files
+                            by passing the absolute file path.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum <code>sendKeys</code> me file ka path
+                            pass karte hain upload ke liye.<br>
+                            <pre>driver.findElement(By.id("upload")).sendKeys("C:\\testdata\\file.txt");</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>36. Explain your TestNG framework.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Based on TestNG and follows Page Object Model. It
+                            contains Base, Page, Test, and Utility classes. Maven is used for dependency management.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mera framework TestNG aur POM par based
+                            hai. Isme Maven, Base, Page, aur Test classes ka use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>37. What is the Difference Between Cucumber and TestNG? (Deep Dive)</summary>
+                        <div class="answer">
+                            <strong>1. What is Cucumber?</strong><br>
+                            <span class="lang-badge">English:</span> BDD tool that uses Gherkin (Given/When/Then). Best
+                            for collaboration.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Isme scenarios English me likhte
+                            hain.<br><br>
+                            <strong>2. What is TestNG?</strong><br>
+                            <span class="lang-badge">English:</span> Testing framework for Java for execution and
+                            reporting.<br>
+                            <pre>@Test
+public void loginTest() {
+    System.out.println("Login Test Executed");
+}</pre>
+                            <strong>3. Comparison Points:</strong><br>
+                            <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                                <tr style="background: var(--brand-primary); color: white;">
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Feature</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Cucumber</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">TestNG</th>
+                                </tr>
+                                <tr>
+                                    <td>Purpose</td>
+                                    <td>Describe behavior</td>
+                                    <td>Execute test cases</td>
+                                </tr>
+                                <tr>
+                                    <td>Readability</td>
+                                    <td>Very Easy</td>
+                                    <td>Technical</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>38. What is POM (Page Object Model)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> POM is a design pattern where each web page is
+                            represented by a separate class with its locators and actions.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har page ke liye alag class banana aur
+                            usme methods likhna POM कहलाता hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>39. How do you perform parallel execution in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Done using TestNG by setting <code>parallel</code>
+                            and <code>thread-count</code> in <code>testng.xml</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> xml file me parallel options set karke
+                            hum execution speed badha sakte hain.<br>
+                            <pre>&lt;suite name="Suite" parallel="tests" thread-count="2"&gt;</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>40. How do you handle a new window in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>getWindowHandles()</code> to get IDs and
+                            <code>switchTo().window(ID)</code> to switch.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> IDs fetch karke specific window ID par
+                            switch karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>41. How do you handle mouse hover in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Handled using <strong>Actions</strong> class with
+                            <code>moveToElement()</code> method.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Actions class ka use karke cursor move
+                            karate hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>42. How do you handle Web Tables in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use XPath to access rows (<code>tr</code>) and
+                            columns (<code>td</code>).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> XPath se logic bante hain:
+                            <code>//table//tr[2]/td[3]</code> code specific cell ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>43. How do you handle keyboard operations in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Handled using <strong>Actions</strong> class or
+                            <code>sendKeys()</code>.<br>
+                            <pre>Actions act = new Actions(driver);
+act.sendKeys(Keys.ENTER).perform();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>44. How do you handle double click in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use <code>doubleClick(element)</code> method of
+                            <strong>Actions</strong> class.<br>
+                            <pre>Actions act = new Actions(driver);
+act.doubleClick(element).perform();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>45. How do you clear browser cache in automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Deleting cookies is the common way.<br>
+                            <code>driver.manage().deleteAllCookies();</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Saare cookies delete karke cache effect
+                            handle karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>46. How do you find XPath of an element?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use Browser DevTools (Inspect) and create
+                            relative/dynamic XPath.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Element inspect karke relative path
+                            banate hain (e.g., <code>//input[@id='username']</code>).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>47. How do you create a Maven project for Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Create Maven project in IDE and add dependencies in
+                            <code>pom.xml</code>.<br><br>
+                            <strong>Sample pom.xml:</strong>
+                            <pre>&lt;dependencies&gt;
+  &lt;!-- Selenium --&gt;
+  &lt;dependency&gt;
+    &lt;groupId&gt;org.seleniumhq.selenium&lt;/groupId&gt;
+    &lt;artifactId&gt;selenium-java&lt;/artifactId&gt;
+    &lt;version&gt;4.18.1&lt;/version&gt;
+  &lt;/dependency&gt;
+&lt;/dependencies&gt;</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>48. How do you write a test automation script?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Open browser → Go to URL → Locate Elements →
+                            Perform Actions → Validate.<br>
+                            <pre>driver.get("https://example.com");
+driver.findElement(By.id("user")).sendKeys("admin");
+driver.findElement(By.id("login")).click();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>49. What is TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> TestNG is a testing framework used with Selenium
+                            for better execution control and reporting.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Test cases manage aur execute karne ka
+                            modern framework.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>50. What are different TestNG annotations?</summary>
+                        <div class="answer">
+                            <code>@BeforeSuite</code>, <code>@BeforeTest</code>, <code>@BeforeClass</code>,
+                            <code>@BeforeMethod</code>, <code>@Test</code>, <code>@AfterMethod</code>,
+                            <code>@AfterClass</code>, <code>@AfterTest</code>, <code>@AfterSuite</code>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>51. What is TestNG Suite?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An XML file (<code>testng.xml</code>) used to
+                            control test execution (parallel, group, listeners).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> XML file jo batches of tests ko control
+                            karti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>52. What are waits in Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Used to synchronize Selenium with web elements to
+                            prevent errors like NoSuchElementException.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Page load hone aur elements appear hone
+                            ka wait karne ke liye dynamic mechanism.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>53. Difference between Implicit and Explicit Wait.</summary>
+                        <div class="answer">
+                            <table style="width:100%; border-collapse: collapse; margin: 10px 0;">
+                                <tr style="background: var(--brand-primary); color: white;">
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Implicit Wait</th>
+                                    <th style="padding: 8px; border: 1px solid var(--border-light);">Explicit Wait</th>
+                                </tr>
+                                <tr>
+                                    <td>Applies globally</td>
+                                    <td>Applies to specific element</td>
+                                </tr>
+                                <tr>
+                                    <td>Defined once</td>
+                                    <td>Defined for each condition</td>
+                                </tr>
+                                <tr>
+                                    <td>Less flexible</td>
+                                    <td>More flexible</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>54. If priority is not given in TestNG, how are test cases executed?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> TestNG executes test cases in <strong>alphabetical
+                                order</strong> by default.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Default default alphabet order follow
+                            hota hai agar priority mention nahi hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>55. Explain Hybrid Driven Framework.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Hybrid framework is the combination of Data Driven,
+                            Keyword Driven, and POM framework.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hybrid framework Data Driven, Keyword
+                            Driven aur POM ka combination hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>56. How do you find XPath of an element?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Steps:<br>
+                            1. Right click on element &rarr; Click Inspect<br>
+                            2. Check attributes like id, name, class<br>
+                            3. Create XPath: <code>//input[@id='username']</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Element par right click karke inspect
+                            karo aur attributes (id/name) ke base par XPath banao.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>57. How do you extract all links from a webpage?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use <code>findElements</code> with the tag name
+                            "a" and iterate to get "href" attributes.<br>
+                            <pre>List&lt;WebElement&gt; links = driver.findElements(By.tagName("a"));
+for(WebElement link : links){
+    System.out.println(link.getAttribute("href"));
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> "a" tag se <code>findElements</code>
+                            karke loop chalate hain aur attribute fetch karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>58. XPath for "Navigate your next" (Infosys example)</summary>
+                        <div class="answer">
+                            <code>//a[text()='Navigate your next']</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum exact text match ke liye
+                            <code>text()</code> function use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>59. What is Dynamic XPath?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Dynamic XPath is used when attribute values change
+                            on every reload (e.g., dynamic IDs).<br>
+                            <strong>Example:</strong> <code>//input[contains(@id,'user')]</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab ID prefix constant ho par numbers
+                            badalte rahein tab <code>contains()</code> use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>60. On which project have you worked?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> I worked on a web automation project using
+                            Selenium, Java, and TestNG for an E-commerce/Banking application.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Maine Selenium aur TestNG framework ka
+                            use karke real-time automation project par kaam kiya hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>61. How to find XPath on any e-commerce site? (Search Box)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Inspect the search input field and use its type or
+                            placeholder.<br>
+                            <strong>Example:</strong> <code>//input[@type='search']</code> or
+                            <code>//input[@placeholder='Search']</code>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>62. Difference between Absolute and Relative XPath.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Absolute:</strong> Full path from root (starts with /). Unstable.<br>
+                            - <strong>Relative:</strong> Short path (starts with //). Stable and reliable.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Absolute root node se start hota hai,
+                            relative attributes se beech me se start hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>63. Which framework is used in your current automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> I use a Hybrid Framework which combines Page Object
+                            Model (POM), Data Driven (using Excel), and TestNG.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Main Hybrid framework (POM + Data Driven
+                            + TestNG) use karta hoon.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>64. Do you use TestNG? Why?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Yes, for test execution, prioritizing tests,
+                            grouping, and generating HTML reports.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Haan, execution control aur automatic
+                            reports ke liye TestNG perfect hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>65. What is Stale Element Reference Exception?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It occurs when an element is no longer present in
+                            the DOM, usually after a page refresh.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jab element reference purana ho jaye
+                            (refresh ke baad), tab ye exception aata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>66. Common Locators in Selenium.</summary>
+                        <div class="answer">
+                            ID, Name, Class Name, Tag Name, Link Text, Partial Link Text, XPath, and CSS Selector.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Sabse common ID, Name aur XPath use hote
+                            hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>67. How to find XPath efficiently?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Always prefer ID or Name. If not available, use
+                            unique attributes with Relative XPath.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Element inspect karke unique id ya text
+                            se dynamic path nikalna sabse efficient hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>68. How to handle mouse operations?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use the <strong>Actions</strong> class for mouse
+                            hover, right click, and double click.<br>
+                            <pre>Actions act = new Actions(driver);
+act.moveToElement(element).click().perform();</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>69. How to handle dropdowns using Selenium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use the <strong>Select</strong> class for
+                            &lt;select&gt; tags.<br>
+                            <pre>Select s = new Select(element);
+s.selectByVisibleText("India");</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>70. How to select the first value in a dropdown?</summary>
+                        <div class="answer">
+                            <code>s.selectByIndex(0);</code><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Index series 0 se start hoti hai, isliye
+                            zero index first value select karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>71. Which locators do you commonly use?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> I commonly use ID and Relative XPath because they
+                            are very stable.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Main jyadatar ID aur XPath use karta hoon
+                            kyunki ye reliable hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>72. Why use relative XPath over absolute XPath?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Relative XPath is much more stable and does not
+                            break if the UI layout changes slightly.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Relative small hota hai aur tab bhi kaam
+                            karta hai jab HTML structure me minor changes ho jayein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>73. How to handle JavaScript alerts?</summary>
+                        <div class="answer">
+                            <pre>Alert a = driver.switchTo().alert();
+a.accept();  // Click OK
+a.dismiss(); // Click Cancel</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Alert interface se hum popup buttons
+                            handle karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>74. Difference between Implicit and Explicit wait with code.</summary>
+                        <div class="answer">
+                            <pre>// Implicit (Global)
+driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+
+// Explicit (Specific)
+WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+wait.until(ExpectedConditions.visibilityOf(element));</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Implicit wait poore driver session ke
+                            liye hota hai, explicit visibility conditional hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>75. Where is the test data kept in a framework?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Test data is usually kept in external files like
+                            Excel (.xlsx), JSON, or Properties files.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hum data script me hardcode nahi karte,
+                            Excel ya config files me rakhte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>76. What are the common TestNG annotations?</summary>
+                        <div class="answer">
+                            <code>@Test</code>, <code>@BeforeMethod</code>, <code>@AfterMethod</code>,
+                            <code>@BeforeClass</code>, <code>@AfterClass</code>, <code>@BeforeSuite</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye annotations hume execution workflow
+                            manage karne me help karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>77. Why do we use @BeforeMethod?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> To run setup code (like opening a browser or
+                            logging in) before every <code>@Test</code> case.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har test case se pehle chalta hai,
+                            configuration tasks ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>78. Sample Selenium script: Login and Validate Product.</summary>
+                        <div class="answer">
+                            <pre>// Login Steps
+driver.findElement(By.id("user")).sendKeys("admin");
+driver.findElement(By.id("pass")).sendKeys("123");
+driver.findElement(By.id("login")).click();
+
+// Search Product
+driver.findElement(By.id("search")).sendKeys("Laptop");
+driver.findElement(By.id("btn")).click();
+
+// Validation
+String actual = driver.findElement(By.xpath("//h2")).getText();
+if(actual.contains("Laptop")) {
+    System.out.println("Test Passed: Product found");
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Login karke product search perform karte
+                            hain aur product header se validation karte hain.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="java-programs"><i class="fas fa-code"></i> Top 20 Important Java Programs
+</h2>
+
+                    <details>
+                        <summary>1. How to Reverse a String in Java?</summary>
+                        <div class="answer">
+                            <pre>public class ReverseString {
+    public static void main(String[] args) {
+        String str = "hello";
+        String rev = "";
+        for(int i=str.length()-1; i>=0; i--){
+            rev = rev + str.charAt(i);
+        }
+        System.out.println(rev);
+    }
+}</pre>
+                            <span class="lang-badge">English:</span> The loop starts from the last index and appends
+                            characters in reverse order.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Loop last character se start hota hai aur
+                            characters ko reverse order me add karta hai.<br>
+                            <strong>Output:</strong> olleh
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. How to check if a String is a Palindrome?</summary>
+                        <div class="answer">
+                            <pre>public class PalindromeCheck {
+    public static void main(String[] args) {
+        String str = "madam";
+        String rev = "";
+        for(int i=str.length()-1;i>=0;i--){
+            rev = rev + str.charAt(i);
+        }
+        if(str.equals(rev))
+            System.out.println("Palindrome");
+        else
+            System.out.println("Not Palindrome");
+    }
+}</pre>
+                            <span class="lang-badge">English:</span> A palindrome string reads the same forward and
+                            backward (e.g., madam, level).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Palindrome string aage aur piche se same
+                            hoti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Swap Two Numbers without a third variable.</summary>
+                        <div class="answer">
+                            <pre>public class SwapNumbers {
+    public static void main(String[] args) {
+        int a = 5, b = 10;
+        a = a + b; // 15
+        b = a - b; // 5
+        a = a - b; // 10
+        System.out.println("a: " + a + ", b: " + b);
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Addition aur subtraction logic use karke
+                            numbers swap kiye gaye hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. How to generate Fibonacci Series?</summary>
+                        <div class="answer">
+                            <pre>public class Fibonacci {
+    public static void main(String[] args) {
+        int a=0, b=1, c;
+        for(int i=1; i<=10; i++){
+            System.out.print(a + " ");
+            c = a + b;
+            a = b;
+            b = c;
+        }
+    }
+}</pre>
+                            <span class="lang-badge">English:</span> Each number is the sum of previous two numbers.<br>
+                            <strong>Example:</strong> 0 1 1 2 3 5 8
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. Find the Largest Number in an Array.</summary>
+                        <div class="answer">
+                            <pre>public class LargestNumber {
+    public static void main(String[] args) {
+        int arr[] = {10, 20, 5, 30, 15};
+        int max = arr[0];
+        for(int i=1; i&lt;arr.length; i++){
+            if(arr[i] &gt; max) max = arr[i];
+        }
+        System.out.println(max);
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Har element ko variable 'max' se compare
+                            karke largest number find karte hain.<br>
+                            <strong>Output:</strong> 30
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. Count Vowels in a String.</summary>
+                        <div class="answer">
+                            <pre>public class CountVowels {
+    public static void main(String[] args) {
+        String s = "automation";
+        int count = 0;
+        for(int i=0; i&lt;s.length(); i++){
+            char c = s.charAt(i);
+            if(c=='a'||c=='e'||c=='i'||c=='o'||c=='u') count++;
+        }
+        System.out.println(count);
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> A, E, I, O, U vowels ko check karke
+                            counter increment karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. Find Duplicate Characters in a String.</summary>
+                        <div class="answer">
+                            <pre>public class DuplicateChar {
+    public static void main(String[] args) {
+        String s = "programming";
+        for(int i=0; i&lt;s.length(); i++){
+            for(int j=i+1; j&lt;s.length(); j++){
+                if(s.charAt(i) == s.charAt(j)){
+                    System.out.println(s.charAt(i));
+                }
+            }
+        }
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Nested loops use karke har character ko
+                            baaki characters se compare kiya jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. How to Reverse an Array?</summary>
+                        <div class="answer">
+                            <pre>public class ReverseArray {
+    public static void main(String[] args) {
+        int arr[] = {1, 2, 3, 4, 5};
+        for(int i=arr.length-1; i&gt;=0; i--){
+            System.out.print(arr[i] + " ");
+        }
+    }
+}</pre>
+                            <span class="lang-badge">English:</span> Loop starts from the last index (`length-1`) to
+                            print in reverse order.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. Count Words in a String.</summary>
+                        <div class="answer">
+                            <pre>public class CountWords {
+    public static void main(String[] args) {
+        String s = "Java Selenium Automation";
+        String words[] = s.split(" ");
+        System.out.println(words.length);
+    }
+}</pre>
+                            <strong>Output:</strong> 3
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Check if a number is Prime.</summary>
+                        <div class="answer">
+                            <pre>public class PrimeNumber {
+    public static void main(String[] args) {
+        int num = 7, count = 0;
+        for(int i=1; i&lt;=num; i++){
+            if(num % i == 0) count++;
+        }
+        if(count == 2) System.out.println("Prime");
+        else System.out.println("Not Prime");
+    }
+}</pre>
+                            <span class="lang-badge">English:</span> A prime number has exactly two factors: 1 and
+                            itself.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. Remove Spaces from a String.</summary>
+                        <div class="answer">
+                            <pre>String s = "Java Selenium";
+s = s.replace(" ", "");
+System.out.println(s);</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>replace()</code> method string se
+                            saare spaces remove kar deta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. Find String Length without using length() method.</summary>
+                        <div class="answer">
+                            <pre>String s = "automation";
+int count = 0;
+for(char c : s.toCharArray()) {
+    count++;
+}
+System.out.println(count);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Find the Second Largest Number in an Array.</summary>
+                        <div class="answer">
+                            <pre>public class SecondLargest {
+    public static void main(String[] args) {
+        int arr[] = {10, 20, 30, 40};
+        int largest=0, second=0;
+        for(int num : arr){
+            if(num &gt; largest){
+                second = largest;
+                largest = num;
+            } else if (num &gt; second && num != largest) {
+                second = num;
+            }
+        }
+        System.out.println(second);
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. Print even numbers from an Array.</summary>
+                        <div class="answer">
+                            <pre>int arr[] = {1, 2, 3, 4, 5, 6};
+for(int i=0; i&lt;arr.length; i++){
+    if(arr[i] % 2 == 0) System.out.println(arr[i]);
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. Sum of all elements in an Array.</summary>
+                        <div class="answer">
+                            <pre>int arr[] = {10, 20, 30};
+int sum = 0;
+for(int i=0; i&lt;arr.length; i++){
+    sum = sum + arr[i];
+}
+System.out.println(sum);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. Print odd numbers between 1 to 10.</summary>
+                        <div class="answer">
+                            <pre>for(int i=1; i&lt;=10; i++){
+    if(i % 2 != 0) System.out.println(i);
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. Reverse words in a sentence.</summary>
+                        <div class="answer">
+                            <pre>String s = "Java Selenium";
+String words[] = s.split(" ");
+for(int i=words.length-1; i&gt;=0; i--){
+    System.out.print(words[i] + " ");
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. Find duplicates in an Array.</summary>
+                        <div class="answer">
+                            <pre>int arr[] = {1, 2, 2, 3, 4, 4};
+for(int i=0; i&lt;arr.length; i++){
+    for(int j=i+1; j&lt;arr.length; j++){
+        if(arr[i] == arr[j]) System.out.println(arr[i]);
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. Check if two Strings are Anagrams.</summary>
+                        <div class="answer">
+                            <pre>import java.util.Arrays;
+public class AnagramCheck {
+    public static void main(String[] args) {
+        String s1="listen", s2="silent";
+        char a[]=s1.toCharArray(), b[]=s2.toCharArray();
+        Arrays.sort(a); Arrays.sort(b);
+        if(Arrays.equals(a,b)) System.out.println("Anagram");
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. Print All Possible Pairs from a String.</summary>
+                        <div class="answer">
+                            <pre>String s = "abcd";
+for(int i=0; i&lt;s.length(); i++){
+    for(int j=i+1; j&lt;s.length(); j++){
+        System.out.println(s.charAt(i) + "" + s.charAt(j));
+    }
+}</pre>
+                            <strong>Output:</strong> ab, ac, ad, bc, bd, cd
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. How to generate a Random Alphanumeric String in Java?</summary>
+                        <div class="answer">
+                            <pre>import java.util.Random;
+public class RandomStringExample {
+    public static void main(String[] args) {
+        String chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+        StringBuilder sb = new StringBuilder();
+        Random random = new Random();
+        for (int i = 0; i &lt; 10; i++) {
+            sb.append(chars.charAt(random.nextInt(chars.length())));
+        }
+        System.out.println(sb.toString());
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. Check if a number is Odd or Even without using the '%' operator.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Divide the number by 2, multiply by 2, and compare
+                            with original number. Or use Bitwise AND.<br>
+                            <pre>// Bitwise Method (Fastest)
+if ((num & 1) == 1) System.out.println("Odd");
+else System.out.println("Even");</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>(num & 1) == 1</code> logic se bit
+                            level par checking hoti hai.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="advanced-testing"><i class="fas fa-tools"></i> Advanced Automation & SDLC
+                    </h2>
+
+                    <details>
+                        <summary>23. What is Time Complexity and why is it important?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Time Complexity measures how much time an algorithm
+                            takes relative to input size. Common notations: O(1), O(n), O(n²).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye batata hai ki input badhne par code
+                            kitna slow ya fast chalega. O(n) loop ke liye hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. What is a Keyword Driven Framework?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A framework where actions (Click, Enter, etc.) are
+                            stored as keywords in external files (Excel/CSV). Script reads keywords and executes
+                            accordingly.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Isme Excel me "ClickLogin" jese keywords
+                            likhte hain aur code un keywords ko actions me convert karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. Explain Selenium Grid and its Hub-Node architecture.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Tool for parallel execution on multiple
+                            machines/browsers. <strong>Hub</strong> is the central server; <strong>Nodes</strong> are
+                            the actual execution machines.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hub driver se command leta hai aur
+                            available Node par test bhej deta hai cross-browser testing ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. Behavioral Question: Why should we hire you?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> "I have 10 years in QA, with strong expertise in
+                            Selenium/Java frameworks. I've led teams and delivered high-quality releases
+                            consistently."<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Apne years of experience, framework
+                            building knowledge aur problem-solving skills ko highlight karein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. How do you raise a defect in Jira? (Standard Steps)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Login &rarr; Create Issue &rarr; Type: Bug &rarr;
+                            Fill Summary, Description, Steps to Reproduce, Expected/Actual results &rarr; Attach
+                            Screenshots.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Steps to reproduce sabse important part
+                            hai taaki developer issue recreate kar sake.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. Explain the Agile Process (Scrum, Sprints, Ceremonies).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Iterative methodology dividing project into 2-4
+                            week <strong>Sprints</strong>. Ceremonies: Sprint Planning, Daily Stand-up, Review, and
+                            Retrospective.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Agile me client feedback jaldi milta hai
+                            aur changes handle karna easy hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. Interview Tip: Which framework are you using?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> "We use a <strong>Hybrid Framework</strong>,
+                            combining Data-Driven (Excel), Keyword-Driven (for maintenance), and Page Object Model with
+                            Maven/TestNG."<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Humesha 'Hybrid' bole kyunki real project
+                            me multiple patterns mix hote hain.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="core-java-expert"><i class="fas fa-brain"></i> Core Java Mastery (Expert Mode)
+                    </h2>
+
+                    <details>
+                        <summary>1. Explain OOPS Concepts and how they are used in Automation.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Encapsulation:</strong> Used in POM (Page Object Model) to wrap data and methods
+                            (Private variables, Public getters).<br>
+                            - <strong>Abstraction:</strong> Hiding implementation details, used in Base classes and
+                            utility interfaces.<br>
+                            - <strong>Inheritance:</strong> Reusability; test classes <code>extends</code> a
+                            Base/Utility class.<br>
+                            - <strong>Polymorphism:</strong> Method overloading (same name, different parameters) and
+                            cross-browser testing (WebDriver interface).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Encapsulation = data hide karna.
+                            Inheritance = parents se child banana. Abstraction = sirf important details dikhana.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Java Code to Read a Properties (Config) File.</summary>
+                        <div class="answer">
+                            <pre>import java.io.FileInputStream;
+import java.util.Properties;
+
+public class ReadConfig {
+    public static void main(String[] args) throws Exception {
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream("src/test/resources/config.properties");
+        prop.load(fis);
+        System.out.println("Browser: " + prop.getProperty("browser"));
+        System.out.println("URL: " + prop.getProperty("url"));
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Properties class <code>load()</code>
+                            function se file read karti hai aur <code>getProperty()</code> se values fetch.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. How do you take a screenshot in Selenium? (Practical Code)</summary>
+                        <div class="answer">
+                            <pre>import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+
+TakesScreenshot ts = (TakesScreenshot) driver;
+File source = ts.getScreenshotAs(OutputType.FILE);
+FileUtils.copyFile(source, new File("D:\\Screenshots\\error.png"));</pre>
+                            <span class="lang-badge">English:</span> Cast the driver to <code>TakesScreenshot</code>,
+                            capture the file, and save it using <code>FileUtils</code> or <code>FileHandler</code>.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. How to read data from an Excel sheet using Apache POI?</summary>
+                        <div class="answer">
+                            <pre>FileInputStream file = new FileInputStream("D:\\TestData.xlsx");
+Workbook workbook = new XSSFWorkbook(file);
+Sheet sheet = workbook.getSheet("Sheet1");
+String user = sheet.getRow(1).getCell(0).getStringCellValue();
+String pass = sheet.getRow(1).getCell(1).getStringCellValue();</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Excel structure (Workbook &rarr; Sheet
+                            &rarr; Row &rarr; Cell) follow karke data iterate karna padta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. Difference between Method Overloading and Overriding.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Overloading:</strong> Same name, different parameters, within same class
+                            (Compile-time).<br>
+                            - <strong>Overriding:</strong> Subclass provides specific implementation of parent method
+                            (Run-time).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Overloading "static binding" hai,
+                            Overriding "dynamic binding" jo inheritance ki vajah se possible hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. Difference between ArrayList and LinkedList with use cases.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>ArrayList</strong> uses dynamic arrays,
+                            best for random access/retrieval. <strong>LinkedList</strong> uses nodes, best for frequent
+                            add/remove operations.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Search karne ke liye ArrayList fast hai,
+                            element delete/add karne ke liye LinkedList.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. Why is String immutable in Java?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> For security, memory optimization (String Pool
+                            caching), and thread safety. Once created, its value cannot be altered in memory.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Memory save karne ke liye String Pool use
+                            hota hai jisme duplicate values create nahi hoti, isliye isse immutable rakha gaya hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. Java Program to Check if a number is Prime.</summary>
+                        <div class="answer">
+                            <pre>int num = 17; boolean isPrime = true;
+if (num &lt;= 1) isPrime = false;
+for (int i = 2; i &lt;= num / 2; i++) {
+    if (num % i == 0) { isPrime = false; break; }
+}
+System.out.println(isPrime ? "Prime" : "Not Prime");</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. Write a program to print duplicate elements in an array.</summary>
+                        <div class="answer">
+                            <pre>int[] arr = {1, 2, 3, 2, 4, 3, 5, 1};
+for(int i = 0; i &lt; arr.length; i++) {
+    for(int j = i + 1; j &lt; arr.length; j++) {
+        if(arr[i] == arr[j]) System.out.println("Duplicate: " + arr[i]);
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Java program to reverse a given string without using inbuilt functions.</summary>
+                        <div class="answer">
+                            <pre>String input = "Selenium", reverse = "";
+for(int i = input.length() - 1; i &gt;= 0; i--) {
+    reverse = reverse + input.charAt(i);
+}
+System.out.println("Reversed: " + reverse);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. Define a class and show how it's called using an object.</summary>
+                        <div class="answer">
+                            <pre>class Car { void start(){ System.out.println("Car started"); } }
+public class Test {
+    public static void main(String[] args){
+        Car myCar = new Car(); // Object creation
+        myCar.start();         // Calling method
+    }
+}</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Class ek design hai, bina object banaye
+                            hum uske state data ya behavior ko access nahi kar sakte.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. Explain and show a Try-Catch block example in Java.</summary>
+                        <div class="answer">
+                            <pre>try {
+    int data = 100 / 0; // Risky code
+} catch (ArithmeticException e) {
+    System.out.println("Cannot divide by zero: " + e.getMessage());
+} finally {
+    System.out.println("Cleanup activities here");
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Java program to sort an array and remove duplicates.</summary>
+                        <div class="answer">
+                            <pre>int[] arr = {5, 2, 8, 2, 5, 1};
+Arrays.sort(arr); 
+int n = arr.length; int[] temp = new int[n]; int j = 0;
+for (int i = 0; i &lt; n - 1; i++) {
+    if (arr[i] != arr[i+1]) temp[j++] = arr[i];
+}
+temp[j++] = arr[n-1];
+for (int i=0; i&lt;j; i++) System.out.print(temp[i] + " ");</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What are Getter and Setter methods and why are they used?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> They are used for <strong>Data
+                                Encapsulation</strong>. Private variables can only be accessed through these public
+                            methods, ensuring data validation and security.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> User ko direct variable control nahi
+                            dete, getters/setters validation layer ki tarah kaam karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. What is an Interface in Java? (Blueprint Theory)</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An interface defines "what" a class should do,
+                            without specifying "how". All methods are abstract by default (before Java 8).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Interface classes ko ek particular set of
+                            rules follow karne ke liye majboor karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>16. What is StringBuilder and how it is different from String?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> StringBuilder is mutable (can be changed). String
+                            creates a new object in memory for every concatenation, but StringBuilder modifies the same
+                            object, making it much faster for loops.<br>
+                            <pre>StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World"); // Modifies same memory space</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. List the most commonly used String methods in automation.</summary>
+                        <div class="answer">
+                            <code>length()</code> - gets character count<br>
+                            <code>charAt(index)</code> - gets specific char<br>
+                            <code>equals()</code> & <code>equalsIgnoreCase()</code> - string comparison<br>
+                            <code>contains()</code> - substring check<br>
+                            <code>split()</code> - breaking string based on regex<br>
+                            <code>substring(start, end)</code> - extracting text
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. Difference between Array and List (ArrayList).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Arrays have a static size and store primitives.
+                            ArrayList has a dynamic size (auto-resizable) and provides rich API methods like
+                            <code>add()</code>, <code>remove()</code>, etc.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Array me size pehle batana padta hai,
+                            ArrayList me data ke hisab se size apne aap badhta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. Difference between Map and Dictionary (Legacy vs Modern).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Map (interface) allows null keys/values in HashMap.
+                            Dictionary is a legacy class (now obsolete) that was fully synchronized and didn't allow
+                            nulls.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Aaj ke time me HashMap (Map interface)
+                            standard hai speed aur flexibility ki wajah se.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. How to iterate over List, Map, and Set structures?</summary>
+                        <div class="answer">
+                            <pre>// List/Set iteration
+for(String val : set) { System.out.println(val); }
+
+// Map iteration (Modern way)
+map.forEach((k, v) -> System.out.println("Key: " + k + ", Value: " + v));</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Enhanced for-loop list/set ke liye best
+                            hai; Map ke liye <code>entrySet()</code> ya lambda use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>21. What is a variable and explain its types (Static vs Instant).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Variables are data containers.
+                            <strong>Static</strong> belongs to the class (memory shared); <strong>Instance</strong>
+                            belongs to an object; <strong>Local</strong> exists only within a method.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Static pure class ke objects ke liye
+                            common hota hai, instance objects ke hisab se alag hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>22. What is a Wrapper Class and its use in Collections?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Since Collections store objects, we need Wrapper
+                            classes to treat primitives as objects (e.g., <code>Integer</code> for
+                            <code>int</code>).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Primitive values (int, char) ko ArrayList
+                            me store karne ke liye Integer/Character objects me convert karna padta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>23. How are Java Collections used in real Test Automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Used for storing multiple WebElements (using
+                            <code>findElements</code>), management of Window Handles (Sets), and mapping environment
+                            variables (Maps).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Browser windows handle karne ke liye
+                            <code>Set&lt;String&gt;</code> use hota hai aur elements list ke liye
+                            <code>List&lt;WebElement&gt;</code>.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>24. Java program for Array of String iteration.</summary>
+                        <div class="answer">
+                            <pre>String[] fruits = {"Apple", "Banana", "Orange"};
+for(int i=0; i&lt;fruits.length; i++){
+    System.out.println("Index " + i + ": " + fruits[i]);
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>25. Logic to find duplicate characters in a given String.</summary>
+                        <div class="answer">
+                            <pre>String str = "testing"; char[] chars = str.toCharArray();
+for(int i=0; i&lt;str.length(); i++){
+  for(int j=i+1; j&lt;str.length(); j++){
+    if(chars[i] == chars[j]) System.out.println("Duplicate: " + chars[i]);
+  }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>26. Find the length of a String without using the internal library length().</summary>
+                        <div class="answer">
+                            <pre>String s = "Automation"; int length = 0;
+for(char c : s.toCharArray()) length++;
+System.out.println("Computed Length: " + length);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>27. Briefly explain Collection, Map, and List hierarchy.</summary>
+                        <div class="answer">
+                            <strong>Collection Interface:</strong> Parent of List, Set, Queue.<br>
+                            <strong>List:</strong> Ordered, allows duplicates.<br>
+                            <strong>Map:</strong> Independent interface, stores Key-Value pairs (no duplicates in keys).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>28. Program to reverse a String based on user input (Scanner).</summary>
+                        <div class="answer">
+                            <pre>Scanner sc = new Scanner(System.in);
+System.out.println("Enter string:");
+String s = sc.nextLine(); String rev = "";
+for(int i=s.length()-1; i&gt;=0; i--) rev += s.charAt(i);
+System.out.println("User Reverse: " + rev);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>29. Program for sorting a String Array alphabetically.</summary>
+                        <div class="answer">
+                            <pre>String arr[] = {"Zebra", "Apple", "Monkey"};
+Arrays.sort(arr); // Apple, Monkey, Zebra</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>Arrays.sort()</code> utility
+                            function comparison algorithm use karke strings ko order me set karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>30. Difference between Abstraction (Class) and Interface.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Abstract classes can have state (variables) and
+                            partial implementation (non-abstract methods). Interfaces only define method signatures
+                            (strictly abstract before Java 8).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Agar base design common rakhna ho toh
+                            abstract class; agar sirf functionalities force karni hon toh interfaces.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>31. Program to find the second largest number in an unsorted array.</summary>
+                        <div class="answer">
+                            <pre>int nums[] = {5, 20, 10, 8, 25};
+Arrays.sort(nums);
+System.out.println("Second Largest: " + nums[nums.length-2]);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>32. How to handle logic exceptions vs runtime environment failures?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Logic errors are fixed during coding. Environment
+                            failures (like element timeout) are handled at runtime using <code>try-catch</code> and
+                            Selenium's <code>WebDriverWait</code>.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>33. What is the 'final' keyword and its impact on class/method/variable?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>final variable:</strong> value cannot
+                            change; <strong>final method:</strong> cannot be overridden; <strong>final class:</strong>
+                            prevents inheritance.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Final se security multi hai taaki koi
+                            aapki class ka behavior change (override) na kar sake.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>34. What is the purpose of the 'this' keyword in Java constructors?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> It prevents naming conflict between local variables
+                            and instance variables by specifically referencing the current object instance.<br>
+                            <pre>public class MyClass {
+    int x;
+    MyClass(int x) { this.x = x; } // 'this.x' belongs to object
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>35. Detailed explanation of all Inheritance types in Java.</summary>
+                        <div class="answer">
+                            <strong>1. Single:</strong> One level (Child &rarr; Parent).<br>
+                            <strong>2. Multilevel:</strong> Child &rarr; Parent &rarr; G-Parent.<br>
+                            <strong>3. Hierarchical:</strong> Multiple children of same parent.<br>
+                            <strong>4. Multiple:</strong> Only via Interfaces (preventing Diamond Problem).<br>
+                            <strong>5. Hybrid:</strong> Mix of above, using Interfaces in Java.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Java me ambiguity se bachne ke liye
+                            classes ke sath multiples inheritance block ki gayi hai.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="cucumber-framework">📌 Cucumber Framework – Question&Answer</h2>
+
+                    <details>
+                        <summary>1. Explain the framework structure which you are using in your Cucumber project.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> In my Cucumber framework, we follow a modular structure:<br>
+                            - <strong>Feature files</strong> &rarr; contain test scenarios<br>
+                            - <strong>Step Definition classes</strong> &rarr; contain implementation of steps<br>
+                            - <strong>Runner class</strong> &rarr; executes feature files<br>
+                            - <strong>Page classes (POM)</strong> &rarr; contain locators and actions<br>
+                            - <strong>Utility classes</strong> &rarr; for common methods (wait, screenshot, excel)<br>
+                            - <strong>Hooks class</strong> &rarr; for setup and teardown<br>
+                            This structure improves reusability and maintainability.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mere Cucumber framework me:<br>
+                            - <strong>Feature file</strong> &rarr; scenarios hote hain<br>
+                            - <strong>Step Definition</strong> &rarr; steps ka code hota hai<br>
+                            - <strong>Runner class</strong> &rarr; execution ke liye hoti hai<br>
+                            - <strong>Page classes (POM)</strong> &rarr; locators aur methods ke liye<br>
+                            - <strong>Utility classes</strong> &rarr; common methods ke liye<br>
+                            - <strong>Hooks class</strong> &rarr; browser setup aur close ke liye<br>
+                            Isse code reusable aur easy to maintain hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. What is a Feature file? What is inside it and explain each keyword.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A Feature file contains test scenarios written in Gherkin language.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Feature file me test scenarios likhe jaate hain Gherkin language me.<br>
+                            <br>
+                            <strong>Keywords:</strong><br>
+                            - <strong>Feature</strong> &rarr; describes application feature / functionality ka naam<br>
+                            - <strong>Scenario</strong> &rarr; test case<br>
+                            - <strong>Given</strong> &rarr; precondition<br>
+                            - <strong>When</strong> &rarr; action<br>
+                            - <strong>Then</strong> &rarr; expected result<br>
+                            - <strong>And / But</strong> &rarr; additional steps / extra steps
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Which annotations are used in the Test Runner class?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use <code>@RunWith(Cucumber.class)</code> and <code>@CucumberOptions</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Runner class me <code>@RunWith(Cucumber.class)</code> aur <code>@CucumberOptions</code> use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What attributes are used inside @CucumberOptions?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English / Hinglish:</span> Common attributes used:<br>
+                            - <strong>features</strong> &rarr; path of feature file<br>
+                            - <strong>glue</strong> &rarr; step definition package / path<br>
+                            - <strong>plugin</strong> &rarr; report generate karta hai / reporting<br>
+                            - <strong>monochrome</strong> &rarr; console output readable<br>
+                            - <strong>dryRun</strong> &rarr; checks mapping of steps<br>
+                            - <strong>tags</strong> &rarr; run specific/selected scenarios
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. Write feature file for login credentials.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A feature file is written in Gherkin language for Cucumber.<br>
+                            <pre>Feature: Login Functionality
+
+Scenario: Valid Login
+Given user is on login page
+When user enters username and password
+And user clicks on login button
+Then user should be logged in successfully</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Feature file me hum plain English me steps likhte hain:<br>
+                            <strong>Given</strong> = precondition<br>
+                            <strong>When</strong> = action<br>
+                            <strong>Then</strong> = result
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. What are Tags in Cucumber and why do we use them?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Tags (e.g., <code>@smoke</code>, <code>@regression</code>) are used to group and organize test scenarios. They allow us to selectively run a specific set of tests without executing the entire suite.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Tags scenarios ko group karne ke kaam aate hain. Specific tests (jaise <code>@smoke</code> ya <code>@regression</code>) run karne ke liye hum in tags ka use karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. Differences between Scenario and Scenario Outline?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Scenario:</strong> Runs a test case once with a single set of data.<br>
+                            - <strong>Scenario Outline:</strong> Runs the exact same test case multiple times using different datasets provided via an <code>Examples</code> table.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Scenario tab use karte hain jab ek hi data set ho, aur Scenario Outline tab use hota hai jab same steps ko alag-alag data (Examples table) ke sath repeat karna ho.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. What is the use of the 'Background' keyword in Cucumber?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> The <code>Background</code> keyword groups steps that are common to all scenarios in a feature file (like logging into the application). These steps run automatically before each scenario.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>Background</code> common steps (jaise login) ko ek jagah rakhne ka tareeka hai, jo har scenario se pehle automatically execute hoti hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. What is a Data Table in Cucumber?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A Data Table allows passing a list or grid of data directly inside a feature file step. It is commonly retrieved in the Step Definition as a <code>List&lt;List&lt;String&gt;&gt;</code> or a <code>List&lt;Map&lt;String, String&gt;&gt;</code>.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Feature file ke ek hi step me multiple data inputs pass karne ke liye Data Table banate hain, jise Java code me <code>List</code> ya <code>Map</code> ki tarah read kiya jata hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. Explain Cucumber Hooks (@Before and @After).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Hooks are blocks of code that run seamlessly before or after scenarios.<br>
+                            - <strong>@Before:</strong> Executes before the first step of each scenario (e.g., initializing WebDriver).<br>
+                            - <strong>@After:</strong> Executes after the last step of each scenario (e.g., capturing a screenshot on failure or quitting the browser).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Hooks code blocks hain jo test ke aage-peeche chalte hain. <code>@Before</code> browser setup karne ke liye aur <code>@After</code> test end hone par driver close ya error screenshot lene ke liye use hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is the purpose of 'dryRun' in @CucumberOptions?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Setting <code>dryRun = true</code> rapidly validates if every step in the Feature file has an associated Step Definition, without actually executing the underlying automation code. It is used to quickly spot missing steps.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>dryRun = true</code> check karta hai ki saare naye steps ka code likha hua hai ya nahi bina actual browser me test ko run kiye.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="framework-structure"><i class="fas fa-project-diagram"></i> Framework Deep-Dive</h2>
+                    <details>
+                        <summary>Can you explain your TestNG automation framework structure?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            Yes, I have designed a TestNG-based automation framework using Selenium by following the Page Object Model (POM) design pattern.<br><br>
+                            The framework is modular and divided into multiple layers for better maintainability, reusability, and scalability. Below is the framework structure:<br><br>
+                            <strong>Project Structure:</strong>
+                            <pre style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 1rem; overflow-x: auto; border: 1px solid var(--border-light); line-height: 1.5; color: var(--text-main);">
+project-root/
+├── src/test/java/
+│   ├── base/
+│   │   └── BaseClass.java
+│   ├── pages/
+│   │   ├── LoginPage.java
+│   │   ├── Users_Management_Page.java
+│   │   └── Policies_Page.java
+│   ├── testCases/
+│   │   ├── TC01_LoginTest.java
+│   │   ├── TC19_Users_Management_Page.java
+│   │   └── TC05_Policies_Page.java
+│   ├── utilities/
+│   │   ├── ConfigReader.java
+│   │   ├── WaitUtils.java
+│   │   ├── ScreenshotUtil.java
+│   │   ├── ExcelUtil.java / ODSReader.java
+│   │   └── RetryAnalyzer.java
+│   ├── listeners/
+│   │   └── CustomReporter.java
+├── src/test/resources/
+│   ├── config/
+│   │   └── config.properties
+│   ├── testData/
+│   │   └── testdata.xlsx / testdata.ods
+├── reports/
+├── screenshots/
+├── testng.xml
+└── pom.xml</pre>
+                            <br>
+                            <strong>Layer Explanations:</strong>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                                <li><strong>1. Base Layer:</strong> Contains BaseClass which handles WebDriver initialization, browser setup, and teardown methods.</li>
+                                <li><strong>2. Page Layer (POM):</strong> Contains all Page Object classes where web elements and reusable methods are defined. This ensures separation of UI logic from test logic.</li>
+                                <li><strong>3. Test Layer:</strong> Contains all TestNG test classes where test scenarios are written using annotations like @Test, @BeforeMethod, and @AfterMethod. Assertions are also implemented here.</li>
+                                <li><strong>4. Utilities:</strong> Includes reusable components like ConfigReader for reading properties, WaitUtils for synchronization, Screenshot utility for capturing failures, and Excel/ODS utilities for data-driven testing.</li>
+                                <li><strong>5. Listeners:</strong> Implements TestNG listeners to generate reports such as Extent Reports and to track test execution status.</li>
+                                <li><strong>6. Configuration File:</strong> config.properties is used to store environment-related data like URL, browser type, username, and password to avoid hardcoding.</li>
+                                <li><strong>7. Test Data:</strong> External data is maintained in Excel or ODS files for data-driven testing.</li>
+                                <li><strong>8. TestNG XML:</strong> testng.xml is used to manage test execution, grouping (smoke/regression), and parallel execution.</li>
+                            </ul>
+                            <br>
+                            Overall, the framework is scalable, reusable, supports data-driven testing, reporting, retry mechanisms, and can be integrated with CI/CD tools like Jenkins.
+                            <br><br>
+                            <div style="background: var(--brand-primary); color: white; padding: 1rem; border-radius: 8px; margin-top: 1rem;">
+                                <strong>🎯 Short Answer (Quick बोलने के लिए):</strong><br>
+                                "I am using a TestNG-based automation framework with Selenium, following the Page Object Model. It includes layers like Base, Pages, Test Cases, Utilities, and Listeners. The framework supports data-driven testing, reporting, retry mechanism, and parallel execution using testng.xml."
+                            </div>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can you explain your Cucumber automation framework structure?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            Yes, I have designed a hybrid automation framework using Selenium, Cucumber, and TestNG by following the Page Object Model (POM) design pattern.<br><br>
+                            The framework is divided into multiple layers to ensure better maintainability, reusability, and scalability. Below is the framework structure:<br><br>
+                            <strong>Project Structure:</strong>
+                            <pre style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: 12px; font-family: 'JetBrains Mono', monospace; font-size: 0.85rem; margin-top: 1rem; overflow-x: auto; border: 1px solid var(--border-light); line-height: 1.5; color: var(--text-main);">
+project-root/
+├── src/test/java/
+│   ├── base/
+│   │   └── BaseClass.java
+│   ├── pages/
+│   │   ├── LoginPage.java
+│   │   ├── Users_Management_Page.java
+│   │   └── Policies_Page.java
+│   ├── stepdefinitions/
+│   │   └── LoginSteps.java
+│   ├── utilities/
+│   │   ├── ConfigReader.java
+│   │   ├── WaitUtils.java
+│   │   ├── ScreenshotUtil.java
+│   │   └── ExcelUtil.java
+│   ├── runners/
+│   │   └── TestRunner.java
+│   └── listeners/
+│       └── CustomReporter.java
+├── src/test/resources/
+│   ├── features/
+│   │   └── login.feature
+│   └── config/
+│       └── config.properties
+├── reports/
+├── screenshots/
+├── testng.xml
+└── pom.xml</pre>
+                            <br>
+                            <strong>Layer Explanations:</strong>
+                            <ul style="margin-top: 1rem; padding-left: 1.5rem; display: flex; flex-direction: column; gap: 0.75rem;">
+                        <li><strong>1. Base Layer:</strong> Contains BaseClass which handles WebDriver initialization, browser setup, and teardown.</li>
+                                <li><strong>2. Page Layer (POM):</strong> Contains all Page Object classes where web elements and actions are defined. This helps in separating UI logic from test logic.</li>
+                                <li><strong>3. Step Definition Layer:</strong> Maps feature file steps (Given, When, Then) to Java methods. This acts as a bridge between feature files and automation code.</li>
+                                <li><strong>4. Feature Files:</strong> Written in Gherkin language and contain test scenarios in a readable format for both technical and non-technical users.</li>
+                                <li><strong>5. Runner Class:</strong> Uses TestNG with CucumberOptions to control test execution, specify feature file paths, glue code, and reporting.</li>
+                                <li><strong>6. Utilities:</strong> Reusable components like ConfigReader, WaitUtils, Screenshot utility, and Excel utility for data-driven testing.</li>
+                                <li><strong>7. Listeners:</strong> Used for generating reports like Extent Reports and capturing execution logs.</li>
+                                <li><strong>8. Config File:</strong> config.properties is used to store environment details such as URL, browser, username, and password.</li>
+                                <li><strong>9. TestNG XML:</strong> Used for grouping tests, parallel execution, and managing test suites.</li>
+                            </ul>
+
+                            <br>
+                            Overall, the framework supports data-driven testing, reporting, reusable components, and can be integrated with CI/CD tools like Jenkins.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="cicd-devops"><i class="fas fa-infinity"></i> CI/CD Pipelines & DevOps for Automation</h2>
+
+                    <details>
+                        <summary>1. What is CI/CD, and how does it relate to test automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Continuous Integration (CI)</strong> is the practice of merging code and running automated tests on every commit. <strong>Continuous Deployment (CD)</strong> is automatically deploying the build to production after successful tests. Automation is the backbone of CI/CD, ensuring that new changes don't break existing features.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> CI matlab code upload karte hi automatic tests chalna. CD matlab tests pass hone par code ko release karna. Setup automated hota hai taaki bugs jaldi mil sakein.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. How do you integrate Selenium tests with Jenkins?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Steps for integration:<br>
+                            1. Create a <strong>Freestyle Project</strong> or <strong>Pipeline</strong> in Jenkins.<br>
+                            2. Configure Source Code Management (SCM) to pull code from <strong>Git</strong>.<br>
+                            3. Add a build step: <code>mvn test</code> (for Maven projects).<br>
+                            4. Use <strong>Post-build Actions</strong> to archive TestNG reports or send email notifications.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Jenkins me build create karke Git se code link karte hain aur 'mvn test' command chala kar reports save karte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Explain Jenkins Pipeline (Jenkinsfile) for automation.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A Jenkinsfile defines the entire build/test process as code (Pipeline-as-Code).<br>
+                            <pre>pipeline {
+    agent any
+    stages {
+        stage('Checkout') { steps { git 'url' } }
+        stage('Build') { steps { sh 'mvn compile' } }
+        stage('Test') { steps { sh 'mvn test' } }
+        stage('Reporting') { steps { allure report } }
+    }
+}</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What is Headless Mode and why use it in CI/CD?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Headless mode runs the browser without a visible UI. It is essential in CI/CD environments (like Linux servers) where there is no display monitor.<br>
+                            <pre>ChromeOptions options = new ChromeOptions();
+options.addArguments("--headless");</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Headless browser screen ke bina backend me chalta hai. Linux servers par UI nahi hota isliye wahan headless mode compulsory hota hai.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="cloud-grid"><i class="fas fa-cloud"></i> Cloud Grid & Parallel Execution</h2>
+
+                    <details>
+                        <summary>1. What is a Cloud Grid (BrowserStack/SauceLabs) and why use it?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A Cloud Grid is a vendor-managed service that provides access to thousands of real devices and OS/browser versions remotely. It avoids the cost of maintaining a local physical lab.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> BrowserStack hume remote devices access karne deta hai. Hume khud saare browsers aur phones kharidne ki zarurat nahi padti.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. How do you connect your Selenium script to BrowserStack?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use <strong>RemoteWebDriver</strong> and provide the BrowserStack Hub URL with our Access Key.<br>
+                            <pre>MutableCapabilities capabilities = new MutableCapabilities();
+capabilities.setCapability("browserName", "Chrome");
+URL url = new URL("https://USERNAME:KEY@hub.browserstack.com/wd/hub");
+WebDriver driver = new RemoteWebDriver(url, capabilities);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. How to achieve Parallel Execution in TestNG?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> By using the <code>parallel</code> attribute in <code>testng.xml</code> at the <strong>suite</strong>, <strong>test</strong>, or <strong>methods</strong> level.<br>
+                            <pre>&lt;suite name="Suite" parallel="tests" thread-count="2"&gt;
+  &lt;test name="ChromeTest"&gt; ... &lt;/test&gt;
+  &lt;test name="FirefoxTest"&gt; ... &lt;/test&gt;
+&lt;/suite&gt;</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> <code>testng.xml</code> me parallel attribute set karke hum ek sath multiple browsers par tests chala sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What is a Tunnel (Local Testing) in Cloud Grids?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A tunnel (like <strong>BrowserStack Local</strong>) creates a secure connection between the Cloud provider and your local/private server, allowing you to test staging/VPN websites on cloud devices.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Tunnel ke zariye hum cloud devices par apne office ke server (localhost) wali website ko test kar sakte hain.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="docker-selenium-grid"><i class="fab fa-docker"></i> Docker for Selenium Grid</h2>
+
+                    <details>
+                        <summary>1. What is Docker and why use it for Selenium Grid?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Docker is a containerization platform that packages your grid environment into portable containers. It ensures <strong>consistency</strong> (same environment for all testers), <strong>scalability</strong> (easily add more browser nodes), and <strong>isolation</strong> (tests don't interfere with each other).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Docker se hum browser aur hub ko containers mein pack kar sakte hain. Isse hume alag-alag computers pe setup nahi karna padta aur hum ek sath bahut saare browsers chala sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. How to run a Standalone Selenium Chrome container?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> You can run a single container that contains both the Hub and the Chrome browser.<br>
+                            <pre>docker run -d -p 4444:4444 --shm-size="2g" selenium/standalone-chrome:latest</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Is command se ek browser container start ho jayega jise hum direct URL se connect kar sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Explain 'docker-compose.yml' for Selenium Grid.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A YAML file used to define and run multi-container applications (Hub + Chrome Node + Firefox Node).<br>
+                            <pre>version: "3"
+services:
+  selenium-hub:
+    image: selenium/hub:latest
+    ports: [ "4444:4444" ]
+  chrome:
+    image: selenium/node-chrome:latest
+    depends_on: [ selenium-hub ]
+    environment: [ SE_EVENT_BUS_HOST=selenium-hub ]</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. How to scale browser nodes using Docker Compose?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use the <code>--scale</code> flag to spin up multiple instances of a browser node instantly.<br>
+                            <pre>docker-compose up --scale chrome=5 -d</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ek simple command se hum 5 chrome browsers ek sath khol sakte hain testing ke liye.
+                        </div>
+                    </details>
+                    </details>
+
+                    <h2 class="section-title" id="api-automation-restassured"><i class="fas fa-network-wired"></i> REST API Automation (RestAssured)</h2>
+
+                    <details>
+                        <summary>1. What is RestAssured and why use it for automation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> RestAssured is a Java library used for testing and validating REST services. Unlike Postman, it allows us to write <strong>BDD-style code</strong> (Given-When-Then), integrates with Maven/TestNG, and supports automated validation of response bodies using JSON tools.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> RestAssured ek Java library hai APIs ko automate karne ke liye. Isse hum Java code likh kar API calls, responses aur assertions ko asani se handle kar sakte hain.
+                            <a href="practice-lab.html?lab=api-lab" class="lab-link"><i class="fas fa-vial"></i> Practice API Automation in Lab</a>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Explain the Given, When, Then syntax in RestAssured.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> RestAssured follows the BDD (Behavior Driven Development) structure:<br>
+                            - <strong>Given:</strong> Pre-requisites (Base URI, Headers, Query Params, Body).<br>
+                            - <strong>When:</strong> The action (GET, POST, PUT, DELETE with endpoint).<br>
+                            - <strong>Then:</strong> The verification (Status Code, Assertions, Response Body).<br>
+                            <pre>given().header("Content-Type", "application/json")
+.when().get("/users")
+.then().statusCode(200);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. How to extract a specific value from a JSON response?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> We use the <strong>JsonPath</strong> class to navigate the JSON structure and extract fields.<br>
+                            <pre>Response res = given().get("/api/user");
+JsonPath js = new JsonPath(res.asString());
+String name = js.getString("data.first_name");</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Response string ko JsonPath mein convert karke, 'key name' ke zariye hum kisi bhi value ko bahar nikal sakte hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What are Serialization and Deserialization in RestAssured?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Serialization</strong>: Converting a Java POJO (Plain Old Java Object) into a JSON/XML format to send as a request body.<br>
+                            - <strong>Deserialization</strong>: Converting a JSON/XML response back into a Java Object.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Java object ko JSON data banana (Sending) matlab Serialization. API ke JSON result ko waapas Java object bana dena matlab Deserialization.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. How to handle API authentication (Bearer Token)?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Authentication is usually passed in the <strong>Authorization</strong> header.<br>
+                            <pre>given().header("Authorization", "Bearer " + myToken)
+.get("/secure-endpoint")
+.then().statusCode(200);</pre>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. What is the role of RequestSpecBuilder and ResponseSpecBuilder?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> They are used to create reusable request and response components (e.g., Base URI, Content-Type) across multiple test cases, reducing code duplication.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Common details jaise Base URL aur Headers ko ek jagah rakhne ke liye builders ka use hota hai taaki code reusable ho sake.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="mobile-automation-appium"><i class="fas fa-mobile-alt"></i> Mobile Automation (Appium)</h2>
+
+                    <details>
+                        <summary>1. What is Appium and how does it work?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Appium is an open-source, cross-platform tool for automating native, hybrid, and mobile web apps. It uses the <strong>JSON Wire Protocol</strong> (now W3C) to communicate with the device. It has no dependency on the app's source code.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Appium mobile apps (Android aur iOS) automate karne ka tool hai. Ye humare Java code ko command ke roop mein server ko bhejta hai aur server usse mobile pe perform karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. Explain Native, Hybrid, and Mobile Web apps.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>Native:</strong> Built for a specific OS (Swift/Java). Fast and offline-friendly.<br>
+                            - <strong>Mobile Web:</strong> Websites accessed via a mobile browser.<br>
+                            - <strong>Hybrid:</strong> Web content inside a native wrapper (Cordova/React Native).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Native matlab jo sirf phone ke liye bani ho; Mobile Web matlab browser mein khulne wali site; Hybrid matlab donon ka mixture.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. What are Desired Capabilities in Appium?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> They are key-value pairs used to instruct the Appium server on which device and app to automate.<br>
+                            <pre>UiAutomator2Options options = new UiAutomator2Options();
+options.setPlatformName("Android");
+options.setDeviceName("emulator-5554");
+options.setAppPackage("com.example.app");
+options.setAppActivity(".MainActivity");</pre>
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="advanced-sql-qa"><i class="fas fa-database"></i> Advanced SQL for QA</h2>
+
+                    <details>
+                        <summary>1. Difference between INNER JOIN and LEFT JOIN?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Inner Join:</strong> Returns only matching rows. <strong>Left Join:</strong> Returns all rows from the left table and matching rows from the right.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Inner Join sirf matching data dikhata hai. Left Join left wali table ka poora data dikhaye chahe right mein match ho ya na ho.
+                            <a href="practice-lab.html?lab=sql-lab" class="lab-link"><i class="fas fa-vial"></i> Practice SQL Queries in Lab</a>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. How to find the 2nd highest salary in a table?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using a subquery or the <code>OFFSET/LIMIT</code> clause.<br>
+                            <pre>SELECT MAX(Salary) FROM Employees 
+WHERE Salary < (SELECT MAX(Salary) FROM Employees);</pre>
+                            <span class="lang-badge hinglish">Hinglish:</span> Poore table se max salary nikalo jo main max salary se kam ho.
+                        </div>
+                    </details>
+                </div>
+            </div>
+
+            <aside class="sidebar">
+                <!-- Quick Navigation Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-compass"></i> Quick Navigation</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#selenium-basics"><i class="fas fa-cubes"></i> Fundamentals</a></li>
+                        <li><a href="#java-programs"><i class="fas fa-code"></i> Java Programs</a></li>
+                        <li><a href="#cicd-devops"><i class="fas fa-infinity"></i> CI/CD Pipeline</a></li>
+                        <li><a href="#docker-selenium-grid"><i class="fab fa-docker"></i> Docker Grid</a></li>
+                        <li><a href="#api-automation-restassured"><i class="fas fa-network-wired"></i> API Automation</a></li>
+                        <li><a href="#mobile-automation-appium"><i class="fas fa-mobile-alt"></i> Mobile Automation</a></li>
+                        <li><a href="#advanced-sql-qa"><i class="fas fa-database"></i> SQL for QA</a></li>
+                        <li><a href="#framework-structure"><i class="fas fa-project-diagram"></i> Frameworks</a></li>
+                    </ul>
+                </div>
+
+                <!-- Related Resource Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-link"></i> Related Guides</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="manual-testing.html"><i class="fas fa-user-check"></i> Manual Testing</a></li>
+                        <li><a href="api-testing.html"><i class="fas fa-network-wired"></i> API Testing Guide</a></li>
+                        <li><a href="sql-testing.html"><i class="fas fa-database"></i> SQL Interview Q&A</a></li>
+                        <li><a href="qa-testing.html"><i class="fas fa-book"></i> Full QA Roadmap</a></li>
+                    </ul>
+                </div>
+
+                <div class="ad-unit ad-top-banner">
+                    <ins class="adsbygoogle"
+                         style="display:block; min-height: 90px;"
+                         data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID"
+                         data-ad-slot="AD_PLACEHOLDER_SLOT_TOP"
+                         data-ad-format="auto"
+                         data-full-width-responsive="true"></ins>
+                    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+            const studyToggle = document.getElementById('studyModeToggle');
+
+            detailsElements.forEach(det => {
+                det.addEventListener('click', () => {
+                    if (document.body.classList.contains('study-mode')) det.classList.add('revealed');
+                });
+            });
+
+            if (studyToggle) {
+                studyToggle.addEventListener('click', () => {
+                    const isActive = document.body.classList.toggle('study-mode');
+                    studyToggle.classList.toggle('active', isActive);
+                    detailsElements.forEach(det => det.classList.remove('revealed'));
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    
+                    detailsElements.forEach(el => {
+                        const summary = el.querySelector('summary');
+                        const answer = el.querySelector('.answer');
+                        
+                        // Reset highlighting
+                        if (el._originalHTML) {
+                            summary.innerHTML = el._originalSummary;
+                            answer.innerHTML = el._originalAnswer;
+                        } else {
+                            el._originalSummary = summary.innerHTML;
+                            el._originalAnswer = answer.innerHTML;
+                            el._originalHTML = true;
+                        }
+
+                        const text = el.textContent.toLowerCase();
+                        const isMatch = term === "" || text.includes(term);
+                        el.style.display = isMatch ? 'block' : 'none';
+
+                        if (isMatch && term !== "") {
+                            const reg = new RegExp(`(${term})`, 'gi');
+                            summary.innerHTML = summary.innerHTML.replace(reg, '<mark>$1</mark>');
+                            answer.innerHTML = answer.innerHTML.replace(reg, '<mark>$1</mark>');
+                        }
+                    });
+
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        let next = title.nextElementSibling;
+                        let hasVisible = false;
+                        while (next && !next.classList.contains('section-title')) {
+                            if (next.tagName === 'DETAILS' && next.style.display !== 'none') {
+                                hasVisible = true;
+                                break;
+                            }
+                            next = next.nextElementSibling;
+                        }
+                        title.style.display = hasVisible || term === "" ? 'flex' : 'none';
+                    });
+                });
+            }
+
+            // Progress Bar Logic
+            window.addEventListener('scroll', () => {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("readingProgress").style.width = scrolled + "%";
+            });
+
+            // Copy to Clipboard Logic
+            document.querySelectorAll('pre').forEach(block => {
+                const button = document.createElement('button');
+                button.className = 'copy-btn';
+                button.innerHTML = '<i class="far fa-copy"></i> Copy';
+                block.appendChild(button);
+
+                button.addEventListener('click', () => {
+                    const code = block.innerText.replace('Copy', '').trim();
+                    navigator.clipboard.writeText(code).then(() => {
+                        button.classList.add('copied');
+                        button.innerHTML = '<i class="fas fa-check"></i> Copied';
+                        setTimeout(() => {
+                            button.classList.remove('copied');
+                            button.innerHTML = '<i class="far fa-copy"></i> Copy';
+                        }, 2000);
+                    });
+                });
+            });
+
+            // Scroll Reveal Logic
+            const revealCallback = (entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            };
+
+            const revealObserver = new IntersectionObserver(revealCallback, { threshold: 0.1 });
+            document.querySelectorAll('.section-title, details').forEach(el => {
+                el.classList.add('reveal-on-scroll');
+                revealObserver.observe(el);
+            });
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+</html>

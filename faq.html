@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frequently Asked Questions - Ram Technical Help</title>
+  <meta name="description" content="Find answers to common questions about computer maintenance, software testing preparation, and using the Ram Technical Help platform.">
+  <meta name="keywords" content="FAQs, Help, OA Support, Tech Help, Website Guide">
+  
+  <!-- Theme Flash Protection -->
+  <script>
+    (function () {
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    })();
+  </script>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="assets/js/components.js" defer></script>
+  <script src="assets/js/app.js" defer></script>
+  <style>
+    .faq-container {
+        max-width: 850px;
+        margin: 0 auto;
+        padding: 4rem 1.5rem;
+    }
+
+    .faq-hero {
+        text-align: center;
+        margin-bottom: 4rem;
+    }
+
+    .faq-hero h1 {
+        font-size: 3rem;
+        font-weight: 800;
+        background: var(--brand-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        margin-bottom: 1rem;
+    }
+
+    details {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-light);
+      border-radius: var(--radius-lg);
+      margin-bottom: 1.25rem;
+      overflow: hidden;
+      transition: var(--transition-base);
+    }
+
+    details[open] {
+      box-shadow: var(--shadow-md);
+      border-color: var(--brand-primary);
+    }
+
+    summary {
+      padding: 1.25rem 1.75rem;
+      cursor: pointer;
+      font-weight: 700;
+      color: var(--text-main);
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.2s;
+    }
+
+    summary:hover {
+        background: var(--bg-surface-alt);
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::after {
+      content: '\f067'; /* FontAwesome Plus */
+      font-family: 'Font Awesome 6 Free';
+      font-weight: 900;
+      font-size: 0.9rem;
+      color: var(--brand-primary);
+      transition: transform 0.3s;
+    }
+
+    details[open] summary::after {
+      content: '\f068'; /* FontAwesome Minus */
+      transform: rotate(180deg);
+    }
+
+    .faq-answer {
+      padding: 1.75rem;
+      padding-top: 0;
+      line-height: 1.7;
+      color: var(--text-muted);
+      border-top: 1px solid transparent;
+      font-size: 1.05rem;
+    }
+
+    details[open] .faq-answer {
+      border-top-color: var(--border-light);
+      padding-top: 1.25rem;
+      animation: slideDown 0.3s ease-out;
+    }
+
+    @keyframes slideDown {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <header class="site-header"></header>
+
+  <div class="container" style="margin-top: 2rem;">
+    <div class="ad-unit ad-top-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="TOP" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <main class="container">
+    <div class="faq-container">
+      <div class="faq-hero">
+        <h1>Got Questions? We Have Answers.</h1>
+        <p class="muted" style="font-size: 1.2rem;">Everything you need to know about Ram Technical Help platforms and services.</p>
+      </div>
+
+      <div class="category-cards" style="margin-top: 1rem; margin-bottom: 4rem;">
+          <a href="faq.html" class="category-card">
+              <i class="fas fa-question-circle"></i>
+              <h3>FAQs</h3>
+              <p>Find answers to commonly asked questions about testing and tools.</p>
+              <span class="btn-card">Explore FAQs <i class="fas fa-arrow-right"></i></span>
+          </a>
+          <a href="blog.html" class="category-card">
+              <i class="fas fa-blog"></i>
+              <h3>Latest Blog</h3>
+              <p>Read latest articles, updates, and insights on testing and technology.</p>
+              <span class="btn-card">Read Blog <i class="fas fa-arrow-right"></i></span>
+          </a>
+          <a href="contact.html" class="category-card">
+              <i class="fas fa-headset"></i>
+              <h3>Contact Us</h3>
+              <p>Get in touch for support, queries, or collaboration.</p>
+              <span class="btn-card">Contact Now <i class="fas fa-arrow-right"></i></span>
+          </a>
+      </div>
+
+      <details>
+        <summary>Is Ram Technical Help completely free?</summary>
+        <div class="faq-answer">
+          Absolutely! All our troubleshooting guides, AI Testing banks, and interactive Practice Labs are 100% free to access. We aim to democratize technical knowledge.
+        </div>
+      </details>
+
+      <details>
+        <summary>What is the "AI Testing" section?</summary>
+        <div class="faq-answer">
+          Our specialized <strong>AI Testing</strong> section was built to help QA engineers transition into AI-driven testing. It covers topics like ChatGPT for automation, prompt engineering for testers, and testing machine learning models.
+        </div>
+      </details>
+
+      <details>
+        <summary>How does the "Practice Lab" work?</summary>
+        <div class="faq-answer">
+          The <strong>Practice Lab</strong> is an interactive environment where you can test your troubleshooting skills on simulated scenarios. It provides instant feedback and helps you internalize the steps required to fix common PC and network issues.
+        </div>
+      </details>
+
+      <details>
+        <summary>Can I suggest a new guide or question?</summary>
+        <div class="faq-answer">
+          We love community input! If you have a troubleshooting solution or an interview question we missed, use the <a href="contact.html">Contact Us</a> form or the submission portal in the Admin section.
+        </div>
+      </details>
+
+      <details>
+        <summary>Why do you use placeholders for ads?</summary>
+        <div class="faq-answer">
+          Ram Technical Help is currently in its final pre-launch phase. We have placed <strong>AdSense placeholders</strong> to ensure our professional layout accommodates monetization without degrading the user experience later.
+        </div>
+      </details>
+
+      <details>
+        <summary>Do I need to sign up to use the Mock Interviewer?</summary>
+        <div class="faq-answer">
+          No sign-up is required to use our tools. However, creating a free account (coming soon) will allow you to save your practice results and track your learning progress over time.
+        </div>
+      </details>
+
+      <details>
+        <summary>Is my data secure in the Lab?</summary>
+        <div class="faq-answer">
+          Security is a priority. All interactive data in our labs is stored in your <strong>LocalStorage</strong>. This means your data never leaves your computer and stays completely private.
+        </div>
+      </details>
+
+      <div style="margin-top: 4rem; text-align: center; background: var(--bg-surface-alt); padding: 3rem; border-radius: 20px;">
+          <h3>Still have questions?</h3>
+          <p class="muted">Our support team is here to help you 24/7.</p>
+          <a href="contact.html" class="btn">Contact Support</a>
+      </div>
+
+    </div>
+  </main>
+
+  <div class="container">
+    <div class="ad-unit ad-footer-banner">
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="FOOTER" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div>
+  </div>
+
+  <footer class="site-footer"></footer>
+
+</body>
+
+</html>
+
+

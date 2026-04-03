@@ -1,0 +1,599 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>API Testing Interview Q&A - Ram Technical Help</title>
+    <meta name="description"
+        content="Master API testing interviews with our collection of Q&A. Covers REST vs SOAP, Postman, Status Codes, and real-world scenarios in English and Hinglish.">
+    <meta name="keywords"
+        content="API Testing, REST API, SOAP API, Postman Tool, Web Services, QA Interview Questions">
+
+    <!-- Theme Flash Protection -->
+    <script>
+        (function () {
+            const savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    
+    <style>
+        /* This page uses global responsive styles from assets/css/styles.css */
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header class="site-header"></header>
+
+    <main class="container page-main">
+        <div class="has-sidebar">
+            <div class="main-content">
+                <div class="qa-container">
+                    <nav class="breadcrumb">
+                        <a href="index.html">Home</a>
+                        <span>/</span>
+                        <a href="qa-testing.html">Testing Q&A</a>
+                        <span>/</span>
+                        <span>API Testing</span>
+                    </nav>
+
+                    <div class="list-header">
+                        <h1>API Testing Interview Q&A Guide</h1>
+                        <p class="muted">Master API testing with Postman, REST vs SOAP, and real-world scenario-based questions.</p>
+                    </div>
+                </div>
+
+                <div class="qa-controls">
+                    <div class="qa-search-wrapper">
+                        <input type="text" id="qaSearch" placeholder="Search API testing questions... (e.g., Postman, REST, JSON)" />
+                    </div>
+                    <div class="qa-btn-group">
+                        <button id="studyModeToggle" class="study-mode-toggle">
+                            <div class="toggle-switch"></div>
+                            <span>Study Mode</span>
+                        </button>
+                        <button id="btnExpandAll" class="btn btn-sm">Expand All</button>
+                        <button id="btnCollapseAll" class="btn btn-sm btn-outline">Collapse All</button>
+                    </div>
+                </div>
+
+                <div id="qa-content">
+                    <h2 class="section-title" id="api-testing-postman">📌 API Testing & Postman</h2>
+
+                    <details>
+                        <summary>1. What is Postman?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Postman is an API testing tool used to create, send, and validate API requests such as GET, POST, PUT, and DELETE.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Postman ek API testing tool hai jiska use hum API requests create, send aur validate karne ke liye karte hain.
+                        </div>
+                    </details>
+                    
+                    <details>
+                        <summary>2. What is an HTTP Method and Which is Most Common?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An HTTP method defines the type of operation. GET is most commonly used to retrieve data without modifying anything.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> HTTP method batata hai action. GET sabse zyada use hota hai kyunki ye bas server se data fetch karta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Difference Between GET and POST?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English / Hinglish:</span><br>
+                            - <strong>GET:</strong> Data read karne ke liye. Data URL me jaata hai (Fast but insecure).<br>
+                            - <strong>POST:</strong> Naya data create/send karne ke liye. Data Request Body me jaata hai (Secure).<br><br>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                <tr>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">Feature</th>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">GET</th>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">POST</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Data Location</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">URL (Query Parameters)</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Request Body</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Security</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Less Secure (Visible in URL)</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">More Secure</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Data Limit</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Limited (URL length)</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Unlimited</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What are the common Status Codes?</summary>
+                        <div class="answer">
+                            <ul style="padding-left: 20px;">
+                                <li><strong>200 OK:</strong> Success.</li>
+                                <li><strong>201 Created:</strong> Resource created successfully.</li>
+                                <li><strong>400 Bad Request:</strong> Client error.</li>
+                                <li><strong>401 Unauthorized:</strong> Authentication required (Token missing/invalid).</li>
+                                <li><strong>403 Forbidden:</strong> Authenticated, but no permission to access.</li>
+                                <li><strong>404 Not Found:</strong> Resource/Endpoint missing.</li>
+                                <li><strong>500 Internal Server Error:</strong> Server crashed.</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. What are Query Parameters?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Query parameters are key-value pairs used to filter or customize responses, added after <code>?</code> in the URL (e.g., <code>/users?id=10</code>).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Query Parameter API response ko filter ya customize karne ke liye use hota hai aur URL ke baad <code>?</code> ke sath add hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. How to pass a token from one API to another?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English / Hinglish:</span> Extract the token from the Login API response and store it in an environment variable in the Tests tab:<br>
+                            <pre>pm.environment.set("token", pm.response.json().token);</pre>
+                            In the Next API, use <code>{{token}}</code> under <strong>Authorization: Bearer Token</strong>.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. What is Environment in Postman?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> In Postman, an Environment is used to store variables like base URL, tokens, and credentials. It allows you to quickly switch contexts (Dev, QA, Prod).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Postman me Environment ka use hum variables store karne ke liye karte hain jaise base URL, token.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. Variable Priority Order in Postman?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English / Hinglish:</span> Order of Priority (Highest to Lowest):<br>
+                            <strong>Local &gt; Data &gt; Environment &gt; Collection &gt; Global</strong>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. Explain HTTP in API.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> HTTP (HyperText Transfer Protocol) is a communication protocol used between client and server in API testing. It defines how requests are sent and responses are received. Common HTTP methods are GET, POST, PUT, and DELETE.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> HTTP ek communication protocol hai jo client aur server ke beech data exchange ke liye use hota hai API me. Ye batata hai request kaise jayegi aur response kaise aayega. Common HTTP methods hain GET, POST, PUT aur DELETE.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. What is Token and Authentication in API?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Authentication is the process of verifying user identity. A token is a unique key generated by the server after successful login, which is sent with every API request to access secured resources.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Authentication ka matlab hota hai user ki identity verify karna. Token ek unique key hoti hai jo login ke baad server generate karta hai aur har API request ke saath bheji jaati hai secure access ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>11. What is API and what are status codes?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> API allows communication between two systems. Status codes indicate response result like 200, 400, 500.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> API do systems ke beech communication karata hai. Status codes response ka result batate hain jaise 200, 400, 500.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. Explain 400 status code.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> 400 means Bad Request. The request sent by client is incorrect.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> 400 ka matlab Bad Request hota hai. Client ne galat request bheji hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. What is 500 Internal Server Error?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> 500 means server side error. Request is correct but server failed to process it.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> 500 ka matlab server side error hota hai. Request sahi hoti hai par server process nahi kar paata.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. Explain API GET, POST, PUT methods.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>GET</strong> &rarr; fetch data<br>
+                            - <strong>POST</strong> &rarr; create data<br>
+                            - <strong>PUT</strong> &rarr; update data<br>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            - <strong>GET</strong> &rarr; data laata hai<br>
+                            - <strong>POST</strong> &rarr; data bhejta hai<br>
+                            - <strong>PUT</strong> &rarr; update karta hai
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. Summarize HTTP status codes.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span><br>
+                            - <strong>200</strong> &rarr; Success<br>
+                            - <strong>400</strong> &rarr; Bad Request<br>
+                            - <strong>404</strong> &rarr; Not Found<br>
+                            - <strong>500</strong> &rarr; Server Error<br>
+                            <span class="lang-badge hinglish">Hinglish:</span><br>
+                            - <strong>200</strong> &rarr; success<br>
+                            - <strong>400</strong> &rarr; client error<br>
+                            - <strong>404</strong> &rarr; not found<br>
+                            - <strong>500</strong> &rarr; server error
+                        </div>
+                    </details>
+                    <details>
+                        <summary>16. What is Microsoft Graph API?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Microsoft Graph API is a RESTful web API provided by Microsoft that allows developers to access and manage data from multiple Microsoft services like Outlook, OneDrive, Teams, and Azure Active Directory using a single endpoint. It acts as a central gateway to interact with Microsoft cloud services and uses OAuth 2.0 for secure authentication.<br><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Microsoft Graph API ek REST API hai jo Microsoft provide karta hai. Iska use karke hum Microsoft ke different services jaise Outlook, OneDrive, Teams aur Azure Active Directory ka data ek hi endpoint se access aur manage kar sakte hain. Ye ek central gateway ki tarah kaam karta hai aur secure authentication ke liye OAuth 2.0 use karta hai.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="api-basics">📌 API Basics & Postman</h2>
+                    
+                    <details>
+                        <summary>1. What is an API and why is it tested?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> API (Application Programming Interface) is a set of rules that allows two software components to communicate. We test it to ensure data integrity, security, and backend reliability.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> API do softwares ke beech pul ka kaam karti hai. Iska test data aur logic check karne ke liye hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. What is Postman and what are its core features?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Postman is a tool for developing and testing APIs. Features include collections, environments, global variables, and automated tests (JS scripts).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Postman API testing ka best tool hai jisme requests save karne (Collections) aur test script likhne ke features hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. Difference between Query Parameters and Path Parameters?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Path Parameters:</strong> Part of the URL (e.g., /users/123). <strong>Query Parameters:</strong> Appended after ? (e.g., /users?age=25) and used for filtering.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Path param URL ka hi hissa hota hai; Query param ? ke baad lagaya jata hai filter aur sorting ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. What are Global, Collection, and Environment variables in Postman?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Global:</strong> All-in-one. <strong>Collection:</strong> Within one folder. <strong>Environment:</strong> Specific to a setup like QA or Prod.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Global har jagah apply hote hain; Environment sirf chune gaye mode (QA/Prod) pe; Collection sirf us group pe.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. How to automate tests in Postman?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> By writing JavaScript code in the "Tests" tab of a request (using the <code>pm.test()</code> function).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Postman ke "Tests" tab mein JS script likh kar assertions/checks lagaye ja sakte hain.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="http-rest">📌 HTTP Protocol & REST Concepts</h2>
+
+                    <details>
+                        <summary>6. Explain HTTP Status Codes (2xx, 3xx, 4xx, 5xx).</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span>
+                            <ul>
+                                <li><strong>2xx:</strong> Success (200 OK, 201 Created).</li>
+                                <li><strong>3xx:</strong> Redirection (301 Moved).</li>
+                                <li><strong>4xx:</strong> Client Error (400 Bad Request, 401 Unauthorized, 404 Not Found).</li>
+                                <li><strong>5xx:</strong> Server Error (500 Internal Server Error).</li>
+                            </ul>
+                            <span class="lang-badge hinglish">Hinglish:</span> 2 series matlab kamyabi, 4 series client ki galti, aur 5 series server ki galti.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. Difference between GET and POST?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>GET:</strong> Fetches data (data in URL, limited size). <strong>POST:</strong> Sends data (data in body, secure, no size limit).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> GET data laata hai aur URL mein dikhta hai; POST data bhejne ke liye hota hai aur jyadatar body mein hidden hota hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. Difference between PUT and PATCH?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>PUT:</strong> Replaces entire resource. <strong>PATCH:</strong> Updates only specific fields (Partial update).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> PUT poora badal deta hai; PATCH thoda sa part badalta hai (like sirf phone number).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>9. What are RESTful Web Services constraints?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Statelessness, Client-Server architecture, Cacheability, Layered system, and Uniform Interface.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> REST ke kuch rules hain (Stateless etc.) jisse ye flexible aur scalable banti hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>10. What is 'Idempotency' in API methods?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A method is idempotent if calling it multiple times has the same outcome (e.g., GET, PUT, DELETE). POST is NOT idempotent.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Agar method baar-baar chalane pe same result de toh wo idempotent hai (jaise PUT ya DELETE).
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="json-security">📌 JSON & API Security</h2>
+
+                    <details>
+                        <summary>11. What is JSON and why it is preferred over XML?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> JSON (JavaScript Object Notation) is lightweight, faster to parse, and more human-readable compared to XML.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> JSON halka aur fast hota hai, aur iska code padhne mein XML se aasan hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>12. How do you handle Authentication in APIs?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using headers like <code>Authorization: Bearer &lt;token&gt;</code>, API Keys, or Basic Auth (Username:Password).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Header mein token ya keys daal kar user ki pehchan process ki jati hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>13. Explain OAuth 2.0 briefly.</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> An authorization protocol where a client gets an 'Access Token' to perform actions on behalf of a user without sharing passwords.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Bina password bataye permission lene ka tareeka (जैसे Login with Google).
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>14. What is 'Payload' and 'Headers'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>Payload:</strong> Data sent in the body. <strong>Headers:</strong> Metadata information (like Content-Type: application/json).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Payload asli data hota hai; Header request ke baare mein informatio hoti hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>15. What are common API security risks?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Injection attacks, Broken Object Level Authorization (BOLA), Unprotected endpoints, and Excessive data exposure.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> API hacking ki threats jaise purana login use karna ya galti se security gaps chodh dena.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="scenario-api">📌 Scenario-Based API Questions</h2>
+
+                    <details>
+                        <summary>16. How to test an API that has no documentation?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Use tools like Fiddler, Charles Proxy, or Chrome Network tab to capture requests while interacting with the application UI.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Proxy tools use karke ye pata lagao ki UI kaunsi calls kar raha hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>17. What is 'API Mocking'?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Simulating the behavior of a real API with fake responses. Useful when the backend is not ready but frontend/testing must proceed.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Asli API banne se pehle uski nakal (fake API) banana testing ke liye.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>18. Difference between 401 Unauthorized and 403 Forbidden?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> <strong>401:</strong> Identity unknown (no valid credentials). <strong>403:</strong> Identity known but access denied (no permission for this resource).<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> 401 matlab user login nahi hai; 403 matlab login toh hai par use ye dekhne ki ijazat nahi hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>19. What is 'Contract Testing' in API?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Verifying that the API provider (server) and consumer (client) agree on the structure of data exchanged.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye check karna ki Client aur Server dono response format (keys/types) pe agree kar rahe hain.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>20. How to handle large JSON responses?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> Using JSON Path expressions to parse and validate specific fields instead of checking the whole string.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> JSON Path use karke sirf kaam ki cheezein pick karo pure response ko padhne ke bajaye.
+                        </div>
+                    </details>
+
+                    <h2 class="section-title" id="web-services-scenarios">📌 Web Services (SOAP vs REST) & Real Scenarios</h2>
+
+                    <details>
+                        <summary>1. What is a web service?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> A web service is an interface that allows different applications to communicate and exchange data over the internet.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Web service ek interface hota hai jo do different applications ke beech internet ke through data exchange karne deta hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>2. What is the difference between SOAP and REST web services?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English / Hinglish:</span><br>
+                            - <strong>REST:</strong> Lightweight, supports JSON and XML, simpler and faster, no WSDL required.<br>
+                            - <strong>SOAP:</strong> XML-based, heavy, uses WSDL, complex but highly secure.<br><br>
+                            <span class="lang-badge hinglish">Hinglish:</span> SOAP XML-based aur heavy hota hai, jabki REST lightweight hota hai aur JSON/XML support karta hai. SOAP WSDL use karta hai, REST nahi karta.<br><br>
+                            <table style="width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.9rem;">
+                                <tr>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">Feature</th>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">REST</th>
+                                    <th style="border: 1px solid var(--border-light); padding: 8px; text-align: left;">SOAP</th>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Protocol vs Style</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Architectural Style</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Protocol</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Data Format</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">JSON, XML, HTML, Text</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Only XML</td>
+                                </tr>
+                                <tr>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Performance</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Fast, lightweight</td>
+                                    <td style="border: 1px solid var(--border-light); padding: 8px;">Slow, heavy payload</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>3. What is WSDL and what does it contain?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> WSDL stands for Web Services Description Language. It is an XML file describing the web service. It contains: Service name, Port and endpoint, Operations (methods), and Request/Response structural format.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Ye ek XML file hoti hai jo web service ke operations, request-response format aur endpoint batati hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>4. Tell me about a time you identified a critical bug through automation.</summary>
+                        <div class="answer">
+                            "During a regression run, automation flagged a scenario where deactivated/inactive users were still able to log in. I immediately analyzed logs &amp; captured screenshots, reported the issue with priority, and informed the development team. It was a security bug. Automation helped catch it early before production, saving a lot of manual effort and risk."
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>5. Describe a challenging situation with developers or deadlines and how you handled it.</summary>
+                        <div class="answer">
+                            "Once we had a major release with tight deadlines. Developers delivered changes very late. Instead of pushing back, I prioritized critical test cases first, used automation scripts to speed up regression, collaborated closely with devs for quick fixes, and escalated blockers early. As a result, we delivered on time with good quality."
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>6. Explain about your current project?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> My current project is a web-based application. My role is to design test cases, execute manual testing, and automate regression test cases using Selenium with Java. I also perform API testing using Postman/SOAP UI and log defects in Jira.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> Mera current project ek web-based application hai. Mera role test cases design karna, manual testing karna aur Selenium Java se regression test cases automate karna hai.
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>7. How to raise a defect in Jira tool?</summary>
+                        <div class="answer">
+                            <ol style="padding-left: 20px;">
+                                <li>Click on <strong>Create Issue</strong>.</li>
+                                <li>Select <strong>Issue Type</strong> as Bug.</li>
+                                <li>Enter <strong>Summary</strong> and <strong>Description</strong>.</li>
+                                <li>Add exact <strong>Steps to Reproduce</strong>.</li>
+                                <li>Mention <strong>Expected</strong> and <strong>Actual Result</strong>.</li>
+                                <li>Attach <strong>screenshots/logs</strong>.</li>
+                                <li>Click <strong>Submit</strong>.</li>
+                            </ol>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>8. What is UNION in SQL?</summary>
+                        <div class="answer">
+                            <span class="lang-badge">English:</span> UNION is an SQL operator used to combine the result of two or more SELECT queries into a single result set. Both queries must have the same number of columns and compatible data types. By default, it removes duplicates.<br>
+                            <span class="lang-badge hinglish">Hinglish:</span> UNION ek SQL operator hai jo do ya zyada SELECT queries ko combine karta hai.
+                        </div>
+                    </details>
+                </div>
+            </div>
+            
+            <aside class="sidebar">
+                <!-- Navigation Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-compass"></i> Guide Navigation</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="#essential-api"><i class="fas fa-network-wired"></i> Essential API</a></li>
+                        <li><a href="#common-api"><i class="fas fa-list-ol"></i> Common Questions</a></li>
+                        <li><a href="automation-testing.html"><i class="fas fa-robot"></i> Automation Hub</a></li>
+                        <li><a href="manual-testing.html"><i class="fas fa-user-check"></i> Manual Testing</a></li>
+                    </ul>
+                </div>
+
+                <!-- Related Resource Widget -->
+                <div class="sidebar-card">
+                    <h4><i class="fas fa-link"></i> Related Guides</h4>
+                    <ul class="sidebar-list">
+                        <li><a href="sql-testing.html"><i class="fas fa-database"></i> SQL Interview Q&A</a></li>
+                        <li><a href="qa-testing.html"><i class="fas fa-book"></i> Full QA Roadmap</a></li>
+                        <li><a href="automation-testing.html"><i class="fas fa-code"></i> Java Programs</a></li>
+                    </ul>
+                </div>
+
+                <div class="ad-unit" style="min-height: 250px;">
+                    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-AD_PLACEHOLDER_CLIENT_ID" data-ad-slot="SIDEBAR" data-ad-format="auto" data-full-width-responsive="true"></ins><script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const searchInput = document.getElementById('qaSearch');
+            const detailsElements = document.querySelectorAll('details');
+            const btnExpandAll = document.getElementById('btnExpandAll');
+            const btnCollapseAll = document.getElementById('btnCollapseAll');
+            const studyToggle = document.getElementById('studyModeToggle');
+
+            detailsElements.forEach(det => {
+                det.addEventListener('click', () => {
+                    if (document.body.classList.contains('study-mode')) det.classList.add('revealed');
+                });
+            });
+
+            if (studyToggle) {
+                studyToggle.addEventListener('click', () => {
+                    const isActive = document.body.classList.toggle('study-mode');
+                    studyToggle.classList.toggle('active', isActive);
+                    detailsElements.forEach(det => det.classList.remove('revealed'));
+                });
+            }
+
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => {
+                    const term = e.target.value.toLowerCase().trim();
+                    detailsElements.forEach(el => {
+                        const text = el.textContent.toLowerCase();
+                        el.style.display = (term === "" || text.includes(term)) ? 'block' : 'none';
+                    });
+                    
+                    document.querySelectorAll('.section-title').forEach(title => {
+                        let next = title.nextElementSibling;
+                        let hasVisible = false;
+                        while(next && !next.classList.contains('section-title')) {
+                            if(next.tagName === 'DETAILS' && next.style.display !== 'none') {
+                                hasVisible = true;
+                                break;
+                            }
+                            next = next.nextElementSibling;
+                        }
+                        title.style.display = hasVisible || term === "" ? 'flex' : 'none';
+                    });
+                });
+            }
+
+            if (btnExpandAll) btnExpandAll.addEventListener('click', () => detailsElements.forEach(d => d.setAttribute('open', '')));
+            if (btnCollapseAll) btnCollapseAll.addEventListener('click', () => detailsElements.forEach(d => d.removeAttribute('open')));
+        });
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,1604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automation Lab - Interactive Practice | Ram Technical Help</title>
+    <meta name="description" content="Dedicated automation practice lab with real-world scenarios, login gates, and interactive modules for students.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    
+    <style>
+        :root {
+            --lab-bg: #0f172a;
+            --lab-surface: #1e293b;
+            --lab-border: rgba(255, 255, 255, 0.1);
+            --lab-accent: #6366f1;
+            --lab-text: #f8fafc;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            transition: var(--transition-theme);
+        }
+
+        /* --- Login Gate --- */
+        #login-gate {
+            min-height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .login-card {
+            background: var(--bg-surface);
+            padding: 2.5rem 2rem;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-xl);
+            width: 100%;
+            max-width: 450px;
+            border: 1px solid var(--border-light);
+            text-align: center;
+            animation: fadeIn 0.6s ease-out;
+        }
+
+        .login-card .logo-icon {
+            font-size: 3rem;
+            color: var(--brand-primary);
+            margin-bottom: 1.5rem;
+        }
+
+        .login-card h1 {
+            font-size: 1.75rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-card p {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group {
+            text-align: left;
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-color);
+            background: var(--bg-surface-alt);
+            font-family: inherit;
+            transition: var(--transition-fast);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--brand-primary);
+            box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+        }
+
+        .hint-box {
+            background: rgba(79, 70, 229, 0.05);
+            padding: 0.65rem 0.75rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.25rem;
+            font-size: 0.75rem;
+            color: var(--brand-primary);
+            border-left: 3px solid var(--brand-primary);
+        }
+
+        .error-msg {
+            color: var(--danger);
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            display: none;
+        }
+
+        /* --- Dashboard --- */
+        #lab-dashboard {
+            display: none;
+            padding: 2rem 0 5rem;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .dashboard-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .module-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .module-card {
+            background: var(--bg-surface);
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-md);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition-base);
+        }
+
+        .module-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-lg);
+            border-color: var(--brand-primary);
+        }
+
+        .module-header {
+            padding: 1.5rem;
+            background: var(--bg-surface-alt);
+            border-bottom: 1px solid var(--border-light);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .module-header i {
+            font-size: 1.5rem;
+            color: var(--brand-primary);
+        }
+
+        .module-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        .module-body {
+            padding: 1.5rem;
+            flex: 1;
+        }
+
+        .task-description {
+            font-size: 0.9rem;
+            background: rgba(0,0,0,0.03);
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            border-left: 3px solid var(--text-light);
+        }
+
+        .practice-arena {
+            background: var(--bg-surface-alt);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            margin-bottom: 1.5rem;
+            min-height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 1px dashed var(--border-color);
+        }
+
+        .locator-info {
+            background: #0f172a;
+            color: #38bdf8;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .locator-tag {
+            color: #f472b6;
+            margin-right: 0.5rem;
+        }
+
+        .code-container {
+            display: none;
+            margin-bottom: 1rem;
+        }
+
+        .code-tabs {
+            display: flex;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .code-tab {
+            padding: 0.3rem 0.8rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            background: var(--border-light);
+        }
+
+        .code-tab.active {
+            background: var(--brand-primary);
+            color: white;
+        }
+
+        .code-snippet {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            white-space: pre-wrap;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+
+        .module-footer {
+            padding: 1rem 1.5rem;
+            background: var(--bg-surface-alt);
+            border-top: 1px solid var(--border-light);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .validation-result {
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .module-card.is-completed {
+            border-color: var(--success);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.1);
+        }
+
+        .module-card.is-completed .module-header {
+            background: rgba(16, 185, 129, 0.05);
+        }
+
+        .completion-badge {
+            display: none;
+            background: var(--success);
+            color: white;
+            font-size: 0.65rem;
+            padding: 2px 8px;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-left: auto;
+        }
+
+        .module-card.is-completed .completion-badge {
+            display: inline-block;
+        }
+
+        .status-pass { color: var(--success); }
+        .status-fail { color: var(--danger); }
+
+        /* --- Module Specific Styles --- */
+        .drag-box {
+            width: 60px;
+            height: 60px;
+            background: var(--brand-primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: var(--radius-md);
+            cursor: move;
+            font-weight: 800;
+            font-size: 0.7rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .drop-zone {
+            width: 100px;
+            height: 100px;
+            border: 2px dashed var(--brand-accent);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--brand-accent);
+            font-weight: 600;
+            font-size: 0.8rem;
+            text-align: center;
+            transition: var(--transition-fast);
+        }
+
+        .drop-zone.active {
+            background: rgba(139, 92, 246, 0.1);
+            transform: scale(1.05);
+            border-style: solid;
+        }
+
+        .practice-iframe {
+            width: 100%;
+            height: 150px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            background: white;
+        }
+
+        .upload-area {
+            border: 2px dashed var(--border-color);
+            padding: 2rem;
+            text-align: center;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .upload-area:hover {
+            border-color: var(--brand-primary);
+            background: rgba(79, 70, 229, 0.05);
+        }
+
+        .sync-loader {
+            display: none;
+            border: 3px solid var(--bg-surface-alt);
+            border-top: 3px solid var(--brand-primary);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            animation: spin 1s linear infinite;
+            margin: 1rem auto;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        [data-theme="dark"] #login-gate .login-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+
+        [data-theme="dark"] .module-card {
+            background: #1e293b;
+            border-color: #334155;
+        }
+        
+        [data-theme="dark"] .module-header {
+            background: #0f172a;
+            border-bottom: 1px solid #334155;
+        }
+
+        [data-theme="dark"] .practice-arena {
+            background: #0f172a;
+            border-color: #334155;
+        }
+
+        [data-theme="dark"] .form-input {
+            background: #0f172a;
+            border-color: #334155;
+            color: white;
+        }
+        /* --- Level Tabs --- */
+        .level-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            background: var(--bg-surface-alt);
+            padding: 0.5rem;
+            border-radius: var(--radius-full);
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid var(--border-light);
+        }
+
+        .level-tab {
+            padding: 1rem 2.5rem;
+            border-radius: var(--radius-full);
+            font-weight: 800;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            font-size: 1rem;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .level-tab.active {
+            background: var(--brand-gradient);
+            color: white;
+            box-shadow: 0 10px 25px rgba(79, 70, 229, 0.4);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .level-tab:not(.active):hover {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--brand-primary);
+            transform: translateY(-1px);
+        }
+
+        .level-tab i {
+            font-size: 1.1rem;
+        }
+
+        .module-section {
+            display: none;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .module-section.active {
+            display: block;
+        }
+
+        /* --- Problem Badges --- */
+        .problem-type {
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-left: 0.5rem;
+        }
+        .type-basic { background: #e0f2fe; color: #0369a1; }
+        .type-dynamic { background: #fef3c7; color: #92400e; }
+        .type-wait { background: #dcfce7; color: #166534; }
+        .type-error { background: #fee2e2; color: #991b1b; }
+
+        /* --- Debug Console --- */
+        .debug-console {
+            background: #0f172a;
+            color: #10b981;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 1rem;
+            border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+            border-top: 1px solid #1e293b;
+            max-height: 120px;
+            overflow-y: auto;
+        }
+
+        .console-line { margin-bottom: 4px; }
+        .console-line.cmd { color: #38bdf8; }
+        .console-line.err { color: #f87171; }
+
+        .form-input-error {
+            border-color: var(--danger) !important;
+            animation: shake 0.4s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            75% { transform: translateX(5px); }
+        }
+
+        .hint-container {
+            display: none;
+            background: rgba(79, 70, 229, 0.05);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+            border: 1px solid var(--border-light);
+            font-size: 0.85rem;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .hint-step {
+            display: none;
+            margin-bottom: 0.5rem;
+        }
+        .hint-step.active { display: block; }
+        .hint-step strong { color: var(--brand-primary); }
+
+        .btn-hint {
+            background: none;
+            border: none;
+            color: var(--brand-primary);
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0;
+        }
+        .btn-hint:hover { text-decoration: underline; }
+
+        .hint-container {
+            display: none;
+            background: rgba(79, 70, 229, 0.05);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            margin-top: 1rem;
+            border: 1px solid var(--border-light);
+            font-size: 0.85rem;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .hint-step {
+            margin-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--border-light);
+            padding-bottom: 0.5rem;
+        }
+        .hint-step:last-child { border-bottom: none; }
+        .hint-step strong { color: var(--brand-primary); display: block; font-size: 0.7rem; text-transform: uppercase; margin-bottom: 2px; }
+
+        .btn-hint {
+            background: none;
+            border: none;
+            color: var(--brand-primary);
+            font-weight: 700;
+            cursor: pointer;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+            padding: 0;
+        }
+        .btn-hint:hover { text-decoration: underline; }
+
+        /* --- Certificate --- */
+        #cert-modal {
+            display: none;
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            backdrop-filter: blur(8px);
+        }
+
+        .cert-container {
+            background: white;
+            width: 800px;
+            height: 600px;
+            padding: 40px;
+            position: relative;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+            background-image: 
+                url("https://www.transparenttextures.com/patterns/natural-paper.png"),
+                radial-gradient(circle at 50% 50%, #ffffff 0%, #f1f5f9 100%);
+            border: 15px solid #1e293b;
+            color: #1e293b;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .cert-inner-border {
+            border: 2px solid #6366f1;
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .cert-title {
+            font-family: 'Inter', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin-bottom: 0.5rem;
+            color: #1e293b;
+        }
+
+        .cert-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #6366f1;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+        }
+
+        .cert-awarded {
+            font-size: 1.1rem;
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-name {
+            font-size: 3rem;
+            font-weight: 800;
+            color: #1e293b;
+            border-bottom: 3px solid #1e293b;
+            padding: 0 20px;
+            margin-bottom: 1.5rem;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .cert-description {
+            font-size: 1.1rem;
+            max-width: 500px;
+            line-height: 1.6;
+            margin-bottom: 2.5rem;
+        }
+
+        .cert-footer {
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            margin-top: auto;
+            position: relative;
+        }
+
+        .cert-signature {
+            border-top: 2px solid #94a3b8;
+            padding-top: 0.5rem;
+            width: 200px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .cert-seal {
+            width: 100px;
+            height: 100px;
+            background: #6366f1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+            box-shadow: 0 0 0 8px rgba(99, 102, 241, 0.2);
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .cert-download-btn {
+            position: absolute;
+            bottom: -80px;
+            display: flex;
+            gap: 1rem;
+        }
+
+        #cert-claim-section {
+            display: none;
+            margin-top: 2rem;
+            animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.3); opacity: 0; }
+            50% { transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @media (max-width: 768px) {
+            .level-tabs {
+                width: 100%;
+                flex-direction: column;
+                border-radius: var(--radius-lg);
+            }
+            .level-tab {
+                width: 100%;
+                justify-content: center;
+                padding: 1rem;
+            }
+            .dashboard-header h1 {
+                font-size: 2.25rem !important;
+            }
+            .module-grid {
+                grid-template-columns: 1fr;
+            }
+            .login-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header"></header>
+
+    <main class="container">
+        <!-- Mesh Gradient -->
+        <div class="mesh-gradient"></div>
+
+        <!-- Login Gate -->
+        <section id="login-gate">
+            <div class="login-card">
+                <div class="logo-icon"><i class="fas fa-lock"></i></div>
+                <h1>Automation Lab Access</h1>
+                <p class="muted" style="margin-bottom: 2rem;">Enter credentials to unlock the practice playground.</p>
+                
+                <div id="login-error" class="error-msg">Invalid credentials. Please try again.</div>
+
+                <div class="form-group" style="margin-bottom: 1.25rem;">
+                    <label for="user">Username</label>
+                    <input type="text" id="user" class="form-input" placeholder="Enter username" autocomplete="username">
+                </div>
+                
+                <div class="form-group" style="margin-bottom: 1.5rem;">
+                    <label for="pass">Password</label>
+                    <input type="text" data-mock-type="password" style="-webkit-text-security: disc; text-security: disc;" id="pass" class="form-input" placeholder="Enter password" autocomplete="current-password">
+                </div>
+
+                <button class="btn btn-block" id="login" onclick="handleLogin()" style="margin-bottom: 2rem; padding: 1rem;">Login to Playground</button>
+
+                <div class="hint-box" style="text-align: center; background: rgba(0,0,0,0.03); border: 1px dashed var(--border-color); color: var(--text-muted);">
+                    <p style="margin-bottom: 4px; font-weight: 700; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.5px;">💡 Practice Credentials</p>
+                    <p style="margin: 0; font-size: 0.8rem; font-weight: 600; color: var(--brand-primary);">User: ramtechnicalhelp | Pass: Aubscribe</p>
+                </div>
+
+                <div style="margin-top: 2rem; border-top: 1px solid var(--border-light); padding-top: 1.5rem;">
+                    <a href="practice-lab.html" class="muted" style="font-size:0.85rem; font-weight: 600; transition: color 0.2s;"><i class="fas fa-arrow-left"></i> Back to Practice Lab</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Lab Dashboard -->
+        <section id="lab-dashboard">
+            <div class="dashboard-header">
+                <h1 style="font-size: 3.5rem; font-weight: 900; letter-spacing: -0.04em; margin-bottom: 0.5rem; background: var(--brand-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">Automation Playground</h1>
+                <p class="muted" style="max-width: 600px; margin: 0 auto;">Master real-world automation scenarios with interactive elements and instant code feedback.</p>
+                
+                <div style="display:flex; justify-content:center; align-items:center; gap: 1rem; margin-top: 2rem; flex-wrap: wrap;">
+                    <div class="stat-pill" style="background:var(--success); color:white; border:none; padding: 0.5rem 1rem;"><i class="fas fa-user-check"></i> ramtechnicalhelp</div>
+                    <div class="stat-pill"><i class="fas fa-tasks"></i> Progress: <span id="progress-text">0%</span></div>
+                    <div class="stat-pill"><i class="fas fa-stopwatch"></i> Time: <span id="lab-timer">00:00</span></div>
+                    
+                    <div class="stat-pill" style="padding: 0; background: var(--bg-surface); border: 1px solid var(--border-light); display: flex; align-items: center;">
+                        <span style="padding: 0 0.75rem; font-size: 0.75rem; font-weight: 800; color: var(--text-muted); border-right: 1px solid var(--border-light);">LANGUAGE</span>
+                        <select id="global-lang-select" onchange="setGlobalLanguage(this.value)" style="border:none; background:transparent; padding:0.4rem 0.75rem; font-weight:700; font-family:inherit; cursor:pointer; color:var(--brand-primary); outline:none;">
+                            <option value="java">Java (Selenium)</option>
+                            <option value="python">Python (Selenium)</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-sm btn-secondary" onclick="logout()" style="height: auto; padding: 0.4rem 1rem; box-shadow: none;"><i class="fas fa-sign-out-alt"></i> Logout</button>
+                </div>
+
+                <div id="cert-claim-section">
+                    <button class="btn btn-lg" onclick="showCertModal()" style="background:var(--brand-gradient); padding: 1.25rem 3rem; font-size: 1.1rem; box-shadow: 0 15px 30px rgba(99, 102, 241, 0.4);">
+                        <i class="fas fa-certificate"></i> CLAIM ACHIEVEMENT CERTIFICATE
+                    </button>
+                </div>
+            </div>
+
+            <div class="level-tabs">
+                <div class="level-tab active" id="tab-basic" onclick="switchLevel('basic')">
+                    <i class="fas fa-seedling"></i> Basic Level
+                </div>
+                <div class="level-tab" id="tab-advanced" onclick="switchLevel('advanced')">
+                    <i class="fas fa-rocket"></i> Advanced Level
+                </div>
+            </div>
+
+            <!-- BASIC LEVEL SECTION -->
+            <div id="section-basic" class="module-section active">
+                <div class="module-grid">
+
+                    <!-- Module: Basic Login -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-sign-in-alt"></i>
+                            <h3>Login Form <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Enter 'admin' and 'password123' to login. Basic ID-based automation.</div>
+                            <div class="practice-arena">
+                                <input type="text" id="auto_username" class="form-input" placeholder="Username (id='auto_username')" style="margin-bottom:0.5rem;">
+                                <input type="text" data-mock-type="password" style="-webkit-text-security: disc; text-security: disc;" id="auto_password" class="form-input" placeholder="Password (id='auto_password')" style="margin-bottom:0.5rem;">
+                                <button class="btn btn-secondary btn-block" id="auto_login_btn" onclick="checkBasicLogin()">Login (id='auto_login_btn')</button>
+                            </div>
+                            <div class="locator-info">
+                                <div><span class="locator-tag">ID:</span> auto_username, auto_password, auto_login_btn</div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-basic-login">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn-hint" onclick="toggleHint(this)"><i class="fas fa-lightbulb"></i> Hint</button>
+                                <button class="btn btn-sm" onclick="validateModule('basic-login')">Validate</button>
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('basic-login')"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                        <div class="hint-container">
+                            <div class="hint-step"><strong>Step 1: Strategy</strong> Locate the input fields using their unique IDs.</div>
+                            <div class="hint-step"><strong>Step 2: Input</strong> Use <code>sendKeys("admin")</code> and <code>sendKeys("password123")</code>.</div>
+                        </div>
+                        <div class="code-container" id="code-box-basic-login" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">driver.findElement(By.id("basic-user")).sendKeys("admin");
+driver.findElement(By.id("basic-pass")).sendKeys("password123");
+driver.findElement(By.xpath("//button[text()='Login']")).click();</div>
+                            <div class="code-snippet" data-lang="python" style="display:none">driver.find_element(By.ID, "basic-user").send_keys("admin")
+driver.find_element(By.ID, "basic-pass").send_keys("password123")
+driver.find_element(By.XPATH, "//button[text()='Login']").click()</div>
+                        </div>
+                    </div>
+
+                    <!-- Module: Dropdown -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-list"></i>
+                            <h3>Dropdown Selection <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Select 'Selenium' from the tools dropdown using the Select class.</div>
+                            <div class="practice-arena">
+                                <select id="tools-dropdown" class="form-input">
+                                    <option value="">-- Select Tool --</option>
+                                    <option value="selenium">Selenium</option>
+                                    <option value="playwright">Playwright</option>
+                                    <option value="cypress">Cypress</option>
+                                </select>
+                            </div>
+                            <div class="locator-info">
+                                <div><span class="locator-tag">ID:</span> tools-dropdown</div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-dropdown">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn-hint" onclick="toggleHint(this)"><i class="fas fa-lightbulb"></i> Hint</button>
+                                <button class="btn btn-sm" onclick="validateModule('dropdown')">Validate</button>
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('dropdown')"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                        <div class="hint-container">
+                            <div class="hint-step"><strong>Step 1: Strategy</strong> Wrap the element in a <code>Select</code> class object.</div>
+                            <div class="hint-step"><strong>Step 2: Selection</strong> Use <code>select.selectByValue("selenium")</code>.</div>
+                        </div>
+                        <div class="code-container" id="code-box-dropdown" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">Select select = new Select(driver.findElement(By.id("tools-dropdown")));
+select.selectByValue("selenium");</div>
+                            <div class="code-snippet" data-lang="python" style="display:none">select = Select(driver.find_element(By.ID, "tools-dropdown"))
+select.select_by_value("selenium")</div>
+                        </div>
+                    </div>
+
+                    <!-- Module: Checkbox & Radio -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-check-double"></i>
+                            <h3>Checkbox & Radio <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Select 'Cucumber' and 'Standard' plan.</div>
+                            <div class="practice-arena" style="display:flex; flex-direction:column; gap:0.75rem; padding:0.5rem;">
+                                <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer;">
+                                    <input type="checkbox" id="check_cucumber" style="width:1.1rem; height:1.1rem; accent-color:var(--brand-primary);"> 
+                                    <span style="font-size:0.9rem; font-weight:500;">Cucumber Framework</span>
+                                </label>
+                                <label style="display:flex; align-items:center; gap:0.6rem; cursor:pointer;">
+                                    <input type="radio" name="plan" id="radio_standard" style="width:1.1rem; height:1.1rem; accent-color:var(--brand-primary);"> 
+                                    <span style="font-size:0.9rem; font-weight:500;">Standard Plan</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-checkbox">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('checkbox')"><i class="fas fa-code"></i> Show Code</button>
+                                <button class="btn btn-sm" onclick="validateModule('checkbox')">Validate</button>
+                            </div>
+                        </div>
+                        <div class="code-container" id="code-box-checkbox" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">driver.findElement(By.id("check_cucumber")).click();
+driver.findElement(By.id("radio_standard")).click();</div>
+                            <div class="code-snippet" data-lang="python" style="display:none">driver.find_element(By.ID, "check_cucumber").click()
+driver.find_element(By.ID, "radio_standard").click()</div>
+                        </div>
+                    </div>
+
+                    <!-- Module: Alerts -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-bell"></i>
+                            <h3>Simple Alerts <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Trigger and accept the JS alert.</div>
+                            <div class="practice-arena" style="text-align:center;">
+                                <button class="btn btn-secondary" onclick="triggerAlert()">Trigger Alert</button>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-alert">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('alert')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: File Upload -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <h3>File Upload <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Upload any file using sendKeys path.</div>
+                            <div class="practice-arena">
+                                <input type="file" id="file-upload-input" onchange="updateUploadStatus()">
+                                <div id="upload-status" class="muted" style="margin-top:0.5rem; font-size:0.75rem;">No file selected</div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-upload">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('upload')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Tables -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-table"></i>
+                            <h3>Web Tables <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Extract the ID for 'Sita' from the table.</div>
+                            <div class="practice-arena" style="padding:0.5rem; background:rgba(0,0,0,0.01); border-radius:8px; border:1px dashed var(--border-light);">
+                                <table style="width:100%; font-size:0.85rem; border-collapse:collapse; text-align:left;">
+                                    <thead style="background:#f8fafc; border-bottom:2px solid var(--border-light);">
+                                        <tr>
+                                            <th style="padding:10px 12px; font-weight:700;">Name</th>
+                                            <th style="padding:10px 12px; font-weight:700;">ID</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="border-bottom:1px solid var(--border-light);">
+                                            <td style="padding:10px 12px;">Ram</td>
+                                            <td style="padding:10px 12px;">101</td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:10px 12px;">Sita</td>
+                                            <td style="padding:10px 12px;" id="table-sita-id">102</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-table">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('table')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Search / Filter -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-search"></i>
+                            <h3>Dynamic Search <span class="problem-type type-basic">Basic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Search for 'Cypress' and click the search button.</div>
+                            <div class="practice-arena" style="background:rgba(0,0,0,0.01); border-radius:8px; padding:1rem; border:1px dashed var(--border-light);">
+                                <div style="display:flex; gap:0.5rem; margin-bottom:1rem;">
+                                    <input type="text" id="search-input" class="form-input" placeholder="Search tools..." onkeyup="filterItems()" style="flex:1;">
+                                    <button class="btn btn-secondary" onclick="performSearch()" style="min-width:50px;"><i class="fas fa-search"></i></button>
+                                </div>
+                                <ul id="search-results" style="list-style:none; padding:0; margin:0; font-size:0.85rem; max-height:120px; overflow-y:auto; border:1px solid var(--border-light); border-radius:6px; background:white;">
+                                    <li class="search-item" style="padding:10px 12px; border-bottom:1px solid #f1f5f9; color:var(--text-main);"><i class="fas fa-cube" style="margin-right:8px; opacity:0.5;"></i>Selenium WebDriver</li>
+                                    <li class="search-item" style="padding:10px 12px; border-bottom:1px solid #f1f5f9; color:var(--text-main);"><i class="fas fa-cube" style="margin-right:8px; opacity:0.5;"></i>Playwright Automation</li>
+                                    <li class="search-item" style="padding:10px 12px; border-bottom:1px solid #f1f5f9; color:var(--text-main);"><i class="fas fa-cube" style="margin-right:8px; opacity:0.5;"></i>Cypress Framework</li>
+                                    <li class="search-item" style="padding:10px 12px; border-bottom:1px solid transparent; color:var(--text-main);"><i class="fas fa-cube" style="margin-right:8px; opacity:0.5;"></i>Appium Mobile</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-search">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn-hint" onclick="toggleHint(this)"><i class="fas fa-lightbulb"></i> Hint</button>
+                                <button class="btn btn-sm" onclick="validateModule('search')">Validate</button>
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('search')"><i class="fas fa-code"></i></button>
+                            </div>
+                        </div>
+                        <div class="hint-container">
+                            <div class="hint-step"><strong>Step 1: Type</strong> Use <code>sendKeys("Cypress")</code> on the search input.</div>
+                            <div class="hint-step"><strong>Step 2: Action</strong> Click the search icon button.</div>
+                        </div>
+                        <div class="code-container" id="code-box-search" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">driver.findElement(By.id("search-input")).sendKeys("Cypress");
+driver.findElement(By.xpath("//button[i[contains(@class,'fa-search')]]")).click();</div>
+                            <div class="code-snippet" data-lang="python" style="display:none">driver.find_element(By.ID, "search-input").send_keys("Cypress")
+driver.find_element(By.CSS_SELECTOR, "button .fa-search").click()</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- ADVANCED LEVEL SECTION -->
+            <div id="section-advanced" class="module-section">
+                <div class="module-grid">
+
+                    <!-- Module: Dynamic Elements -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-bolt"></i>
+                            <h3>Dynamic IDs <span class="problem-type type-dynamic">Dynamic</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Click the button. Note: Its ID starts with 'btn_' followed by random numbers.</div>
+                            <div class="practice-arena" style="text-align:center;">
+                                <button class="btn btn-secondary" id="btn_dynamic_99" onclick="state.dynamicClicked=true; this.textContent='CLICKED!'">Dynamic Button</button>
+                                <button class="btn btn-sm btn-secondary" onclick="refreshDynamicID()" style="margin-top:1rem; opacity:0.6;"><i class="fas fa-sync"></i> Refresh ID</button>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-dynamic">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('dynamic')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Stale Element -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-sync"></i>
+                            <h3>Stale Element <span class="problem-type type-error">Stale</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Click 'Refresh DOM', then click the target. Handle DOM refresh.</div>
+                            <div class="practice-arena" id="stale-container" style="text-align:center;">
+                                <button class="btn btn-secondary" id="stale-target" onclick="state.staleClicked=true; this.textContent='SUCCESS!'">Action Button</button>
+                                <div style="margin-top:1rem;">
+                                    <button class="btn btn-sm" onclick="triggerStale()"><i class="fas fa-redo"></i> Refresh DOM</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-stale">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('stale')"><i class="fas fa-magic"></i> Solve</button>
+                                <button class="btn btn-sm" onclick="validateModule('stale')">Validate</button>
+                            </div>
+                        </div>
+                        <div class="code-container" id="code-box-stale" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">// Tip: Re-initialize the element after DOM refresh
+WebElement btn = driver.findElement(By.id("stale-target"));
+driver.findElement(By.button_refresh).click(); 
+btn = driver.findElement(By.id("stale-target")); // Fix
+btn.click();</div>
+                            <div class="code-snippet" data-lang="python" style="display:none"># Re-fetch element to avoid StaleElementReferenceException
+btn = driver.find_element(By.ID, "stale-target")
+driver.find_element(By.XPATH, "//button[contains(.,'Refresh')]").click()
+btn = driver.find_element(By.ID, "stale-target")
+btn.click()</div>
+                        </div>
+                    </div>
+
+                    <!-- Module: Broken Locator -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-search-minus"></i>
+                            <h3>Broken Locator <span class="problem-type type-error">Fix Me</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Inspect to find the correct ID (current: 'wrong-id') and click.</div>
+                            <div class="practice-arena" style="text-align:center;">
+                                <button class="btn btn-secondary" id="real-id-2026" onclick="state.brokenFixDone=true; this.textContent='FIXED!'">Submit Data</button>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-broken">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('broken')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Hidden Elements -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-eye-slash"></i>
+                            <h3>Hidden & JS Click <span class="problem-type type-dynamic">JS Click</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: The 'Secret' button is hidden. Click it using JavaScriptExecutor.</div>
+                            <div class="practice-arena" style="text-align:center;">
+                                <button class="btn btn-secondary" id="hidden-btn" onclick="state.hiddenClicked=true; alert('JS Click Success!')" style="display:none;">Secret Button</button>
+                                <p class="muted" style="font-size:0.75rem;">Style: display:none</p>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-hidden">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('hidden')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Synchronization -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-hourglass-half"></i>
+                            <h3>Explicit Wait <span class="problem-type type-wait">Sync</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Wait for the Secret Key (5-8s delay) using WebDriverWait.</div>
+                            <div class="practice-arena" style="text-align:center;">
+                                <button class="btn btn-secondary" id="sync-trigger" onclick="startSync()">Get Key</button>
+                                <div id="sync-loader" class="sync-loader"></div>
+                                <div id="secret-key" style="display:none; margin-top:1rem; font-weight:800; color:var(--brand-primary);">KEY: SEL-WAIT-2026</div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-sync">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn btn-sm btn-secondary" onclick="toggleCode('sync')"><i class="fas fa-magic"></i> Solve</button>
+                                <button class="btn btn-sm" onclick="validateModule('sync')">Validate</button>
+                            </div>
+                        </div>
+                        <div class="code-container" id="code-box-sync" style="padding: 1rem; border-top: 1px solid var(--border-light);">
+                            <div class="code-tabs">
+                                <div class="code-tab active" onclick="switchCode(this, 'java')">Java</div>
+                                <div class="code-tab" onclick="switchCode(this, 'python')">Python</div>
+                            </div>
+                            <div class="code-snippet" data-lang="java">WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+driver.findElement(By.id("sync-trigger")).click();
+WebElement key = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("secret-key")));
+System.out.println(key.getText());</div>
+                            <div class="code-snippet" data-lang="python" style="display:none">wait = WebDriverWait(driver, 10)
+driver.find_element(By.ID, "sync-trigger").click()
+key = wait.until(EC.visibility_of_element_located((By.ID, "secret-key")))
+print(key.text)</div>
+                        </div>
+                    </div>
+
+                    <!-- Module: iFrames -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-window-restore"></i>
+                            <h3>Nested iFrames <span class="problem-type type-dynamic">SwitchTo</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Switch into the frame and click the inner button.</div>
+                            <div class="practice-arena" style="padding:0; min-height:100px; display:flex; align-items:center; justify-content:center; background:rgba(0,0,0,0.01); border-radius:8px; border:1px dashed var(--border-light); overflow:hidden;">
+                                <iframe id="practice-iframe" class="practice-iframe" style="width:100%; height:100px; border:none;" srcdoc="<html><head><style>body { display:flex; justify-content:center; align-items:center; height:100vh; margin:0; font-family:sans-serif; background:transparent; }</style><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head><body><button id='iframe-btn' onclick='window.parent.postMessage(\&quot;iframe_clicked\&quot;, \&quot;*\&quot;)' style='background:#6366f1; color:white; border:none; padding:10px 24px; border-radius:6px; cursor:pointer; font-weight:700; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); transition: all 0.2s;'>Frame Btn</button></body></html>"></iframe>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-iframe">Status: <span class="muted">Pending</span></div>
+                            <button class="btn btn-sm" onclick="validateModule('iframe')">Validate</button>
+                        </div>
+                    </div>
+
+                    <!-- Module: Shadow DOM -->
+                    <div class="module-card">
+                        <div class="module-header">
+                            <i class="fas fa-ghost"></i>
+                            <h3>Shadow DOM <span class="problem-type type-dynamic">Isolated</span></h3>
+                            <span class="completion-badge">Passed</span>
+                        </div>
+                        <div class="module-body">
+                            <div class="task-description">Task: Access the button HIDDEN inside a Shadow Root and click it.</div>
+                            <div class="practice-arena" id="shadow-host-container" style="text-align:center;">
+                                <!-- Shadow DOM will be attached here via JS -->
+                                <div id="shadow-host"></div>
+                            </div>
+                        </div>
+                        <div class="module-footer">
+                            <div class="validation-result" id="res-shadow">Status: <span class="muted">Pending</span></div>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button class="btn-hint" onclick="toggleHint(this)"><i class="fas fa-lightbulb"></i> Hint</button>
+                                <button class="btn btn-sm" onclick="validateModule('shadow')">Validate</button>
+                            </div>
+                        </div>
+                        <div class="hint-container">
+                            <div class="hint-step"><strong>Step 1: Strategy</strong> Find the 'Shadow Host' element first.</div>
+                            <div class="hint-step"><strong>Step 2: Access</strong> Use <code>host.getShadowRoot()</code> (Java) or <code>host.shadow_root</code> (Python).</div>
+                            <div class="hint-step"><strong>Step 3: Action</strong> Find the button inside that root and click it.</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer"></footer>
+
+    <!-- Certificate Modal -->
+    <div id="cert-modal">
+        <div class="cert-container" id="certificate-capture">
+            <div class="cert-inner-border">
+                <div class="cert-title">Certificate</div>
+                <div class="cert-subtitle">of Automation Mastery</div>
+                
+                <div class="cert-awarded">This is proudly awarded to</div>
+                <div class="cert-name" id="cert-user-name">STUDENT NAME</div>
+                
+                <div class="cert-description">
+                    For successfully completing the <strong>Advanced Automation Learning Path</strong>, 
+                    demonstrating proficiency in Shadow DOM, Dynamic Locators, 
+                    Stale Element handling, and Industry-standard Practices.
+                </div>
+
+                <div class="cert-footer">
+                    <div class="cert-signature" style="text-align: left;">
+                        <img loading="lazy" src="https://i.ibb.co/Vv3S9J1/signature.png" alt="Sig" style="height: 40px; filter: grayscale(1); margin-bottom: 5px;">
+                        <div>Program Director</div>
+                    </div>
+                    <div class="cert-seal"><i class="fas fa-award"></i></div>
+                    <div class="cert-signature" style="text-align: right;">
+                        <strong style="display: block; color: #1e293b;">Ram Technical Help</strong>
+                        <div id="cert-date">Date: April 01, 2026</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cert-download-btn">
+            <button class="btn" onclick="downloadCert()"><i class="fas fa-download"></i> Download as Image</button>
+            <button class="btn btn-secondary" onclick="document.getElementById('cert-modal').style.display='none'"><i class="fas fa-times"></i> Close</button>
+        </div>
+    </div>
+
+    <script>
+        // --- GLOBAL STATE ---
+        const state = {
+            alertAccepted: false,
+            fileUploaded: false,
+            dragDone: false,
+            iframeClicked: false,
+            syncDone: false,
+            dynamicClicked: false,
+            staleClicked: false,
+            brokenFixDone: false,
+            hiddenClicked: false,
+            basicLoginDone: false,
+            shadowClicked: false,
+            searchDone: false,
+            startTime: Date.now()
+        };
+
+        // --- AUTH & INITIALIZATION ---
+        function handleLogin() {
+            const u = document.getElementById('user').value;
+            const p = document.getElementById('pass').value;
+            const error = document.getElementById('login-error');
+            
+            if (u === 'ramtechnicalhelp' && p === 'Aubscribe') {
+                document.getElementById('login-gate').style.display = 'none';
+                document.getElementById('lab-dashboard').style.display = 'block';
+                localStorage.setItem('lab_auth', 'true');
+                initLab();
+            } else {
+                error.style.display = 'block';
+                setTimeout(() => error.style.display = 'none', 3000);
+            }
+        }
+
+        function logout() {
+            localStorage.removeItem('lab_auth');
+            location.reload();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Disabled auto-login check to ensure students can practice login automation every time
+            // If they are already in session, we show the dashboard, but if they refresh we ask again
+            // This is better for Selenium scripts that start from scratch
+            
+            // Note: If you want persistence, uncomment below
+            /*
+            if (localStorage.getItem('lab_auth') === 'true') {
+                 document.getElementById('login-gate').style.display = 'none';
+                 document.getElementById('lab-dashboard').style.display = 'block';
+                 initLab();
+            }
+            */
+        });
+
+        function initLab() {
+            loadProgress();
+            startLabTimer();
+            updateProgress();
+            initShadowDOM();
+            
+            // iFrame message listener
+            window.addEventListener('message', (event) => {
+                if (event.data === 'iframe_clicked') {
+                    state.iframeClicked = true;
+                    alert("System: iFrame Switch Successful!");
+                }
+            });
+        }
+
+        function initShadowDOM() {
+            const host = document.getElementById('shadow-host');
+            if (host) {
+                const shadowRoot = host.attachShadow({mode: 'open'});
+                shadowRoot.innerHTML = `
+                    <style>
+                        .shadow-btn {
+                            background: #6366f1;
+                            color: white;
+                            border: none;
+                            padding: 10px 20px;
+                            border-radius: 6px;
+                            cursor: pointer;
+                            font-weight: 700;
+                            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+                            transition: all 0.2s;
+                        }
+                        .shadow-btn:active { transform: scale(0.95); }
+                        .shadow-btn:hover { background: #4f46e5; }
+                    </style>
+                    <button class="shadow-btn" id="shadow-btn-inner">Inside Shadow Root</button>
+                `;
+                shadowRoot.getElementById('shadow-btn-inner').onclick = () => {
+                    state.shadowClicked = true;
+                    alert("Success: You accessed the Shadow DOM!");
+                };
+            }
+        }
+
+        // --- UTILS & HELPERS ---
+        function toggleCode(id) {
+            const el = document.getElementById('code-box-' + id);
+            el.style.display = el.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function switchCode(tab, lang) {
+            const container = tab.closest('.code-container');
+            container.querySelectorAll('.code-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            container.querySelectorAll('.code-snippet').forEach(s => {
+                s.style.display = (s.dataset.lang === lang) ? 'block' : 'none';
+            });
+        }
+
+        function switchLevel(lvl) {
+            document.querySelectorAll('.level-tab').forEach(t => t.classList.remove('active'));
+            document.querySelectorAll('.module-section').forEach(s => s.classList.remove('active'));
+            document.getElementById('tab-' + lvl).classList.add('active');
+            document.getElementById('section-' + lvl).classList.add('active');
+        }
+
+        function startLabTimer() {
+            if (state.timerInterval) clearInterval(state.timerInterval);
+            state.timerInterval = setInterval(() => {
+                const elapsed = Math.floor((Date.now() - state.startTime) / 1000);
+                const mins = String(Math.floor(elapsed / 60)).padStart(2, '0');
+                const secs = String(elapsed % 60).padStart(2, '0');
+                const timerDisplay = document.getElementById('lab-timer');
+                if(timerDisplay) timerDisplay.textContent = `${mins}:${secs}`;
+            }, 1000);
+        }
+
+        function toggleHint(btn) {
+            const container = btn.closest('.module-card').querySelector('.hint-container');
+            container.style.display = (container.style.display === 'block') ? 'none' : 'block';
+        }
+
+        // --- CERTIFICATE LOGIC ---
+        function showCertModal() {
+            let name = prompt("Enter your Full Name for the certificate:", "Automation Pro");
+            if (name) {
+                document.getElementById('cert-user-name').textContent = name;
+                document.getElementById('cert-date').textContent = "Date: " + new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' });
+                document.getElementById('cert-modal').style.display = 'flex';
+            }
+        }
+
+        function downloadCert() {
+            const cert = document.getElementById('certificate-capture');
+            html2canvas(cert, { scale: 2 }).then(canvas => {
+                const link = document.createElement('a');
+                link.download = `Automation_Certificate_${Date.now()}.png`;
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            });
+        }
+
+        // --- PROGRESS TRACKING ---
+        function updateProgress() {
+            const progress = JSON.parse(localStorage.getItem('lab_progress') || '{}');
+            const completedCount = Object.values(progress).filter(v => v === true).length;
+            const totalModules = 14; // 7 Basic + 7 Advanced
+            const percentage = Math.round((completedCount / totalModules) * 100);
+            
+            const progressText = document.getElementById('progress-text');
+            if(progressText) progressText.textContent = percentage + '%';
+
+            if (percentage === 100) {
+                confetti({
+                    particleCount: 150,
+                    spread: 70,
+                    origin: { y: 0.6 },
+                    colors: ['#6366f1', '#10b981', '#f59e0b']
+                });
+                document.getElementById('cert-claim-section').style.display = 'block';
+            }
+        }
+
+        function saveProgress(id) {
+            const progress = JSON.parse(localStorage.getItem('lab_progress') || '{}');
+            progress[id] = true;
+            localStorage.setItem('lab_progress', JSON.stringify(progress));
+            const res = document.getElementById('res-' + id);
+            const card = res ? res.closest('.module-card') : null;
+            if (card) card.classList.add('is-completed');
+            updateProgress();
+        }
+
+        function loadProgress() {
+            const progress = JSON.parse(localStorage.getItem('lab_progress') || '{}');
+            Object.keys(progress).forEach(id => {
+                if (progress[id]) {
+                    const res = document.getElementById('res-' + id);
+                    if (res) {
+                        res.innerHTML = 'Status: <span class="status-pass"><i class="fas fa-check-circle"></i> Passed</span>';
+                        const card = res.closest('.module-card');
+                        if (card) card.classList.add('is-completed');
+                    }
+                }
+            });
+        }
+
+        // --- MODULE LOGIC & VALIDATION ---
+        function validateModule(id) {
+            let passed = false;
+            const res = document.getElementById('res-' + id);
+
+            switch(id) {
+                case 'basic-login': if (state.basicLoginDone) passed = true; break;
+                case 'dropdown': if (document.getElementById('tools-dropdown').value === 'selenium') passed = true; break;
+                case 'checkbox': if (document.getElementById('check_cucumber').checked && document.getElementById('radio_standard').checked) passed = true; break;
+                case 'alert': if (state.alertAccepted) passed = true; break;
+                case 'upload': if (state.fileUploaded) passed = true; break;
+                case 'table': passed = true; break; // Visual extract task
+                case 'search': if (state.searchDone) passed = true; break;
+                case 'dynamic': if (state.dynamicClicked) passed = true; break;
+                case 'stale': if (state.staleClicked) passed = true; break;
+                case 'broken': if (state.brokenFixDone) passed = true; break;
+                case 'hidden': if (state.hiddenClicked) passed = true; break;
+                case 'sync': if (state.syncDone) passed = true; break;
+                case 'iframe': if (state.iframeClicked) passed = true; break;
+                case 'shadow': if (state.shadowClicked) passed = true; break;
+            }
+
+            if (passed) {
+                res.innerHTML = 'Status: <span class="status-pass"><i class="fas fa-check-circle"></i> Passed</span>';
+                saveProgress(id);
+            } else {
+                res.innerHTML = 'Status: <span class="status-fail"><i class="fas fa-times-circle"></i> Failed</span>';
+                alert("Validation Hint: Complete the practice action in the arena correctly first.");
+            }
+        }
+
+        // --- PRACTICE ARENA ACTIONS ---
+        function checkBasicLogin() {
+            const u = document.getElementById('auto_username').value;
+            const p = document.getElementById('auto_password').value;
+            if (u === 'admin' && p === 'password123') {
+                state.basicLoginDone = true;
+                alert("Practice: Successfully Handled Login!");
+            } else {
+                alert("Try again. Hint: u='admin', p='password123'");
+            }
+        }
+
+        // --- SEARCH MODULE LOGIC ---
+        function filterItems() {
+            const query = document.getElementById('search-input').value.toLowerCase();
+            const items = document.querySelectorAll('.search-item');
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                item.style.display = text.includes(query) ? 'block' : 'none';
+            });
+        }
+
+        function performSearch() {
+            const query = document.getElementById('search-input').value;
+            if (query.toLowerCase().includes('cypress')) {
+                state.searchDone = true;
+                alert("Search Successful: Found Cypress Framework!");
+            } else {
+                alert("Searching for: " + query);
+            }
+        }
+
+        function triggerAlert() {
+            alert("This is a simple JavaScript alert.");
+            state.alertAccepted = true;
+        }
+
+        function updateUploadStatus() {
+            const input = document.getElementById('file-upload-input');
+            const status = document.getElementById('upload-status');
+            if (input.files.length > 0) {
+                status.textContent = "Selected: " + input.files[0].name;
+                status.style.color = "var(--success)";
+                state.fileUploaded = true;
+            }
+        }
+
+        function refreshDynamicID() {
+            const btn = document.getElementById('btn_dynamic_99');
+            const random = Math.floor(Math.random() * 1000);
+            btn.id = 'btn_' + random;
+            btn.textContent = 'ID: btn_' + random;
+            state.dynamicClicked = false;
+        }
+
+        function triggerStale() {
+            const container = document.getElementById('stale-container');
+            container.innerHTML = `
+                <button class="btn btn-secondary" id="stale-target" onclick="state.staleClicked=true; this.textContent='SUCCESS!'">Target Re-built</button>
+                <div style="margin-top:1rem;">
+                    <button class="btn btn-sm" onclick="triggerStale()"><i class="fas fa-redo"></i> Refresh DOM</button>
+                </div>
+            `;
+            state.staleClicked = false;
+            alert("DOM Refreshed! The old element reference is now Stale.");
+        }
+
+        function startSync() {
+            const trigger = document.getElementById('sync-trigger');
+            const loader = document.getElementById('sync-loader');
+            const secret = document.getElementById('secret-key');
+            trigger.disabled = true;
+            loader.style.display = 'block';
+            secret.style.display = 'none';
+            setTimeout(() => {
+                loader.style.display = 'none';
+                secret.style.display = 'block';
+                state.syncDone = true;
+            }, 6000);
+        }
+
+        function setGlobalLanguage(lang) {
+            localStorage.setItem('lab_pref_lang', lang);
+        }
+    </script>
+</body>
+</html>
+
+

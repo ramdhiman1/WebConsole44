@@ -1,0 +1,1251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API Practice Lab - Interactive Playground | Ram Technical Help</title>
+    <meta name="description" content="Master API testing with our interactive playground. Practice GET, POST, PUT, DELETE requests with mock APIs, documentation, and real-world scenarios.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="assets/js/components.js" defer></script>
+    <script src="assets/js/app.js" defer></script>
+
+    <style>
+        :root {
+            --api-bg: #0f172a;
+            --api-surface: #1e293b;
+            --api-surface-alt: #334155;
+            --api-border: rgba(255, 255, 255, 0.1);
+            --api-accent: #6366f1;
+            --api-text: #f8fafc;
+            --api-muted: #94a3b8;
+            --method-get: #10b981;
+            --method-post: #f59e0b;
+            --method-put: #3b82f6;
+            --method-delete: #ef4444;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            transition: var(--transition-theme);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .api-lab-container {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            flex: 1;
+            max-width: 1600px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        /* --- Sidebar / Docs --- */
+        .api-sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            max-height: calc(100vh - 120px);
+            position: sticky;
+            top: 2rem;
+            overflow-y: auto;
+            padding-right: 5px;
+            z-index: 10;
+        }
+
+        .api-sidebar::-webkit-scrollbar { width: 4px; }
+        .api-sidebar::-webkit-scrollbar-thumb { background: var(--border-light); border-radius: 10px; }
+
+        .side-tabs {
+            display: flex;
+            background: var(--bg-surface-alt);
+            padding: 4px;
+            border-radius: var(--radius-md);
+            margin-bottom: 0.5rem;
+            border: 1px solid var(--border-light);
+            gap: 4px;
+        }
+
+        .side-tab-btn {
+            flex: 1;
+            padding: 0.6rem;
+            font-size: 0.75rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            cursor: pointer;
+            border-radius: 6px;
+            border: none;
+            background: transparent;
+            transition: var(--transition-fast);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .side-tab-btn.active {
+            background: var(--api-accent);
+            color: white;
+            box-shadow: 0 4px 10px rgba(99, 102, 241, 0.2);
+        }
+
+        .side-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .side-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--api-accent);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .endpoint-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            overflow-y: auto;
+        }
+
+        .endpoint-item {
+            padding: 0.75rem;
+            border-radius: var(--radius-md);
+            background: var(--bg-surface-alt);
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border: 1px solid transparent;
+            font-size: 0.85rem;
+        }
+
+        .endpoint-item:hover, .endpoint-item.active {
+            border-color: var(--api-accent);
+            transform: translateX(4px);
+            background: rgba(99, 102, 241, 0.1);
+        }
+
+        .endpoint-item .method-badge {
+            font-size: 0.7rem;
+            font-weight: 800;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-right: 0.5rem;
+            display: inline-block;
+            min-width: 50px;
+            text-align: center;
+        }
+
+        /* --- Main Workspace --- */
+        .api-workspace {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .request-panel, .response-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            box-shadow: var(--shadow-md);
+        }
+
+        .url-bar {
+            display: flex;
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .method-select {
+            width: 120px;
+            padding: 0.75rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            background: var(--bg-surface-alt);
+            color: var(--text-main);
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .url-input {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            border-radius: var(--radius-md);
+            border: 1px solid var(--border-light);
+            background: var(--bg-surface-alt);
+            color: var(--text-main);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+        }
+
+        .send-btn {
+            background: var(--brand-gradient);
+            color: white;
+            padding: 0 2rem;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            transition: var(--transition-base);
+            box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .send-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(99, 102, 241, 0.4);
+        }
+
+        /* Tabs System */
+        .tab-headers {
+            display: flex;
+            gap: 1.5rem;
+            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 1rem;
+        }
+
+        .tab-btn {
+            padding: 0.75rem 0.25rem;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-muted);
+            cursor: pointer;
+            position: relative;
+            background: none;
+            border: none;
+        }
+
+        .tab-btn.active {
+            color: var(--api-accent);
+        }
+
+        .tab-btn.active::after {
+            content: '';
+            position: absolute;
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: var(--api-accent);
+        }
+
+        .tab-content {
+            display: none;
+            min-height: 200px;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .editor-container {
+            position: relative;
+            background: #0f172a;
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            border: 1px solid var(--border-light);
+        }
+
+        .json-editor {
+            width: 100%;
+            height: 200px;
+            background: transparent;
+            color: #38bdf8;
+            border: none;
+            resize: vertical;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            outline: none;
+            line-height: 1.6;
+        }
+
+        /* --- Response View --- */
+        .response-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-pill {
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-weight: 800;
+            font-size: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+
+        .status-success { background: rgba(16, 185, 129, 0.1); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.2); }
+        .status-error { background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2); }
+        .status-warning { background: rgba(245, 158, 11, 0.1); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.2); }
+
+        .resp-viewer {
+            background: #0f172a;
+            border-radius: var(--radius-md);
+            padding: 1.25rem;
+            min-height: 300px;
+            max-height: 500px;
+            overflow-y: auto;
+            border: 1px solid var(--border-light);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.9rem;
+            line-height: 1.6;
+            color: #e2e8f0;
+            white-space: pre-wrap;
+        }
+
+        .resp-placeholder {
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--api-muted);
+            text-align: center;
+        }
+
+        .resp-placeholder i {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: 0.3;
+        }
+
+        /* --- Utils --- */
+        .copy-btn {
+            background: var(--bg-surface-alt);
+            border: 1px solid var(--border-light);
+            color: var(--text-muted);
+            padding: 0.4rem 0.8rem;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-fast);
+        }
+
+        .copy-btn:hover {
+            background: var(--api-accent);
+            color: white;
+            border-color: var(--api-accent);
+        }
+
+        .level-badge {
+            font-size: 0.65rem;
+            background: var(--api-accent);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 800;
+        }
+
+        /* Snippet Modal / Area */
+        .snippet-section {
+            margin-top: 1.5rem;
+        }
+
+        .code-box {
+            background: #1e293b;
+            color: #e2e8f0;
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            position: relative;
+            margin-top: 0.5rem;
+            border: 1px solid var(--border-light);
+            line-height: 1.6;
+        }
+
+        .method-get-text { color: var(--method-get); }
+        .method-post-text { color: var(--method-post); }
+        .method-put-text { color: var(--method-put); }
+        .method-delete-text { color: var(--method-delete); }
+
+        /* Test Script Box */
+        .test-script-box {
+            background: #1e293b;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-md);
+            padding: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .test-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.5rem;
+            border-bottom: 1px solid var(--border-light);
+        }
+        
+        .test-item:last-child { border: none; }
+        
+        .test-status { width: 20px; height: 20px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; color: white; }
+        .test-pass { background: var(--success); }
+        .test-fail { background: var(--danger); }
+        .test-pending { background: var(--api-muted); }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 1024px) {
+            .api-lab-container {
+                grid-template-columns: 1fr;
+            }
+            .api-sidebar {
+                height: auto;
+                position: relative;
+                top: 0;
+            }
+            .endpoint-list {
+                flex-direction: row;
+                overflow-x: auto;
+                padding-bottom: 0.5rem;
+            }
+            .endpoint-item {
+                min-width: 200px;
+            }
+        }
+    </style>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-AD_PLACEHOLDER_CLIENT_ID" crossorigin="anonymous"></script>
+</head>
+<body>
+    <header class="site-header"></header>
+
+    <div class="api-lab-container">
+        <!-- Documentation Sidebar -->
+        <aside class="api-sidebar">
+            <!-- Sidebar Tabs (New Style) -->
+            <div class="side-tabs">
+                <button class="side-tab-btn active" id="collection-tab-trigger" onclick="switchSidebar('collection')">Collection</button>
+                <button class="side-tab-btn" id="history-tab-trigger" onclick="switchSidebar('history')">History</button>
+            </div>
+
+            <div id="side-collection">
+                <div class="side-card">
+                    <h3><i class="fas fa-layer-group"></i> API Collection</h3>
+                    <div class="endpoint-list" id="collection-list">
+                        <div class="endpoint-item active" onclick="loadEndpoint('GET_USERS', this)">
+                            <span class="method-badge" style="background:var(--method-get); color:white;">GET</span>
+                            <span>/users</span>
+                        </div>
+                        <div class="endpoint-item" onclick="loadEndpoint('GET_USER_ID', this)">
+                            <span class="method-badge" style="background:var(--method-get); color:white;">GET</span>
+                            <span>/users/{id}</span>
+                        </div>
+                        <div class="endpoint-item" onclick="loadEndpoint('POST_USER', this)">
+                            <span class="method-badge" style="background:var(--method-post); color:white;">POST</span>
+                            <span>/users</span>
+                        </div>
+                        <div class="endpoint-item" onclick="loadEndpoint('PUT_USER', this)">
+                            <span class="method-badge" style="background:var(--method-put); color:white;">PUT</span>
+                            <span>/users/{id}</span>
+                        </div>
+                        <div class="endpoint-item" onclick="loadEndpoint('DELETE_USER', this)">
+                            <span class="method-badge" style="background:var(--method-delete); color:white;">DELETE</span>
+                            <span>/users/{id}</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="side-card">
+                    <h3><i class="fas fa-vials"></i> Practice Scenarios</h3>
+                    <div class="endpoint-list">
+                        <div class="endpoint-item" onclick="loadScenario('AUTH_ERROR')">
+                            <i class="fas fa-lock" style="margin-right: 0.5rem; color: #ef4444;"></i> Unauthorized Test
+                        </div>
+                        <div class="endpoint-item" onclick="loadScenario('NOT_FOUND')">
+                            <i class="fas fa-search" style="margin-right: 0.5rem; color: #f59e0b;"></i> 404 Not Found
+                        </div>
+                        <div class="endpoint-item" onclick="loadScenario('BEARER_AUTH')">
+                            <span class="level-badge">ADVANCED</span> Bearer Token Flow
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="side-history" style="display:none;">
+                <div class="side-card" style="flex:1;">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem;">
+                        <h3 style="margin:0;"><i class="fas fa-history"></i> Recent Requests</h3>
+                        <button class="copy-btn" onclick="clearHistory()" style="font-size:0.6rem;">Clear All</button>
+                    </div>
+                    <div class="endpoint-list" id="history-list">
+                        <!-- History items will appear here -->
+                        <p class="muted" style="font-size:0.75rem; text-align:center; padding:2rem;">No history yet</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="side-card" style="background: var(--brand-gradient); border: none; color: white;">
+                <h3 style="color:white;"><i class="fas fa-graduation-cap"></i> Mastery Goal</h3>
+                <p style="font-size: 0.8rem; margin: 0; line-height: 1.5; opacity: 0.9;">Complete all CRUD operations and handle error status codes to unlock the <b>API Testing Expert</b> badge.</p>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="api-workspace">
+            <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: 0.5rem;">
+                <div>
+                    <h1 style="font-size: 2.25rem; font-weight: 800; margin: 0; background: var(--brand-gradient); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent;">API Testing Playground</h1>
+                    <p class="muted">Simulate real-world API requests & responses. No real backend needed.</p>
+                </div>
+                <div class="stat-pill" style="margin:0; background: rgba(16, 185, 129, 0.1); color: #10b981; border-color: #10b981;">
+                    <i class="fas fa-circle" style="font-size:0.6rem;"></i> Server Active
+                </div>
+            </div>
+
+            <!-- Request Section -->
+            <section class="request-panel">
+                <div class="url-bar">
+                    <select id="method-select" class="method-select" onchange="updateMethodColor()">
+                        <option value="GET">GET</option>
+                        <option value="POST">POST</option>
+                        <option value="PUT">PUT</option>
+                        <option value="DELETE">DELETE</option>
+                    </select>
+                    <input type="text" id="url-input" class="url-input" value="https://ramtechnicalhelp.com/api/v1/users">
+                    <button class="send-btn" onclick="sendRequest()">
+                        <i class="fas fa-paper-plane"></i>
+                        <span>SEND</span>
+                    </button>
+                    <button class="copy-btn" title="Reset Lab" onclick="resetLab()">
+                        <i class="fas fa-sync-alt"></i>
+                    </button>
+                </div>
+
+                <div class="tab-headers">
+                    <button class="tab-btn active" data-tab="params" onclick="switchTab('params', this)">Params</button>
+                    <button class="tab-btn" data-tab="headers" onclick="switchTab('headers', this)">Headers</button>
+                    <button class="tab-btn" data-tab="auth" onclick="switchTab('auth', this)">Auth</button>
+                    <button class="tab-btn" data-tab="body" id="body-tab-btn" onclick="switchTab('body', this)">Body</button>
+                    <button class="tab-btn" data-tab="tests" onclick="switchTab('tests', this)">Tests <span style="font-size:0.6rem; vertical-align:top; background:var(--api-accent); color:white; padding:1px 4px; border-radius:3px;">QA</span></button>
+                </div>
+
+                <!-- Tab Contents -->
+                <div id="tab-params" class="tab-content active">
+                    <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                        <p class="muted" style="font-size: 0.85rem; margin: 0;">Query parameters added to the URL will be automatically parsed by the server. 
+                        Example: <code>?role=QA&limit=10</code></p>
+                    </div>
+                </div>
+
+                <div id="tab-headers" class="tab-content">
+                    <div style="background: var(--bg-surface-alt); padding: 1rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                        <div style="display:flex; justify-content:space-between; margin-bottom: 0.5rem;">
+                            <span class="muted" style="font-size: 0.75rem; font-weight: 700; width: 45%;">KEY</span>
+                            <span class="muted" style="font-size: 0.75rem; font-weight: 700; width: 45%;">VALUE</span>
+                        </div>
+                        <div style="display:flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="text" value="Content-Type" class="form-input" style="flex:1; margin-bottom:0;" readonly>
+                            <input type="text" value="application/json" class="form-input" style="flex:1; margin-bottom:0;" readonly>
+                        </div>
+                        <div style="display:flex; gap: 0.5rem; margin-bottom: 0.5rem;">
+                            <input type="text" value="Accept" class="form-input" style="flex:1; margin-bottom:0;" readonly>
+                            <input type="text" value="*/*" class="form-input" style="flex:1; margin-bottom:0;" readonly>
+                        </div>
+                        <div style="display:flex; gap: 0.5rem;" id="custom-header-row">
+                            <input type="text" id="header-key" placeholder="New Key" class="form-input" style="flex:1; margin-bottom:0;">
+                            <input type="text" id="header-val" placeholder="New Value" class="form-input" style="flex:1; margin-bottom:0;">
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-auth" class="tab-content">
+                    <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                        <label class="muted" style="display:block; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 800;">AUTH TYPE</label>
+                        <select id="auth-type" class="method-select" style="width: 100%; margin-bottom: 1rem;" onchange="toggleAuthInput()">
+                            <option value="none">No Auth</option>
+                            <option value="bearer">Bearer Token</option>
+                            <option value="apikey">API Key (X-API-Key)</option>
+                        </select>
+                        <div id="auth-input-container" style="display:none;">
+                            <label class="muted" style="display:block; margin-bottom: 0.5rem; font-size: 0.75rem; font-weight: 800;" id="auth-label">TOKEN</label>
+                            <input type="text" id="auth-token" placeholder="Enter token..." class="form-input" style="margin-bottom:0; font-family:'JetBrains Mono', monospace;">
+                            <p class="muted" style="font-size: 0.7rem; margin-top: 0.6rem;" id="auth-hint">Try using: <code style="background:rgba(0,0,0,0.2); padding: 2px 4px; border-radius:2px; color:var(--api-accent);">test-premium-2024</code></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="tab-body" class="tab-content">
+                    <div class="editor-container">
+                        <div style="position:absolute; top: 0.5rem; right: 0.5rem; display:flex; gap: 0.5rem; z-index: 1;">
+                            <button class="copy-btn" onclick="formatJson()">Auto-Format</button>
+                        </div>
+                        <textarea id="json-body" class="json-editor" placeholder='{ "name": "John Doe", "role": "Tester" }'></textarea>
+                    </div>
+                </div>
+
+                <div id="tab-tests" class="tab-content">
+                    <div style="background: var(--bg-surface-alt); padding: 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-light);">
+                        <h4 style="font-size: 0.85rem; margin-top: 0;">Postman-Style Tests</h4>
+                        <div class="json-editor" style="height: 120px; font-size: 0.8rem; overflow: hidden; opacity: 0.8;">
+pm.test("Status code is 200", () => {
+    pm.response.to.have.status(200);
+});
+
+pm.test("Check User ID", () => {
+    var jsonData = pm.response.json();
+    pm.expect(jsonData.id).to.eql(1);
+});
+                        </div>
+                        <p class="muted" style="font-size: 0.75rem; margin-top: 0.5rem;"><i class="fas fa-info-circle"></i> These tests run automatically on every request. Results are shown in the response panel.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Response Section -->
+            <section class="response-panel">
+                <div class="response-header">
+                    <div style="display:flex; gap: 1.5rem; align-items:center;">
+                        <span class="muted" style="font-weight:800; font-size: 0.8rem; text-transform:uppercase;">Response</span>
+                        <div id="resp-meta" style="display:none; gap: 0.75rem; align-items:center;">
+                            <div id="resp-status" class="status-pill status-success">200 OK</div>
+                            <span class="muted" id="resp-time" style="font-size: 0.75rem; font-weight:600;"><i class="far fa-clock"></i> 0 ms</span>
+                            <span class="muted" id="resp-size" style="font-size: 0.75rem; font-weight:600;"><i class="fas fa-database"></i> 0 B</span>
+                        </div>
+                    </div>
+                    <div id="resp-actions" style="display:none; gap: 0.5rem; align-items:center;">
+                        <input type="text" id="resp-search" placeholder="Search JSON..." class="form-input" style="width:140px; margin:0; padding: 0.35rem 0.6rem; font-size: 0.7rem; border-radius: 4px;" onkeyup="searchResponse()">
+                        <button class="copy-btn" onclick="copyAsCurl()" title="Copy as cURL">
+                            <i class="fas fa-terminal"></i> cURL
+                        </button>
+                        <button class="copy-btn" onclick="copyResponse()">
+                            <i class="fas fa-copy"></i> JSON
+                        </button>
+                        <button class="copy-btn" onclick="downloadPostmanCollection()" style="background:var(--api-accent); color:white; border:none;" title="Download Postman Collection">
+                            <i class="fas fa-file-export"></i> Postman
+                        </button>
+                    </div>
+                </div>
+
+                <div class="tab-headers" id="resp-tabs" style="display:none; margin-bottom: 1.5rem;">
+                    <button class="tab-btn active" data-resp-tab="body" onclick="switchRespTab('body', this)">Body</button>
+                    <button class="tab-btn" data-resp-tab="headers" onclick="switchRespTab('headers', this)">Headers</button>
+                    <button class="tab-btn" data-resp-tab="results" onclick="switchRespTab('results', this)">Test Results</button>
+                </div>
+
+                <!-- Response Body -->
+                <div id="resp-body-content" class="resp-viewer">
+                    <div class="resp-placeholder">
+                        <i class="fas fa-satellite-dish"></i>
+                        <p>Waiting for your request to be sent...</p>
+                        <p style="font-size: 0.8rem; opacity: 0.6; margin-top: 0.5rem;">The local mock server is ready at <code>ramtechnicalhelp.com/api</code></p>
+                    </div>
+                </div>
+
+                <!-- Response Headers (Professional View) -->
+                <div id="resp-headers-content" class="resp-viewer" style="display:none; padding: 1.5rem;">
+                    <div style="display: grid; grid-template-columns: 200px 1fr; gap: 0.75rem; font-size: 0.85rem;">
+                        <span class="muted" style="font-weight: 800;">Date</span>
+                        <span style="color: #38bdf8;" id="resp-header-date"></span>
+                        
+                        <span class="muted" style="font-weight: 800;">Content-Type</span>
+                        <span style="color: #38bdf8;">application/json; charset=utf-8</span>
+                        
+                        <span class="muted" style="font-weight: 800;">X-Powered-By</span>
+                        <span style="color: #38bdf8;">RamTechnicalHelp-Mock-Server</span>
+                        
+                        <span class="muted" style="font-weight: 800;">Cache-Control</span>
+                        <span style="color: #38bdf8;">no-cache, no-store, must-revalidate</span>
+                        
+                        <span class="muted" style="font-weight: 800;">Access-Control-Allow-Origin</span>
+                        <span style="color: #38bdf8;">*</span>
+                        
+                        <span class="muted" style="font-weight: 800;">Server</span>
+                        <span style="color: #38bdf8;">Ubuntu / Nginx 1.18.0</span>
+                    </div>
+                </div>
+
+                <!-- Test Results (Hidden) -->
+                <div id="resp-results-content" style="display:none;">
+                    <div class="test-script-box" id="test-results-list">
+                        <!-- Results injected here -->
+                    </div>
+                </div>
+
+                <!-- Code Snippets Section -->
+                <div class="snippet-section">
+                    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom: 0.75rem;">
+                        <h4 class="muted" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; margin:0;">Generate Code Snippet</h4>
+                        <div style="display:flex; gap: 0.5rem;">
+                            <button class="tab-btn active" onclick="generateSnippet('curl', this)" style="padding: 0.3rem 0.6rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.7rem;">cURL</button>
+                            <button class="tab-btn" onclick="generateSnippet('java', this)" style="padding: 0.3rem 0.6rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.7rem;">Java (RA)</button>
+                            <button class="tab-btn" onclick="generateSnippet('python', this)" style="padding: 0.3rem 0.6rem; border: 1px solid var(--border-light); border-radius: 4px; font-size: 0.7rem;">Python</button>
+                        </div>
+                    </div>
+                    <div class="code-box" id="snippet-code">
+                        <span class="muted"># Code snippet will be generated here after the first request</span>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer"></footer>
+
+    <script>
+        function switchSidebar(tab) {
+            document.getElementById('collection-tab-trigger').classList.toggle('active', tab === 'collection');
+            document.getElementById('history-tab-trigger').classList.toggle('active', tab === 'history');
+            document.getElementById('side-collection').style.display = tab === 'collection' ? 'block' : 'none';
+            document.getElementById('side-history').style.display = tab === 'history' ? 'block' : 'none';
+            if (tab === 'history') renderHistory();
+        }
+
+        function addToHistory(item) {
+            let history = JSON.parse(localStorage.getItem('api_history') || '[]');
+            item.timestamp = new Date().toLocaleTimeString();
+            history.unshift(item);
+            if (history.length > 20) history.pop();
+            localStorage.setItem('api_history', JSON.stringify(history));
+        }
+
+        function renderHistory() {
+            const list = document.getElementById('history-list');
+            const history = JSON.parse(localStorage.getItem('api_history') || '[]');
+            if (history.length === 0) {
+                list.innerHTML = `<p class="muted" style="font-size:0.75rem; text-align:center; padding:2rem;">No history yet</p>`;
+                return;
+            }
+            list.innerHTML = history.map((item, idx) => `
+                <div class="endpoint-item" onclick="loadFromHistory(${idx})">
+                    <span class="method-badge" style="background:var(--method-${item.method.toLowerCase()}); color:white; font-size: 0.6rem; min-width:40px;">${item.method}</span>
+                    <span style="font-size: 0.75rem; opacity: 0.8;">${item.url.replace(BASE_URL, '')}</span>
+                    <span style="margin-left:auto; font-size:0.6rem;" class="muted">${item.timestamp}</span>
+                </div>
+            `).join('');
+        }
+
+        function loadFromHistory(idx) {
+            const history = JSON.parse(localStorage.getItem('api_history') || '[]');
+            const item = history[idx];
+            document.getElementById('method-select').value = item.method;
+            document.getElementById('url-input').value = item.url;
+            document.getElementById('json-body').value = item.body || '';
+            updateMethodColor();
+            switchSidebar('collection');
+            alert("History Refilled! Press SEND to re-run.");
+        }
+
+        function clearHistory() {
+            localStorage.removeItem('api_history');
+            renderHistory();
+        }
+
+        // --- Mock Data Engine ---
+        let users = [];
+        
+        function initDB() {
+            const saved = localStorage.getItem('mock_users');
+            if (saved) {
+                users = JSON.parse(saved);
+            } else {
+                users = [
+                    { id: 1, name: "Ram Sharma", role: "Lead QA", email: "ram@testhub.lab" },
+                    { id: 2, name: "Anita Singh", role: "Automation Engineer", email: "anita@testhub.lab" },
+                    { id: 3, name: "Vikram Gupta", role: "Security Tester", email: "vikram@testhub.lab" }
+                ];
+                localStorage.setItem('mock_users', JSON.stringify(users));
+            }
+        }
+
+        const BASE_URL = "https://ramtechnicalhelp.com/api/v1";
+        
+        // --- UI Logic ---
+        function updateMethodColor() {
+            const method = document.getElementById('method-select').value;
+            const select = document.getElementById('method-select');
+            const urlInput = document.getElementById('url-input');
+            const jsonBody = document.getElementById('json-body');
+            
+            const colorMap = {
+                'GET': '#10b981',
+                'POST': '#f59e0b',
+                'PUT': '#3b82f6',
+                'DELETE': '#ef4444'
+            };
+            select.style.color = colorMap[method];
+            select.style.borderColor = colorMap[method];
+
+            // Auto-update URL structure based on method
+            let currentUrl = urlInput.value.split('?')[0];
+            
+            if (method === 'PUT' || method === 'DELETE') {
+                if (!currentUrl.endsWith('/1') && !currentUrl.split('/').pop().match(/^\d+$/)) {
+                    urlInput.value = currentUrl.replace(/\/users\/?$/, '/users/1');
+                }
+            } else {
+                urlInput.value = currentUrl.replace(/\/users\/\d+$/, '/users');
+            }
+
+            // --- Auto-update Body Content ---
+            if (method === 'POST') {
+                jsonBody.value = JSON.stringify({ name: "John Doe", role: "Software Tester", email: "john@ramtechnicalhelp.com" }, null, 4);
+                switchTab('body', document.getElementById('body-tab-btn'));
+            } else if (method === 'PUT') {
+                jsonBody.value = JSON.stringify({ role: "Senior QA Automation Engineer" }, null, 4);
+                switchTab('body', document.getElementById('body-tab-btn'));
+            } else if (method === 'GET' || method === 'DELETE') {
+                jsonBody.value = "";
+                switchTab('params', document.querySelector('[data-tab="params"]'));
+            }
+        }
+
+        function switchTab(tabId, btn) {
+            const buttons = btn.parentElement.querySelectorAll('.tab-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const contents = btn.parentElement.parentElement.querySelectorAll('.tab-content');
+            contents.forEach(c => c.classList.remove('active'));
+            document.getElementById('tab-' + tabId).classList.add('active');
+        }
+
+        function switchRespTab(tabId, btn) {
+            const buttons = document.getElementById('resp-tabs').querySelectorAll('.tab-btn');
+            buttons.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            ['body', 'headers', 'results'].forEach(t => {
+                document.getElementById(`resp-${t}-content`).style.display = t === tabId ? 'block' : 'none';
+            });
+        }
+
+        function toggleAuthInput() {
+            const type = document.getElementById('auth-type').value;
+            const container = document.getElementById('auth-input-container');
+            const label = document.getElementById('auth-label');
+            const hint = document.getElementById('auth-hint');
+            
+            if (type === 'none') {
+                container.style.display = 'none';
+            } else {
+                container.style.display = 'block';
+                label.innerText = type === 'bearer' ? 'BEARER TOKEN' : 'X-API-KEY';
+                hint.innerHTML = type === 'bearer' ? 'Try using: <code style="color:var(--api-accent)">test-premium-2024</code>' : 'Try using: <code style="color:var(--api-accent)">RA-KEY-99</code>';
+            }
+        }
+
+        function formatJson() {
+            const area = document.getElementById('json-body');
+            try {
+                if (!area.value.trim()) return;
+                const obj = JSON.parse(area.value);
+                area.value = JSON.stringify(obj, null, 4);
+            } catch (e) {
+                alert("Invalid JSON format!");
+            }
+        }
+
+        // --- Core Fake Request Logic ---
+        async function sendRequest() {
+            const method = document.getElementById('method-select').value;
+            const fullUrl = document.getElementById('url-input').value;
+            const bodyText = document.getElementById('json-body').value;
+            const authType = document.getElementById('auth-type').value;
+            const authToken = document.getElementById('auth-token').value;
+
+            // Show Loading
+            document.getElementById('resp-body-content').innerHTML = `
+                <div class="resp-placeholder">
+                    <i class="fas fa-spinner fa-spin" style="opacity:1; color:var(--api-accent)"></i>
+                    <p>Contacting Mock Server...</p>
+                </div>
+            `;
+            document.getElementById('resp-meta').style.display = 'none';
+            document.getElementById('resp-actions').style.display = 'none';
+            document.getElementById('resp-tabs').style.display = 'none';
+
+            // Simulate Latency
+            await new Promise(r => setTimeout(r, 400 + Math.random() * 600));
+
+            const startTime = Date.now();
+            let response = { status: 200, statusText: "OK", data: null };
+            
+            try {
+                const path = fullUrl.replace(BASE_URL, '').split('?')[0];
+
+                // Auth Check (Simulated)
+                if (authType !== 'none') {
+                    const valid = authType === 'bearer' ? (authToken === 'test-premium-2024') : (authToken === 'RA-KEY-99');
+                    if (!valid) {
+                        response = { status: 401, statusText: "Unauthorized", data: { error: "Auth Credentials Invalid", message: "Use the credentials shown in the Hint." } };
+                        finalizeResponse(response, Date.now() - startTime);
+                        return;
+                    }
+                }
+
+                if (path === '/users') {
+                    if (method === 'GET') {
+                        response.data = users;
+                    } else if (method === 'POST') {
+                        if (!bodyText.trim()) throw new Error("Empty body");
+                        const newUser = JSON.parse(bodyText);
+                        newUser.id = users.length > 0 ? Math.max(...users.map(u => u.id)) + 1 : 1;
+                        users.push(newUser);
+                        localStorage.setItem('mock_users', JSON.stringify(users));
+                        response.status = 201;
+                        response.statusText = "Created";
+                        response.data = newUser;
+                    } else {
+                        response = { status: 405, statusText: "Method Not Allowed", data: { error: "Bulk operations not supported" } };
+                    }
+                } else if (path.startsWith('/users/')) {
+                    const id = parseInt(path.split('/')[2]);
+                    const index = users.findIndex(u => u.id === id);
+
+                    if (index === -1) {
+                        response = { status: 404, statusText: "Not Found", data: { error: "User ID " + id + " does not exist" } };
+                    } else {
+                        if (method === 'GET') response.data = users[index];
+                        else if (method === 'PUT') {
+                            const updateData = JSON.parse(bodyText);
+                            users[index] = { ...users[index], ...updateData, id: id };
+                            localStorage.setItem('mock_users', JSON.stringify(users));
+                            response.data = users[index];
+                        } else if (method === 'DELETE') {
+                            const deleted = users.splice(index, 1);
+                            localStorage.setItem('mock_users', JSON.stringify(users));
+                            response.data = { message: "Successfully deleted", user: deleted[0] };
+                        }
+                    }
+                } else if (path.includes('unknown') || path.includes('error')) {
+                    response = { status: 500, statusText: "Internal Server Error", data: { error: "Stack trace: NullPointerException at MockServer.java:124", timestamp: new Date().toISOString() } };
+                } else {
+                    response = { status: 404, statusText: "Not Found", data: { error: "The requested resource was not found on this server" } };
+                }
+
+            } catch (e) {
+                response = { status: 400, statusText: "Bad Request", data: { error: "JSON Payload Error", details: e.message } };
+            }
+
+            finalizeResponse(response, Date.now() - startTime);
+            addToHistory({ method, url: fullUrl, body: bodyText });
+        }
+
+        function finalizeResponse(resp, time) {
+            const display = document.getElementById('resp-body-content');
+            const meta = document.getElementById('resp-meta');
+            const status = document.getElementById('resp-status');
+            const timeEl = document.getElementById('resp-time');
+            const sizeEl = document.getElementById('resp-size');
+            const actions = document.getElementById('resp-actions');
+            const tabs = document.getElementById('resp-tabs');
+
+            const jsonStr = JSON.stringify(resp.data, null, 4);
+            display.innerText = jsonStr;
+            
+            // Calculate real size in KB
+            const sizeInBytes = new Blob([jsonStr]).size;
+            const sizeText = sizeInBytes < 1024 ? `${sizeInBytes} B` : `${(sizeInBytes/1024).toFixed(2)} KB`;
+            sizeEl.innerHTML = `<i class="fas fa-database"></i> ${sizeText}`;
+
+            meta.style.display = 'flex';
+            actions.style.display = 'flex';
+            tabs.style.display = 'flex';
+            status.innerText = `${resp.status} ${resp.statusText}`;
+            timeEl.innerHTML = `<i class="far fa-clock"></i> ${time} ms`;
+
+            status.className = 'status-pill';
+            if (resp.status >= 200 && resp.status < 300) status.classList.add('status-success');
+            else if (resp.status >= 400 && resp.status < 500) status.classList.add('status-warning');
+            else status.classList.add('status-error');
+
+            document.getElementById('resp-header-date').innerText = new Date().toUTCString();
+            
+            runSimulatedTests(resp);
+            generateSnippet(currentSnippetLang, null);
+            switchRespTab('body', document.querySelector('[data-resp-tab="body"]'));
+        }
+
+        function searchResponse() {
+            const search = document.getElementById('resp-search').value.toLowerCase();
+            const display = document.getElementById('resp-body-content');
+            const text = display.innerText;
+            if (!search) {
+                display.innerHTML = text; // Just text or we re-format
+                return;
+            }
+            // Highlight logic (basic)
+            const regex = new RegExp(`(${search})`, 'gi');
+            display.innerHTML = text.replace(regex, '<span style="background: yellow; color: black; border-radius:3px;">$1</span>');
+        }
+
+        function copyAsCurl() {
+            const method = document.getElementById('method-select').value;
+            const url = document.getElementById('url-input').value;
+            const body = document.getElementById('json-body').value;
+            const authType = document.getElementById('auth-type').value;
+            const authToken = document.getElementById('auth-token').value;
+
+            let curl = `curl --location --request ${method} '${url}' \\\n--header 'Content-Type: application/json' `;
+            if (authType === 'bearer') curl += `\\\n--header 'Authorization: Bearer ${authToken || "TOKEN"}' `;
+            if (body && method !== 'GET') curl += `\\\n--data-raw '${body.replace(/\n/g, '').replace(/\s+/g, ' ')}'`;
+            
+            navigator.clipboard.writeText(curl);
+            alert("cURL Command Copied to Clipboard!");
+        }
+
+        function runSimulatedTests(resp) {
+            const resultsList = document.getElementById('test-results-list');
+            resultsList.innerHTML = '';
+            
+            const checks = [
+                { name: "Status code is 200/201", pass: resp.status < 300 },
+                { name: "Response is JSON object", pass: typeof resp.data === 'object' },
+                { name: "Content-Type header exists", pass: true },
+                { name: "Response time < 1000ms", pass: true }
+            ];
+
+            checks.forEach(check => {
+                const item = document.createElement('div');
+                item.className = 'test-item';
+                item.innerHTML = `
+                    <div class="test-status ${check.pass ? 'test-pass' : 'test-fail'}">
+                        <i class="fas ${check.pass ? 'fa-check' : 'fa-times'}"></i>
+                    </div>
+                    <span style="font-size: 0.85rem; font-weight: 500;">${check.name}</span>
+                    <span style="margin-left:auto; font-size: 0.7rem; font-weight: 700; color: ${check.pass ? 'var(--success)' : 'var(--danger)'}">${check.pass ? 'PASS' : 'FAIL'}</span>
+                `;
+                resultsList.appendChild(item);
+            });
+        }
+
+        // --- Presets ---
+        function loadEndpoint(type, btn) {
+            if (btn) {
+                document.querySelectorAll('#collection-list .endpoint-item').forEach(i => i.classList.remove('active'));
+                btn.classList.add('active');
+            }
+
+            const method = document.getElementById('method-select');
+            const url = document.getElementById('url-input');
+            const body = document.getElementById('json-body');
+            
+            switch(type) {
+                case 'GET_USERS':
+                    method.value = 'GET';
+                    url.value = BASE_URL + '/users';
+                    body.value = '';
+                    break;
+                case 'GET_USER_ID':
+                    method.value = 'GET';
+                    url.value = BASE_URL + '/users/1';
+                    body.value = '';
+                    break;
+                case 'POST_USER':
+                    method.value = 'POST';
+                    url.value = BASE_URL + '/users';
+                    body.value = JSON.stringify({ name: "New User", role: "QA Engineer", email: "new@testhub.lab" }, null, 4);
+                    switchTab('body', document.getElementById('body-tab-btn'));
+                    break;
+                case 'PUT_USER':
+                    method.value = 'PUT';
+                    url.value = BASE_URL + '/users/1';
+                    body.value = JSON.stringify({ role: "Senior QA Lead" }, null, 4);
+                    switchTab('body', document.getElementById('body-tab-btn'));
+                    break;
+                case 'DELETE_USER':
+                    method.value = 'DELETE';
+                    url.value = BASE_URL + '/users/2';
+                    body.value = '';
+                    break;
+            }
+            updateMethodColor();
+        }
+
+        function loadScenario(type) {
+            const url = document.getElementById('url-input');
+            const auth = document.getElementById('auth-type');
+            
+            switch(type) {
+                case 'AUTH_ERROR':
+                    auth.value = 'bearer';
+                    document.getElementById('auth-token').value = 'expired-token-xyz';
+                    toggleAuthInput();
+                    switchTab('auth', document.querySelector('[data-tab="auth"]'));
+                    break;
+                case 'NOT_FOUND':
+                    url.value = BASE_URL + '/users/999';
+                    break;
+                case 'SERVER_ERROR':
+                    url.value = BASE_URL + '/v1/internal-server-unknown';
+                    break;
+                case 'BEARER_AUTH':
+                    auth.value = 'bearer';
+                    document.getElementById('auth-token').value = 'test-premium-2024';
+                    toggleAuthInput();
+                    switchTab('auth', document.querySelector('[data-tab="auth"]'));
+                    break;
+            }
+        }
+
+        function resetLab() {
+            localStorage.removeItem('mock_users');
+            initDB();
+            alert("API Environment & Database Reset Successfully!");
+            loadEndpoint('GET_USERS', document.querySelector('#collection-list .endpoint-item'));
+        }
+
+        function copyResponse() {
+            const txt = document.getElementById('resp-body-content').innerText;
+            navigator.clipboard.writeText(txt);
+            alert("Response JSON copied!");
+        }
+
+        function exportRequest() {
+            const data = {
+                method: document.getElementById('method-select').value,
+                url: document.getElementById('url-input').value,
+                auth: document.getElementById('auth-type').value,
+                body: document.getElementById('json-body').value,
+                timestamp: new Date().toISOString()
+            };
+            const blob = new Blob([JSON.stringify(data, null, 4)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `request-export-${Date.now()}.json`;
+            a.click();
+        }
+
+        // --- Snippet Generator ---
+        let currentSnippetLang = 'curl';
+        function generateSnippet(lang, btn) {
+            if (btn) {
+                const buttons = btn.parentElement.querySelectorAll('.tab-btn');
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            
+            currentSnippetLang = lang || currentSnippetLang;
+            const tool = document.getElementById('snippet-code');
+            const method = document.getElementById('method-select').value;
+            const url = document.getElementById('url-input').value;
+            const body = document.getElementById('json-body').value;
+            const authType = document.getElementById('auth-type').value;
+            const authToken = document.getElementById('auth-token').value;
+
+            let code = "";
+            if (currentSnippetLang === 'curl') {
+                code = `curl --location --request <span class="method-${method.toLowerCase()}-text">${method}</span> '${url}' \\\n--header 'Content-Type: application/json' `;
+                if (authType === 'bearer') code += `\\\n--header 'Authorization: Bearer ${authToken || "TOKEN"}' `;
+                if (authType === 'apikey') code += `\\\n--header 'X-API-Key: ${authToken || "KEY"}' `;
+                if (body && method !== 'GET') code += `\\\n--data-raw '${body.replace(/\n/g, '').replace(/\s+/g, ' ')}'`;
+            } else if (currentSnippetLang === 'java') {
+                code = `RestAssured.given()\n` +
+                       `    .contentType(ContentType.JSON)\n`;
+                if (authType === 'bearer') code += `    .auth().oauth2("${authToken || "TOKEN"}")\n`;
+                if (authType === 'apikey') code += `    .header("X-API-Key", "${authToken || "KEY"}")\n`;
+                if (body && method !== 'GET') code += `    .body("${body.replace(/\n/g, '').replace(/"/g, '\\"')}")\n`;
+                code += `    .when().${method.toLowerCase()}("${url}")\n` +
+                        `    .then().statusCode(200);`;
+            } else {
+                 code = `import requests\n\n` +
+                        `url = "${url}"\n` +
+                        `headers = {"Content-Type": "application/json"}\n`;
+                if (authType === 'bearer') code += `headers["Authorization"] = "Bearer ${authToken || "TOKEN"}"\n`;
+                if (authType === 'apikey') code += `headers["X-API-Key"] = "${authToken || "KEY"}"\n`;
+                if (body && method !== 'GET') {
+                    code += `payload = ${body}\n`;
+                    code += `response = requests.${method.toLowerCase()}(url, json=payload, headers=headers)\n`;
+                } else {
+                    code += `response = requests.${method.toLowerCase()}(url, headers=headers)\n`;
+                }
+                code += `print(response.json())`;
+            }
+
+            tool.innerHTML = code;
+        }
+
+        function downloadPostmanCollection() {
+            const collection = {
+                "info": {
+                    "name": "Ram Technical Help - API Lab",
+                    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+                },
+                "item": [
+                    {
+                        "name": "Get All Users (LIVE - ramtechnicalhelp.com)",
+                        "request": {
+                            "method": "GET",
+                            "header": [{"key": "Content-Type", "value": "application/json"}],
+                            "url": { "raw": "https://ramtechnicalhelp.com/api/v1/users.json", "protocol": "https", "host": ["ramtechnicalhelp", "com"], "path": ["api", "v1", "users.json"] }
+                        }
+                    },
+                    {
+                        "name": "Try Create User (POST - ramtechnicalhelp.com)",
+                        "request": {
+                            "method": "POST",
+                            "header": [{"key": "Content-Type", "value": "application/json"}],
+                            "body": { "mode": "raw", "raw": "{\n    \"name\": \"Postman Tester\",\n    \"role\": \"Manual Tester\",\n    \"email\": \"postman@ramtechnicalhelp.com\"\n}" },
+                            "url": { "raw": "https://ramtechnicalhelp.com/api/v1/users", "protocol": "https", "host": ["ramtechnicalhelp", "com"], "path": ["api", "v1", "users"] }
+                        }
+                    },
+                    {
+                        "name": "Get User by ID",
+                        "request": {
+                            "method": "GET",
+                            "header": [{"key": "Content-Type", "value": "application/json"}],
+                            "url": { "raw": "https://api.testhub.lab/v1/users/1", "protocol": "https", "host": ["api", "testhub", "lab"], "path": ["v1", "users", "1"] }
+                        }
+                    },
+                    {
+                        "name": "Advanced: Bearer Auth Request",
+                        "request": {
+                            "method": "GET",
+                            "header": [
+                                {"key": "Content-Type", "value": "application/json"},
+                                {"key": "Authorization", "value": "Bearer test-premium-2024", "type": "text"}
+                            ],
+                            "url": { "raw": "https://api.testhub.lab/v1/users/1", "protocol": "https", "host": ["api", "testhub", "lab"], "path": ["v1", "users", "1"] }
+                        }
+                    }
+                ]
+            };
+            const blob = new Blob([JSON.stringify(collection, null, 4)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `testhub-api-collection.json`;
+            a.click();
+            alert("Postman Collection Exported! \n\nNote: These endpoints are currently simulated. To use them in a real environment, you would need to host a matching backend.");
+        }
+
+        window.onload = () => {
+            initDB();
+            updateMethodColor();
+        };
+    </script>
+</body>
+</html>
+
+
